@@ -9,7 +9,7 @@
  * node ~/sync_materials_to_app.mjs
  */
 
-const LESSONS_FILE = "./lessons.json";
+const LESSONS_FILE = "./lessons.json?v=original-audio-20261022";
 const KNOWN_CATEGORIES = ["Everyday Conversation", "Workplace English", "Listening Focus"];
 const GRAMMAR_FALLBACK = "Lihat bentuk kata kerja dan kata bantu pada kalimat ini.";
 
