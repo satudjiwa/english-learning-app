@@ -41,8 +41,8 @@ materi hasil scrape BrowserOS neo
 
 | Gerbang | Arti | Terisi untuk |
 |---|---|---|
-| `audio_embed_allowed` | File MP3 boleh diputar langsung dari server sumber | 37 materi British Council — hotlink diizinkan & sudah diuji |
-| `frame_embed_allowed` | Halaman sumber boleh ditampilkan dalam iframe | 29 materi Randall's ESL Lab — CDN-nya menolak hotlink, jadi pemutar tampil lewat halaman script |
+| `audio_embed_allowed` | File MP3 resmi tersedia untuk streaming dari server sumber | 37 materi British Council — pemutar tetap memuat file dari domain sumber |
+| `frame_embed_allowed` | Halaman sumber boleh ditampilkan dalam iframe | Tidak ada untuk Randall's ESL Lab; syarat situs melarang penyematan audio/teks di aplikasi lain |
 | `transcript_embed_allowed` | Teks transkrip boleh disalin ke aplikasi | **tidak ada** — transkrip tetap berada di situs sumber |
 
 Ubah nilainya hanya setelah menguji sendiri dari origin `satudjiwa.github.io`; `audio_url` dan `frame_url` hanya diteruskan ke aplikasi bila gerbangnya `true`.
@@ -73,11 +73,8 @@ Service worker memakai strategi *network-first* untuk `.json` dan halaman, sehin
 
 - 66 materi: 23 percakapan sehari-hari, 23 workplace, dan 20 fokus listening.
 - Alur Listen → Understand → Repeat → Use → Review.
-- **Audio asli diputar di dalam aplikasi.** Dua cara, ditentukan server sumber:
-  - *British Council* (37 materi): berkas MP3 resmi diputar langsung dari server British Council. Hotlink diizinkan dan sudah diuji.
-  - *Randall's ESL Lab* (29 materi): CDN mereka menolak pemutaran dari luar (`403` tanpa `Referer: esl-lab.com`), jadi halaman script resmi ditampilkan di dalam iframe. Audio di dalamnya tetap berbunyi karena referrer-nya tetap halaman aslinya.
-  - Tidak ada berkas audio yang diunduh atau disimpan ulang di repo ini.
-- Transkrip British Council tidak bisa ditampilkan di dalam aplikasi (`X-Frame-Options: SAMEORIGIN` + tanpa CORS), jadi tautan ke sumbernya tetap dipakai. Pada materi Randall's transkripnya sudah terlihat di panel yang tertanam.
+- **Rekaman asli digunakan.** 37 materi British Council memiliki pemutar MP3 langsung dari server sumber. 29 materi Randall's ESL Lab membuka pemutar di halaman resmi karena ketentuan situs melarang penyematan. Audio tidak diunduh atau disimpan ulang di repo ini.
+- Transkrip resmi tetap dibuka lewat halaman sumber; aplikasi tidak menyalin teks lengkap.
 - Catatan tata bahasa per kalimat, maksimal empat kosakata kunci, satu latihan isian, dan satu latihan bicara (roleplay).
 - Progres tersimpan di local storage browser dan review bersela pada hari ke-1, 3, 7, 14, dan 28.
 - Layout responsif untuk laptop dan ponsel; aplikasi dapat dipasang dari browser yang mendukung PWA.
