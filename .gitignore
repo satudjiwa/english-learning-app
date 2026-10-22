@@ -1,0 +1,13 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Node (not used, but just in case)
+node_modules/
+
+# Local staging for the Pages deploy workflow
+_site/
