@@ -1,6 +1,6 @@
 # Small Steps English
 
-Aplikasi web belajar bahasa Inggris pemula. Tampilan dan latihan berjalan lokal di browser; audio dan transkrip asli dibuka dari situs sumber.
+Aplikasi web belajar bahasa Inggris pemula. Aplikasi menampilkan latihan di browser dan memutar audio asli dari situs sumber jika stream resmi tersedia.
 
 ## Versi daring
 
@@ -61,11 +61,11 @@ Service worker memakai strategi *network-first* untuk `.json` dan halaman, sehin
 
 - 66 materi: 23 percakapan sehari-hari, 23 workplace, dan 20 fokus listening.
 - Alur Listen → Understand → Repeat → Use → Review.
-- Kalimat latihan Inggris dengan terjemahan, text-to-speech per kalimat atau berurutan, dan pemutar audio/transkrip sumber hanya jika izin penyematan dinyatakan secara eksplisit.
+- Kalimat latihan Inggris dengan terjemahan dan pemutar audio asli langsung untuk sumber yang menyediakan URL streaming publik; materi lainnya tertaut ke pemutar resmi. Tidak memakai text-to-speech sebagai pengganti audio pelajaran.
 - Catatan tata bahasa per kalimat, maksimal empat kosakata kunci, satu latihan isian, dan satu latihan bicara (roleplay).
 - Progres tersimpan di local storage browser dan review bersela pada hari ke-1, 3, 7, 14, dan 28.
 - Layout responsif untuk laptop dan ponsel; aplikasi dapat dipasang dari browser yang mendukung PWA.
 
 ## Catatan sumber
 
-Audio dan transkrip pihak ketiga hanya boleh disematkan jika izin tertulis/lisensinya secara eksplisit memperbolehkannya. Pipeline hanya meneruskan audio_url atau transcript_text bila research.audio_embed_allowed atau research.transcript_embed_allowed bernilai true. Materi saat ini belum memiliki izin sematan tercatat, sehingga aplikasi memakai text-to-speech perangkat untuk kalimat latihan dan menyediakan tautan ke audio/transkrip resmi.
+Audio asli diputar dari URL streaming pada situs pemilik untuk materi yang sudah diverifikasi tersedia; berkas tidak diunduh atau disimpan ulang. Materi Randall’s ESL Lab yang ketentuan penggunaannya tidak mengizinkan penyematan tetap dibuka melalui halaman sumber. Transkrip lengkap tetap berada di situs sumber kecuali ada izin untuk menampilkannya.
