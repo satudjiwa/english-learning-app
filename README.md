@@ -61,11 +61,11 @@ Service worker memakai strategi *network-first* untuk `.json` dan halaman, sehin
 
 - 66 materi: 23 percakapan sehari-hari, 23 workplace, dan 20 fokus listening.
 - Alur Listen → Understand → Repeat → Use → Review.
-- Kalimat Inggris dengan terjemahan Indonesia dan contoh pengucapan melalui text-to-speech browser.
+- Kalimat latihan Inggris dengan terjemahan, text-to-speech per kalimat atau berurutan, dan pemutar audio/transkrip sumber hanya jika izin penyematan dinyatakan secara eksplisit.
 - Catatan tata bahasa per kalimat, maksimal empat kosakata kunci, satu latihan isian, dan satu latihan bicara (roleplay).
 - Progres tersimpan di local storage browser dan review bersela pada hari ke-1, 3, 7, 14, dan 28.
 - Layout responsif untuk laptop dan ponsel; aplikasi dapat dipasang dari browser yang mendukung PWA.
 
 ## Catatan sumber
 
-Audio dan transkrip lengkap tidak disalin ke aplikasi. Tombol materi dan transkrip membuka halaman sumber resmi. Suara contoh menggunakan fitur text-to-speech perangkat, bukan audio dari situs pelajaran.
+Audio dan transkrip pihak ketiga hanya boleh disematkan jika izin tertulis/lisensinya secara eksplisit memperbolehkannya. Pipeline hanya meneruskan audio_url atau transcript_text bila research.audio_embed_allowed atau research.transcript_embed_allowed bernilai true. Materi saat ini belum memiliki izin sematan tercatat, sehingga aplikasi memakai text-to-speech perangkat untuk kalimat latihan dan menyediakan tautan ke audio/transkrip resmi.

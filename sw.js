@@ -1,4 +1,4 @@
-const CACHE = "small-steps-shell-v4";
+const CACHE = "small-steps-shell-v5";
 const SHELL = ["./", "./index.html", "./styles.css", "./app.js", "./manifest.webmanifest", "./icon.svg", "./lessons.json"];
 
 self.addEventListener("install", event => {

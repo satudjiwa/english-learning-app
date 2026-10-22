@@ -33,7 +33,12 @@
       "Hello, my name is Rina.": "Present simple · Subject + am/is/are + pelengkap. Untuk identitas, keadaan, atau lokasi.",
       "I work in IT support.": "Present simple · Subject + V1; he/she/it + V-s. Untuk rutinitas, fakta, atau pekerjaan.",
       "What do you do?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan informasi."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV02",
@@ -69,7 +74,12 @@
       "Could I book a table for two, please?": "Permintaan sopan · Can/Could + subject + V1? Setelah modal, kata kerja tetap bentuk dasar.",
       "Is there a table available at seven?": "Present simple · Am/Is/Are + subject + pelengkap? Untuk menanyakan keadaan, lokasi, atau ketersediaan.",
       "Could you say that again, please?": "Permintaan sopan · Can/Could + subject + V1? Setelah modal, kata kerja tetap bentuk dasar."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV03",
@@ -105,7 +115,12 @@
       "Please call me back after lunch.": "Imperative · V1 di awal kalimat. Untuk instruksi atau permintaan; please membuatnya lebih sopan.",
       "Could you leave a message?": "Permintaan sopan · Can/Could + subject + V1? Setelah modal, kata kerja tetap bentuk dasar.",
       "I will call you later.": "Future with will · Subject + will + V1. Untuk rencana atau janji."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP01",
@@ -141,7 +156,12 @@
       "Could you please check this?": "Permintaan sopan · Can/Could + subject + V1? Setelah modal, kata kerja tetap bentuk dasar.",
       "I will check and update you.": "Future with will · Subject + will + V1. Untuk rencana atau janji.",
       "The printer is not working.": "Present continuous · Subject + am/is/are + V-ing. Untuk keadaan yang sedang terjadi."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP02",
@@ -177,7 +197,12 @@
       "Nice to meet you.": "Ungkapan tetap · Nice to meet you adalah sapaan; to meet memakai infinitive setelah nice.",
       "I work in IT support.": "Present simple · Subject + V1; he/she/it + V-s. Untuk rutinitas, fakta, atau pekerjaan.",
       "Could you explain the problem again?": "Permintaan sopan · Can/Could + subject + V1? Setelah modal, kata kerja tetap bentuk dasar."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP03",
@@ -213,7 +238,12 @@
       "Could we move the meeting to three?": "Permintaan sopan · Can/Could + subject + V1? Setelah modal, kata kerja tetap bentuk dasar.",
       "Does Friday work for you?": "Present simple · Do/Does + subject + V1? Untuk bertanya tentang kebiasaan, fakta, atau jadwal. Setelah does, kata kerja tetap bentuk dasar.",
       "That works for me.": "Present simple · Subject + V-s. Untuk rutinitas atau fakta; he/she/it memakai akhiran -s."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS01",
@@ -249,7 +279,12 @@
       "I usually get up at six.": "Present simple · Subject + V1 + at + jam. Untuk menyebut waktu kegiatan rutin.",
       "I go to work at eight.": "Present simple · Subject + V1 + at + jam. Untuk menyebut waktu kegiatan rutin.",
       "What time do you go to bed?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan informasi."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS02",
@@ -285,7 +320,12 @@
       "First, I make coffee.": "Present simple · Subject + V1; he/she/it + V-s. Untuk rutinitas, fakta, atau pekerjaan.",
       "Then I check my messages.": "Present simple · Subject + V1; he/she/it + V-s. Untuk rutinitas, fakta, atau pekerjaan.",
       "I get ready for work.": "Present simple · Subject + V1; he/she/it + V-s. Untuk rutinitas, fakta, atau pekerjaan."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS03",
@@ -321,7 +361,12 @@
       "I'd like a chicken sandwich, please.": "Would like · Subject + would like + noun. Bentuk sopan untuk menyatakan keinginan atau memesan.",
       "Can I have a glass of water?": "Modal can · Can + subject + V1? Untuk meminta sesuatu atau menanyakan kemampuan/kemungkinan.",
       "Is that everything?": "Present simple · Am/Is/Are + subject + pelengkap? Untuk menanyakan keadaan, lokasi, atau ketersediaan."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV04",
@@ -357,7 +402,12 @@
       "Excuse me, where is the library?": "Present simple · WH-word + is/are + subject? Untuk menanyakan lokasi atau asal.",
       "Go straight and turn left.": "Imperative · V1 di awal kalimat. Untuk instruksi atau permintaan; please membuatnya lebih sopan.",
       "Is it near the station?": "Present simple · Am/Is/Are + subject + pelengkap? Untuk menanyakan keadaan, lokasi, atau ketersediaan."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV05",
@@ -393,7 +443,12 @@
       "Hi, I'm Dita. What's your name?": "Present simple · Subject + am/is/are + pelengkap. Untuk identitas, keadaan, atau lokasi.",
       "Where are you from?": "Present simple · WH-word + is/are + subject? Untuk menanyakan lokasi atau asal.",
       "What do you do?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan informasi."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV06",
@@ -429,7 +484,12 @@
       "Hello, I'm Rina. Nice to meet you.": "Present simple · Subject + am/is/are + pelengkap. Untuk identitas, keadaan, atau lokasi.",
       "Do you know the host?": "Present simple · Do/Does + subject + V1? Untuk menanyakan kebiasaan atau fakta.",
       "Would you like some tea?": "Would like · Would you like + noun? Bentuk sopan untuk menawarkan sesuatu."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV07",
@@ -465,7 +525,12 @@
       "Can I have a coffee, please?": "Modal can · Can + subject + V1? Untuk meminta sesuatu atau menanyakan kemampuan/kemungkinan.",
       "I'd like a cheese sandwich.": "Would like · Subject + would like + noun. Bentuk sopan untuk menyatakan keinginan atau memesan.",
       "How much is it?": "Present simple · WH-word + is/are + subject + pelengkap? Untuk meminta informasi."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV08",
@@ -501,7 +566,12 @@
       "Do you have this in a small size?": "Present simple · Do/Does + subject + V1? Untuk menanyakan kebiasaan atau fakta.",
       "Can I try it on?": "Modal can · Can + subject + V1? Untuk meminta sesuatu atau menanyakan kemampuan/kemungkinan.",
       "I'm looking for a blue shirt.": "Present continuous · Subject + am/is/are + V-ing. Untuk keadaan yang sedang terjadi."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV09",
@@ -537,7 +607,12 @@
       "What time does the class start?": "Present simple · WH-word + does + subject + V1? Untuk menanyakan jadwal.",
       "Please bring a notebook.": "Imperative · V1 di awal kalimat. Untuk instruksi atau permintaan; please membuatnya lebih sopan.",
       "The class is on Monday.": "Present simple · Subject + is/are + pelengkap. Di sini dipakai untuk menyebut jadwal."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV10",
@@ -573,7 +648,12 @@
       "Can we meet another day?": "Modal can · Can + subject + V1? Untuk meminta sesuatu atau menanyakan kemampuan/kemungkinan.",
       "I'm sorry, something has come up.": "Present perfect · Subject + has/have + V3. Kejadian baru terjadi dan dampaknya masih terasa sekarang.",
       "How about Saturday?": "Pola usulan · How about + hari/benda atau V-ing? Bentuk singkat untuk mengusulkan pilihan."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP04",
@@ -609,7 +689,12 @@
       "I'll take care of that.": "Future with will · Subject + will + V1. Untuk rencana atau janji.",
       "Could you repeat the deadline?": "Permintaan sopan · Can/Could + subject + V1? Setelah modal, kata kerja tetap bentuk dasar.",
       "I will send an update this afternoon.": "Future with will · Subject + will + V1. Untuk rencana atau janji."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP05",
@@ -645,7 +730,12 @@
       "Who is responsible for IT support?": "Present simple · Subject + am/is/are + pelengkap. Untuk identitas, keadaan, atau lokasi.",
       "You can ask Maya in the finance team.": "Modal can · Subject + can + V1. Untuk menyatakan kemampuan atau memberi saran.",
       "What does he do?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan informasi."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP06",
@@ -681,7 +771,12 @@
       "I can prepare the first report.": "Modal can · Subject + can + V1. Untuk menyatakan kemampuan atau memberi saran.",
       "Who will check the numbers?": "Future with will · Will + subject + V1? Untuk menanyakan siapa yang akan melakukan sesuatu.",
       "Let's finish this by Friday.": "Let's + V1 · Bentuk ajakan untuk melakukan sesuatu bersama."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP07",
@@ -717,7 +812,12 @@
       "Could you explain that again?": "Permintaan sopan · Can/Could + subject + V1? Setelah modal, kata kerja tetap bentuk dasar.",
       "Let me check the details.": "Let + object + V1 · Bentuk untuk menawarkan melakukan sesuatu sekarang.",
       "So, the meeting is at two, right?": "Present simple · Subject + am/is/are + pelengkap. Untuk identitas, keadaan, atau lokasi."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP08",
@@ -753,7 +853,12 @@
       "The total is forty units.": "Present simple · Subject + is + jumlah/keterangan. Untuk menyebut total atau angka.",
       "Sales increased this month.": "Present simple · Subject + V1 + keterangan. Untuk fakta atau rutinitas.",
       "I'll check the figures and update you.": "Future with will · Subject + will + V1. Untuk rencana atau janji."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP09",
@@ -789,7 +894,12 @@
       "Hi, I'm Budi from IT support.": "Present simple · Subject + am/is/are + pelengkap. Untuk identitas, keadaan, atau lokasi.",
       "What team do you work with?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan informasi.",
       "Nice to meet you. Let me know if you need help.": "Infinitive + imperative · Nice to meet you adalah ungkapan sapaan. Let me know memakai V1 sebagai instruksi; if you need help memakai present simple."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP10",
@@ -825,7 +935,12 @@
       "Could you send me the printer information?": "Permintaan sopan · Can/Could + subject + V1? Setelah modal, kata kerja tetap bentuk dasar.",
       "I will email it by three thirty.": "Future with will · Subject + will + V1. Untuk rencana atau janji.",
       "Let me confirm your name and number.": "Let + object + V1 · Bentuk untuk menawarkan melakukan sesuatu sekarang."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS04",
@@ -861,7 +976,12 @@
       "Could I have your name, please?": "Permintaan sopan · Can/Could + subject + V1? Setelah modal, kata kerja tetap bentuk dasar.",
       "How do you spell that?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan informasi.",
       "It's R-A-N-I.": "Present simple · Subject + am/is/are + pelengkap. Untuk identitas, keadaan, atau lokasi."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS05",
@@ -897,7 +1017,12 @@
       "I usually cook dinner at six.": "Present simple · Subject + V1 + at + jam. Untuk menyebut waktu kegiatan rutin.",
       "Then I watch the news.": "Present simple · Subject + V1 + object. Untuk rutinitas atau fakta.",
       "I go to bed at ten.": "Present simple · Subject + V1 + at + jam. Untuk menyebut waktu kegiatan rutin."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS06",
@@ -933,7 +1058,12 @@
       "Where can I find the bookstore?": "Present simple · WH-word + can + subject + V1? Untuk menanyakan kemungkinan atau meminta bantuan.",
       "It's on the second floor.": "Present simple · Subject + is + keterangan tempat. Untuk menyebut lokasi.",
       "Could you help me find this shop?": "Permintaan sopan · Can/Could + subject + V1? Setelah modal, kata kerja tetap bentuk dasar."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS07",
@@ -969,7 +1099,12 @@
       "I'd like a ticket to Bandung, please.": "Would like · Subject + would like + noun. Bentuk sopan untuk menyatakan keinginan atau memesan.",
       "What time does the train leave?": "Present simple · WH-word + does + subject + V1? Untuk menanyakan jadwal.",
       "Is it a one-way ticket?": "Present simple · Am/Is/Are + subject + pelengkap? Untuk menanyakan keadaan, lokasi, atau ketersediaan."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS08",
@@ -1005,7 +1140,12 @@
       "Hi, I'm Dita. Nice to meet you.": "Present simple · Subject + am/is/are + pelengkap. Untuk identitas, keadaan, atau lokasi.",
       "This is my friend, Arif.": "Present simple · Subject + am/is/are + pelengkap. Untuk identitas, keadaan, atau lokasi.",
       "Where are you from?": "Present simple · WH-word + is/are + subject? Untuk menanyakan lokasi atau asal."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS09",
@@ -1041,7 +1181,12 @@
       "My first class starts at eight.": "Present simple · Subject + V-s. Untuk rutinitas atau fakta; he/she/it memakai akhiran -s.",
       "I have English after lunch.": "Present simple · Subject + V1 + object. Untuk rutinitas atau fakta.",
       "What do you study today?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan informasi."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS10",
@@ -1077,7 +1222,12 @@
       "We are going to the park this afternoon.": "Future with be going to · Subject + am/is/are going to + V1. Untuk rencana.",
       "Would you like to come with us?": "Would like + to · Would you like to + V1? Bentuk sopan untuk mengajak.",
       "That sounds fun.": "Present simple · Subject + V-s. Untuk rutinitas atau fakta; he/she/it memakai akhiran -s."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV11",
@@ -1113,7 +1263,12 @@
       "How's it going?": "Present simple · How + is/are + subject + -ing? Bentuk sapaan kasual untuk menanyakan kabar.",
       "I'm organising a little party for my birthday.": "Present continuous · Subject + am/is/are + V-ing. Menyatakan rencana yang sedang disiapkan saat bicara.",
       "Drive straight on Forest Road until you get to the motorway.": "Imperative · V1 di awal kalimat untuk memberi petunjuk arah; until menandai batas akhir perjalanan."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP11",
@@ -1149,7 +1304,12 @@
       "The deadline for this essay is October the 18th.": "Present simple · Subject + is + keterangan waktu. Untuk menyebut tenggat.",
       "Please hand it in on time.": "Imperative · V1 di awal kalimat untuk instruksi; please membuatnya lebih sopan.",
       "Don't forget that you must reference every idea or quote you use.": "Imperative + modal must · Don't + V1 untuk melarang; must + V1 untuk kewajiban."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP12",
@@ -1185,7 +1345,12 @@
       "Could you take a message, please?": "Modal could · Could + subject + V1? Bentuk permintaan sopan; could di sini bukan tense lampau.",
       "Please ask her to call me back.": "Imperative + to-infinitive · V1 di awal kalimat untuk instruksi; ask + object + to + V1 untuk meminta seseorang melakukan sesuatu.",
       "Can I give you my email address too?": "Modal can · Can + subject + V1? Untuk meminta izin atau menawarkan bantuan."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV12",
@@ -1221,7 +1386,12 @@
       "I'm sorry, but I can't come to class next Wednesday.": "Modal can't · Can't + subject + V1 menyatakan tidak dapat; I'm sorry dipakai untuk meminta maaf.",
       "Is there anything to do at home?": "Present simple · WH-word + is/are + subject + pelengkap? Untuk menanyakan kemungkinan ada tugas.",
       "I was going to give you all a practice test.": "Past continuous · Was/were going to + V1. Rencana yang pernah ada sebelum berubah pikiran."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV13",
@@ -1257,7 +1427,12 @@
       "This train is delayed by approximately 8 minutes.": "Present passive · Subject + is/are + V3. 'is delayed' berarti 'ditunda'; preposisi by menyatakan besaran selisih waktu.",
       "Please have your passports and boarding passes ready.": "Imperative · Have + object + V3. Untuk meminta sesuatu agar sudah siap.",
       "Please mind the gap between the train and the platform.": "Imperative · Mind + noun. Untuk meminta perhatian pada hal yang berbahaya."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP13",
@@ -1293,7 +1468,12 @@
       "Sorry, I don't understand. Can you explain?": "Present simple · Don't + subject + V1 menyatakan tidak bisa; Can + subject + V1? meminta penjelasan.",
       "The Fibonacci numbers are a sequence of numbers.": "Present simple · Subject + are + noun + of + noun. Untuk menjelaskan dan memberi definisi.",
       "No question is ever silly.": "Present simple · Subject + is + adjective. Pernyataan umum; ever menegaskan berlaku di semua kasus."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV14",
@@ -1329,7 +1509,12 @@
       "I'm looking for a place where I can pick up some English.": "Present continuous · Subject + am/is/are + V-ing. Menyatakan usaha yang sedang berjalan; where + klausa untuk menjelaskan tempat.",
       "Are there any rules I should know about?": "Present simple · There is/are + noun + any; modal should + V1 untuk memberi saran.",
       "Would it be possible to have a room with another student?": "Modal would · Would + subject + V1? Permintaan sopan yang tidak langsung."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV15",
@@ -1365,7 +1550,12 @@
       "I've decided to look for a new place.": "Present perfect · Subject + have/has + V3. Menyatakan keputusan yang sudah diambil dan masih berlaku.",
       "My budget is around two hundred dollars a month, including utilities.": "Present simple · Subject + is + jumlah + keterangan. Untuk menyebut batas anggaran; around menunjukkan perkiraan.",
       "I need a furnished apartment with a parking space.": "Present simple · Subject + V1 + object. Menyatakan kebutuhan; with + noun menambah keterangan."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV16",
@@ -1401,7 +1591,12 @@
       "I'd like to reserve a room for two on the 21st.": "Would like + to · Would like + to + V1. Bentuk sopan untuk menyatakan keinginan dan memesan.",
       "Sorry, March, not May.": "Imperative · Bentuk singkat tanpa kata kerja untuk mengoreksi informasi yang keliru.",
       "Do you have a non-smoking room on the 20th?": "Present simple · Do/Does + subject + V1? Untuk menanyakan ketersediaan; Have + noun menyebut jenis kamar."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV17",
@@ -1437,7 +1632,12 @@
       "I'd like to order a grilled chicken sandwich and some fries.": "Would like + to · Would like + to + V1. Bentuk sopan untuk memesan.",
       "Could I have the dressing on the side, please?": "Modal could · Could + subject + V1? Permintaan sopan; have + object untuk meminta barang.",
       "Could you send it to room 640?": "Modal could · Could + subject + object + preposisi? Permintaan sopan; angka kamar menjadi tujuan."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV18",
@@ -1473,7 +1673,12 @@
       "I'm here for a teaching convention for the first part of my trip.": "Present continuous · Subject + am/is/are + for + noun. Menyatakan keadaan sekarang; for + noun menjelaskan alasan.",
       "I'll be staying at a hotel downtown for the entire week.": "Future with will · Subject + will + V1. Menyatakan rencana yang sudah pasti; for + periode waktu.",
       "Is this your first visit to the country?": "Present simple · WH-word + is/are + subject + noun? Untuk menanyakan pengalaman."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV19",
@@ -1509,7 +1714,12 @@
       "I'm going out to eat, and then we're going to catch a movie.": "Future with be going to · Subject + am/is/are + going to + V1. Menyatakan rencana yang sudah diputuskan.",
       "It's rated PG, so it's fine for everyone.": "Present simple · Subject + is + V3 (past participle). Menyatakan status; so + klausa menjelaskan akibat.",
       "Dad, I'm going out with my friends tonight.": "Present continuous · Subject + am/is/are + V-ing. Menyatakan rencana yang sedang akan dijalankan."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV20",
@@ -1545,7 +1755,12 @@
       "I didn't like the first one, so my expectations were low.": "Past simple · Subjek + did + V1. Menyatakan pengalaman masa lalu; so + klausa menjelaskan akibat.",
       "It starts with a long scene that has nothing to do with the story.": "Present simple · Subject + V-s + klausa. Menyatakan isi; that-clause menjelaskan hubungan.",
       "I wouldn't recommend it, but you can judge for yourself.": "Modal would + V1 · Bentuk penilaian hipotesis; but + klausa menghubungkan dua pendapat."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV21",
@@ -1581,7 +1796,12 @@
       "I haven't seen you for years — how have you been?": "Present perfect · Subject + have/has + V3. Pengalaman yang masih relevan sekarang; How + have/has + subject + V3? menanyakan kabar.",
       "So, what are you doing here these days?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan kegiatan; these days menandai periode sekarang.",
       "It didn't work out, so I came back.": "Past simple · Subject + did + V1. Menyatakan hasil di masa lalu; so + klausa menjelaskan sebab."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV22",
@@ -1617,7 +1837,12 @@
       "I saw your sign outside — do you have a budget membership?": "Past simple · Subject + V2. Menyatakan pengalaman yang lebih dulu; do/does + subject + V1? untuk bertanya.",
       "Do you charge any sign-up fees or cancellation fees?": "Present simple · Do/Does + subject + V1? Untuk menanyakan kebijakan dan biaya.",
       "If I find a cheaper rate elsewhere, will you match it?": "Conditional type 1 · If + present simple, will + V1. Menyatakan syarat dan akibat yang wajar."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "EV23",
@@ -1653,7 +1878,12 @@
       "Have you ever wondered what it would be like to disconnect completely?": "Present perfect · Have/has + subject + V3. Pengalaman masa lalu yang masih relevan; what-clause untuk isi.",
       "A digital detox means a total switch-off from all things digital.": "Present simple · Subject + V3 + object. Menjelaskan arti istilah; from + noun menyatakan asal.",
       "I've tried several detox activities and they helped me sleep better.": "Present perfect · Subject + have/has + V3. Pengalaman sampai sekarang; helped menunjukkan waktu lampau di klausa kedua."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP14",
@@ -1689,7 +1919,12 @@
       "I'm calling about the invoice and the payment terms.": "Present continuous · Subject + am/is/are + V-ing. Menjelaskan tujuan panggilan saat ini; about + noun.",
       "We need an extension from thirty days to sixty days.": "Present simple · Subject + V1 + object. Menyatakan kebutuhan; from + X to + Y menunjukkan perubahan.",
       "Could you send me a quick email confirmation?": "Modal could · Could + subject + object? Permintaan sopan; me menunjukkan penerima."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP15",
@@ -1725,7 +1960,12 @@
       "We need to decide on the timeline for the new project.": "Modal need to · Subject + need + to + V1. Menyatakan kebutuhan; on + noun menyatakan objek.",
       "Let's each give our opinion, and then we'll discuss it.": "Let's + V1 · Bentuk ajakan; we'll + V1 untuk rencana yang sudah disepakati.",
       "I'm not sure we should start before everyone agrees.": "Modal should + V1 · Should + subject + V1 memberi saran; before + klausa menyatakan syarat waktu."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP16",
@@ -1761,7 +2001,12 @@
       "I need to create a workplace charter for the whole team.": "Modal need to · Subject + need + to + V1. Menyatakan rencana atau tugas pribadi.",
       "Could you look for a trainer who specialises in this?": "Modal could · Could + subject + V1? Permintaan sopan; who-clause menjelaskan orang yang dicari.",
       "I'll do some further research and share it with everyone.": "Future with will · Subject + will + V1. Menyatakan komitmen; and menggabungkan dua kegiatan."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP17",
@@ -1797,7 +2042,12 @@
       "In traditional workplaces, work and private life were clearly divided.": "Past simple · Subject + were + V3. Menjelaskan keadaan yang berlaku di masa lalu.",
       "More and more people are able to work flexibly.": "Present simple · Subject + are able to + V1. Kemampuan yang berlaku sekarang; work + adverb.",
       "If you need to leave early, you can catch up on work in the evening.": "Conditional type 1 · If + present simple, can + subject + V1. Menyatakan syarat dan kemungkinan akibat."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP18",
@@ -1833,7 +2083,12 @@
       "We've just secured some funding for the next stage.": "Present perfect · Subject + have/has + V3. Hasil yang baru terjadi; just untuk menekankan.",
       "Our app helps students with their homework.": "Present simple · Subject + V-s + object. Menyatakan fungsi produk; help + object.",
       "We hope to expand the range of services we offer.": "Modal hope + to · Subject + hope + to + V1. Menyatakan harapan; yang kita offer = klausa relatif."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP19",
@@ -1869,7 +2124,12 @@
       "Our market research showed that the target market is men aged eighteen to forty.": "Past simple · Subject + V2. Menyatakan hasil riset; that-clause menjelaskan isi temuan.",
       "The bottle is designed to look like a black metal flask.": "Present passive · Subject + is/are + V3 + to + V1. Menjelaskan proses desain; to + V1 menyatakan tujuan.",
       "We're launching the product in two months.": "Present continuous · Subject + am/is/are + V-ing. Rencana yang sudah dijadwalkan; in + periode."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP20",
@@ -1905,7 +2165,12 @@
       "I'm calling about the piano for our office party next month.": "Present continuous · Subject + am/is/are + V-ing. Menjelaskan tujuan panggilan saat ini; about + noun.",
       "Would an upright piano be an option?": "Modal would · Would + noun + be? Pertanyaan sopan yang menawarkan pilihan.",
       "Could you send me the photos and the costs?": "Modal could · Could + subject + object? Permintaan sopan; and menggabungkan dua objek."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP21",
@@ -1941,7 +2206,12 @@
       "Have you heard that John isn't coming back?": "Present perfect · Have/has + subject + V3. Pengalaman sampai sekarang; that-clause isi kabar.",
       "I'm not sure that's the full story.": "Present simple · Subject + am/is/are + sure + klausa. Menyatakan tingkat keyakinan.",
       "He repeated her idea in the meeting, and her name wasn't in the notes.": "Past simple · Subjek + V2. Melaporkan kejadian yang sudah terjadi di masa lalu."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP22",
@@ -1977,7 +2247,12 @@
       "I'm majoring in hotel management.": "Present continuous · Subject + am/is/are + V-ing. Menyatakan bidang studi saat ini; in + bidang studi.",
       "I changed my major to computer science.": "Past simple · Subject + V2. Menyatakan keputusan yang sudah diambil.",
       "With the right skills, landing a job shouldn't be difficult.": "Modal shouldn't + V1. Prediksi negatif; with + noun phrase menyatakan syarat."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "WP23",
@@ -2013,7 +2288,12 @@
       "What is your specialty?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan bidang keahlian.",
       "I work as a personal injury attorney.": "Present simple · Subject + V1 + as + noun. Menyatakan profesi; as + kata kerja.",
       "My son is thinking of going into law.": "Present continuous · Subject + am/is/are + V-ing. Menyatakan rencana; think of + V-ing untuk rencana."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS11",
@@ -2049,7 +2329,12 @@
       "I used to stay up late with my friends.": "Used to + V1 · Menunjukkan kebiasaan di masa lalu yang sudah berhenti.",
       "We don't do anything special on New Year's Eve.": "Present simple · Subject + don't + V1. Kebiasaan yang berlaku sekarang; on + hari.",
       "Every day gives you a new opportunity to be better.": "Present simple · Subjek + V-s + object. Pernyataan umum; to + V1 menyatakan tujuan."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS12",
@@ -2085,7 +2370,12 @@
       "No playing until the work is done.": "Present simple · Gerundium sebagai subjek; until + klausa menyatakan batas waktu.",
       "You have to vacuum the room and dust everything.": "Modal have to · Subject + have to + V1. Menyatakan kewajiban; and menggabungkan dua pekerjaan.",
       "If you finish everything, we'll go out for lunch.": "Conditional type 1 · If + present simple, will + V1. Menyatakan syarat dan akibat."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS13",
@@ -2121,7 +2411,12 @@
       "Can I have my allowance?": "Modal can · Can + subject + V1? Permintaan sopan; have + object.",
       "It's been piling up for weeks.": "Present perfect continuous · Subject + has/have + been + V-ing. Proses yang berlangsung dari masa lalu sampai sekarang; for + periode.",
       "I'm going to put some in savings and buy books with the rest.": "Future with be going to · Subject + am/is/are + going to + V1. Rencana yang sudah diputuskan."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS14",
@@ -2157,7 +2452,12 @@
       "I started to feel sick on Sunday afternoon.": "Past simple · Subject + V2 + to + V1. Menyatakan saat perubahan; on + waktu.",
       "I'm supposed to take the medicine three times a day after eating.": "Modal be supposed to · Subject + am/is/are + supposed to + V1. Aturan yang disarankan dokter.",
       "I'm worried because I have a presentation on Friday.": "Present simple · Subject + am/is/are + adjective. Menyatakan perasaan; because + klausa memberi alasan."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS15",
@@ -2193,7 +2493,12 @@
       "We're open on Saturdays until six.": "Present simple · Subject + am/is/are + adjective. Menyatakan jam operasional; until + waktu.",
       "You can get an additional twenty per cent off.": "Modal can · Can + subject + V1. Kemungkinan keuntungan; get + object + off.",
       "Eye exams are free.": "Present simple · Subject + are + adjective. Menyatakan fakta; subjek jamak memakai are."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS16",
@@ -2229,7 +2534,12 @@
       "Have you signed up for student health insurance?": "Present perfect · Have/has + subject + V3. Menanyakan pengalaman sampai sekarang; for + noun menyatakan program.",
       "You're still on your parents' insurance until you turn twenty-six.": "Present simple · Subject + are + frasa preposisi. Menyatakan keadaan; until + klausa menyatakan batas waktu.",
       "It costs about one hundred and eighty dollars a month.": "Present simple · Subject + V-s + jumlah. Menyatakan harga; about menunjukkan perkiraan."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS17",
@@ -2265,7 +2575,12 @@
       "Did you remember to bring our raincoats?": "Past simple · Do/Does + subject + V1? Menanyakan apakah tugas sudah dikerjakan; remember + to + V1.",
       "The weather report said it was going to rain.": "Past simple · Subject + V2. Menyatakan isi laporan; was/were going to + V1 untuk rencana yang sudah ada.",
       "We could head down the mountain and stay at a hotel.": "Modal could · Could + subject + V1. Bentuk pilihan; and menggabungkan dua rencana."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS18",
@@ -2301,7 +2616,12 @@
       "We have salmon and your favourite salad for dinner.": "Present simple · Subject + have + object. Menyatakan isi hidangan; for + waktu makan.",
       "I made an apple pie for dessert.": "Past simple · Subject + V2 + object. Tindakan yang sudah selesai.",
       "I'm sorry, I forgot you told me this morning.": "Past simple di dalam klausa · Subject + V2. Menyatakan kesalahan yang sudah terjadi; this morning menyatakan waktu."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS19",
@@ -2337,7 +2657,12 @@
       "Let's look at the city guide and plan our day.": "Let's + V1 · Bentuk ajakan melakukan sesuatu bersama.",
       "Why don't we visit the art museum in the morning?": "Why don't we + V1? Bentuk ajakan; in + waktu menyatakan waktu.",
       "I'm not really interested in going to the zoo.": "Present simple · Subject + am/is/are + adjective + in + V-ing. Menyatakan minat; not really untuk penekanan."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   },
   {
     "id": "LS20",
@@ -2373,6 +2698,11 @@
       "There will be a few showers on the east coast.": "Future with will · There + will + be + noun. Cuaca yang akan terjadi; on + tempat.",
       "It's mostly dry until Thursday.": "Present simple · Subject + is + adjective. Kondisi saat ini; until + waktu.",
       "Some of today's showers will be heavy and thundery.": "Future with will · Subject + will + be + adjective. Prakiraan; some of + noun."
-    }
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   }
 ]
