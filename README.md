@@ -77,7 +77,6 @@ Service worker memakai strategi *network-first* untuk `.json` dan halaman, sehin
   - *British Council* (37 materi): berkas MP3 resmi diputar langsung dari server British Council. Hotlink diizinkan dan sudah diuji.
   - *Randall's ESL Lab* (29 materi): CDN mereka menolak pemutaran dari luar (`403` tanpa `Referer: esl-lab.com`), jadi halaman script resmi ditampilkan di dalam iframe. Audio di dalamnya tetap berbunyi karena referrer-nya tetap halaman aslinya.
   - Tidak ada berkas audio yang diunduh atau disimpan ulang di repo ini.
-- Tombol ▶ pada tiap kalimat membacakan kalimat itu dengan text-to-speech perangkat — alat latihan melafalkan, bukan pengganti audio pelajaran.
 - Transkrip British Council tidak bisa ditampilkan di dalam aplikasi (`X-Frame-Options: SAMEORIGIN` + tanpa CORS), jadi tautan ke sumbernya tetap dipakai. Pada materi Randall's transkripnya sudah terlihat di panel yang tertanam.
 - Catatan tata bahasa per kalimat, maksimal empat kosakata kunci, satu latihan isian, dan satu latihan bicara (roleplay).
 - Progres tersimpan di local storage browser dan review bersela pada hari ke-1, 3, 7, 14, dan 28.

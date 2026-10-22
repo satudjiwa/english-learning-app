@@ -1,5 +1,5 @@
-const CACHE = "small-steps-shell-v8";
-const SHELL = ["./", "./index.html", "./styles.css", "./app.js?v=original-audio-20261022", "./manifest.webmanifest", "./icon.svg", "./lessons.json?v=original-audio-20261022"];
+const CACHE = "small-steps-shell-v9";
+const SHELL = ["./", "./index.html", "./styles.css", "./app.js?v=original-audio-v2", "./manifest.webmanifest", "./icon.svg", "./lessons.json?v=original-audio-20261022"];
 
 self.addEventListener("install", event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
