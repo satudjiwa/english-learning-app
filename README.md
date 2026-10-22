@@ -74,6 +74,7 @@ Service worker memakai strategi *network-first* untuk `.json` dan halaman, sehin
 - 66 materi: 23 percakapan sehari-hari, 23 workplace, dan 20 fokus listening.
 - Alur Listen → Understand → Repeat → Use → Review.
 - **Rekaman asli digunakan.** 37 materi British Council memiliki pemutar MP3 langsung dari server sumber. 29 materi Randall's ESL Lab membuka pemutar di halaman resmi karena ketentuan situs melarang penyematan. Audio tidak diunduh atau disimpan ulang di repo ini.
+- Tombol ▶ pada tiap kalimat membacakan kalimat latihan itu dengan text-to-speech perangkat. Ini alat untuk melafalkan kalimat contoh milik aplikasi sendiri — bukan pengganti rekaman pelajaran.
 - Transkrip resmi tetap dibuka lewat halaman sumber; aplikasi tidak menyalin teks lengkap.
 - Catatan tata bahasa per kalimat, maksimal empat kosakata kunci, satu latihan isian, dan satu latihan bicara (roleplay).
 - Progres tersimpan di local storage browser dan review bersela pada hari ke-1, 3, 7, 14, dan 28.
@@ -81,4 +82,8 @@ Service worker memakai strategi *network-first* untuk `.json` dan halaman, sehin
 
 ## Catatan sumber
 
-Audio asli diputar dari URL streaming pada situs pemilik untuk materi yang sudah diverifikasi tersedia; berkas tidak diunduh atau disimpan ulang. Materi Randall’s ESL Lab yang ketentuan penggunaannya tidak mengizinkan penyematan tetap dibuka melalui halaman sumber. Transkrip lengkap tetap berada di situs sumber kecuali ada izin untuk menampilkannya.
+Audio asli diputar dari URL streaming pada situs pemilik untuk materi yang sudah diverifikasi tersedia; berkas tidak diunduh atau disimpan ulang.
+
+Untuk materi Randall's ESL Lab, [Terms of Use](https://www.esl-lab.com/copyright_terms/) melarang materi situs "reproduced, copied, recorded, stored, modified, republished, downloaded, or distributed" tanpa izin tertulis; yang diizinkan hanya penggunaan online untuk belajar pribadi dan mencetak transkrip untuk dipakai offline pribadi. Karena itu rekaman dan transkripnya **tidak** ditampilkan di dalam aplikasi — hanya ditautkan ke sumbernya. Serupa, halaman British Council mengirim `X-Frame-Options: SAMEORIGIN` dan tidak mengizinkan CORS, sehingga transkripnya pun tidak bisa ditampilkan di dalam aplikasi.
+
+Bukti teknis pengujian penyematan tersimpan per materi di `research.media_policy` pada raw store.
