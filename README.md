@@ -75,20 +75,19 @@ Workflow GitHub Pages memuat ulang situs otomatis setelah push.
 
 Service worker memakai strategi *network-first* untuk `.json` dan halaman, sehingga materi baru langsung terlihat tanpa menaikkan versi cache. Masih tetap menaikkan `const CACHE` di `sw.js` bila `app.js` atau `styles.css` berubah besar.
 
-## Modul rencana baca
+## Modul bacaan
 
-Tab **Rencana baca** berisi program 28 hari: 10 graded reader A2–B1, jadwal per hari, sesi listening, dan checklist progres.
+Tab **Bacaan** berisi daftar graded reader berjenjang: 10 buku inti A2–B1 dan 4 buku bonus.
 
 - Sumber data: `reading-plan.json` (ditulis manual, tidak lewat sync).
-- Isi: `meta` (judul, total kata, durasi harian), `books[]` (14 buku: 10 inti + 4 bonus), `days[]` (28 sesi), `listening_sources[]`, dan `rules[]`.
-- Progres disimpan di local storage yang sama dengan materi, pada kunci `reading.completed` — bentuknya `{ "1": { "at": <timestamp> } }`.
+- Isi: `meta` (judul, total kata) dan `books[]` (14 buku: 10 inti + 4 bonus).
 - Buku **tidak disalin** ke repo. Setiap kartu hanya menautkan ke halaman English e-Reader, mengikuti pola yang sama seperti materi Randall's ESL Lab.
-- Menambah atau mengubah sesi cukup di `reading-plan.json`; tidak perlu menjalankan `sync_materials_to_app.mjs`. Naikkan `const CACHE` di `sw.js` hanya bila `app.js` atau `styles.css` berubah.
+- Menambah atau mengubah bacaan cukup di `reading-plan.json`; tidak perlu menjalankan `sync_materials_to_app.mjs`. Naikkan `const CACHE` di `sw.js` hanya bila `app.js` atau `styles.css` berubah.
 
 ## Fitur
 
 - 68 materi: 25 percakapan sehari-hari, 23 workplace, dan 20 fokus listening.
-- **Rencana baca 28 hari**: 10 graded reader A2–B1 (±58.800 kata) + 4 buku bonus, jadwal harian, sesi listening dengan transkrip, dan checklist progres yang tersimpan di perangkat.
+- **Bacaan berjenjang**: 10 graded reader A2–B1 (±58.800 kata) + 4 buku bonus, dengan level, jumlah kata, dan tautan ke sumber.
 - Alur Listen → Understand → Repeat → Use → Review.
 - **Rekaman asli digunakan.** 37 materi British Council memiliki pemutar MP3 langsung dari server sumber. 29 materi Randall's ESL Lab membuka pemutar di halaman resmi karena ketentuan situs melarang penyematan. 2 materi ESLyes juga hanya menautkan ke halaman resmi karena audio dan transkripnya berstatus all rights reserved. Audio tidak diunduh atau disimpan ulang di repo ini.
 - Tombol ▶ pada tiap kalimat membacakan kalimat latihan itu dengan text-to-speech perangkat. Ini alat untuk melafalkan kalimat contoh milik aplikasi sendiri — bukan pengganti rekaman pelajaran.

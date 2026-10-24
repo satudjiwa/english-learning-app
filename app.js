@@ -72,16 +72,15 @@ const content = document.querySelector("#app-content");
 const breadcrumb = document.querySelector("#breadcrumb");
 
 let store = loadStore();
-if(!store.reading) store.reading = {completed:{}};
 
-function loadStore(){try{const s=JSON.parse(localStorage.getItem(STORE_KEY));return {...(s||{}),completed:(s&&s.completed)||{},reviews:(s&&s.reviews)||{},reading:(s&&s.reading)||{completed:{}}}}catch{return {completed:{},reviews:{},reading:{completed:{}}}}}
+function loadStore(){try{const s=JSON.parse(localStorage.getItem(STORE_KEY));return {...(s||{}),completed:(s&&s.completed)||{},reviews:(s&&s.reviews)||{}}}catch{return {completed:{},reviews:{}}}}
 function saveStore(){localStorage.setItem(STORE_KEY,JSON.stringify(store));updateReviewCount()}
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function categoryClass(c){return c==="Workplace English"?"work":c==="Listening Focus"?"listen":""}
 function categoryLabel(c){return c==="Everyday Conversation"?"Everyday":c==="Workplace English"?"Workplace":c==="Listening Focus"?"Listening":c}
 function card(l){const done=!!store.completed[l.id];return `<article class="lesson-card" tabindex="0" role="button" data-lesson="${l.id}" aria-label="Buka materi ${esc(l.title)}"><div class="card-top"><span class="pill ${categoryClass(l.category)}">${categoryLabel(l.category)}</span>${done?'<span class="card-check" aria-label="Selesai">✓</span>':''}</div><h3>${esc(l.title)}</h3><p>${esc(l.topic)}</p><div class="card-foot"><span>${esc(l.level)}</span><span>${done?"Sudah dipelajari":"12–15 menit"}</span></div></article>`}
 function getDueReviews(){const now=Date.now();return lessons.filter(l=>(store.reviews[l.id]?.due||0)<=now&&store.reviews[l.id]?.due)}
-function updateReviewCount(){document.querySelectorAll("#lesson-nav-count").forEach(el=>el.textContent=lessons.length);const n=getDueReviews().length;document.querySelectorAll("#review-nav-count").forEach(el=>el.textContent=n);document.querySelector("#mobile-review-dot")?.classList.toggle("visible",n>0);const total=readingPlan?readingPlan.days.length:28;const rd=Object.keys(store.reading?.completed||{}).length;document.querySelectorAll("#reading-nav-count").forEach(el=>el.textContent=rd+"/"+total)}
+function updateReviewCount(){document.querySelectorAll("#lesson-nav-count").forEach(el=>el.textContent=lessons.length);const n=getDueReviews().length;document.querySelectorAll("#review-nav-count").forEach(el=>el.textContent=n);document.querySelector("#mobile-review-dot")?.classList.toggle("visible",n>0);document.querySelectorAll("#reading-nav-count").forEach(el=>el.textContent=readingPlan?readingPlan.books.length:"—")}
 function setView(view){state.view=view;state.lessonId=null;render()}
 function openLesson(id){state.view="lesson";state.lessonId=id;render()}
 function render(){updateReviewCount();document.querySelectorAll(".nav-item[data-view]").forEach(b=>b.classList.toggle("active",b.dataset.view===state.view||(state.view==="lesson"&&b.dataset.view==="library")));if(state.view==="reading")return renderReading();if(loadError)return renderLoadError(loadError);if(!lessons.length)return renderLoading();if(state.view==="lesson")return renderLesson();if(state.view==="library")return renderLibrary();if(state.view==="review")return renderReview();return renderHome()}
@@ -98,43 +97,23 @@ function renderLesson(){const l=lessons.find(x=>x.id===state.lessonId);if(!l)ret
 document.querySelectorAll("[data-speak]").forEach(b=>b.onclick=()=>speak(l.expressions[Number(b.dataset.speak)][0]));document.querySelector("#hint-button").onclick=()=>document.querySelector("#hint").hidden=!document.querySelector("#hint").hidden;document.querySelector("#answer-form").onsubmit=e=>{e.preventDefault();const value=document.querySelector("#answer-input").value.trim().toLowerCase().replace(/[.!?]/g,"");const fb=document.querySelector("#answer-feedback");if(value===l.exercise.answer.toLowerCase()){fb.textContent="Betul! Bagus, coba ucapkan kalimatnya.";fb.style.color="#33764f"}else{fb.textContent=value?"Belum tepat. Coba lagi atau lihat petunjuk.":"Tulis jawaban dulu, ya.";fb.style.color="#a05f2b"}};document.querySelector("#complete-button").onclick=()=>completeLesson(l.id);bindCommon()}
 function renderReview(){breadcrumb.innerHTML='Ruang belajar <span>/</span> Ulangi kalimat';const due=getDueReviews();content.innerHTML=`<div class="section-head" style="margin-top:0"><div><div class="eyebrow">REVIEW BERSELA</div><h2>Ulangi agar makin ingat</h2><p>Kalimat dari materi selesai dijadwalkan kembali secara bertahap.</p></div></div>${due.length?`<section class="review-list">${due.map(l=>`<article class="review-row"><div><span class="review-date">SIAP DIULANG SEKARANG</span><strong style="display:block;margin-top:5px">${esc(l.title)}</strong><p>${esc(l.expressions[0][0])}<br>${esc(l.expressions[0][1])}</p></div><button class="small-primary" data-review="${l.id}">Ulangi</button></article>`).join("")}</section>`:'<div class="empty-state"><strong>Belum ada review yang jatuh tempo.</strong><br><br>Selesaikan satu materi, lalu kalimatnya akan dijadwalkan untuk besok.</div>'}<div class="panel" style="margin-top:16px"><div class="eyebrow">JADWAL PENGULANGAN</div><h2>Ulangi setelah 1, 3, 7, 14, dan 28 hari</h2><p style="font-size:11px;line-height:1.6;color:#738077;margin:0">Tandai materi selesai. Aplikasi menyimpan progres di perangkat ini dan menampilkan materi yang siap diulang.</p></div>`;bindCommon();document.querySelectorAll("[data-review]").forEach(b=>b.onclick=()=>openLesson(b.dataset.review))}
 function fmtNum(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,".")}
-function renderReadingLoading(){content.innerHTML='<div class="empty-state"><strong>Memuat rencana baca…</strong></div>'}
+function renderReadingLoading(){content.innerHTML='<div class="empty-state"><strong>Memuat bacaan…</strong></div>'}
 function readingBookCard(b){return `<a class="reading-book" href="${esc(b.url)}" target="_blank" rel="noopener noreferrer"><div class="card-top"><span class="pill ${b.level==="B1"?"work":""}">${esc(b.level)}</span><span class="book-words">${fmtNum(b.words)} kata</span></div><h3>${esc(b.title)}</h3><p class="book-author">${esc(b.author)}</p><p class="book-blurb">${esc(b.blurb)}</p><div class="card-foot"><span>English e-Reader</span><span aria-hidden="true">↗</span></div></a>`}
 function renderReading(){
-  breadcrumb.innerHTML='Ruang belajar <span>/</span> Rencana baca';
-  if(readingError){content.innerHTML='<div class="empty-state"><strong>Rencana baca tidak bisa dimuat.</strong><br><br><span style="font-size:11px">'+esc(String((readingError&&readingError.message)||readingError))+'</span><br><br><button class="small-primary" id="retry-reading">Coba lagi</button></div>';document.querySelector("#retry-reading").onclick=()=>{readingError=null;render();loadReadingPlan()};return}
+  breadcrumb.innerHTML='Ruang belajar <span>/</span> Bacaan';
+  if(readingError){content.innerHTML='<div class="empty-state"><strong>Bacaan tidak bisa dimuat.</strong><br><br><span style="font-size:11px">'+esc(String((readingError&&readingError.message)||readingError))+'</span><br><br><button class="small-primary" id="retry-reading">Coba lagi</button></div>';document.querySelector("#retry-reading").onclick=()=>{readingError=null;render();loadReadingPlan()};return}
   if(!readingPlan)return renderReadingLoading();
-  const done=store.reading.completed||{};
-  const total=readingPlan.days.length;
-  const doneCount=readingPlan.days.filter(d=>done[d.day]).length;
-  const pct=Math.round(doneCount/total*100);
-  const byId=Object.fromEntries(readingPlan.books.map(b=>[b.id,b]));
-  const weeks=[1,2,3,4].map(w=>readingPlan.days.filter(d=>Math.ceil(d.day/7)===w));
   const totalWords=readingPlan.meta.total_words;
-  const bookCount=readingPlan.meta.total_books;
   const core=readingPlan.books.filter(b=>b.kind==="core");
   const bonus=readingPlan.books.filter(b=>b.kind==="bonus");
-  const weeksHtml=weeks.map((days,i)=>{const first=days[0],last=days[days.length-1];return `<section class="week-block"><div class="week-head"><span class="week-label">Minggu ${i+1}</span><span class="week-range">Hari ${first.day}–${last.day} · ${esc(byId[first.book].level)}</span></div><div class="day-list">${days.map(d=>{const b=byId[d.book];const isDone=!!done[d.day];return `<div class="day-row ${isDone?"done":""}"><button class="day-check" data-day="${d.day}" aria-pressed="${isDone}" aria-label="Tandai hari ${d.day} ${isDone?"belum selesai":"selesai"}">${isDone?"✓":""}</button><span class="day-num">${String(d.day).padStart(2,"0")}</span><div class="day-main"><strong>${esc(b.title)} <span class="day-part">${esc(d.part)}</span></strong><p>±${fmtNum(d.words)} kata${d.review?` · review ${d.review} kata`:""}${d.retell?" · retell 1 menit":""}</p></div><a class="day-listen" href="${esc(d.listening.url)}" target="_blank" rel="noopener noreferrer" title="Buka audio ${esc(d.listening.label)}">${esc(d.listening.label)} <span aria-hidden="true">↗</span></a></div>`}).join("")}</div></section>`}).join("");
-  content.innerHTML=`<div class="section-head reading-head"><div><div class="eyebrow">RENCANA BACA · 28 HARI</div><h2>Dari A2 ke B1 lewat ${bookCount} buku</h2><p>${fmtNum(totalWords)} kata · ±${readingPlan.meta.daily_minutes} menit sehari · ${total} sesi</p></div><div class="reading-progress"><strong>${doneCount}<span>/${total}</span></strong><small>hari selesai</small></div></div>
-  <div class="reading-meter" role="progressbar" aria-valuemin="0" aria-valuemax="${total}" aria-valuenow="${doneCount}"><span style="width:${pct}%"></span></div>
-  <section class="reading-hero"><p>${esc(readingPlan.meta.intro)}</p><div class="reading-hero-stats"><span><b>${readingPlan.meta.daily_minutes}</b> menit/hari</span><span><b>${fmtNum(totalWords)}</b> kata</span><span><b>${bookCount}</b> buku inti</span></div></section>
-  ${weeksHtml}
-  <div class="section-head"><div><div class="eyebrow">BACAAN</div><h2>Sepuluh buku inti</h2><p>Buka di English e-Reader, baca langsung di browser atau unduh EPUB-nya.</p></div></div><section class="reading-grid">${core.map(readingBookCard).join("")}</section>
-  <div class="section-head"><div><div class="eyebrow">LANJUTAN</div><h2>Empat buku bonus</h2><p>Untuk minggu ke-5 dan ke-6 setelah 28 hari selesai.</p></div></div><section class="reading-grid">${bonus.map(readingBookCard).join("")}</section>
-  <div class="reading-notes"><section class="panel"><div class="eyebrow">ATURAN MAIN</div><h2>Empat hal yang menentukan hasil</h2><div class="steps-list">${readingPlan.rules.map((r,i)=>`<div class="step-row"><span class="step-number">${i+1}</span><span>${esc(r)}</span></div>`).join("")}</div></section><section class="panel"><div class="eyebrow">SUMBER AUDIO</div><h2>Listening dengan transkrip</h2><div class="listening-list">${readingPlan.listening_sources.map(s=>`<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer"><strong>${esc(s.name)}</strong><small>${esc(s.note)}</small></a>`).join("")}</div></section></div>`;
-  document.querySelectorAll("[data-day]").forEach(b=>b.onclick=()=>toggleReadingDay(Number(b.dataset.day)));
+  content.innerHTML=`<div class="section-head reading-head"><div><div class="eyebrow">BACAAN BERJENJANG · A2–B1</div><h2>${core.length} buku inti, ${bonus.length} bonus</h2><p>${fmtNum(totalWords)} kata · pilih satu, baca di browser, ketuk kata yang menghambat</p></div></div>
+  <section class="reading-hero"><p>${esc(readingPlan.meta.intro)}</p><div class="reading-hero-stats"><span><b>${fmtNum(totalWords)}</b> kata</span><span><b>${core.length}</b> buku inti</span><span><b>${bonus.length}</b> bonus</span></div></section>
+  <div class="section-head"><div><div class="eyebrow">BACAAN</div><h2>Sepuluh buku inti</h2><p>Urut dari yang paling pendek. Buka di English e-Reader, baca langsung atau unduh EPUB-nya.</p></div></div><section class="reading-grid">${core.map(readingBookCard).join("")}</section>
+  <div class="section-head"><div><div class="eyebrow">LANJUTAN</div><h2>Empat buku bonus</h2><p>Untuk setelah sepuluh buku inti selesai.</p></div></div><section class="reading-grid">${bonus.map(readingBookCard).join("")}</section>`;
   bindCommon();
 }
-function toggleReadingDay(day){
-  const done=store.reading.completed;
-  if(done[day]) delete done[day]; else done[day]={at:Date.now()};
-  saveStore();
-  const finished=Object.keys(done).length===readingPlan.days.length;
-  renderReading();
-  toast(done[day]?(finished?"Semua 28 hari selesai. Luar biasa.":"Hari "+day+" ditandai selesai."):"Tanda hari "+day+" dibatalkan.");
-}
 async function loadReadingPlan(){
-  try{const res=await fetch(READING_FILE);if(!res.ok)throw new Error("HTTP "+res.status+" untuk "+READING_FILE);const data=await res.json();if(!data||!Array.isArray(data.days)||!data.days.length||!Array.isArray(data.books)||!data.books.length)throw new Error("format reading-plan.json tidak sesuai");readingPlan=data;readingError=null;render()}
+  try{const res=await fetch(READING_FILE);if(!res.ok)throw new Error("HTTP "+res.status+" untuk "+READING_FILE);const data=await res.json();if(!data||!Array.isArray(data.books)||!data.books.length)throw new Error("format reading-plan.json tidak sesuai");readingPlan=data;readingError=null;render()}
   catch(err){readingError=err;console.error("Gagal memuat rencana baca:",err);render()}
 }
 function completeLesson(id){const now=Date.now(),existing=store.reviews[id],day=24*60*60*1000;store.completed[id]=now;if(!existing){store.reviews[id]={stage:0,due:now+day}}else if(existing.due<=now){const stage=Math.min(existing.stage+1,4),interval=[1,3,7,14,28][stage];store.reviews[id]={stage,due:now+interval*day}}saveStore();toast(existing?"Review selesai — jadwal berikutnya sudah diperbarui.":"Sesi selesai — kalimatnya muncul lagi besok.");renderLesson()}
