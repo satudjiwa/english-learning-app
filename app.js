@@ -9,7 +9,7 @@
  * node ~/sync_materials_to_app.mjs
  */
 
-const LESSONS_FILE = "./lessons.json?v=original-audio-v3";
+const LESSONS_FILE = "./lessons.json?v=reader-v1";
 const READING_FILE = "./reading-plan.json?v=1";
 const KNOWN_CATEGORIES = ["Everyday Conversation", "Workplace English", "Listening Focus"];
 const GRAMMAR_FALLBACK = "Lihat bentuk kata kerja dan kata bantu pada kalimat ini.";
@@ -36,6 +36,17 @@ function validateLesson(m){
   if (!m.exercise || typeof m.exercise !== "object") problems.push('"exercise" wajib ada');
   else for (const k of ["prompt","answer","hint"]) if (typeof m.exercise[k] !== "string" || !m.exercise[k].trim()) problems.push('exercise.'+k+' kosong');
   if (!KNOWN_CATEGORIES.includes(m.category)) problems.push('category "'+m.category+'" di luar daftar yang dikenal');
+  if (m.sentences !== undefined && m.sentences !== null) {
+    if (!Array.isArray(m.sentences) || !m.sentences.length) problems.push('"sentences" harus array berisi minimal 1 kalimat');
+    else m.sentences.forEach((s,i) => {
+      if (!s || typeof s !== "object") { problems.push('sentences['+i+'] bukan objek'); return; }
+      for (const k of ["en","id","pattern"])
+        if (typeof s[k] !== "string" || !s[k].trim()) problems.push('sentences['+i+'].'+k+' kosong');
+      for (const k of ["start","end"])
+        if (typeof s[k] !== "number" || !Number.isFinite(s[k]) || s[k] < 0) problems.push('sentences['+i+'].'+k+' harus angka >= 0');
+      if (typeof s.start === "number" && typeof s.end === "number" && s.end <= s.start) problems.push('sentences['+i+'].end harus > start');
+    });
+  }
   return problems;
 }
 
@@ -53,6 +64,8 @@ async function loadLessons(){
     }
     if (!valid.length) throw new Error("tidak ada materi valid di " + LESSONS_FILE);
     lessons = valid;
+    const requested = new URLSearchParams(location.search).get("lesson");
+    if (requested && valid.some(l => l.id === requested)) { state.view = "lesson"; state.lessonId = requested; }
     loadError = null;
     refreshCategories();
     render();
@@ -78,7 +91,7 @@ function saveStore(){localStorage.setItem(STORE_KEY,JSON.stringify(store));updat
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function categoryClass(c){return c==="Workplace English"?"work":c==="Listening Focus"?"listen":""}
 function categoryLabel(c){return c==="Everyday Conversation"?"Everyday":c==="Workplace English"?"Workplace":c==="Listening Focus"?"Listening":c}
-function card(l){const done=!!store.completed[l.id];return `<article class="lesson-card" tabindex="0" role="button" data-lesson="${l.id}" aria-label="Buka materi ${esc(l.title)}"><div class="card-top"><span class="pill ${categoryClass(l.category)}">${categoryLabel(l.category)}</span>${done?'<span class="card-check" aria-label="Selesai">✓</span>':''}</div><h3>${esc(l.title)}</h3><p>${esc(l.topic)}</p><div class="card-foot"><span>${esc(l.level)}</span><span>${done?"Sudah dipelajari":"12–15 menit"}</span></div></article>`}
+function card(l){const done=!!store.completed[l.id];const rich=Array.isArray(l.sentences)&&l.sentences.length>0;return `<article class="lesson-card" tabindex="0" role="button" data-lesson="${l.id}" aria-label="Buka materi ${esc(l.title)}"><div class="card-top"><span class="pill ${categoryClass(l.category)}">${categoryLabel(l.category)}</span>${done?'<span class="card-check" aria-label="Selesai">✓</span>':''}</div><h3>${esc(l.title)}</h3><p>${esc(l.topic)}</p><div class="card-foot"><span>${esc(l.level)}</span><span>${rich?"Teks + audio":done?"Sudah dipelajari":"12–15 menit"}</span></div></article>`}
 function getDueReviews(){const now=Date.now();return lessons.filter(l=>(store.reviews[l.id]?.due||0)<=now&&store.reviews[l.id]?.due)}
 function updateReviewCount(){document.querySelectorAll("#lesson-nav-count").forEach(el=>el.textContent=lessons.length);const n=getDueReviews().length;document.querySelectorAll("#review-nav-count").forEach(el=>el.textContent=n);document.querySelector("#mobile-review-dot")?.classList.toggle("visible",n>0);document.querySelectorAll("#reading-nav-count").forEach(el=>el.textContent=readingPlan?readingPlan.books.length:"—")}
 function setView(view){state.view=view;state.lessonId=null;render()}
@@ -90,10 +103,223 @@ function renderHome(){breadcrumb.innerHTML='Ruang belajar <span>/</span> Beranda
 <section class="today-card"><div class="today-left"><div class="play-badge">▶</div><div><div class="today-meta">${esc(next.category)} · ${esc(next.level)}</div><h3>${esc(next.title)}</h3><p>${esc(next.objective)}</p><span class="duration">◷ &nbsp;12–15 menit</span></div></div><button class="small-primary" data-open="${next.id}">Buka pelajaran</button></section>
 <div class="section-head"><div><div class="eyebrow">PILIHAN UNTUKMU</div><h2>Belajar sesuai kebutuhan</h2></div><button class="text-button" data-view="library">Perpustakaan →</button></div><section class="lesson-grid">${lessons.slice(0,3).map(card).join("")}</section>`;bindCommon()}
 function renderLibrary(){breadcrumb.innerHTML='Ruang belajar <span>/</span> Materi belajar';const filtered=lessons.filter(l=>(state.filter==="Semua"||l.category===state.filter)&&`${l.title} ${l.topic} ${l.category}`.toLowerCase().includes(state.search.toLowerCase()));content.innerHTML=`<div class="section-head" style="margin-top:0"><div><div class="eyebrow">PERPUSTAKAAN MATERI</div><h2>Belajar satu topik setiap kali</h2><p>Kalimat dan terjemahan tampil di sini; audio asli diputar di dalam pelajaran bila tersedia.</p></div></div><div class="filter-row">${categories.map(c=>`<button class="filter-chip ${state.filter===c?"active":""}" data-filter="${c}">${c=== "Semua"?`Semua materi (${lessons.length})`:`${categoryLabel(c)} (${lessons.filter(l=>l.category===c).length})`}</button>`).join("")}<label class="search-box"><input id="lesson-search" type="search" placeholder="Cari topik atau materi…" value="${esc(state.search)}" aria-label="Cari materi"></label></div><section class="lesson-grid">${filtered.length?filtered.map(card).join(""):'<div class="empty-state">Materi tidak ditemukan. Coba kata kunci lain.</div>'}</section>`;bindCommon();document.querySelectorAll("[data-filter]").forEach(b=>b.onclick=()=>{state.filter=b.dataset.filter;renderLibrary()});document.querySelector("#lesson-search").oninput=e=>{state.search=e.target.value;const pos=e.target.selectionStart;renderLibrary();const input=document.querySelector("#lesson-search");input.focus();input.setSelectionRange(pos,pos)}}
-function safeMediaUrl(value){try{const url=new URL(value);return url.protocol==="https:"?url.href:""}catch{return ""}}
+function safeMediaUrl(value){if(typeof value!=="string"||!value.trim())return "";try{const url=new URL(value,location.href);if(url.origin===location.origin)return url.href;return url.protocol==="https:"?url.href:""}catch{return ""}}
 function audioBlock(l){const url=safeMediaUrl(l.audio_url);if(l.audio_embed_allowed===true&&url)return `<div class="official-media"><span class="media-label">Audio asli · ${esc(l.source_website||"sumber resmi")}</span><audio controls preload="none" src="${esc(url)}">Browser Anda tidak mendukung pemutar audio.</audio>${l.audio_duration&&l.audio_duration!=="Unknown"?`<small>Durasi: ${esc(l.audio_duration)}</small>`:""}</div>`;const frame=safeMediaUrl(l.frame_url);if(l.frame_embed_allowed===true&&frame)return `<div class="official-media"><span class="media-label">Pemutar audio asli dari sumber</span><div class="official-frame"><iframe src="${esc(frame)}" title="Pemutar audio dan transkrip di halaman sumber" loading="lazy"></iframe></div></div>`;return `<div class="audio-controls"><p>Audio asli tidak dapat diputar tertanam untuk materi ini. Gunakan pemutar resmi di halaman sumber.</p><a class="source-link" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">▶ Buka audio asli di situs sumber <span aria-hidden="true">↗</span></a></div>`}
 function transcriptBlock(l){if(l.transcript_embed_allowed!==true||typeof l.transcript_text!=="string"||!l.transcript_text.trim())return "";const text=esc(l.transcript_text).replace(/\r?\n/g,"<br>");return `<details class="official-transcript"><summary>Transkrip resmi</summary><div class="transcript-text">${text}</div></details>`}
-function renderLesson(){const l=lessons.find(x=>x.id===state.lessonId);if(!l)return setView("home");breadcrumb.innerHTML=`Ruang belajar <span>/</span> ${categoryLabel(l.category)} <span>/</span> ${esc(l.title)}`;const done=!!store.completed[l.id];const reviewDue=!!store.reviews[l.id]&&store.reviews[l.id].due<=Date.now();content.innerHTML=`<section class="lesson-detail"><button class="back-link" data-view="library">← Kembali ke materi</button><div class="detail-banner"><div><span class="pill">${categoryLabel(l.category)}</span><h1>${esc(l.title)}</h1><p>${esc(l.objective)}</p></div><span class="level-tag">${esc(l.level)} &nbsp;·&nbsp; 12–15 menit</span></div><div class="detail-columns"><div><section class="panel"><div class="eyebrow">KALIMAT LATIHAN & TERJEMAHAN</div><h2>Listen, then repeat</h2>${audioBlock(l)}<div class="phrase-list">${l.expressions.map(([en,id],i)=>`<div class="phrase-row"><div><strong>${esc(en)}</strong><small>${esc(id)}</small><small class="phrase-tense"><b>Tata bahasa:</b> ${esc(l.tenseNotes?.[en]||GRAMMAR_FALLBACK)}</small></div><button class="speak-button" data-speak="${i}" title="Dengarkan pelafalan contoh kalimat ini" aria-label="Dengarkan: ${esc(en)}">▶</button></div>`).join("")}</div>${transcriptBlock(l)}</section><section class="panel" style="margin-top:14px"><div class="eyebrow">KOSAKATA DALAM KONTEKS</div><h2>Ingat beberapa kata saja</h2><p style="font-size:11px;color:#647168;line-height:1.7;margin:0">${esc(l.vocab)}</p></section><section class="panel" style="margin-top:14px"><div class="eyebrow">RUTINITAS BELAJAR</div><h2>Ikuti lima langkah</h2><div class="steps-list"><div class="step-row"><span class="step-number">1</span><span><b>Listen</b> — dengarkan materi tanpa membaca dulu.</span></div><div class="step-row"><span class="step-number">2</span><span><b>Understand</b> — buka transkrip dan cek makna.</span></div><div class="step-row"><span class="step-number">3</span><span><b>Repeat</b> — tirukan 2–3 kalimat dengan suara keras.</span></div><div class="step-row"><span class="step-number">4</span><span><b>Use</b> — ganti nama, waktu, atau benda dengan informasi sendiri.</span></div><div class="step-row"><span class="step-number">5</span><span><b>Review</b> — coba jawab latihan, lalu ulangi lagi nanti.</span></div></div></section></div><div><section class="panel source-panel"><div class="eyebrow">MATERI SUMBER</div><h2>Audio asli & sumber resmi</h2><p>Jika pemutar audio asli tersedia, Anda bisa memutarnya langsung di sini. Materi lainnya membuka pemutar resmi di situs sumber.</p><a class="source-link" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">▶ &nbsp;Buka pelajaran resmi <span aria-hidden="true">↗</span></a><br><a class="source-link" href="${esc(l.transcript)}" target="_blank" rel="noopener noreferrer">▤ &nbsp;Buka transkrip / script resmi <span aria-hidden="true">↗</span></a></section><section class="exercise-box"><div class="eyebrow">CEK PEMAHAMAN</div><p><b>Lengkapi kalimat:</b><br>${esc(l.exercise.prompt)}</p><form id="answer-form" class="answer-line"><input id="answer-input" autocomplete="off" aria-label="Jawaban" placeholder="Tulis jawabanmu…"><button class="small-primary" type="submit">Cek</button></form><div id="answer-feedback" class="answer-feedback" aria-live="polite"></div><button class="text-button" id="hint-button" style="padding-left:0">Lihat petunjuk</button><div id="hint" hidden style="font-size:10px;color:#806943;margin-top:5px">${esc(l.exercise.hint)}</div></section>${l.roleplay?`<section class="panel" style="margin-top:14px"><div class="eyebrow">LATIHAN BICARA</div><h2>Praktik bersama teman</h2><p>${esc(l.roleplay)}</p></section>`:""}<section class="panel" style="margin-top:14px"><div class="eyebrow">SELESAIKAN SESI</div><h2>Sudah mencoba?</h2><div class="complete-row"><p>${done?reviewDue?"Review ini sudah jatuh tempo. Ulangi kalimat, lalu tandai selesai untuk menjadwalkan review berikutnya.":"Materi ini sudah selesai. Kalimat berikutnya akan muncul sesuai jadwal review.":"Tandai selesai untuk menjadwalkan review besok."}</p><button class="done-button ${done?"completed":""}" id="complete-button" ${done&&!reviewDue?"disabled":""}>${done?reviewDue?"Selesaikan review":"✓ Sudah dipelajari":"Tandai selesai"}</button></div></section><section class="panel" style="margin-top:14px"><div class="eyebrow">CATATAN KECIL</div><p style="font-size:10px;line-height:1.6;color:#77837d;margin:0">Jika audio tidak bisa diputar, coba buka dari halaman sumber. Materi ini tidak diunduh oleh aplikasi.</p></section></div></div></section>`;
+function formatTime(seconds){
+  const n = Math.max(0, Math.floor(Number(seconds) || 0));
+  return Math.floor(n / 60) + ":" + String(n % 60).padStart(2, "0");
+}
+
+function durationText(value){
+  const match = String(value || "").match(/(\d+(?:\.\d+)?)/);
+  return match ? formatTime(Number(match[1])) : "";
+}
+
+function bindExercise(l){
+  const hintButton = document.querySelector("#hint-button");
+  if (hintButton) hintButton.onclick = () => {
+    const hint = document.querySelector("#hint");
+    if (hint) hint.hidden = !hint.hidden;
+  };
+  const form = document.querySelector("#answer-form");
+  if (form) form.onsubmit = (event) => {
+    event.preventDefault();
+    const value = document.querySelector("#answer-input").value.trim().toLowerCase().replace(/[.!?]/g, "");
+    const feedback = document.querySelector("#answer-feedback");
+    if (value === l.exercise.answer.toLowerCase()) {
+      feedback.textContent = "Betul! Bagus, coba ucapkan kalimatnya.";
+      feedback.style.color = "#33764f";
+    } else {
+      feedback.textContent = value ? "Belum tepat. Coba lagi atau lihat petunjuk." : "Tulis jawaban dulu, ya.";
+      feedback.style.color = "#a05f2b";
+    }
+  };
+  const complete = document.querySelector("#complete-button");
+  if (complete) complete.onclick = () => completeLesson(l.id);
+}
+
+function bindReader(l){
+  const audio = document.querySelector("#reader-audio");
+  const playButton = document.querySelector("#reader-play");
+  const translationToggle = document.querySelector("#reader-translation-toggle");
+  const progress = document.querySelector("#reader-progress");
+  const rows = Array.from(document.querySelectorAll(".sentence-row"));
+  const lastEnd = l.sentences[l.sentences.length - 1].end;
+  const totalLabel = durationText(l.audio_duration) || formatTime(lastEnd);
+
+  if (translationToggle) translationToggle.onclick = () => {
+    const visible = translationToggle.getAttribute("aria-pressed") === "true";
+    const next = !visible;
+    document.querySelectorAll(".sentence-id").forEach((el) => { el.hidden = !next; });
+    translationToggle.setAttribute("aria-pressed", String(next));
+    translationToggle.textContent = next ? "Sembunyikan terjemahan" : "Tampilkan terjemahan";
+  };
+
+  if (!audio) {
+    bindExercise(l);
+    return;
+  }
+
+  const setActive = (index) => {
+    rows.forEach((row, i) => row.classList.toggle("active", i === index));
+  };
+
+  const sync = () => {
+    const current = audio.currentTime || 0;
+    let active = -1;
+    for (let i = 0; i < l.sentences.length; i += 1) {
+      const sentence = l.sentences[i];
+      if (current >= sentence.start && current < sentence.end) { active = i; break; }
+    }
+    setActive(active);
+    if (progress) {
+      const total = Number.isFinite(audio.duration) && audio.duration > 0 ? formatTime(audio.duration) : totalLabel;
+      progress.textContent = formatTime(current) + " / " + total;
+    }
+  };
+
+  audio.addEventListener("timeupdate", sync);
+  audio.addEventListener("loadedmetadata", sync);
+  audio.addEventListener("play", () => { if (playButton) playButton.textContent = "❚❚ Jeda"; });
+  audio.addEventListener("pause", () => { if (playButton) playButton.textContent = "▶ Putar semua"; });
+  audio.addEventListener("ended", () => {
+    setActive(-1);
+    if (playButton) playButton.textContent = "▶ Putar semua";
+    sync();
+  });
+
+  if (playButton) playButton.onclick = () => {
+    if (audio.paused) audio.play().catch(() => toast("Audio tidak bisa diputar. Coba lagi."));
+    else audio.pause();
+  };
+
+  rows.forEach((row, i) => {
+    const start = l.sentences[i].start;
+    const play = () => {
+      try { audio.currentTime = start; } catch {}
+      audio.play().catch(() => toast("Audio tidak bisa diputar. Coba lagi."));
+    };
+    const button = row.querySelector("[data-sentence]");
+    if (button) button.onclick = (event) => { event.stopPropagation(); play(); };
+    row.onclick = (event) => { if (!event.target.closest("button")) play(); };
+  });
+
+  sync();
+  bindExercise(l);
+}
+
+function renderReaderLesson(l){
+  const done = !!store.completed[l.id];
+  const reviewDue = !!store.reviews[l.id] && store.reviews[l.id].due <= Date.now();
+  const publicDomain = !!(l.license && /public domain/i.test(l.license));
+  const audioUrl = safeMediaUrl(l.audio_url);
+  const richAudio = audioUrl
+    ? `<div class="official-media reader-audio">
+        <span class="media-label">Audio asli · ${esc(l.source_website || "sumber resmi")}${l.license ? ` · ${esc(l.license)}` : ""}</span>
+        <audio id="reader-audio" controls preload="metadata" src="${esc(audioUrl)}">Browser Anda tidak mendukung pemutar audio.</audio>
+        <div class="reader-controls">
+          <button class="small-primary" id="reader-play" type="button">▶ Putar semua</button>
+          <button class="ghost-button" id="reader-translation-toggle" type="button" aria-pressed="true">Sembunyikan terjemahan</button>
+          <span class="reader-progress" id="reader-progress">0:00 / ${esc(durationText(l.audio_duration) || formatTime(l.sentences[l.sentences.length - 1].end))}</span>
+        </div>
+      </div>`
+    : `<div class="audio-controls"><p>Audio tidak tersedia di aplikasi ini.</p><a class="source-link" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">Buka audio di sumber <span aria-hidden="true">↗</span></a></div>`;
+
+  const rows = l.sentences.map((sentence, i) => `<article class="sentence-row" data-index="${i}" data-start="${sentence.start}" data-end="${sentence.end}">
+      <button class="sentence-play" type="button" data-sentence="${i}" aria-label="Putar kalimat ${i + 1}: ${esc(sentence.en)}" title="Putar dari kalimat ini">▶</button>
+      <div class="sentence-main">
+        <div class="sentence-top">${sentence.speaker ? `<span class="speaker">${esc(sentence.speaker)}</span>` : ""}<span class="sentence-time">${formatTime(sentence.start)}</span></div>
+        <p class="sentence-en">${esc(sentence.en)}</p>
+        <p class="sentence-id">${esc(sentence.id)}</p>
+        <div class="sentence-pattern"><b>Pola:</b> ${esc(sentence.pattern)}</div>
+      </div>
+    </article>`).join("");
+
+  const keyPatterns = Object.entries(l.tenseNotes || {}).slice(0, 4).map(([en, note]) => `<div class="pattern-summary-row"><strong>${esc(en)}</strong><span>${esc(note)}</span></div>`).join("");
+
+  content.innerHTML = `<section class="lesson-detail reader-detail">
+  <button class="back-link" data-view="library">← Kembali ke materi</button>
+  <div class="detail-banner reader-banner">
+    <div>
+      <span class="pill">${categoryLabel(l.category)}</span>
+      <h1>${esc(l.title)}</h1>
+      <p>${esc(l.objective)}</p>
+    </div>
+    <span class="level-tag">${esc(l.level)} &nbsp;·&nbsp; ${esc(l.audio_duration || "")} &nbsp;·&nbsp; ${l.sentences.length} kalimat</span>
+  </div>
+  <div class="reader-meta">
+    <span><b>Sumber</b> ${esc(l.source_website || "sumber resmi")}</span>
+    <span><b>Lisensi</b> ${esc(l.license || "lihat sumber")}</span>
+    <span><b>Aksen</b> American English</span>
+  </div>
+  <div class="detail-columns reader-columns">
+    <div>
+      <section class="panel reader-panel">
+        <div class="eyebrow">TEKS + AUDIO</div>
+        <h2>Listen and follow</h2>
+        ${richAudio}
+        <div class="sentence-list" id="sentence-list">${rows}</div>
+        <p class="reader-hint">Klik kalimat untuk memutar dari titik itu. Baris yang sedang diputar akan menyala.</p>
+      </section>
+    </div>
+    <div>
+      <section class="panel source-panel">
+        <div class="eyebrow">SUMBER & LISENSI</div>
+        <h2>${publicDomain ? "Public domain" : "Sumber resmi"}</h2>
+        <p>Percakapan ini diproduksi oleh ${esc(l.source_website || "sumber resmi")}. ${publicDomain ? "Teks dan audio berada di domain publik; audio disimpan di aplikasi agar bisa diputar tanpa meninggalkan halaman." : "Lihat halaman sumber untuk ketentuan penggunaan; audio disimpan di aplikasi agar bisa diputar tanpa meninggalkan halaman."}</p>
+        <a class="source-link" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">Buka pelajaran di sumber <span aria-hidden="true">↗</span></a>
+        <p class="license-note">${esc(l.license || "")} · Audio dinormalisasi; isi tidak diubah.</p>
+      </section>
+      ${keyPatterns ? `<section class="panel" style="margin-top:14px"><div class="eyebrow">POLA KALIMAT KUNCI</div><h2>Perhatikan pola ini</h2><div class="pattern-summary">${keyPatterns}</div></section>` : ""}
+      <section class="panel" style="margin-top:14px">
+        <div class="eyebrow">KOSAKATA DALAM KONTEKS</div>
+        <h2>Ingat beberapa kata saja</h2>
+        <p class="reader-vocab">${esc(l.vocab)}</p>
+      </section>
+      <section class="panel" style="margin-top:14px">
+        <div class="eyebrow">CARA PAKAI</div>
+        <h2>Dengar, ikuti, ulangi</h2>
+        <div class="steps-list">
+          <div class="step-row"><span class="step-number">1</span><span><b>Listen</b> — putar audio sekali tanpa membaca.</span></div>
+          <div class="step-row"><span class="step-number">2</span><span><b>Follow</b> — ikuti teks; klik kalimat untuk mengulang bagian itu.</span></div>
+          <div class="step-row"><span class="step-number">3</span><span><b>Understand</b> — tampilkan terjemahan bila perlu, lalu sembunyikan lagi.</span></div>
+          <div class="step-row"><span class="step-number">4</span><span><b>Repeat</b> — baca pola kalimat, lalu tirukan kalimatnya dengan suara keras.</span></div>
+          <div class="step-row"><span class="step-number">5</span><span><b>Review</b> — jawab latihan, lalu tandai selesai.</span></div>
+        </div>
+      </section>
+      <section class="exercise-box">
+        <div class="eyebrow">CEK PEMAHAMAN</div>
+        <p><b>Lengkapi kalimat:</b><br>${esc(l.exercise.prompt)}</p>
+        <form id="answer-form" class="answer-line">
+          <input id="answer-input" autocomplete="off" aria-label="Jawaban" placeholder="Tulis jawabanmu…">
+          <button class="small-primary" type="submit">Cek</button>
+        </form>
+        <div id="answer-feedback" class="answer-feedback" aria-live="polite"></div>
+        <button class="text-button" id="hint-button" style="padding-left:0">Lihat petunjuk</button>
+        <div id="hint" hidden style="font-size:10px;color:#806943;margin-top:5px">${esc(l.exercise.hint)}</div>
+      </section>
+      <section class="panel" style="margin-top:14px">
+        <div class="eyebrow">SELESAIKAN SESI</div>
+        <h2>Sudah mencoba?</h2>
+        <div class="complete-row">
+          <p>${done ? reviewDue ? "Review ini sudah jatuh tempo. Ulangi kalimat, lalu tandai selesai untuk menjadwalkan review berikutnya." : "Materi ini sudah selesai. Kalimat berikutnya akan muncul sesuai jadwal review." : "Tandai selesai untuk menjadwalkan review besok."}</p>
+          <button class="done-button ${done ? "completed" : ""}" id="complete-button" ${done && !reviewDue ? "disabled" : ""}>${done ? reviewDue ? "Selesaikan review" : "✓ Sudah dipelajari" : "Tandai selesai"}</button>
+        </div>
+      </section>
+      <section class="panel" style="margin-top:14px">
+        <div class="eyebrow">CATATAN KECIL</div>
+        <p class="license-note">Audio berasal dari ${esc(l.source_website || "sumber resmi")} dan disimpan lokal. Jika audio tidak bisa diputar, buka halaman sumber.</p>
+      </section>
+    </div>
+  </div>
+</section>`;
+
+  bindReader(l);
+  bindCommon();
+}
+
+function renderLesson(){const l=lessons.find(x=>x.id===state.lessonId);if(!l)return setView("home");breadcrumb.innerHTML=`Ruang belajar <span>/</span> ${categoryLabel(l.category)} <span>/</span> ${esc(l.title)}`;if(Array.isArray(l.sentences)&&l.sentences.length)return renderReaderLesson(l);const done=!!store.completed[l.id];const reviewDue=!!store.reviews[l.id]&&store.reviews[l.id].due<=Date.now();content.innerHTML=`<section class="lesson-detail"><button class="back-link" data-view="library">← Kembali ke materi</button><div class="detail-banner"><div><span class="pill">${categoryLabel(l.category)}</span><h1>${esc(l.title)}</h1><p>${esc(l.objective)}</p></div><span class="level-tag">${esc(l.level)} &nbsp;·&nbsp; 12–15 menit</span></div><div class="detail-columns"><div><section class="panel"><div class="eyebrow">KALIMAT LATIHAN & TERJEMAHAN</div><h2>Listen, then repeat</h2>${audioBlock(l)}<div class="phrase-list">${l.expressions.map(([en,id],i)=>`<div class="phrase-row"><div><strong>${esc(en)}</strong><small>${esc(id)}</small><small class="phrase-tense"><b>Tata bahasa:</b> ${esc(l.tenseNotes?.[en]||GRAMMAR_FALLBACK)}</small></div><button class="speak-button" data-speak="${i}" title="Dengarkan pelafalan contoh kalimat ini" aria-label="Dengarkan: ${esc(en)}">▶</button></div>`).join("")}</div>${transcriptBlock(l)}</section><section class="panel" style="margin-top:14px"><div class="eyebrow">KOSAKATA DALAM KONTEKS</div><h2>Ingat beberapa kata saja</h2><p style="font-size:11px;color:#647168;line-height:1.7;margin:0">${esc(l.vocab)}</p></section><section class="panel" style="margin-top:14px"><div class="eyebrow">RUTINITAS BELAJAR</div><h2>Ikuti lima langkah</h2><div class="steps-list"><div class="step-row"><span class="step-number">1</span><span><b>Listen</b> — dengarkan materi tanpa membaca dulu.</span></div><div class="step-row"><span class="step-number">2</span><span><b>Understand</b> — buka transkrip dan cek makna.</span></div><div class="step-row"><span class="step-number">3</span><span><b>Repeat</b> — tirukan 2–3 kalimat dengan suara keras.</span></div><div class="step-row"><span class="step-number">4</span><span><b>Use</b> — ganti nama, waktu, atau benda dengan informasi sendiri.</span></div><div class="step-row"><span class="step-number">5</span><span><b>Review</b> — coba jawab latihan, lalu ulangi lagi nanti.</span></div></div></section></div><div><section class="panel source-panel"><div class="eyebrow">MATERI SUMBER</div><h2>Audio asli & sumber resmi</h2><p>Jika pemutar audio asli tersedia, Anda bisa memutarnya langsung di sini. Materi lainnya membuka pemutar resmi di situs sumber.</p><a class="source-link" href="${esc(l.url)}" target="_blank" rel="noopener noreferrer">▶ &nbsp;Buka pelajaran resmi <span aria-hidden="true">↗</span></a><br><a class="source-link" href="${esc(l.transcript)}" target="_blank" rel="noopener noreferrer">▤ &nbsp;Buka transkrip / script resmi <span aria-hidden="true">↗</span></a></section><section class="exercise-box"><div class="eyebrow">CEK PEMAHAMAN</div><p><b>Lengkapi kalimat:</b><br>${esc(l.exercise.prompt)}</p><form id="answer-form" class="answer-line"><input id="answer-input" autocomplete="off" aria-label="Jawaban" placeholder="Tulis jawabanmu…"><button class="small-primary" type="submit">Cek</button></form><div id="answer-feedback" class="answer-feedback" aria-live="polite"></div><button class="text-button" id="hint-button" style="padding-left:0">Lihat petunjuk</button><div id="hint" hidden style="font-size:10px;color:#806943;margin-top:5px">${esc(l.exercise.hint)}</div></section>${l.roleplay?`<section class="panel" style="margin-top:14px"><div class="eyebrow">LATIHAN BICARA</div><h2>Praktik bersama teman</h2><p>${esc(l.roleplay)}</p></section>`:""}<section class="panel" style="margin-top:14px"><div class="eyebrow">SELESAIKAN SESI</div><h2>Sudah mencoba?</h2><div class="complete-row"><p>${done?reviewDue?"Review ini sudah jatuh tempo. Ulangi kalimat, lalu tandai selesai untuk menjadwalkan review berikutnya.":"Materi ini sudah selesai. Kalimat berikutnya akan muncul sesuai jadwal review.":"Tandai selesai untuk menjadwalkan review besok."}</p><button class="done-button ${done?"completed":""}" id="complete-button" ${done&&!reviewDue?"disabled":""}>${done?reviewDue?"Selesaikan review":"✓ Sudah dipelajari":"Tandai selesai"}</button></div></section><section class="panel" style="margin-top:14px"><div class="eyebrow">CATATAN KECIL</div><p style="font-size:10px;line-height:1.6;color:#77837d;margin:0">Jika audio tidak bisa diputar, coba buka dari halaman sumber. Materi ini tidak diunduh oleh aplikasi.</p></section></div></div></section>`;
 document.querySelectorAll("[data-speak]").forEach(b=>b.onclick=()=>speak(l.expressions[Number(b.dataset.speak)][0]));document.querySelector("#hint-button").onclick=()=>document.querySelector("#hint").hidden=!document.querySelector("#hint").hidden;document.querySelector("#answer-form").onsubmit=e=>{e.preventDefault();const value=document.querySelector("#answer-input").value.trim().toLowerCase().replace(/[.!?]/g,"");const fb=document.querySelector("#answer-feedback");if(value===l.exercise.answer.toLowerCase()){fb.textContent="Betul! Bagus, coba ucapkan kalimatnya.";fb.style.color="#33764f"}else{fb.textContent=value?"Belum tepat. Coba lagi atau lihat petunjuk.":"Tulis jawaban dulu, ya.";fb.style.color="#a05f2b"}};document.querySelector("#complete-button").onclick=()=>completeLesson(l.id);bindCommon()}
 function renderReview(){breadcrumb.innerHTML='Ruang belajar <span>/</span> Ulangi kalimat';const due=getDueReviews();content.innerHTML=`<div class="section-head" style="margin-top:0"><div><div class="eyebrow">REVIEW BERSELA</div><h2>Ulangi agar makin ingat</h2><p>Kalimat dari materi selesai dijadwalkan kembali secara bertahap.</p></div></div>${due.length?`<section class="review-list">${due.map(l=>`<article class="review-row"><div><span class="review-date">SIAP DIULANG SEKARANG</span><strong style="display:block;margin-top:5px">${esc(l.title)}</strong><p>${esc(l.expressions[0][0])}<br>${esc(l.expressions[0][1])}</p></div><button class="small-primary" data-review="${l.id}">Ulangi</button></article>`).join("")}</section>`:'<div class="empty-state"><strong>Belum ada review yang jatuh tempo.</strong><br><br>Selesaikan satu materi, lalu kalimatnya akan dijadwalkan untuk besok.</div>'}<div class="panel" style="margin-top:16px"><div class="eyebrow">JADWAL PENGULANGAN</div><h2>Ulangi setelah 1, 3, 7, 14, dan 28 hari</h2><p style="font-size:11px;line-height:1.6;color:#738077;margin:0">Tandai materi selesai. Aplikasi menyimpan progres di perangkat ini dan menampilkan materi yang siap diulang.</p></div>`;bindCommon();document.querySelectorAll("[data-review]").forEach(b=>b.onclick=()=>openLesson(b.dataset.review))}
 function fmtNum(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,".")}

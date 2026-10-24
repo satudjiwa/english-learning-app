@@ -1,11 +1,206 @@
 [
   {
+    "id": "VOA01",
+    "title": "Welcome! — Nice to meet you",
+    "category": "Everyday Conversation",
+    "level": "A1",
+    "topic": "Perkenalan diri, nama, dan ejaan",
+    "objective": "Dengarkan percakapan perkenalan 30 detik. Latih bertanya nama, memperkenalkan diri, dan mengeja nama dengan huruf.",
+    "source": "VOA Learning English",
+    "source_website": "VOA Learning English",
+    "license": "Public domain — Voice of America",
+    "url": "https://learningenglish.voanews.com/a/lets-learn-english-lesson-one/3111026.html",
+    "transcript": "https://learningenglish.voanews.com/a/lets-learn-english-lesson-one/3111026.html",
+    "expressions": [
+      [
+        "Are you Anna?",
+        "Apakah kamu Anna?"
+      ],
+      [
+        "Nice to meet you.",
+        "Senang bertemu denganmu."
+      ],
+      [
+        "Welcome to 1400 Irving Street!",
+        "Selamat datang di Jalan Irving 1400!"
+      ]
+    ],
+    "vocab": "hi = hai · nice = senang · meet = bertemu · again = lagi · welcome = selamat datang · apartment = apartemen · street = jalan · spell = mengeja",
+    "exercise": {
+      "prompt": "___ you Anna?",
+      "answer": "Are",
+      "hint": "Kata bantu untuk subjek 'you' dalam pertanyaan Yes/No."
+    },
+    "roleplay": "Perkenalkan diri dan eja namamu. A: Hi! Are you ...? B: Yes! I'm ... . A: Is that ...? B: No. ... .",
+    "tenseNotes": {
+      "Are you Anna?": "Present simple · Are + you + nama? Untuk pertanyaan Yes/No tentang identitas. Jawaban: Yes, I am. / No, I'm not.",
+      "Nice to meet you.": "Ungkapan tetap saat pertama bertemu. Tidak berubah untuk siapa pun.",
+      "Welcome to 1400 Irving Street!": "Welcome to + tempat = selamat datang di ... . Alamat memakai nomor + nama jalan."
+    },
+    "sentences": [
+      {
+        "speaker": "Pete",
+        "start": 0.69,
+        "end": 1.1,
+        "en": "Hi!",
+        "id": "Hai!",
+        "pattern": "Sapaan informal. 'Hi' lebih santai daripada 'Hello'."
+      },
+      {
+        "speaker": "Pete",
+        "start": 1.57,
+        "end": 2.45,
+        "en": "Are you Anna?",
+        "id": "Apakah kamu Anna?",
+        "pattern": "Are + you + nama? → pertanyaan Yes/No. Jawaban: Yes, I am. / No, I'm not."
+      },
+      {
+        "speaker": "Anna",
+        "start": 2.55,
+        "end": 3.05,
+        "en": "Yes!",
+        "id": "Ya!",
+        "pattern": "Jawaban singkat 'Yes'. Dalam percakapan, intonasi ramah membuatnya terdengar hangat."
+      },
+      {
+        "speaker": "Anna",
+        "start": 3.21,
+        "end": 3.55,
+        "en": "Hi there!",
+        "id": "Hai!",
+        "pattern": "'Hi there!' = sapaan santai, sama seperti 'Hi'."
+      },
+      {
+        "speaker": "Anna",
+        "start": 3.67,
+        "end": 4.2,
+        "en": "Are you Pete?",
+        "id": "Apakah kamu Pete?",
+        "pattern": "Are + you + nama? → pertanyaan Yes/No. Subjek 'you' memakai 'are'."
+      },
+      {
+        "speaker": "Pete",
+        "start": 4.45,
+        "end": 5.1,
+        "en": "I am Pete.",
+        "id": "Saya Pete.",
+        "pattern": "I + am + nama. 'I am' sering disingkat menjadi 'I'm' dalam percakapan."
+      },
+      {
+        "speaker": "Anna",
+        "start": 5.65,
+        "end": 6.4,
+        "en": "Nice to meet you.",
+        "id": "Senang bertemu denganmu.",
+        "pattern": "Ungkapan tetap saat pertama bertemu. Tidak perlu diubah untuk lawan bicara yang berbeda."
+      },
+      {
+        "speaker": "Anna",
+        "start": 7.23,
+        "end": 9.8,
+        "en": "Let's try that again.",
+        "id": "Ayo coba lagi.",
+        "pattern": "Let's + verb = ayo lakukan bersama. 'Try again' = coba lagi."
+      },
+      {
+        "speaker": "Anna",
+        "start": 10.57,
+        "end": 11.6,
+        "en": "I'm Anna.",
+        "id": "Saya Anna.",
+        "pattern": "I'm = I am. Kontraksi ini paling sering dipakai saat memperkenalkan diri."
+      },
+      {
+        "speaker": "Anna",
+        "start": 11.99,
+        "end": 12.55,
+        "en": "Nice to meet you.",
+        "id": "Senang bertemu denganmu.",
+        "pattern": "Ungkapan yang sama diulang. Dalam percakapan, pengulangan membantu lawan bicara mendengar dengan jelas."
+      },
+      {
+        "speaker": "Pete",
+        "start": 12.75,
+        "end": 13.7,
+        "en": "I'm Pete.",
+        "id": "Saya Pete.",
+        "pattern": "I'm = I am. Nama orang tidak memakai artikel 'a' atau 'an'."
+      },
+      {
+        "speaker": "Pete",
+        "start": 14.25,
+        "end": 16.65,
+        "en": "Anna, is that A-N-A?",
+        "id": "Anna, apakah itu A-N-A?",
+        "pattern": "Is + that + ...? = apakah itu ...? Untuk menanyakan ejaan atau identitas. Huruf dieja satu per satu."
+      },
+      {
+        "speaker": "Anna",
+        "start": 16.85,
+        "end": 17.3,
+        "en": "No.",
+        "id": "Bukan.",
+        "pattern": "'No' = bukan/tidak. Jawaban singkat untuk pertanyaan Yes/No."
+      },
+      {
+        "speaker": "Anna",
+        "start": 17.51,
+        "end": 18.9,
+        "en": "A-N-N-A.",
+        "id": "A-N-N-A.",
+        "pattern": "Ejaan nama: A-N-N-A. Ada dua huruf N. Huruf A dibaca /eɪ/, N dibaca /en/."
+      },
+      {
+        "speaker": "Pete",
+        "start": 20.05,
+        "end": 21.7,
+        "en": "Well, Anna with two N's...",
+        "id": "Baiklah, Anna dengan dua huruf N...",
+        "pattern": "With + noun = dengan ... . 'Two N's' = dua huruf N. 'Well' = baiklah."
+      },
+      {
+        "speaker": "Pete",
+        "start": 22.44,
+        "end": 25.95,
+        "en": "Welcome to 1400 Irving Street!",
+        "id": "Selamat datang di Jalan Irving 1400!",
+        "pattern": "Welcome to + tempat = selamat datang di ... . Alamat dalam bahasa Inggris: nomor + nama jalan."
+      },
+      {
+        "speaker": "Anna",
+        "start": 26.09,
+        "end": 28,
+        "en": "My new apartment!",
+        "id": "Apartemen baruku!",
+        "pattern": "My + noun = ...ku. 'New' = baru; 'apartment' = apartemen."
+      },
+      {
+        "speaker": "Anna",
+        "start": 28.2,
+        "end": 28.6,
+        "en": "Yes!",
+        "id": "Ya!",
+        "pattern": "'Yes!' = ya, jawaban singkat yang antusias."
+      }
+    ],
+    "audio_embed_allowed": true,
+    "audio_url": "./audio/voa-lesson1-welcome.mp3",
+    "audio_duration": "30.0 s",
+    "frame_embed_allowed": false,
+    "frame_url": null,
+    "transcript_embed_allowed": true,
+    "transcript_text": "Pete: Hi! Are you Anna?\nAnna: Yes! Hi there! Are you Pete?\nPete: I am Pete.\nAnna: Nice to meet you.\nAnna: Let's try that again. I'm Anna. Nice to meet you.\nPete: I'm Pete. \"Anna\" Is that A-N-A?\nAnna: No. A-N-N-A\nPete: Well, Anna with two \"n's\" ... Welcome to ... 1400 Irving Street!\nAnna: My new apartment! Yes!"
+  },
+  {
     "id": "EV01",
     "title": "Business cards",
     "category": "Workplace English",
     "level": "A1",
     "topic": "Perkenalan profesional & pekerjaan",
     "objective": "Dengarkan orang berbicara tentang pekerjaannya. Latih menyebut peran dan bertanya tentang pekerjaan rekan.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/business-cards",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/business-cards",
     "expressions": [
@@ -34,6 +229,7 @@
       "I work in IT support.": "Present simple · Subject + V1; he/she/it + V-s. Untuk rutinitas, fakta, atau pekerjaan.",
       "What do you do?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan informasi."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A1_Business_cards.mp3",
     "audio_duration": "Unknown",
@@ -49,6 +245,9 @@
     "level": "A1",
     "topic": "Memesan meja",
     "objective": "Pahami percakapan reservasi dan latih menyebut jumlah orang serta waktu.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/booking-table",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/booking-table",
     "expressions": [
@@ -77,6 +276,7 @@
       "Is there a table available at seven?": "Present simple · Am/Is/Are + subject + pelengkap? Untuk menanyakan keadaan, lokasi, atau ketersediaan.",
       "Could you say that again, please?": "Permintaan sopan · Can/Could + subject + V1? Setelah modal, kata kerja tetap bentuk dasar."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A1_Booking_a_table.mp3",
     "audio_duration": "Unknown",
@@ -92,6 +292,9 @@
     "level": "A1",
     "topic": "Pesan telepon",
     "objective": "Latih menangkap nama, alasan menelepon, dan tindak lanjut dari pesan singkat.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/voicemail-message",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/voicemail-message",
     "expressions": [
@@ -120,6 +323,7 @@
       "Could you leave a message?": "Permintaan sopan · Can/Could + subject + V1? Setelah modal, kata kerja tetap bentuk dasar.",
       "I will call you later.": "Future with will · Subject + will + V1. Untuk rencana atau janji."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A1_A_voicemail_message.mp3",
     "audio_duration": "Unknown",
@@ -135,6 +339,9 @@
     "level": "A1",
     "topic": "Memahami instruksi kerja",
     "objective": "Dengarkan permintaan atasan. Catat tugas yang diminta dan pastikan Anda memahami tindak lanjutnya.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/request-your-boss",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/request-your-boss",
     "expressions": [
@@ -163,6 +370,7 @@
       "I will check and update you.": "Future with will · Subject + will + V1. Untuk rencana atau janji.",
       "The printer is not working.": "Present continuous · Subject + am/is/are + V-ing. Untuk keadaan yang sedang terjadi."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A1_A_request_from_your_boss.mp3",
     "audio_duration": "Unknown",
@@ -178,6 +386,9 @@
     "level": "A1",
     "topic": "Menyapa rekan baru",
     "objective": "Pahami percakapan dua rekan baru dan latih memperkenalkan diri di tempat kerja.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/meeting-new-team-member",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/meeting-new-team-member",
     "expressions": [
@@ -206,6 +417,7 @@
       "I work in IT support.": "Present simple · Subject + V1; he/she/it + V-s. Untuk rutinitas, fakta, atau pekerjaan.",
       "Could you explain the problem again?": "Permintaan sopan · Can/Could + subject + V1? Setelah modal, kata kerja tetap bentuk dasar."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A1_Meeting_a_new_team_member.mp3",
     "audio_duration": "Unknown",
@@ -221,6 +433,9 @@
     "level": "A2",
     "topic": "Mengubah rencana pertemuan",
     "objective": "Dengarkan rekan mengubah waktu rapat. Latih menawarkan waktu lain dan mengonfirmasinya.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/changing-meeting-time",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/changing-meeting-time",
     "expressions": [
@@ -249,6 +464,7 @@
       "Does Friday work for you?": "Present simple · Do/Does + subject + V1? Untuk bertanya tentang kebiasaan, fakta, atau jadwal. Setelah does, kata kerja tetap bentuk dasar.",
       "That works for me.": "Present simple · Subject + V-s. Untuk rutinitas atau fakta; he/she/it memakai akhiran -s."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A2_Changing_a_meeting_time.mp3",
     "audio_duration": "Unknown",
@@ -264,6 +480,9 @@
     "level": "Easy",
     "topic": "Rutinitas harian",
     "objective": "Dengarkan kegiatan dan waktu dalam rutinitas sehari-hari. Buka naskah setelah mendengar pertama kali.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/daily-schedule/",
     "transcript": "https://www.esl-lab.com/easy/daily-schedule-script/",
     "expressions": [
@@ -292,6 +511,7 @@
       "I go to work at eight.": "Present simple · Subject + V1 + at + jam. Untuk menyebut waktu kegiatan rutin.",
       "What time do you go to bed?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan informasi."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -307,6 +527,9 @@
     "level": "Easy",
     "topic": "Kegiatan pagi",
     "objective": "Pahami urutan kegiatan pagi dan tirukan kalimat pendek dengan pola First … Then … .",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/morning-routine/",
     "transcript": "https://www.esl-lab.com/easy/morning-routine-script/",
     "expressions": [
@@ -335,6 +558,7 @@
       "Then I check my messages.": "Present simple · Subject + V1; he/she/it + V-s. Untuk rutinitas, fakta, atau pekerjaan.",
       "I get ready for work.": "Present simple · Subject + V1; he/she/it + V-s. Untuk rutinitas, fakta, atau pekerjaan."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -350,6 +574,9 @@
     "level": "Easy",
     "topic": "Memesan makanan",
     "objective": "Dengarkan pesanan dan tangkap makanan atau minuman yang disebut. Gunakan naskah resmi untuk mengecek.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/restaurant-order/",
     "transcript": "https://www.esl-lab.com/easy/restaurant-order/",
     "expressions": [
@@ -378,6 +605,7 @@
       "Can I have a glass of water?": "Modal can · Can + subject + V1? Untuk meminta sesuatu atau menanyakan kemampuan/kemungkinan.",
       "Is that everything?": "Present simple · Am/Is/Are + subject + pelengkap? Untuk menanyakan keadaan, lokasi, atau ketersediaan."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -393,6 +621,9 @@
     "level": "A1",
     "topic": "Menanyakan arah",
     "objective": "Dengarkan petunjuk arah sederhana. Latih bertanya lokasi dan mengonfirmasi belokan.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/finding-library",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/finding-library",
     "expressions": [
@@ -421,6 +652,7 @@
       "Go straight and turn left.": "Imperative · V1 di awal kalimat. Untuk instruksi atau permintaan; please membuatnya lebih sopan.",
       "Is it near the station?": "Present simple · Am/Is/Are + subject + pelengkap? Untuk menanyakan keadaan, lokasi, atau ketersediaan."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A1_Finding_%20the_library.mp3",
     "audio_duration": "Unknown",
@@ -436,6 +668,9 @@
     "level": "A1",
     "topic": "Berkenalan dan bertanya",
     "objective": "Pahami percakapan saat bertemu orang baru. Latih menyebut nama dan bertanya hal sederhana.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/meeting-other-students",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/meeting-other-students",
     "expressions": [
@@ -464,6 +699,7 @@
       "Where are you from?": "Present simple · WH-word + is/are + subject? Untuk menanyakan lokasi atau asal.",
       "What do you do?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan informasi."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A1_Meeting_other_students.mp3",
     "audio_duration": "Unknown",
@@ -479,6 +715,9 @@
     "level": "A1",
     "topic": "Sapaan saat acara makan",
     "objective": "Dengarkan perkenalan singkat di acara makan. Latih sapaan dan pertanyaan ringan.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/meeting-people-dinner",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/meeting-people-dinner",
     "expressions": [
@@ -507,6 +746,7 @@
       "Do you know the host?": "Present simple · Do/Does + subject + V1? Untuk menanyakan kebiasaan atau fakta.",
       "Would you like some tea?": "Would like · Would you like + noun? Bentuk sopan untuk menawarkan sesuatu."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A1_Meeting_people_at_a_dinner.mp3",
     "audio_duration": "Unknown",
@@ -522,6 +762,9 @@
     "level": "A1",
     "topic": "Memesan makanan dan minuman",
     "objective": "Pahami pesanan sederhana di kafe. Latih memesan dengan sopan dan menanyakan harga.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/ordering-cafe",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/ordering-cafe",
     "expressions": [
@@ -550,6 +793,7 @@
       "I'd like a cheese sandwich.": "Would like · Subject + would like + noun. Bentuk sopan untuk menyatakan keinginan atau memesan.",
       "How much is it?": "Present simple · WH-word + is/are + subject + pelengkap? Untuk meminta informasi."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A1_Ordering_in_a_caf%C3%A9.mp3",
     "audio_duration": "Unknown",
@@ -565,6 +809,9 @@
     "level": "A1",
     "topic": "Belanja pakaian",
     "objective": "Tangkap ukuran dan warna dalam percakapan toko. Latih meminta bantuan dan mencoba pakaian.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/shopping-clothes",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/shopping-clothes",
     "expressions": [
@@ -593,6 +840,7 @@
       "Can I try it on?": "Modal can · Can + subject + V1? Untuk meminta sesuatu atau menanyakan kemampuan/kemungkinan.",
       "I'm looking for a blue shirt.": "Present continuous · Subject + am/is/are + V-ing. Untuk keadaan yang sedang terjadi."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A1_Shopping_for_clothes.mp3",
     "audio_duration": "Unknown",
@@ -608,6 +856,9 @@
     "level": "A1",
     "topic": "Memahami informasi kelas",
     "objective": "Dengarkan informasi dasar tentang kelas. Latih bertanya jadwal dan membawa perlengkapan.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/first-english-class",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/first-english-class",
     "expressions": [
@@ -636,6 +887,7 @@
       "Please bring a notebook.": "Imperative · V1 di awal kalimat. Untuk instruksi atau permintaan; please membuatnya lebih sopan.",
       "The class is on Monday.": "Present simple · Subject + is/are + pelengkap. Di sini dipakai untuk menyebut jadwal."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A1_The_first_English_class.mp3",
     "audio_duration": "Unknown",
@@ -651,6 +903,9 @@
     "level": "A2",
     "topic": "Mengubah rencana",
     "objective": "Pahami alasan perubahan rencana. Latih mengusulkan waktu baru dan menyetujuinya.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/changing-plans",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/changing-plans",
     "expressions": [
@@ -679,6 +934,7 @@
       "I'm sorry, something has come up.": "Present perfect · Subject + has/have + V3. Kejadian baru terjadi dan dampaknya masih terasa sekarang.",
       "How about Saturday?": "Pola usulan · How about + hari/benda atau V-ing? Bentuk singkat untuk mengusulkan pilihan."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A2_Changing_plans.mp3",
     "audio_duration": "Unknown",
@@ -694,6 +950,9 @@
     "level": "A2",
     "topic": "Mendengarkan pengarahan kerja",
     "objective": "Dengarkan pengarahan singkat dan catat tugas atau informasi penting. Latih memberi konfirmasi.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/morning-briefing",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/morning-briefing",
     "expressions": [
@@ -722,6 +981,7 @@
       "Could you repeat the deadline?": "Permintaan sopan · Can/Could + subject + V1? Setelah modal, kata kerja tetap bentuk dasar.",
       "I will send an update this afternoon.": "Future with will · Subject + will + V1. Untuk rencana atau janji."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A2_Morning_briefing.mp3",
     "audio_duration": "Unknown",
@@ -737,6 +997,9 @@
     "level": "A2",
     "topic": "Mengenal rekan kerja",
     "objective": "Pahami siapa melakukan pekerjaan apa. Latih bertanya tentang peran rekan kerja.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/whos-who-office",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/whos-who-office",
     "expressions": [
@@ -765,6 +1028,7 @@
       "You can ask Maya in the finance team.": "Modal can · Subject + can + V1. Untuk menyatakan kemampuan atau memberi saran.",
       "What does he do?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan informasi."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A2_Who%27s_who_in_the_office.mp3",
     "audio_duration": "Unknown",
@@ -780,6 +1044,9 @@
     "level": "A1",
     "topic": "Membagi tugas tim",
     "objective": "Dengarkan pembagian tugas dalam tim. Latih menawarkan bantuan dan menyepakati tugas.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/organising-group-project",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a1/organising-group-project",
     "expressions": [
@@ -808,6 +1075,7 @@
       "Who will check the numbers?": "Future with will · Will + subject + V1? Untuk menanyakan siapa yang akan melakukan sesuatu.",
       "Let's finish this by Friday.": "Let's + V1 · Bentuk ajakan untuk melakukan sesuatu bersama."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_Listening_A1_Organising_a_%20group_%20project.mp3",
     "audio_duration": "Unknown",
@@ -823,6 +1091,9 @@
     "level": "A2",
     "topic": "Memahami percakapan singkat",
     "objective": "Latih menangkap tujuan dan detail dalam empat percakapan pendek; gunakan pola klarifikasi di tempat kerja.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/four-conversations",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/four-conversations",
     "expressions": [
@@ -851,6 +1122,7 @@
       "Let me check the details.": "Let + object + V1 · Bentuk untuk menawarkan melakukan sesuatu sekarang.",
       "So, the meeting is at two, right?": "Present simple · Subject + am/is/are + pelengkap. Untuk identitas, keadaan, atau lokasi."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A2_Four_conversations.mp3",
     "audio_duration": "Unknown",
@@ -866,6 +1138,9 @@
     "level": "A2",
     "topic": "Menyampaikan angka dan data",
     "objective": "Berlatih menangkap angka penting dan melaporkannya dengan kalimat sederhana.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/facts-figures",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/facts-figures",
     "expressions": [
@@ -894,6 +1169,7 @@
       "Sales increased this month.": "Present simple · Subject + V1 + keterangan. Untuk fakta atau rutinitas.",
       "I'll check the figures and update you.": "Future with will · Subject + will + V1. Untuk rencana atau janji."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A2_Facts_and_figures.mp3",
     "audio_duration": "Unknown",
@@ -909,6 +1185,9 @@
     "level": "Easy",
     "topic": "Menyapa rekan kerja",
     "objective": "Dengarkan perkenalan di kantor. Latih menyebut nama, peran, dan tim dengan singkat.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/meeting-coworkers/",
     "transcript": "https://www.esl-lab.com/easy/meeting-coworkers/",
     "expressions": [
@@ -937,6 +1216,7 @@
       "What team do you work with?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan informasi.",
       "Nice to meet you. Let me know if you need help.": "Infinitive + imperative · Nice to meet you adalah ungkapan sapaan. Let me know memakai V1 sebagai instruksi; if you need help memakai present simple."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -952,6 +1232,9 @@
     "level": "Easy",
     "topic": "Meminta perlengkapan dan informasi",
     "objective": "Dengarkan percakapan telepon tentang permintaan informasi. Catat barang, nama, dan waktu tindak lanjut.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/office-supplies/",
     "transcript": "https://www.esl-lab.com/easy/office-supplies/",
     "expressions": [
@@ -980,6 +1263,7 @@
       "I will email it by three thirty.": "Future with will · Subject + will + V1. Untuk rencana atau janji.",
       "Let me confirm your name and number.": "Let + object + V1 · Bentuk untuk menawarkan melakukan sesuatu sekarang."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -995,6 +1279,9 @@
     "level": "Easy",
     "topic": "Menangkap nama saat perkenalan",
     "objective": "Dengarkan sekali untuk menangkap nama. Buka script resmi setelahnya dan ulangi pertanyaan dengan intonasi sopan.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/introductions-names/",
     "transcript": "https://www.esl-lab.com/easy/introductions-names/",
     "expressions": [
@@ -1023,6 +1310,7 @@
       "How do you spell that?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan informasi.",
       "It's R-A-N-I.": "Present simple · Subject + am/is/are + pelengkap. Untuk identitas, keadaan, atau lokasi."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -1038,6 +1326,9 @@
     "level": "Easy",
     "topic": "Rutinitas sore dan malam",
     "objective": "Dengarkan urutan kegiatan malam. Catat dua kegiatan, lalu ceritakan rutinitas Anda dengan usually.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/evening-routine/",
     "transcript": "https://www.esl-lab.com/easy/evening-routine/",
     "expressions": [
@@ -1066,6 +1357,7 @@
       "Then I watch the news.": "Present simple · Subject + V1 + object. Untuk rutinitas atau fakta.",
       "I go to bed at ten.": "Present simple · Subject + V1 + at + jam. Untuk menyebut waktu kegiatan rutin."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -1081,6 +1373,9 @@
     "level": "Easy",
     "topic": "Belanja dan memilih barang",
     "objective": "Dengarkan percakapan belanja dan tangkap barang yang dicari. Ulangi ungkapan meminta bantuan.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/shopping-centers/",
     "transcript": "https://www.esl-lab.com/easy/shopping-centers/",
     "expressions": [
@@ -1109,6 +1404,7 @@
       "It's on the second floor.": "Present simple · Subject + is + keterangan tempat. Untuk menyebut lokasi.",
       "Could you help me find this shop?": "Permintaan sopan · Can/Could + subject + V1? Setelah modal, kata kerja tetap bentuk dasar."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -1124,6 +1420,9 @@
     "level": "Easy",
     "topic": "Membeli tiket dan menanyakan jadwal",
     "objective": "Dengarkan detail perjalanan seperti tujuan dan waktu. Tulis dua informasi sebelum membuka script.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/train-tickets/",
     "transcript": "https://www.esl-lab.com/easy/train-tickets/",
     "expressions": [
@@ -1152,6 +1451,7 @@
       "What time does the train leave?": "Present simple · WH-word + does + subject + V1? Untuk menanyakan jadwal.",
       "Is it a one-way ticket?": "Present simple · Am/Is/Are + subject + pelengkap? Untuk menanyakan keadaan, lokasi, atau ketersediaan."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -1167,6 +1467,9 @@
     "level": "Easy",
     "topic": "Memahami perkenalan singkat",
     "objective": "Dengarkan nama dan hubungan pembicara. Tirukan sapaan lalu ganti nama dengan nama Anda.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/introductions/",
     "transcript": "https://www.esl-lab.com/easy/introductions/",
     "expressions": [
@@ -1195,6 +1498,7 @@
       "This is my friend, Arif.": "Present simple · Subject + am/is/are + pelengkap. Untuk identitas, keadaan, atau lokasi.",
       "Where are you from?": "Present simple · WH-word + is/are + subject? Untuk menanyakan lokasi atau asal."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -1210,6 +1514,9 @@
     "level": "Easy",
     "topic": "Jadwal dan kegiatan harian",
     "objective": "Tangkap mata pelajaran dan waktu dalam jadwal. Dengarkan dua kali lalu cek melalui script resmi.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/school-schedule/",
     "transcript": "https://www.esl-lab.com/easy/school-schedule/",
     "expressions": [
@@ -1238,6 +1545,7 @@
       "I have English after lunch.": "Present simple · Subject + V1 + object. Untuk rutinitas atau fakta.",
       "What do you study today?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan informasi."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -1253,6 +1561,9 @@
     "level": "Easy",
     "topic": "Kegiatan akhir pekan",
     "objective": "Dengarkan rencana kegiatan bersama keluarga. Catat satu kegiatan dan waktu, lalu ceritakan rencana Anda.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/family-activities/",
     "transcript": "https://www.esl-lab.com/easy/family-activities/",
     "expressions": [
@@ -1281,6 +1592,7 @@
       "Would you like to come with us?": "Would like + to · Would you like to + V1? Bentuk sopan untuk mengajak.",
       "That sounds fun.": "Present simple · Subject + V-s. Untuk rutinitas atau fakta; he/she/it memakai akhiran -s."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -1296,6 +1608,9 @@
     "level": "A2",
     "topic": "Mengundang teman ke pesta",
     "objective": "Dengarkan dua pesan suara. Tangkap rencana pesta, lalu ikuti petunjuk arah yang diberikan di pesan kedua.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/invitation-party",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/invitation-party",
     "expressions": [
@@ -1324,6 +1639,7 @@
       "I'm organising a little party for my birthday.": "Present continuous · Subject + am/is/are + V-ing. Menyatakan rencana yang sedang disiapkan saat bicara.",
       "Drive straight on Forest Road until you get to the motorway.": "Imperative · V1 di awal kalimat untuk memberi petunjuk arah; until menandai batas akhir perjalanan."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A2_An_invitation_to_a_party.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -1339,6 +1655,9 @@
     "level": "A2",
     "topic": "Menerima instruksi tugas",
     "objective": "Dengarkan dosen menjelaskan aturan esai. Catat tenggat waktu, cara mengumpulkan, dan format berkas yang diminta.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/instructions-assignment",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/instructions-assignment",
     "expressions": [
@@ -1367,6 +1686,7 @@
       "Please hand it in on time.": "Imperative · V1 di awal kalimat untuk instruksi; please membuatnya lebih sopan.",
       "Don't forget that you must reference every idea or quote you use.": "Imperative + modal must · Don't + V1 untuk melarang; must + V1 untuk kewajiban."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A2_Academic_Instructions_for_an_assignment.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -1382,6 +1702,9 @@
     "level": "A2",
     "topic": "Menitipkan pesan di kantor",
     "objective": "Dengarkan percakapan telepon. Catat nama dan nomor telepon yang ditinggalkan, serta hal yang perlu ditindaklanjuti.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/leaving-message",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/leaving-message",
     "expressions": [
@@ -1410,6 +1733,7 @@
       "Please ask her to call me back.": "Imperative + to-infinitive · V1 di awal kalimat untuk instruksi; ask + object + to + V1 untuk meminta seseorang melakukan sesuatu.",
       "Can I give you my email address too?": "Modal can · Can + subject + V1? Untuk meminta izin atau menawarkan bantuan."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A2_Leaving_a_message.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -1425,6 +1749,9 @@
     "level": "A2",
     "topic": "Izin tidak masuk kelas",
     "objective": "Dengarkan siswa yang izin tidak masuk. Tangkap tugas pengganti, tenggat waktu, dan dokumen yang harus dibawa.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/missing-class",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/missing-class",
     "expressions": [
@@ -1453,6 +1780,7 @@
       "Is there anything to do at home?": "Present simple · WH-word + is/are + subject + pelengkap? Untuk menanyakan kemungkinan ada tugas.",
       "I was going to give you all a practice test.": "Past continuous · Was/were going to + V1. Rencana yang pernah ada sebelum berubah pikiran."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A2_Missing_a_class.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -1468,6 +1796,9 @@
     "level": "A2",
     "topic": "Pengumuman di stasiun dan bandara",
     "objective": "Dengarkan pengumuman perjalanan. Tangkap nomor peron, keterlambatan, dan informasi yang harus disiapkan penumpang.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/transport-announcements",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/transport-announcements",
     "expressions": [
@@ -1496,6 +1827,7 @@
       "Please have your passports and boarding passes ready.": "Imperative · Have + object + V3. Untuk meminta sesuatu agar sudah siap.",
       "Please mind the gap between the train and the platform.": "Imperative · Mind + noun. Untuk meminta perhatian pada hal yang berbahaya."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A2_Transport_announcements.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -1511,6 +1843,9 @@
     "level": "A2",
     "topic": "Memahami penjelasan dosen",
     "objective": "Dengarkan dosen menjelaskan konsep yang rumit. Latih bertanya bagian yang belum dipahami lalu menyebut ulang dengan kalimat sendiri.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/understanding-explanation",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/a2/understanding-explanation",
     "expressions": [
@@ -1539,6 +1874,7 @@
       "The Fibonacci numbers are a sequence of numbers.": "Present simple · Subject + are + noun + of + noun. Untuk menjelaskan dan memberi definisi.",
       "No question is ever silly.": "Present simple · Subject + is + adjective. Pernyataan umum; ever menegaskan berlaku di semua kasus."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_A2_Understanding_an_explanation.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -1554,6 +1890,9 @@
     "level": "Easy",
     "topic": "Tinggal bersama keluarga tuan rumah",
     "objective": "Dengarkan percakapan seorang mahasiswa yang mencari tempat tinggal. Tanyakan aturan rumah dan cari kamar yang nyaman.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/homestay/",
     "transcript": "https://www.esl-lab.com/easy/homestay-script/",
     "expressions": [
@@ -1582,6 +1921,7 @@
       "Are there any rules I should know about?": "Present simple · There is/are + noun + any; modal should + V1 untuk memberi saran.",
       "Would it be possible to have a room with another student?": "Modal would · Would + subject + V1? Permintaan sopan yang tidak langsung."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -1597,6 +1937,9 @@
     "level": "Easy",
     "topic": "Mencari tempat tinggal yang sesuai",
     "objective": "Dengarkan percakapan dua teman tentang apartemen. Tangkap anggaran, syarat furnish, dan kebutuhan lain yang disampaikan.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/apartments-for-rent/",
     "transcript": "https://www.esl-lab.com/easy/apartments-for-rent-script/",
     "expressions": [
@@ -1625,6 +1968,7 @@
       "My budget is around two hundred dollars a month, including utilities.": "Present simple · Subject + is + jumlah + keterangan. Untuk menyebut batas anggaran; around menunjukkan perkiraan.",
       "I need a furnished apartment with a parking space.": "Present simple · Subject + V1 + object. Menyatakan kebutuhan; with + noun menambah keterangan."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -1640,6 +1984,9 @@
     "level": "Easy",
     "topic": "Reservasi kamar hotel",
     "objective": "Dengarkan percakapan di meja resepsionis. Tangkap tanggal yang benar, pilihan kamar, dan harga yang ditawarkan.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/hotel-reservations/",
     "transcript": "https://www.esl-lab.com/easy/hotel-reservations-script/",
     "expressions": [
@@ -1668,6 +2015,7 @@
       "Sorry, March, not May.": "Imperative · Bentuk singkat tanpa kata kerja untuk mengoreksi informasi yang keliru.",
       "Do you have a non-smoking room on the 20th?": "Present simple · Do/Does + subject + V1? Untuk menanyakan ketersediaan; Have + noun menyebut jenis kamar."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -1683,6 +2031,9 @@
     "level": "Easy",
     "topic": "Pesan makanan ke kamar",
     "objective": "Dengarkan pesanan lewat telepon untuk layanan kamar. Tangkap menu, pilihan saus, ukuran minuman, dan nomor kamar.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/hotel-room-service/",
     "transcript": "https://www.esl-lab.com/easy/hotel-room-service-script/",
     "expressions": [
@@ -1711,6 +2062,7 @@
       "Could I have the dressing on the side, please?": "Modal could · Could + subject + V1? Permintaan sopan; have + object untuk meminta barang.",
       "Could you send it to room 640?": "Modal could · Could + subject + object + preposisi? Permintaan sopan; angka kamar menjadi tujuan."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -1726,6 +2078,9 @@
     "level": "Easy",
     "topic": "Imigrasi dan bea cukai",
     "objective": "Dengarkan pemeriksaan bea cukai. Siapkan jawaban singkat tentang tujuan kunjungan, tempat tinggal, dan isi bagasi.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/immigration-customs/",
     "transcript": "https://www.esl-lab.com/easy/immigration-customs-script/",
     "expressions": [
@@ -1754,6 +2109,7 @@
       "I'll be staying at a hotel downtown for the entire week.": "Future with will · Subject + will + V1. Menyatakan rencana yang sudah pasti; for + periode waktu.",
       "Is this your first visit to the country?": "Present simple · WH-word + is/are + subject + noun? Untuk menanyakan pengalaman."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -1769,6 +2125,9 @@
     "level": "Easy",
     "topic": "Rencana keluar malam dan kencan",
     "objective": "Dengarkan percakapan anak dan ayahnya. Tangkap rencana malam, film yang ditonton, dan alasan orang tua tetap ingin ikut.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/first-date/",
     "transcript": "https://www.esl-lab.com/easy/first-date-script/",
     "expressions": [
@@ -1797,6 +2156,7 @@
       "It's rated PG, so it's fine for everyone.": "Present simple · Subject + is + V3 (past participle). Menyatakan status; so + klausa menjelaskan akibat.",
       "Dad, I'm going out with my friends tonight.": "Present continuous · Subject + am/is/are + V-ing. Menyatakan rencana yang sedang akan dijalankan."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -1812,6 +2172,9 @@
     "level": "B2",
     "topic": "Memberi pendapat tentang film",
     "objective": "Dengarkan ulasan film. Latih menyampaikan pendapat pribadi dengan alasan, lalu menilai apakah film layak ditonton.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b2/film-reviews",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/b2/film-reviews",
     "expressions": [
@@ -1840,6 +2203,7 @@
       "It starts with a long scene that has nothing to do with the story.": "Present simple · Subject + V-s + klausa. Menyatakan isi; that-clause menjelaskan hubungan.",
       "I wouldn't recommend it, but you can judge for yourself.": "Modal would + V1 · Bentuk penilaian hipotesis; but + klausa menghubungkan dua pendapat."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_B2_Film_reviews.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -1855,6 +2219,9 @@
     "level": "B1",
     "topic": "Bertemu kembali setelah bertahun-tahun",
     "objective": "Dengarkan percakapan dua teman lama. Latih membuka obrolan, bertanya kabar, dan rencana masa depan masing-masing.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/meeting-old-friend",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/meeting-old-friend",
     "expressions": [
@@ -1883,6 +2250,7 @@
       "So, what are you doing here these days?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan kegiatan; these days menandai periode sekarang.",
       "It didn't work out, so I came back.": "Past simple · Subject + did + V1. Menyatakan hasil di masa lalu; so + klausa menjelaskan sebab."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_B1_Meeting_an_old_friend.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -1898,6 +2266,9 @@
     "level": "B2",
     "topic": "Bergabung dengan gym",
     "objective": "Dengarkan percakapan di resepsionis gym. Tangkap penawaran paket hemat, biaya tersembunyi, dan syarat harga.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b2/joining-gym",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/b2/joining-gym",
     "expressions": [
@@ -1926,6 +2297,7 @@
       "Do you charge any sign-up fees or cancellation fees?": "Present simple · Do/Does + subject + V1? Untuk menanyakan kebijakan dan biaya.",
       "If I find a cheaper rate elsewhere, will you match it?": "Conditional type 1 · If + present simple, will + V1. Menyatakan syarat dan akibat yang wajar."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_B2_Joining_a_gym.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -1941,6 +2313,9 @@
     "level": "B2",
     "topic": "Kebiasaan memakai perangkat digital",
     "objective": "Dengarkan wawancara podcast tentang digital detox. Latih menjelaskan kebiasaan memakai gadget, lalu mengusulkan cara untuk mengurangi waktu layar.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b2/digital-detox-podcast",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/b2/digital-detox-podcast",
     "expressions": [
@@ -1969,6 +2344,7 @@
       "A digital detox means a total switch-off from all things digital.": "Present simple · Subject + V3 + object. Menjelaskan arti istilah; from + noun menyatakan asal.",
       "I've tried several detox activities and they helped me sleep better.": "Present perfect · Subject + have/has + V3. Pengalaman sampai sekarang; helped menunjukkan waktu lampau di klausa kedua."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_B2_Digital_detox_podcast.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -1984,6 +2360,9 @@
     "level": "B1",
     "topic": "Permintaan perpanjangan termin pembayaran",
     "objective": "Dengarkan telepon ke pelanggan. Latih melaporkan kendala, menawarkan alasan, dan meminta konfirmasi tertulis.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/phone-call-customer",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/phone-call-customer",
     "expressions": [
@@ -2012,6 +2391,7 @@
       "We need an extension from thirty days to sixty days.": "Present simple · Subject + V1 + object. Menyatakan kebutuhan; from + X to + Y menunjukkan perubahan.",
       "Could you send me a quick email confirmation?": "Modal could · Could + subject + object? Permintaan sopan; me menunjukkan penerima."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_B1_A_phone_call_from_a_customer.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -2027,6 +2407,9 @@
     "level": "B1",
     "topic": "Rapat proyek dan kesepakatan",
     "objective": "Dengarkan rapat tim tentang jadwal proyek. Latih meminta pendapat setiap orang dan menyampaikan ketidaksetujuan dengan sopan.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/making-decision",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/making-decision",
     "expressions": [
@@ -2055,6 +2438,7 @@
       "Let's each give our opinion, and then we'll discuss it.": "Let's + V1 · Bentuk ajakan; we'll + V1 untuk rencana yang sudah disepakati.",
       "I'm not sure we should start before everyone agrees.": "Modal should + V1 · Should + subject + V1 memberi saran; before + klausa menyatakan syarat waktu."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_B1_Making_a_decision.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -2070,6 +2454,9 @@
     "level": "B1",
     "topic": "Membangun kebiasaan kerja yang inklusif",
     "objective": "Dengarkan rapat tim. Tangkap tujuan rapat, pembagian tugas, dan komitmen setiap orang untuk menindaklanjuti.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/team-meeting-about-diversity",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/team-meeting-about-diversity",
     "expressions": [
@@ -2098,6 +2485,7 @@
       "Could you look for a trainer who specialises in this?": "Modal could · Could + subject + V1? Permintaan sopan; who-clause menjelaskan orang yang dicari.",
       "I'll do some further research and share it with everyone.": "Future with will · Subject + will + V1. Menyatakan komitmen; and menggabungkan dua kegiatan."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_B1_Team_meeting_about_diversity.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -2113,6 +2501,9 @@
     "level": "B1",
     "topic": "Keseimbangan antara kerja dan kehidupan pribadi",
     "objective": "Dengarkan wawancara radio tentang cara kerja modern. Tangkap istilah lembur, kerja fleksibel, dan dampaknya pada waktu pribadi.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/work-life-balance",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/work-life-balance",
     "expressions": [
@@ -2141,6 +2532,7 @@
       "More and more people are able to work flexibly.": "Present simple · Subject + are able to + V1. Kemampuan yang berlaku sekarang; work + adverb.",
       "If you need to leave early, you can catch up on work in the evening.": "Conditional type 1 · If + present simple, can + subject + V1. Menyatakan syarat dan kemungkinan akibat."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_B1_Work_life_balance.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -2156,6 +2548,9 @@
     "level": "B2",
     "topic": "Wawancara tentang produk yang dibangun",
     "objective": "Dengarkan wawancara dengan pendiri aplikasi. Tangkap masalah yang diselesaikan, siapa target penggunanya, dan rencana selanjutnya.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b2/business-interview",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/b2/business-interview",
     "expressions": [
@@ -2184,6 +2579,7 @@
       "Our app helps students with their homework.": "Present simple · Subject + V-s + object. Menyatakan fungsi produk; help + object.",
       "We hope to expand the range of services we offer.": "Modal hope + to · Subject + hope + to + V1. Menyatakan harapan; yang kita offer = klausa relatif."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_B2_A_business_interview.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -2199,6 +2595,9 @@
     "level": "B2",
     "topic": "Mempresentasikan desain produk",
     "objective": "Dengarkan presentasi desain produk. Tangkap pasar target, ciri utama desain, dan jadwal produksi yang dijelaskan.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b2/design-presentation",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/b2/design-presentation",
     "expressions": [
@@ -2227,6 +2626,7 @@
       "The bottle is designed to look like a black metal flask.": "Present passive · Subject + is/are + V3 + to + V1. Menjelaskan proses desain; to + V1 menyatakan tujuan.",
       "We're launching the product in two months.": "Present continuous · Subject + am/is/are + V-ing. Rencana yang sudah dijadwalkan; in + periode."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_B2_A_design_presentation.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -2242,6 +2642,9 @@
     "level": "B2",
     "topic": "Menawar dan memilih vendor acara",
     "objective": "Dengarkan telepon dengan pemasok acara. Tangkap kendala anggaran, tawaran alternatif, dan informasi yang diminta kembali.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b2/office-party-planning",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/b2/office-party-planning",
     "expressions": [
@@ -2270,6 +2673,7 @@
       "Would an upright piano be an option?": "Modal would · Would + noun + be? Pertanyaan sopan yang menawarkan pilihan.",
       "Could you send me the photos and the costs?": "Modal could · Could + subject + object? Permintaan sopan; and menggabungkan dua objek."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_B2_Office_party_planning.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -2285,6 +2689,9 @@
     "level": "B2",
     "topic": "Menyembunyikan rumor di tempat kerja",
     "objective": "Dengarkan dua rekan membicarakan kabar yang belum jelas. Latih bertanya sumber kabar dan menyampaikan informasi dengan hati-hati.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b2/talking-about-rumours",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/b2/talking-about-rumours",
     "expressions": [
@@ -2313,6 +2720,7 @@
       "I'm not sure that's the full story.": "Present simple · Subject + am/is/are + sure + klausa. Menyatakan tingkat keyakinan.",
       "He repeated her idea in the meeting, and her name wasn't in the notes.": "Past simple · Subjek + V2. Melaporkan kejadian yang sudah terjadi di masa lalu."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_B2_Talking_about_rumours.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -2328,6 +2736,9 @@
     "level": "Easy",
     "topic": "Memilih bidang studi dan arah karier",
     "objective": "Dengarkan dua mahasiswa bicara tentang jurusan. Tangkap pilihan bidang studi, alasan menggantinya, dan rencana setelah lulus.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/college-life/",
     "transcript": "https://www.esl-lab.com/easy/college-life-script/",
     "expressions": [
@@ -2356,6 +2767,7 @@
       "I changed my major to computer science.": "Past simple · Subject + V2. Menyatakan keputusan yang sudah diambil.",
       "With the right skills, landing a job shouldn't be difficult.": "Modal shouldn't + V1. Prediksi negatif; with + noun phrase menyatakan syarat."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -2371,6 +2783,9 @@
     "level": "Easy",
     "topic": "Bertemu profesional dan layanan konsultan",
     "objective": "Dengarkan percakapan tentang praktik hukum. Tangkap bidang keahlian, latar belakang pendidikan, dan jam praktik.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/law-offices/",
     "transcript": "https://www.esl-lab.com/easy/law-offices-script/",
     "expressions": [
@@ -2399,6 +2814,7 @@
       "I work as a personal injury attorney.": "Present simple · Subject + V1 + as + noun. Menyatakan profesi; as + kata kerja.",
       "My son is thinking of going into law.": "Present continuous · Subject + am/is/are + V-ing. Menyatakan rencana; think of + V-ing untuk rencana."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -2414,6 +2830,9 @@
     "level": "Easy",
     "topic": "Niat dan kebiasaan tahun baru",
     "objective": "Dengarkan monolog tentang merayakan tahun baru. Tangkap kebiasaan lama, kebiasaan sekarang, dan niat yang dibuat.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/happy-new-year/",
     "transcript": "https://www.esl-lab.com/easy/happy-new-year-script/",
     "expressions": [
@@ -2442,6 +2861,7 @@
       "We don't do anything special on New Year's Eve.": "Present simple · Subject + don't + V1. Kebiasaan yang berlaku sekarang; on + hari.",
       "Every day gives you a new opportunity to be better.": "Present simple · Subjek + V-s + object. Pernyataan umum; to + V1 menyatakan tujuan."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -2457,6 +2877,9 @@
     "level": "Easy",
     "topic": "Pekerjaan rumah dan hadiahnya",
     "objective": "Dengarkan percakapan ayah dan anak tentang pekerjaan rumah. Tangkap daftar tugas dan syarat untuk mendapat hadiah.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/household-chores/",
     "transcript": "https://www.esl-lab.com/easy/saturdays-chores-script/",
     "expressions": [
@@ -2485,6 +2908,7 @@
       "You have to vacuum the room and dust everything.": "Modal have to · Subject + have to + V1. Menyatakan kewajiban; and menggabungkan dua pekerjaan.",
       "If you finish everything, we'll go out for lunch.": "Conditional type 1 · If + present simple, will + V1. Menyatakan syarat dan akibat."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -2500,6 +2924,9 @@
     "level": "Easy",
     "topic": "Mengelola uang saku",
     "objective": "Dengarkan percakapan ayah dan anak tentang uang saku. Tangkap jumlah uang, alasan menunda, dan rencana pembelanjaannya.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/spending-money/",
     "transcript": "https://www.esl-lab.com/easy/spending-money-script/",
     "expressions": [
@@ -2528,6 +2955,7 @@
       "It's been piling up for weeks.": "Present perfect continuous · Subject + has/have + been + V-ing. Proses yang berlangsung dari masa lalu sampai sekarang; for + periode.",
       "I'm going to put some in savings and buy books with the rest.": "Future with be going to · Subject + am/is/are + going to + V1. Rencana yang sudah diputuskan."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -2543,6 +2971,9 @@
     "level": "Easy",
     "topic": "Obat dari dokter",
     "objective": "Dengarkan percakapan tentang sakit. Tangkap kapan mulai merasa sakit, obat apa, dan jadwal minumnya.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/drugs-medication/",
     "transcript": "https://www.esl-lab.com/easy/drugs-medication-script/",
     "expressions": [
@@ -2571,6 +3002,7 @@
       "I'm supposed to take the medicine three times a day after eating.": "Modal be supposed to · Subject + am/is/are + supposed to + V1. Aturan yang disarankan dokter.",
       "I'm worried because I have a presentation on Friday.": "Present simple · Subject + am/is/are + adjective. Menyatakan perasaan; because + klausa memberi alasan."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -2586,6 +3018,9 @@
     "level": "Easy",
     "topic": "Informasi toko optik",
     "objective": "Dengarkan rekaman pengumuman dari toko kacamata. Tangkap jam buka setiap hari, diskon yang berlaku, dan biaya pemeriksaan mata.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/eyeglasses/",
     "transcript": "https://www.esl-lab.com/easy/eyeglasses-script/",
     "expressions": [
@@ -2614,6 +3049,7 @@
       "You can get an additional twenty per cent off.": "Modal can · Can + subject + V1. Kemungkinan keuntungan; get + object + off.",
       "Eye exams are free.": "Present simple · Subject + are + adjective. Menyatakan fakta; subjek jamak memakai are."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -2629,6 +3065,9 @@
     "level": "Easy",
     "topic": "Asuransi kesehatan mahasiswa",
     "objective": "Dengarkan percakapan anak dan orang tua. Tangkap syarat pendaftaran, batas usia, dan perkiraan biaya bulanan.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/health-insurance/",
     "transcript": "https://www.esl-lab.com/easy/health-insurance-script/",
     "expressions": [
@@ -2657,6 +3096,7 @@
       "You're still on your parents' insurance until you turn twenty-six.": "Present simple · Subject + are + frasa preposisi. Menyatakan keadaan; until + klausa menyatakan batas waktu.",
       "It costs about one hundred and eighty dollars a month.": "Present simple · Subject + V-s + jumlah. Menyatakan harga; about menunjukkan perkiraan."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -2672,6 +3112,9 @@
     "level": "Easy",
     "topic": "Perjalanan kemah dan rencana cadangan",
     "objective": "Dengarkan percakapan dua teman saat berkemah. Tangkap kekhawatiran cuaca, barang yang terlupa, dan pilihan cadangan mereka.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/camping-gear/",
     "transcript": "https://www.esl-lab.com/easy/camping-gear-script/",
     "expressions": [
@@ -2700,6 +3143,7 @@
       "The weather report said it was going to rain.": "Past simple · Subject + V2. Menyatakan isi laporan; was/were going to + V1 untuk rencana yang sudah ada.",
       "We could head down the mountain and stay at a hotel.": "Modal could · Could + subject + V1. Bentuk pilihan; and menggabungkan dua rencana."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -2715,6 +3159,9 @@
     "level": "Easy",
     "topic": "Masakan rumahan dan hidangan penutup",
     "objective": "Dengarkan percakapan dua orang tentang makan malam. Tangkap hidangan yang dibuat, waktu yang dibutuhkan, dan kecewaannya.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/gourmet-cooking/",
     "transcript": "https://www.esl-lab.com/easy/gourmet-cooking-script/",
     "expressions": [
@@ -2743,6 +3190,7 @@
       "I made an apple pie for dessert.": "Past simple · Subject + V2 + object. Tindakan yang sudah selesai.",
       "I'm sorry, I forgot you told me this morning.": "Past simple di dalam klausa · Subject + V2. Menyatakan kesalahan yang sudah terjadi; this morning menyatakan waktu."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -2758,6 +3206,9 @@
     "level": "Easy",
     "topic": "Merencanakan hari sightseeing",
     "objective": "Dengarkan dua teman menyusun rencana harian. Tangkap tempat yang dipilih, tempat makan, dan alasan mereka berubah pikiran.",
+    "source": "Randall's ESL Cyber Listening Lab",
+    "source_website": null,
+    "license": null,
     "url": "https://www.esl-lab.com/easy/sightseeing-tours/",
     "transcript": "https://www.esl-lab.com/easy/sightseeing-tours-script/",
     "expressions": [
@@ -2786,6 +3237,7 @@
       "Why don't we visit the art museum in the morning?": "Why don't we + V1? Bentuk ajakan; in + waktu menyatakan waktu.",
       "I'm not really interested in going to the zoo.": "Present simple · Subject + am/is/are + adjective + in + V-ing. Menyatakan minat; not really untuk penekanan."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -2801,6 +3253,9 @@
     "level": "B1",
     "topic": "Laporan cuaca di beberapa wilayah",
     "objective": "Dengarkan laporan cuaca radio. Tangkap wilayah mana yang hujan, mana yang kering, dan kapan cuaca membaik.",
+    "source": "British Council LearnEnglish",
+    "source_website": null,
+    "license": null,
     "url": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/weather-forecast",
     "transcript": "https://learnenglish.britishcouncil.org/free-resources/listening/b1/weather-forecast",
     "expressions": [
@@ -2829,6 +3284,7 @@
       "It's mostly dry until Thursday.": "Present simple · Subject + is + adjective. Kondisi saat ini; until + waktu.",
       "Some of today's showers will be heavy and thundery.": "Future with will · Subject + will + be + adjective. Prakiraan; some of + noun."
     },
+    "sentences": null,
     "audio_embed_allowed": true,
     "audio_url": "https://learnenglish.britishcouncil.org/sites/podcasts/files/LE_listening_B1_A_weather_forecast.mp3",
     "audio_duration": "Unknown — not displayed on page",
@@ -2844,6 +3300,9 @@
     "level": "A1",
     "topic": "Tempat tinggal dan ukuran kota",
     "objective": "Dengarkan dialog tentang tempat tinggal. Latih bertanya 'Where do you live?' dan menjawab dengan nama kota serta jumlah penduduk.",
+    "source": "ESLyes",
+    "source_website": null,
+    "license": null,
     "url": "https://eslyes.com/easydialogs/ec/dailylife001.htm",
     "transcript": "https://eslyes.com/easydialogs/ec/dailylife001.htm",
     "expressions": [
@@ -2872,6 +3331,7 @@
       "I live in Pasadena.": "Present simple · Subject + V1 + in + tempat. Untuk menyatakan tempat tinggal.",
       "It has about 140,000 people.": "Present simple · Subject + has + about + jumlah + people. Untuk menyebut jumlah penduduk."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
@@ -2887,6 +3347,9 @@
     "level": "A1",
     "topic": "Benda di sekitar dan hewan",
     "objective": "Dengarkan cerita pendek tentang bola merah dan kucing. Latih kalimat posisi dan kegiatan sehari-hari.",
+    "source": "ESLyes",
+    "source_website": null,
+    "license": null,
     "url": "https://eslyes.com/easykids/ekid/easykid001.htm",
     "transcript": "https://eslyes.com/easykids/ekid/easykid001.htm",
     "expressions": [
@@ -2915,6 +3378,7 @@
       "The cat looks at the ball.": "Present simple · Subject + V1(-s) + at + objek. Untuk kegiatan yang dilakukan hewan atau orang.",
       "The cat hits the ball with its paw.": "Present simple · Subject + V1(-s) + objek + with + alat. Untuk menyebut alat yang dipakai."
     },
+    "sentences": null,
     "audio_embed_allowed": false,
     "audio_url": null,
     "audio_duration": null,
