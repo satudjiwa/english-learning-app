@@ -2836,5 +2836,91 @@
     "frame_url": null,
     "transcript_embed_allowed": false,
     "transcript_text": null
+  },
+  {
+    "id": "EV24",
+    "title": "I Live in Pasadena",
+    "category": "Everyday Conversation",
+    "level": "A1",
+    "topic": "Tempat tinggal dan ukuran kota",
+    "objective": "Dengarkan dialog tentang tempat tinggal. Latih bertanya 'Where do you live?' dan menjawab dengan nama kota serta jumlah penduduk.",
+    "url": "https://eslyes.com/easydialogs/ec/dailylife001.htm",
+    "transcript": "https://eslyes.com/easydialogs/ec/dailylife001.htm",
+    "expressions": [
+      [
+        "Where do you live?",
+        "Di mana kamu tinggal?"
+      ],
+      [
+        "I live in Pasadena.",
+        "Saya tinggal di Pasadena."
+      ],
+      [
+        "It has about 140,000 people.",
+        "Penduduknya sekitar 140.000 orang."
+      ]
+    ],
+    "vocab": "live = tinggal · city = kota · people = penduduk · about = sekitar",
+    "exercise": {
+      "prompt": "I live ___ Pasadena.",
+      "answer": "in",
+      "hint": "Gunakan kata depan untuk menyebut kota atau tempat tinggal."
+    },
+    "roleplay": "Tanya temanmu di mana dia tinggal. Lalu jawab dengan kota dan jumlah penduduk: 'I live in ... It has about ... people.'",
+    "tenseNotes": {
+      "Where do you live?": "Present simple · WH-word + do/does + subject + V1? Untuk menanyakan tempat tinggal.",
+      "I live in Pasadena.": "Present simple · Subject + V1 + in + tempat. Untuk menyatakan tempat tinggal.",
+      "It has about 140,000 people.": "Present simple · Subject + has + about + jumlah + people. Untuk menyebut jumlah penduduk."
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "frame_embed_allowed": false,
+    "frame_url": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
+  },
+  {
+    "id": "EV25",
+    "title": "Red Ball on the Floor",
+    "category": "Everyday Conversation",
+    "level": "A1",
+    "topic": "Benda di sekitar dan hewan",
+    "objective": "Dengarkan cerita pendek tentang bola merah dan kucing. Latih kalimat posisi dan kegiatan sehari-hari.",
+    "url": "https://eslyes.com/easykids/ekid/easykid001.htm",
+    "transcript": "https://eslyes.com/easykids/ekid/easykid001.htm",
+    "expressions": [
+      [
+        "The ball is on the floor.",
+        "Bola itu ada di lantai."
+      ],
+      [
+        "The cat looks at the ball.",
+        "Kucing itu melihat bola."
+      ],
+      [
+        "The cat hits the ball with its paw.",
+        "Kucing itu memukul bola dengan cakarnya."
+      ]
+    ],
+    "vocab": "ball = bola · floor = lantai · look at = melihat · paw = cakar",
+    "exercise": {
+      "prompt": "The ball is ___ the floor.",
+      "answer": "on",
+      "hint": "Gunakan kata depan untuk benda yang berada di atas permukaan."
+    },
+    "roleplay": "Lihat benda di sekitarmu. Ceritakan posisinya: 'The ... is on the ...' Lalu sebut siapa yang melihat atau menyentuhnya.",
+    "tenseNotes": {
+      "The ball is on the floor.": "Present simple · Subject + is/are + preposisi + tempat. Untuk menyatakan posisi.",
+      "The cat looks at the ball.": "Present simple · Subject + V1(-s) + at + objek. Untuk kegiatan yang dilakukan hewan atau orang.",
+      "The cat hits the ball with its paw.": "Present simple · Subject + V1(-s) + objek + with + alat. Untuk menyebut alat yang dipakai."
+    },
+    "audio_embed_allowed": false,
+    "audio_url": null,
+    "audio_duration": null,
+    "frame_embed_allowed": false,
+    "frame_url": null,
+    "transcript_embed_allowed": false,
+    "transcript_text": null
   }
 ]

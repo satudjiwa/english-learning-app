@@ -87,10 +87,10 @@ Tab **Rencana baca** berisi program 28 hari: 10 graded reader A2–B1, jadwal pe
 
 ## Fitur
 
-- 66 materi: 23 percakapan sehari-hari, 23 workplace, dan 20 fokus listening.
+- 68 materi: 25 percakapan sehari-hari, 23 workplace, dan 20 fokus listening.
 - **Rencana baca 28 hari**: 10 graded reader A2–B1 (±58.800 kata) + 4 buku bonus, jadwal harian, sesi listening dengan transkrip, dan checklist progres yang tersimpan di perangkat.
 - Alur Listen → Understand → Repeat → Use → Review.
-- **Rekaman asli digunakan.** 37 materi British Council memiliki pemutar MP3 langsung dari server sumber. 29 materi Randall's ESL Lab membuka pemutar di halaman resmi karena ketentuan situs melarang penyematan. Audio tidak diunduh atau disimpan ulang di repo ini.
+- **Rekaman asli digunakan.** 37 materi British Council memiliki pemutar MP3 langsung dari server sumber. 29 materi Randall's ESL Lab membuka pemutar di halaman resmi karena ketentuan situs melarang penyematan. 2 materi ESLyes juga hanya menautkan ke halaman resmi karena audio dan transkripnya berstatus all rights reserved. Audio tidak diunduh atau disimpan ulang di repo ini.
 - Tombol ▶ pada tiap kalimat membacakan kalimat latihan itu dengan text-to-speech perangkat. Ini alat untuk melafalkan kalimat contoh milik aplikasi sendiri — bukan pengganti rekaman pelajaran.
 - Transkrip resmi tetap dibuka lewat halaman sumber; aplikasi tidak menyalin teks lengkap.
 - Catatan tata bahasa per kalimat, maksimal empat kosakata kunci, satu latihan isian, dan satu latihan bicara (roleplay).
@@ -102,5 +102,7 @@ Tab **Rencana baca** berisi program 28 hari: 10 graded reader A2–B1, jadwal pe
 Audio asli diputar dari URL streaming pada situs pemilik untuk materi yang sudah diverifikasi tersedia; berkas tidak diunduh atau disimpan ulang.
 
 Untuk materi Randall's ESL Lab, [Terms of Use](https://www.esl-lab.com/copyright_terms/) melarang materi situs "reproduced, copied, recorded, stored, modified, republished, downloaded, or distributed" tanpa izin tertulis; yang diizinkan hanya penggunaan online untuk belajar pribadi dan mencetak transkrip untuk dipakai offline pribadi. Karena itu rekaman dan transkripnya **tidak** ditampilkan di dalam aplikasi — hanya ditautkan ke sumbernya. Serupa, halaman British Council mengirim `X-Frame-Options: SAMEORIGIN` dan tidak mengizinkan CORS, sehingga transkripnya pun tidak bisa ditampilkan di dalam aplikasi.
+
+Untuk dua materi ESLyes (*I Live in Pasadena* dan *Red Ball on the Floor*), audio dan transkrip lengkap tidak disalin. Halaman sumber mencantumkan “Copyright © Mike Carlson. All rights reserved.”; aplikasi hanya menampilkan tiga kalimat latihan pendek dan menautkan ke pemutar resmi.
 
 Bukti teknis pengujian penyematan tersimpan per materi di `research.media_policy` pada raw store.
