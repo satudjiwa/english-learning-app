@@ -1,0 +1,576 @@
+{
+ "version": 1,
+ "meta": {
+  "title": "Rencana baca 28 hari",
+  "subtitle": "Dari A2 ke B1 lewat 10 buku berjenjang",
+  "intro": "Metode yang sama seperti iklan EWA: baca teks asli, ketuk kata yang menghambat, lalu ulangi besok. Tambahannya sesi dengar dan review kosakata.",
+  "daily_minutes": 22,
+  "total_words": 58800,
+  "total_books": 10
+ },
+ "books": [
+  {
+   "id": "london",
+   "title": "London",
+   "author": "John Escott",
+   "level": "A2",
+   "words": 3220,
+   "kind": "core",
+   "url": "https://english-e-reader.net/book/london-vicky-shipton",
+   "days": [
+    1,
+    2
+   ],
+   "blurb": "Nonfiksi ringan soal kota, transportasi, dan budaya. Kalimat pendek, kosakata sehari-hari."
+  },
+  {
+   "id": "man-from-the-south",
+   "title": "Man from the South",
+   "author": "Roald Dahl",
+   "level": "A2",
+   "words": 2983,
+   "kind": "core",
+   "url": "https://english-e-reader.net/book/man-from-the-south-roald-dahl",
+   "days": [
+    3
+   ],
+   "blurb": "Cerita pendek dengan akhir tak terduga. Cocok untuk sesi sekali duduk."
+  },
+  {
+   "id": "titanic",
+   "title": "Titanic",
+   "author": "Paul Shipton",
+   "level": "A2",
+   "words": 5822,
+   "kind": "core",
+   "url": "https://english-e-reader.net/book/titanic-paul-shipton",
+   "days": [
+    4,
+    5,
+    6
+   ],
+   "blurb": "Kronologi tenggelamnya Titanic. Banyak kata umum tentang waktu, orang, dan kejadian."
+  },
+  {
+   "id": "hachiko",
+   "title": "Hachiko",
+   "author": "Nicole Irving",
+   "level": "A2",
+   "words": 6223,
+   "kind": "core",
+   "url": "https://english-e-reader.net/book/hachiko-nicole-irving",
+   "days": [
+    7,
+    8,
+    9
+   ],
+   "blurb": "Kisah nyata anjing setia di Jepang. Emosional, tapi struktur kalimatnya sederhana."
+  },
+  {
+   "id": "the-curse-of-the-mummy",
+   "title": "The Curse of the Mummy",
+   "author": "Joyce Hannam",
+   "level": "A2",
+   "words": 8302,
+   "kind": "core",
+   "url": "https://english-e-reader.net/book/the-curse-of-the-mummy-joyce-hannam",
+   "days": [
+    10,
+    11,
+    12,
+    13
+   ],
+   "blurb": "Misteri arkeologi 1922. Alur detektif, bagus untuk latihan menebak makna dari konteks."
+  },
+  {
+   "id": "the-million-pound-bank-note",
+   "title": "The Million Pound Bank Note",
+   "author": "Mark Twain",
+   "level": "B1",
+   "words": 3827,
+   "kind": "core",
+   "url": "https://english-e-reader.net/book/the-million-pound-bank-note-mark-twain",
+   "days": [
+    14,
+    15
+   ],
+   "blurb": "Humor klasik Mark Twain. Pendek, jadi pintu masuk yang nyaman ke level B1."
+  },
+  {
+   "id": "mr-bean-in-town",
+   "title": "Mr Bean in Town",
+   "author": "Richard Curtis",
+   "level": "B1",
+   "words": 4246,
+   "kind": "core",
+   "url": "https://english-e-reader.net/book/mr-bean-in-town-richard-curtis",
+   "days": [
+    16,
+    17
+   ],
+   "blurb": "Komedi visual yang ringan. Pilihan bagus untuk hari ketika energi sedang rendah."
+  },
+  {
+   "id": "henry-viii-and-his-six-wives",
+   "title": "Henry VIII and His Six Wives",
+   "author": "Janet Hardy Gould",
+   "level": "B1",
+   "words": 5934,
+   "kind": "core",
+   "url": "https://english-e-reader.net/book/henry-viii-and-his-six-wives-janet-hardy-gould",
+   "days": [
+    18,
+    19,
+    20
+   ],
+   "blurb": "Sejarah Inggris dengan banyak nama dan hubungan. Melatih membaca konteks, bukan hafalan kata."
+  },
+  {
+   "id": "forrest-gump",
+   "title": "Forrest Gump",
+   "author": "John Escott",
+   "level": "B1",
+   "words": 8460,
+   "kind": "core",
+   "url": "https://english-e-reader.net/book/forrest-gump-john-escott",
+   "days": [
+    21,
+    22,
+    23,
+    24
+   ],
+   "blurb": "Sejarah Amerika lewat sudut pandang sederhana. Kalimat naratif dan dialog seimbang."
+  },
+  {
+   "id": "the-everest-story",
+   "title": "The Everest Story",
+   "author": "Tim Vicary",
+   "level": "B1",
+   "words": 9783,
+   "kind": "core",
+   "url": "https://english-e-reader.net/book/the-everest-story-tim-vicary",
+   "days": [
+    25,
+    26,
+    27,
+    28
+   ],
+   "blurb": "Ekspedisi pendakian Everest. Kosakata deskriptif dan narasi panjang untuk penutup program."
+  },
+  {
+   "id": "sherlock-holmes-and-the-dukes-son",
+   "title": "Sherlock Holmes and the Duke's Son",
+   "author": "Arthur Conan Doyle",
+   "level": "A2",
+   "words": 8151,
+   "kind": "bonus",
+   "url": "https://english-e-reader.net/book/sherlock-holmes-and-the-dukes-son-arthur-conan-doyle",
+   "days": [],
+   "blurb": "Kasus detektif klasik. Alur jelas, banyak dialog."
+  },
+  {
+   "id": "rain-man",
+   "title": "Rain Man",
+   "author": "Barry Morrow",
+   "level": "A2",
+   "words": 10950,
+   "kind": "bonus",
+   "url": "https://english-e-reader.net/book/rain-man-barry-morrow",
+   "days": [],
+   "blurb": "Novel/film tentang dua bersaudara. Banyak percakapan sehari-hari."
+  },
+  {
+   "id": "red-dog",
+   "title": "Red Dog",
+   "author": "Louis de Bernières",
+   "level": "B1",
+   "words": 10263,
+   "kind": "bonus",
+   "url": "https://english-e-reader.net/book/red-dog-louis-de-bernieres",
+   "days": [],
+   "blurb": "Kisah nyata dari Australia. Narasi hangat, bahasa natural."
+  },
+  {
+   "id": "the-no1-ladies-detective-agency",
+   "title": "The No.1 Ladies' Detective Agency",
+   "author": "Alexander McCall Smith",
+   "level": "B1",
+   "words": 13061,
+   "kind": "bonus",
+   "url": "https://english-e-reader.net/book/the-no1-ladies-detective-agency-alexander-smith",
+   "days": [],
+   "blurb": "Detektif ringan di Botswana. Dialog kaya dan kosakata budaya."
+  }
+ ],
+ "days": [
+  {
+   "day": 1,
+   "book": "london",
+   "part": "1/2",
+   "words": 1610,
+   "listening": {
+    "label": "VOA LLE · lesson 1",
+    "url": "https://learningenglish.voanews.com/p/5644.html"
+   },
+   "review": 0,
+   "retell": false
+  },
+  {
+   "day": 2,
+   "book": "london",
+   "part": "2/2",
+   "words": 1610,
+   "listening": {
+    "label": "VOA LLE · lesson 2",
+    "url": "https://learningenglish.voanews.com/p/5644.html"
+   },
+   "review": 8,
+   "retell": true
+  },
+  {
+   "day": 3,
+   "book": "man-from-the-south",
+   "part": "1/1",
+   "words": 2980,
+   "listening": {
+    "label": "VOA LLE · lesson 3",
+    "url": "https://learningenglish.voanews.com/p/5644.html"
+   },
+   "review": 8,
+   "retell": true
+  },
+  {
+   "day": 4,
+   "book": "titanic",
+   "part": "1/3",
+   "words": 1940,
+   "listening": {
+    "label": "VOA LLE · lesson 4",
+    "url": "https://learningenglish.voanews.com/p/5644.html"
+   },
+   "review": 10,
+   "retell": false
+  },
+  {
+   "day": 5,
+   "book": "titanic",
+   "part": "2/3",
+   "words": 1940,
+   "listening": {
+    "label": "VOA LLE · lesson 5",
+    "url": "https://learningenglish.voanews.com/p/5644.html"
+   },
+   "review": 10,
+   "retell": false
+  },
+  {
+   "day": 6,
+   "book": "titanic",
+   "part": "3/3",
+   "words": 1940,
+   "listening": {
+    "label": "VOA LLE · lesson 6",
+    "url": "https://learningenglish.voanews.com/p/5644.html"
+   },
+   "review": 10,
+   "retell": true
+  },
+  {
+   "day": 7,
+   "book": "hachiko",
+   "part": "1/3",
+   "words": 2070,
+   "listening": {
+    "label": "VOA LLE · lesson 7",
+    "url": "https://learningenglish.voanews.com/p/5644.html"
+   },
+   "review": 10,
+   "retell": false
+  },
+  {
+   "day": 8,
+   "book": "hachiko",
+   "part": "2/3",
+   "words": 2070,
+   "listening": {
+    "label": "VOA LLE · lesson 8",
+    "url": "https://learningenglish.voanews.com/p/5644.html"
+   },
+   "review": 10,
+   "retell": false
+  },
+  {
+   "day": 9,
+   "book": "hachiko",
+   "part": "3/3",
+   "words": 2070,
+   "listening": {
+    "label": "VOA LLE · lesson 9",
+    "url": "https://learningenglish.voanews.com/p/5644.html"
+   },
+   "review": 10,
+   "retell": true
+  },
+  {
+   "day": 10,
+   "book": "the-curse-of-the-mummy",
+   "part": "1/4",
+   "words": 2080,
+   "listening": {
+    "label": "VOA LLE · lesson 10",
+    "url": "https://learningenglish.voanews.com/p/5644.html"
+   },
+   "review": 10,
+   "retell": false
+  },
+  {
+   "day": 11,
+   "book": "the-curse-of-the-mummy",
+   "part": "2/4",
+   "words": 2080,
+   "listening": {
+    "label": "VOA LLE · lesson 11",
+    "url": "https://learningenglish.voanews.com/p/5644.html"
+   },
+   "review": 10,
+   "retell": false
+  },
+  {
+   "day": 12,
+   "book": "the-curse-of-the-mummy",
+   "part": "3/4",
+   "words": 2080,
+   "listening": {
+    "label": "VOA LLE · lesson 12",
+    "url": "https://learningenglish.voanews.com/p/5644.html"
+   },
+   "review": 10,
+   "retell": false
+  },
+  {
+   "day": 13,
+   "book": "the-curse-of-the-mummy",
+   "part": "4/4",
+   "words": 2080,
+   "listening": {
+    "label": "VOA LLE · lesson 13",
+    "url": "https://learningenglish.voanews.com/p/5644.html"
+   },
+   "review": 12,
+   "retell": true
+  },
+  {
+   "day": 14,
+   "book": "the-million-pound-bank-note",
+   "part": "1/2",
+   "words": 1910,
+   "listening": {
+    "label": "BBC 6 Minute English · #1",
+    "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english"
+   },
+   "review": 10,
+   "retell": false
+  },
+  {
+   "day": 15,
+   "book": "the-million-pound-bank-note",
+   "part": "2/2",
+   "words": 1910,
+   "listening": {
+    "label": "BBC 6 Minute English · #2",
+    "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english"
+   },
+   "review": 10,
+   "retell": true
+  },
+  {
+   "day": 16,
+   "book": "mr-bean-in-town",
+   "part": "1/2",
+   "words": 2120,
+   "listening": {
+    "label": "BBC 6 Minute English · #3",
+    "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english"
+   },
+   "review": 8,
+   "retell": false
+  },
+  {
+   "day": 17,
+   "book": "mr-bean-in-town",
+   "part": "2/2",
+   "words": 2120,
+   "listening": {
+    "label": "BBC 6 Minute English · #4",
+    "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english"
+   },
+   "review": 8,
+   "retell": true
+  },
+  {
+   "day": 18,
+   "book": "henry-viii-and-his-six-wives",
+   "part": "1/3",
+   "words": 1980,
+   "listening": {
+    "label": "BBC 6 Minute English · #5",
+    "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english"
+   },
+   "review": 10,
+   "retell": false
+  },
+  {
+   "day": 19,
+   "book": "henry-viii-and-his-six-wives",
+   "part": "2/3",
+   "words": 1980,
+   "listening": {
+    "label": "BBC 6 Minute English · #6",
+    "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english"
+   },
+   "review": 10,
+   "retell": false
+  },
+  {
+   "day": 20,
+   "book": "henry-viii-and-his-six-wives",
+   "part": "3/3",
+   "words": 1980,
+   "listening": {
+    "label": "BBC 6 Minute English · #7",
+    "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english"
+   },
+   "review": 10,
+   "retell": true
+  },
+  {
+   "day": 21,
+   "book": "forrest-gump",
+   "part": "1/4",
+   "words": 2110,
+   "listening": {
+    "label": "BBC 6 Minute English · #8",
+    "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english"
+   },
+   "review": 12,
+   "retell": false
+  },
+  {
+   "day": 22,
+   "book": "forrest-gump",
+   "part": "2/4",
+   "words": 2110,
+   "listening": {
+    "label": "BBC 6 Minute English · #9",
+    "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english"
+   },
+   "review": 12,
+   "retell": false
+  },
+  {
+   "day": 23,
+   "book": "forrest-gump",
+   "part": "3/4",
+   "words": 2110,
+   "listening": {
+    "label": "BBC 6 Minute English · #10",
+    "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english"
+   },
+   "review": 12,
+   "retell": false
+  },
+  {
+   "day": 24,
+   "book": "forrest-gump",
+   "part": "4/4",
+   "words": 2110,
+   "listening": {
+    "label": "News in Levels · 1 berita",
+    "url": "https://www.newsinlevels.com"
+   },
+   "review": 12,
+   "retell": true
+  },
+  {
+   "day": 25,
+   "book": "the-everest-story",
+   "part": "1/4",
+   "words": 2440,
+   "listening": {
+    "label": "BBC 6 Minute English · #11",
+    "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english"
+   },
+   "review": 12,
+   "retell": false
+  },
+  {
+   "day": 26,
+   "book": "the-everest-story",
+   "part": "2/4",
+   "words": 2440,
+   "listening": {
+    "label": "BBC 6 Minute English · #12",
+    "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english"
+   },
+   "review": 12,
+   "retell": false
+  },
+  {
+   "day": 27,
+   "book": "the-everest-story",
+   "part": "3/4",
+   "words": 2440,
+   "listening": {
+    "label": "BBC 6 Minute English · #13",
+    "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english"
+   },
+   "review": 12,
+   "retell": false
+  },
+  {
+   "day": 28,
+   "book": "the-everest-story",
+   "part": "4/4",
+   "words": 2440,
+   "listening": {
+    "label": "BBC 6 Minute English · #14",
+    "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english"
+   },
+   "review": 12,
+   "retell": true
+  }
+ ],
+ "listening_sources": [
+  {
+   "name": "VOA — Let's Learn English",
+   "note": "52 pelajaran, ±5 menit, bahasa lambat",
+   "url": "https://learningenglish.voanews.com/p/5644.html"
+  },
+  {
+   "name": "BBC — 6 Minute English",
+   "note": "Episode ±6 menit dengan transkrip",
+   "url": "https://www.bbc.co.uk/learningenglish/english/features/6-minute-english"
+  },
+  {
+   "name": "News in Levels",
+   "note": "Satu berita dalam 3 level",
+   "url": "https://www.newsinlevels.com"
+  },
+  {
+   "name": "ELLLO",
+   "note": "3.000+ listening dengan transkrip",
+   "url": "https://www.elllo.org"
+  },
+  {
+   "name": "LibriVox",
+   "note": "Audiobook domain publik untuk shadowing",
+   "url": "https://librivox.org"
+  }
+ ],
+ "rules": [
+  "Aturan 90%: kalau lebih dari 1 dari 10 kata harus dicari, turun satu level.",
+  "Simpan kata dalam bentuk frasa, misalnya “he kept staring at the wall”, bukan “stare”.",
+  "Kalau tertinggal satu hari, geser jadwalnya — jangan mengejar dua buku sekaligus.",
+  "Retell 1 menit tiap akhir buku: tutup buku, ceritakan ulang dengan suara keras."
+ ]
+}

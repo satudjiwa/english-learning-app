@@ -31,6 +31,12 @@ materi hasil scrape BrowserOS neo
                  └─► english-learning-app/lessons.json          ← dimuat aplikasi saat runtime
 ```
 
+Modul rencana baca memakai alur terpisah dan tidak melewati sync:
+
+```
+english-learning-app/reading-plan.json   ← ditulis manual, divalidasi app.js saat dimuat
+```
+
 - `materials.json` di raw store berisi materi lengkap: isi pelajaran, catatan tata bahasa, latihan, roleplay, plus metadata riset (level CEFR sumber, URL audio, durasi, catatan verifikasi).
 - `lessons.json` di repo ini adalah salinan yang sudah divalidasi dan siap dimuat browser. **Jangan menyuntingnya langsung** — ubah raw store lalu jalankan perintah sinkronisasi di atas.
 - `app.js` memuat `lessons.json`, memvalidasi tiap materi, lalu menampilkannya lewat UI. Materi yang tidak valid dilewati dengan pesan di console, bukan membuat aplikasi gagal tampil.
@@ -69,9 +75,20 @@ Workflow GitHub Pages memuat ulang situs otomatis setelah push.
 
 Service worker memakai strategi *network-first* untuk `.json` dan halaman, sehingga materi baru langsung terlihat tanpa menaikkan versi cache. Masih tetap menaikkan `const CACHE` di `sw.js` bila `app.js` atau `styles.css` berubah besar.
 
+## Modul rencana baca
+
+Tab **Rencana baca** berisi program 28 hari: 10 graded reader A2–B1, jadwal per hari, sesi listening, dan checklist progres.
+
+- Sumber data: `reading-plan.json` (ditulis manual, tidak lewat sync).
+- Isi: `meta` (judul, total kata, durasi harian), `books[]` (14 buku: 10 inti + 4 bonus), `days[]` (28 sesi), `listening_sources[]`, dan `rules[]`.
+- Progres disimpan di local storage yang sama dengan materi, pada kunci `reading.completed` — bentuknya `{ "1": { "at": <timestamp> } }`.
+- Buku **tidak disalin** ke repo. Setiap kartu hanya menautkan ke halaman English e-Reader, mengikuti pola yang sama seperti materi Randall's ESL Lab.
+- Menambah atau mengubah sesi cukup di `reading-plan.json`; tidak perlu menjalankan `sync_materials_to_app.mjs`. Naikkan `const CACHE` di `sw.js` hanya bila `app.js` atau `styles.css` berubah.
+
 ## Fitur
 
 - 66 materi: 23 percakapan sehari-hari, 23 workplace, dan 20 fokus listening.
+- **Rencana baca 28 hari**: 10 graded reader A2–B1 (±58.800 kata) + 4 buku bonus, jadwal harian, sesi listening dengan transkrip, dan checklist progres yang tersimpan di perangkat.
 - Alur Listen → Understand → Repeat → Use → Review.
 - **Rekaman asli digunakan.** 37 materi British Council memiliki pemutar MP3 langsung dari server sumber. 29 materi Randall's ESL Lab membuka pemutar di halaman resmi karena ketentuan situs melarang penyematan. Audio tidak diunduh atau disimpan ulang di repo ini.
 - Tombol ▶ pada tiap kalimat membacakan kalimat latihan itu dengan text-to-speech perangkat. Ini alat untuk melafalkan kalimat contoh milik aplikasi sendiri — bukan pengganti rekaman pelajaran.
