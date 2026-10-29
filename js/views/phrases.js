@@ -12,7 +12,7 @@ import {
   speechErrorID
 } from "../speech.js";
 import { emptyStateHTML, toast } from "../ui.js";
-import { esc, normalizeSearch } from "../utils.js";
+import { englishHTML, esc, normalizeSearch } from "../utils.js";
 
 export const navLabel = "Bank Frasa";
 export const title = "Bank Frasa";
@@ -26,6 +26,7 @@ function filterPhrases(ui) {
   const query = normalizeSearch(ui.query);
   return PHRASES.filter(phrase => {
     if (ui.category !== "all" && phrase.category !== ui.category) return false;
+    if (ui.level !== "all" && CATEGORY_BY_ID[phrase.category]?.level !== ui.level) return false;
     if (!query) return true;
     const haystack = normalizeSearch(`${phrase.en} ${phrase.idText}`);
     return query.split(" ").every(token => haystack.includes(token));
@@ -58,13 +59,14 @@ function phraseCardHTML(phrase) {
       <div class="phrase-card-head">
         <span class="category-chip">${icon(category.icon, 15)} ${esc(category.label)}</span>
         <div class="phrase-card-tools">
+          <span class="level-badge">${esc(category.level)}</span>
           <span class="status-badge status-${status.tone}">${esc(status.label)}</span>
           <button class="icon-btn" type="button" data-speak-phrase="${esc(phrase.id)}" aria-label="Dengarkan: ${esc(phrase.en)}" ${isSpeechSupported() ? "" : "disabled"}>
             ${icon("volume", 18)}
           </button>
         </div>
       </div>
-      <p class="phrase-en" lang="en">${esc(phrase.en)}</p>
+      <p class="phrase-en" lang="en">${englishHTML(phrase.en)}</p>
       <p class="phrase-meaning">${esc(phrase.idText)}</p>
       <p class="phrase-note"><strong>Kapan dipakai:</strong> ${esc(phrase.note)}</p>
       ${dialogueHTML(phrase)}
@@ -89,7 +91,8 @@ function countText(count) {
 }
 
 export function render(ctx) {
-  const ui = ctx.ui.phrases || { query: "", category: "all" };
+  const ui = ctx.ui.phrases || { query: "", category: "all", level: "all" };
+  if (!ui.level) ui.level = "all";
   ctx.ui.phrases = ui;
   const list = filterPhrases(ui);
   const stats = getStats();
@@ -98,7 +101,7 @@ export function render(ctx) {
     <div class="page">
       <header class="page-heading page-heading--split">
         <div>
-          <span class="eyebrow">${PHRASES.length} kalimat · ${CATEGORIES.length} kategori</span>
+          <span class="eyebrow">${PHRASES.length} kalimat · ${CATEGORIES.length} kategori · 2 level</span>
           <h1>Bank Frasa</h1>
           <p>${esc(description)}</p>
         </div>
@@ -108,11 +111,24 @@ export function render(ctx) {
       </header>
 
       <section class="phrase-toolbar" aria-label="Cari dan filter frasa">
-        <div class="search-field">
-          ${icon("search", 19)}
-          <label class="sr-only" for="phrase-search">Cari frasa dalam bahasa Inggris atau Indonesia</label>
-          <input id="phrase-search" type="search" placeholder="Cari: LAN, sensor, PSU, keterlambatan..." value="${esc(ui.query)}" autocomplete="off" spellcheck="false">
-          <button class="search-clear" id="search-clear" type="button" aria-label="Hapus pencarian" ${ui.query ? "" : "hidden"}>${icon("x", 16)}</button>
+        <div class="phrase-search-row">
+          <div class="search-field">
+            ${icon("search", 19)}
+            <label class="sr-only" for="phrase-search">Cari frasa dalam bahasa Inggris atau Indonesia</label>
+            <input id="phrase-search" type="search" placeholder="Cari: LAN, sensor, PSU, handover..." value="${esc(ui.query)}" autocomplete="off" spellcheck="false">
+            <button class="search-clear" id="search-clear" type="button" aria-label="Hapus pencarian" ${ui.query ? "" : "hidden"}>${icon("x", 16)}</button>
+          </div>
+          <div class="level-filter">
+            <label for="phrase-level">Level</label>
+            <div class="select-wrap">
+              <select id="phrase-level">
+                <option value="all" ${ui.level === "all" ? "selected" : ""}>Semua level</option>
+                <option value="Pemula" ${ui.level === "Pemula" ? "selected" : ""}>Pemula</option>
+                <option value="Menengah" ${ui.level === "Menengah" ? "selected" : ""}>Menengah</option>
+              </select>
+              ${icon("chevron-right", 15)}
+            </div>
+          </div>
         </div>
 
         <div class="filter-chips" role="group" aria-label="Filter kategori">
@@ -151,6 +167,7 @@ export function mount(root, ctx) {
   if (!ui) return;
   const input = root.querySelector("#phrase-search");
   const clear = root.querySelector("#search-clear");
+  const levelSelect = root.querySelector("#phrase-level");
   const list = root.querySelector("#phrase-list");
   const count = root.querySelector("#phrase-count");
   const chips = [...root.querySelectorAll("[data-category]")];
@@ -161,6 +178,7 @@ export function mount(root, ctx) {
     list.innerHTML = cardsHTML(filtered);
     if (count) count.textContent = countText(filtered.length);
     if (clear) clear.hidden = !ui.query;
+    if (levelSelect) levelSelect.value = ui.level;
     chips.forEach(chip => {
       const active = chip.dataset.category === ui.category;
       chip.classList.toggle("is-active", active);
@@ -170,6 +188,11 @@ export function mount(root, ctx) {
 
   input.addEventListener("input", () => {
     ui.query = input.value;
+    update();
+  });
+
+  levelSelect?.addEventListener("change", () => {
+    ui.level = levelSelect.value;
     update();
   });
 
@@ -192,6 +215,7 @@ export function mount(root, ctx) {
     if (reset) {
       ui.query = "";
       ui.category = "all";
+      ui.level = "all";
       input.value = "";
       update();
       input.focus();

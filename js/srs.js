@@ -13,21 +13,21 @@ import { addDays, startOfDay } from "./utils.js";
 
 export const RATING_META = {
   again: {
-    label: "Belum Ingat",
-    short: "Belum ingat",
-    description: "Ulangi lagi di sesi ini.",
+    label: "Again",
+    short: "Again",
+    description: "Ulangi di sesi ini.",
     tone: "danger"
   },
   hard: {
-    label: "Agak Ingat",
-    short: "Agak ingat",
-    description: "Dijadwalkan ulang besok.",
+    label: "Difficult",
+    short: "Difficult",
+    description: "Review besok.",
     tone: "warning"
   },
   good: {
-    label: "Sudah Ingat",
-    short: "Sudah ingat",
-    description: "Jarak review akan bertambah.",
+    label: "Easy",
+    short: "Easy",
+    description: "Interval review bertambah.",
     tone: "success"
   }
 };

@@ -13,6 +13,7 @@ import * as dashboard from "./views/dashboard.js";
 import * as daily from "./views/daily.js";
 import * as phrases from "./views/phrases.js";
 import * as recall from "./views/recall.js";
+import * as patterns from "./views/patterns.js";
 import * as listen from "./views/listen.js";
 import * as simulator from "./views/simulator.js";
 import * as progress from "./views/progress.js";
@@ -24,6 +25,7 @@ const VIEWS = {
   daily,
   phrases,
   recall,
+  patterns,
   listen,
   simulator,
   progress,
@@ -39,6 +41,7 @@ const NAV = [
       { route: "daily", label: "Latihan Harian", icon: "calendar" },
       { route: "phrases", label: "Bank Frasa", icon: "book" },
       { route: "recall", label: "Latihan Recall", icon: "brain", badge: true },
+      { route: "patterns", label: "Pola Pertanyaan", icon: "message" },
       { route: "listen", label: "Listen & Speak", icon: "headphones" },
       { route: "simulator", label: "Simulator", icon: "users" }
     ]

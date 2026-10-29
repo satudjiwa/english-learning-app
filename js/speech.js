@@ -103,8 +103,12 @@ export function speak(text, options = {}) {
     const voice = resolveVoice(options.voiceURI ?? settings.voiceURI);
     const baseRate = Number(options.rate ?? settings.rate) || settings.rate;
     const rate = clamp(options.slow ? baseRate * 0.68 : baseRate, 0.5, 1.5);
+    const spokenText = text
+      .replace(/\[time\]/gi, "the agreed time")
+      .replace(/\bTeam\s+\[name\]/gi, "The next team")
+      .replace(/\[name\]/gi, "the next team");
 
-    const utterance = new Utterance(text);
+    const utterance = new Utterance(spokenText);
     utterance.lang = voice?.lang || "en-US";
     if (voice) utterance.voice = voice;
     utterance.rate = rate;

@@ -9,7 +9,7 @@ import {
   speechErrorID
 } from "../speech.js";
 import { toast } from "../ui.js";
-import { esc } from "../utils.js";
+import { englishHTML, esc } from "../utils.js";
 
 export const navLabel = "Listen & Speak";
 export const title = "Listen & Speak";
@@ -46,12 +46,17 @@ function recordingSupported() {
 }
 
 function categoryOptions(selected) {
+  const levels = ["Pemula", "Menengah"];
   return [
     `<option value="all" ${selected === "all" ? "selected" : ""}>Semua kategori (${PHRASES.length})</option>`,
-    ...CATEGORIES.map(category => `
-      <option value="${category.id}" ${selected === category.id ? "selected" : ""}>
-        ${esc(category.label)} (${PHRASES.filter(phrase => phrase.category === category.id).length})
-      </option>
+    ...levels.map(level => `
+      <optgroup label="${level}">
+        ${CATEGORIES.filter(category => category.level === level).map(category => `
+          <option value="${category.id}" ${selected === category.id ? "selected" : ""}>
+            ${esc(category.label)} (${PHRASES.filter(phrase => phrase.category === category.id).length})
+          </option>
+        `).join("")}
+      </optgroup>
     `)
   ].join("");
 }
@@ -105,13 +110,16 @@ export function render(ctx) {
       <div class="listen-layout">
         <article class="listen-card" aria-labelledby="listen-sentence">
           <div class="listen-card-head">
-            <span class="category-chip">${icon(category.icon, 15)} ${esc(category.label)}</span>
+            <div class="listen-card-tags">
+              <span class="category-chip">${icon(category.icon, 15)} ${esc(category.label)}</span>
+              <span class="level-badge">${esc(category.level)}</span>
+            </div>
             <span class="listen-step">${icon("headphones", 15)} Frasa ${index + 1} / ${filtered.length}</span>
           </div>
 
           <div class="listen-sentence-wrap ${ui.hideText ? "is-text-hidden" : ""}" id="listen-sentence-wrap">
             <span class="listen-label">${ui.hideText ? "Teks disembunyikan" : "Dengarkan dan tirukan"}</span>
-            <h2 class="listen-sentence" id="listen-sentence" lang="en">${esc(phrase.en)}</h2>
+            <h2 class="listen-sentence" id="listen-sentence" lang="en">${englishHTML(phrase.en)}</h2>
             <div class="hidden-sentence" aria-hidden="${ui.hideText ? "false" : "true"}">
               ${icon("volume", 22)}
               <p>Teks disembunyikan untuk latihan listening-first. Dengarkan dulu, lalu tekan “Tampilkan teks”.</p>

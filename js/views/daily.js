@@ -17,7 +17,7 @@ import {
   speechErrorID
 } from "../speech.js";
 import { progressBarHTML, toast } from "../ui.js";
-import { dateKey, esc } from "../utils.js";
+import { dateKey, englishHTML, esc } from "../utils.js";
 
 export const navLabel = "Latihan Harian";
 export const title = "Latihan Harian";
@@ -85,7 +85,7 @@ function completionHTML({ plan, progress, stats, due, canReview }) {
         <article class="review-phrase-row">
           <span class="phrase-check">${icon("check", 16)}</span>
           <div>
-            <p class="review-en" lang="en">${esc(phrase.en)}</p>
+            <p class="review-en" lang="en">${englishHTML(phrase.en)}</p>
             <p class="review-id">${esc(phrase.idText)}</p>
           </div>
           <button class="icon-btn" type="button" data-speak-completion="${esc(phrase.id)}" aria-label="Dengarkan: ${esc(phrase.en)}" ${isSpeechSupported() ? "" : "disabled"}>
@@ -113,7 +113,7 @@ function phraseCardHTML({ phrase, index, total, learned, reviewing }) {
 
       <div class="practice-body">
         <span class="practice-label">${icon("volume", 15)} Dengarkan, lalu ucapkan</span>
-        <h2 class="practice-en" id="daily-phrase-en" lang="en">${esc(phrase.en)}</h2>
+        <h2 class="practice-en" id="daily-phrase-en" lang="en">${englishHTML(phrase.en)}</h2>
 
         <div class="audio-actions">
           <button class="btn btn-secondary" type="button" data-play="${esc(phrase.id)}" ${audioDisabled ? "disabled" : ""}>

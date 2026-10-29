@@ -29,6 +29,12 @@ const ITEMS = [
     description: "Uji ingatan dari prompt Indonesia dan atur jadwal review."
   },
   {
+    route: "patterns",
+    icon: "message",
+    title: "Pola Pertanyaan",
+    description: "Pelajari struktur Can I, Could you, How do I, dan pola tanya lain."
+  },
+  {
     route: "listen",
     icon: "headphones",
     title: "Listen & Speak",

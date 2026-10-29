@@ -41,6 +41,12 @@ const MODULES = [
     description: "Ingat kalimat Inggris dari prompt Indonesia, lalu nilai dirimu."
   },
   {
+    route: "patterns",
+    icon: "message",
+    title: "Pola Pertanyaan",
+    description: "Kuasai struktur bertanya untuk izin, permintaan, dan instruksi."
+  },
+  {
     route: "listen",
     icon: "headphones",
     title: "Listen & Speak",

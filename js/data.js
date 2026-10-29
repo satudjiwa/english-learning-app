@@ -6,6 +6,13 @@
  * Jika perlu mengubah teks, pertahankan ID lama atau buat frasa baru.
  */
 
+import {
+  EXTRA_CATEGORIES,
+  EXTRA_PHRASES,
+  EXTRA_SCENARIOS,
+  QUESTION_PATTERNS
+} from "./expansion.js";
+
 export const CATEGORIES = [
   {
     id: "starting-session",
@@ -104,8 +111,36 @@ export const CATEGORIES = [
     short: "Penutup",
     icon: "phone-off",
     description: "Mengakhiri panggilan dengan sopan dan jelas."
-  }
+  },
+  ...EXTRA_CATEGORIES
 ];
+
+/*
+ * Level kategori dipakai untuk menyaring materi di Bank Frasa dan memberi
+ * konteks kesulitan. Frasa lama tetap "Pemula" agar progres pengguna tidak
+ * berubah; level hanya metadata tampilan.
+ */
+const EXISTING_CATEGORY_LEVELS = {
+  "starting-session": "Pemula",
+  "explaining-problem": "Pemula",
+  cables: "Pemula",
+  sensors: "Menengah",
+  power: "Menengah",
+  restart: "Pemula",
+  "software-network": "Menengah",
+  instructions: "Pemula",
+  "test-results": "Pemula",
+  delays: "Pemula",
+  clarification: "Pemula",
+  "status-updates": "Pemula",
+  completion: "Pemula",
+  "ending-session": "Pemula"
+};
+
+for (const category of CATEGORIES) {
+  category.level = category.level || EXISTING_CATEGORY_LEVELS[category.id] || "Pemula";
+}
+
 
 /*
  * Struktur frasa:
@@ -856,7 +891,8 @@ export const PHRASES = [
     en: "The remote session is finished.",
     idText: "Sesi remote sudah selesai.",
     note: "Kalimat netral untuk memastikan kedua pihak tahu sesi sudah berakhir."
-  }
+  },
+  ...EXTRA_PHRASES
 ];
 
 /*
@@ -1058,8 +1094,8 @@ export const SCENARIOS = [
     id: "replace-psu",
     title: "Mengganti PSU dengan izin",
     icon: "wrench",
-    level: "Pemula",
-    intro: "PSU sudah dipastikan bermasalah. Engineer meminta Anda menggantinya, tetapi Anda ingin memastikan izin dan melaporkan prosesnya.",
+    level: "Menengah",
+    intro: "PSU sudah dipastikan bermasalah. Engineer meminta Anda menggantinya, tetapi Anda harus memastikan izin, LOTO, dan work permit sebelum bekerja.",
     steps: [
       {
         engineer: { en: "The PSU is faulty. Please replace it.", idText: "PSU-nya bermasalah. Tolong ganti." },
@@ -1068,16 +1104,25 @@ export const SCENARIOS = [
           { en: "The test is complete.", correct: false },
           { en: "I’m calling from Terminal 3 Jakarta.", correct: false }
         ],
-        explanation: "Meskipun engineer sudah meminta, meminta izin secara eksplisit menunjukkan Anda mengikuti prosedur."
+        explanation: "Meminta izin secara eksplisit adalah awal yang baik, tetapi izin saja belum membuat pekerjaan berisiko menjadi aman."
       },
       {
-        engineer: { en: "Yes, go ahead. Let me know when it’s done.", idText: "Ya, silakan. Beri tahu saya setelah selesai." },
+        engineer: { en: "Yes, but follow the approved safety procedure first.", idText: "Ya, tetapi ikuti prosedur keselamatan yang disetujui terlebih dahulu." },
+        options: [
+          { en: "Understood. I’ll lock out the machine and confirm zero voltage first.", correct: true },
+          { en: "Okay, I’ll replace it right away.", correct: false },
+          { en: "I don’t need a work permit for this.", correct: false }
+        ],
+        explanation: "Lakukan LOTO, konfirmasi tegangan nol, dan ikuti work permit. Izin engineer tidak menggantikan prosedur keselamatan."
+      },
+      {
+        engineer: { en: "Good. Let me know when it’s done.", idText: "Bagus. Beri tahu saya setelah selesai." },
         options: [
           { en: "Thank you. I’ll let you know when it’s done.", correct: true },
           { en: "The sensor is not detecting any movement.", correct: false },
           { en: "Could you speak more slowly?", correct: false }
         ],
-        explanation: "Konfirmasi izin dan janjikan update setelah pekerjaan selesai."
+        explanation: "Konfirmasi prosedur dan janjikan update setelah pekerjaan selesai."
       },
       {
         engineer: { en: "How is it going?", idText: "Bagaimana perkembangannya?" },
@@ -1287,8 +1332,11 @@ export const SCENARIOS = [
         explanation: "Konfirmasi instruksi tambahan dan beri komitmen untuk memberi kabar."
       }
     ]
-  }
+  },
+  ...EXTRA_SCENARIOS
 ];
+
+export { QUESTION_PATTERNS };
 
 export const CATEGORY_BY_ID = Object.fromEntries(CATEGORIES.map(category => [category.id, category]));
 export const PHRASE_BY_ID = Object.fromEntries(PHRASES.map(phrase => [phrase.id, phrase]));

@@ -16,14 +16,15 @@ import {
   speechErrorID
 } from "../speech.js";
 import { progressBarHTML, toast } from "../ui.js";
-import { dateKey, esc, relativeDueLabel } from "../utils.js";
+import { dateKey, englishHTML, esc, relativeDueLabel } from "../utils.js";
 
 export const navLabel = "Latihan Recall";
 export const title = "Latihan Recall";
-export const description = "Lihat prompt bahasa Indonesia, ingat kalimat Inggrisnya, lalu nilai keyakinanmu.";
+export const description = "Lihat prompt bahasa Indonesia, ucapkan kalimat Inggrisnya, lalu nilai Again, Difficult, atau Easy.";
 
 const MAX_DUE_CARDS = 12;
 const FREE_CARDS = 8;
+const PRIORITY_LAPSES = 2;
 
 function shuffle(items) {
   const list = [...items];
@@ -34,12 +35,26 @@ function shuffle(items) {
   return list;
 }
 
+/** Skor sederhana: frasa yang sering dinilai "Again" atau "Difficult" lebih dulu. */
+function priorityScore(record) {
+  if (!record) return 0;
+  const lapses = Number(record.lapses) || 0;
+  const last = record.lastRating;
+  return lapses * 10 + (last === "again" ? 6 : last === "hard" ? 3 : 0);
+}
+
+function byDifficulty(a, b) {
+  const difference = priorityScore(b.record) - priorityScore(a.record);
+  if (difference) return difference;
+  return new Date(a.record?.dueAt || 0) - new Date(b.record?.dueAt || 0);
+}
+
 function buildSession(now = new Date()) {
   const due = getDuePhrases(now);
   if (due.length) {
     return {
       dateKey: dateKey(now),
-      queue: due.slice(0, MAX_DUE_CARDS).map(item => item.phrase.id),
+      queue: [...due].sort(byDifficulty).slice(0, MAX_DUE_CARDS).map(item => item.phrase.id),
       index: 0,
       mode: "due",
       startDue: due.length,
@@ -50,9 +65,15 @@ function buildSession(now = new Date()) {
 
   const candidates = PHRASES.filter(phrase => !isMastered(getPhraseRecord(phrase.id)));
   const pool = candidates.length ? candidates : PHRASES;
+  const queue = shuffle(pool)
+    .sort((a, b) => (
+      priorityScore(getPhraseRecord(b.id)) - priorityScore(getPhraseRecord(a.id))
+    ))
+    .slice(0, FREE_CARDS)
+    .map(phrase => phrase.id);
   return {
     dateKey: dateKey(now),
-    queue: shuffle(pool).slice(0, FREE_CARDS).map(phrase => phrase.id),
+    queue,
     index: 0,
     mode: "free",
     startDue: 0,
@@ -88,17 +109,17 @@ function sessionSummaryHTML({ session, stats }) {
         <div class="rating-summary-item is-danger">
           <span>${icon("rotate-ccw", 18)}</span>
           <b>${session.ratings.again}</b>
-          <small>Belum ingat</small>
+          <small>${RATING_META.again.label}</small>
         </div>
         <div class="rating-summary-item is-warning">
           <span>${icon("clock", 18)}</span>
           <b>${session.ratings.hard}</b>
-          <small>Agak ingat</small>
+          <small>${RATING_META.hard.label}</small>
         </div>
         <div class="rating-summary-item is-success">
           <span>${icon("check", 18)}</span>
           <b>${session.ratings.good}</b>
-          <small>Sudah ingat</small>
+          <small>${RATING_META.good.label}</small>
         </div>
       </div>
       <div class="completion-stats">
@@ -106,7 +127,7 @@ function sessionSummaryHTML({ session, stats }) {
         <span><b>${stats.mastered}</b> frasa dikuasai</span>
         <span><b>${stats.streak}</b> hari streak</span>
       </div>
-      ${due > 0 ? `<p class="summary-note">${icon("info", 16)} Masih ada ${due} frasa yang perlu diulang. Sesi berikutnya akan mengambil frasa yang paling lama jatuh tempo.</p>` : ""}
+      ${due > 0 ? `<p class="summary-note">${icon("info", 16)} Masih ada ${due} frasa yang perlu diulang. Sesi berikutnya akan mendahulukan frasa yang sering salah.</p>` : ""}
       <div class="completion-actions">
         <button class="btn btn-primary" type="button" data-new-session>${icon("refresh", 18)} Mulai sesi baru</button>
         ${due > 0 ? `<a class="btn btn-secondary" href="#/recall" data-reload-recall>Review berikutnya</a>` : `<a class="btn btn-secondary" href="#/home">Kembali ke beranda</a>`}
@@ -153,6 +174,9 @@ export function render(ctx) {
     ctx.refresh();
     return "";
   }
+  const category = CATEGORY_BY_ID[phrase.category];
+  const record = getPhraseRecord(phrase.id);
+  const needsWork = (Number(record?.lapses) || 0) >= PRIORITY_LAPSES;
   const progress = session.queue.length
     ? Math.round((session.index / session.queue.length) * 100)
     : 0;
@@ -178,7 +202,11 @@ export function render(ctx) {
 
           <article class="recall-card" aria-labelledby="recall-prompt">
             <div class="recall-card-top">
-              <span class="category-chip">${icon(CATEGORY_BY_ID[phrase.category].icon, 15)} ${esc(CATEGORY_BY_ID[phrase.category].label)}</span>
+              <div class="recall-card-tags">
+                <span class="category-chip">${icon(category.icon, 15)} ${esc(category.label)}</span>
+                <span class="level-badge">${esc(category.level)}</span>
+                ${needsWork ? `<span class="priority-badge">${icon("refresh", 13)} Sering salah</span>` : ""}
+              </div>
               <span class="recall-hint">${icon("brain", 15)} Active recall</span>
             </div>
 
@@ -197,7 +225,7 @@ export function render(ctx) {
             <div id="recall-after" hidden>
               <div class="answer-block" id="recall-answer" tabindex="-1">
                 <span class="answer-label">Jawaban</span>
-                <p class="answer-en" lang="en">${esc(phrase.en)}</p>
+                <p class="answer-en" lang="en">${englishHTML(phrase.en)}</p>
                 <div class="answer-actions">
                   <button class="btn btn-secondary btn-sm" type="button" data-answer-play ${audioAvailable ? "" : "disabled"}>
                     ${icon("play", 16)} Putar
@@ -207,14 +235,14 @@ export function render(ctx) {
                   </button>
                 </div>
                 <div class="answer-note">
-                  <strong>Kapan dipakai:</strong> ${esc(phrase.note)}
+                  <strong>Penjelasan singkat:</strong> ${esc(phrase.note)}
                 </div>
               </div>
 
               <div class="rating-section">
                 <div class="rating-heading">
                   <h3>Seberapa yakin kamu?</h3>
-                  <p>Penilaian menentukan jadwal review berikutnya.</p>
+                  <p>Nilai dirimu sendiri. Again berarti ulangi di sesi ini; Difficult berarti review besok; Easy berarti interval bertambah.</p>
                 </div>
                 <div class="rating-grid" role="group" aria-label="Nilai keyakinan">
                   ${ratingButtonHTML("again")}
@@ -239,9 +267,9 @@ export function render(ctx) {
             <span class="side-card-icon">${icon("target", 20)}</span>
             <h2>Cara menilai</h2>
             <ul class="plain-list">
-              <li><span class="dot dot-danger"></span><strong>Belum ingat</strong> — akan muncul lagi di sesi ini.</li>
-              <li><span class="dot dot-warning"></span><strong>Agak ingat</strong> — review besok.</li>
-              <li><span class="dot dot-success"></span><strong>Sudah ingat</strong> — review 3 hari lagi, lalu makin lama.</li>
+              <li><span class="dot dot-danger"></span><strong>Again</strong> — muncul lagi di sesi ini.</li>
+              <li><span class="dot dot-warning"></span><strong>Difficult</strong> — review besok.</li>
+              <li><span class="dot dot-success"></span><strong>Easy</strong> — review 3 hari lagi, lalu makin lama.</li>
             </ul>
           </section>
 
@@ -252,8 +280,8 @@ export function render(ctx) {
             <div class="side-stat"><span>Dipelajari</span><b data-side-learned>${stats.learned}/${stats.total}</b></div>
             <div class="side-stat"><span>Dikuasai</span><b data-side-mastered>${stats.mastered}</b></div>
             <p class="side-note">${session.mode === "due"
-              ? "Sesi mengambil frasa yang paling lama jatuh tempo."
-              : "Belum ada frasa jatuh tempo. Sesi ini berisi latihan bebas; penilaianmu tetap disimpan."}</p>
+              ? "Sesi mendahulukan frasa yang sering salah, lalu yang paling lama jatuh tempo."
+              : "Belum ada frasa jatuh tempo. Latihan bebas juga mendahulukan frasa yang sering salah; penilaianmu tetap disimpan."}</p>
           </section>
 
           ${!audioAvailable ? `
@@ -347,9 +375,9 @@ export function mount(root, ctx) {
 
       if (schedule) {
         if (rating === "again") {
-          schedule.textContent = "Frasa ini akan muncul lagi di sesi ini. Jadwal review tetap jatuh tempo.";
+          schedule.textContent = "Frasa ini akan muncul lagi di sesi ini. Baca penjelasannya, lalu ucapkan ulang kalimatnya.";
         } else if (rating === "hard") {
-          schedule.textContent = "Review berikutnya: besok.";
+          schedule.textContent = "Review berikutnya: besok. Baca lagi penjelasan singkatnya sebelum lanjut.";
         } else {
           schedule.textContent = `Review berikutnya: ${relativeDueLabel(result.scheduled.dueAt)} (${result.scheduled.intervalDays} hari).`;
         }

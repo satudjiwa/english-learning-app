@@ -22,6 +22,7 @@ import {
 } from "../ui.js";
 import {
   esc,
+  englishHTML,
   formatDateTimeID,
   formatTodayID,
   relativeDueLabel
@@ -80,7 +81,7 @@ function historyHTML(history) {
           <article class="history-row">
             <span class="history-rating rating-${meta.tone}">${esc(meta.short)}</span>
             <div class="history-copy">
-              <p class="history-en" lang="en">${esc(phrase?.en || "Frasa tidak ditemukan")}</p>
+              <p class="history-en" lang="en">${englishHTML(phrase?.en || "Frasa tidak ditemukan")}</p>
               <p class="history-meta">${esc(formatDateTimeID(entry.at))} · Berikutnya: ${esc(relativeDueLabel(entry.dueAt))}</p>
             </div>
             <span class="history-arrow">${icon("chevron-right", 16)}</span>
@@ -106,7 +107,7 @@ function dueListHTML(duePhrases) {
         <div class="due-row">
           <span class="due-row-icon">${icon("clock", 17)}</span>
           <div>
-            <p lang="en">${esc(phrase.en)}</p>
+            <p lang="en">${englishHTML(phrase.en)}</p>
             <span>${esc(phrase.idText)}</span>
           </div>
           <span class="due-row-label">${esc(relativeDueLabel(record.dueAt))}</span>

@@ -8,7 +8,7 @@ import {
   speechErrorID
 } from "../speech.js";
 import { emptyStateHTML, toast } from "../ui.js";
-import { esc } from "../utils.js";
+import { englishHTML, esc } from "../utils.js";
 
 export const navLabel = "Simulator";
 export const title = "Simulator Remote Session";
@@ -76,7 +76,7 @@ function bubbleHTML({ line, role, turnIndex = null, kind = "engineer" }) {
             ${icon("volume", 15)}
           </button>
         </div>
-        <p class="chat-en" lang="en">${esc(line.en)}</p>
+        <p class="chat-en" lang="en">${englishHTML(line.en)}</p>
         <p class="chat-id">${esc(line.idText)}</p>
       </div>
     </div>
@@ -178,7 +178,7 @@ function scenarioViewHTML(scenario, session) {
               <button class="option-btn ${isCorrect ? "is-correct" : ""} ${isWrong ? "is-wrong" : ""} ${isSelected ? "is-selected" : ""}" type="button" data-option="${index}" ${session.answered || isWrong ? "disabled" : ""}>
                 <span class="option-letter">${String.fromCharCode(65 + index)}</span>
                 <span class="option-copy">
-                  <span lang="en">${esc(option.en)}</span>
+                  <span lang="en">${englishHTML(option.en)}</span>
                   <small>${esc(option.idText || "")}</small>
                 </span>
                 <span class="option-mark">${isCorrect ? icon("check", 18) : isWrong ? icon("x", 18) : ""}</span>
@@ -226,6 +226,10 @@ export function render(ctx, params) {
         <div class="sim-note">
           ${icon("users", 20)}
           <p><strong>Anggap ini panggilan sungguhan.</strong> Ucapkan jawabanmu dengan suara keras sebelum memilih. Tidak ada penilaian otomatis untuk pelafalan.</p>
+        </div>
+        <div class="sim-note sim-note--safety">
+          ${icon("shield", 20)}
+          <p><strong>Izin engineer bukan pengganti prosedur keselamatan.</strong> Untuk pekerjaan listrik, membuka panel, atau mengganti komponen, konfirmasi LOTO, work permit, dan prosedur yang disetujui sebelum bertindak.</p>
         </div>
         ${scenarioGridHTML()}
       </div>

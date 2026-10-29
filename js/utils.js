@@ -9,6 +9,16 @@ export function esc(value) {
     .replaceAll("'", "&#39;");
 }
 
+/**
+ * Escape teks Inggris lalu tandai placeholder detail seperti [time] dan [name]
+ * agar mudah terlihat saat pengguna mengganti isinya.
+ */
+export function englishHTML(value) {
+  return esc(value).replace(/\[(time|name)\]/gi, match => (
+    `<mark class="placeholder">${match}</mark>`
+  ));
+}
+
 /** Normalisasi pencarian: abaikan huruf besar, tanda kutip, dan tanda baca. */
 export function normalizeSearch(value) {
   return String(value ?? "")
