@@ -1,0 +1,11 @@
+{
+  "name": "english-learning-app",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "English for Service Engineer — latihan bahasa Inggris untuk service engineer dan teknisi bandara Indonesia.",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "test": "node scripts/check.mjs"
+  }
+}

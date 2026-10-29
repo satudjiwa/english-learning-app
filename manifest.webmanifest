@@ -1,13 +1,19 @@
 {
-  "name": "Small Steps English",
-  "short_name": "Small Steps",
-  "description": "Latihan bahasa Inggris pemula, 15 menit per hari.",
+  "name": "English for Service Engineer",
+  "short_name": "Service English",
+  "description": "Latihan bahasa Inggris praktis untuk service engineer dan teknisi bandara Indonesia.",
   "lang": "id",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#f5f7f3",
-  "theme_color": "#f5f7f3",
+  "background_color": "#f3f5f7",
+  "theme_color": "#0b2239",
   "icons": [
-    {"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
   ]
 }

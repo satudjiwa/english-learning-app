@@ -1,55 +1,85 @@
-const CACHE = "small-steps-shell-v16";
-const SHELL = ["./", "./index.html", "./styles.css?v=20261024-reader", "./app.js?v=20261024-reader", "./manifest.webmanifest", "./icon.svg", "./lessons.json", "./reading-plan.json", "./audio/voa-lesson1-welcome.mp3"];
+/*
+ * Service worker sederhana untuk aplikasi statis.
+ * Halaman memakai strategi network-first agar pembaruan langsung terlihat;
+ * aset modul memakai cache-first dengan pembaruan di belakang layar.
+ */
+
+const CACHE = "service-english-shell-v1";
+const SHELL = [
+  "./",
+  "./index.html",
+  "./styles.css",
+  "./manifest.webmanifest",
+  "./icon.svg",
+  "./js/app.js",
+  "./js/data.js",
+  "./js/icons.js",
+  "./js/srs.js",
+  "./js/speech.js",
+  "./js/store.js",
+  "./js/ui.js",
+  "./js/utils.js",
+  "./js/views/dashboard.js",
+  "./js/views/daily.js",
+  "./js/views/phrases.js",
+  "./js/views/recall.js",
+  "./js/views/listen.js",
+  "./js/views/simulator.js",
+  "./js/views/progress.js",
+  "./js/views/settings.js",
+  "./js/views/menu.js"
+];
 
 self.addEventListener("install", event => {
-  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(SHELL)).then(() => self.skipWaiting()));
+  event.waitUntil(
+    caches.open(CACHE)
+      .then(cache => cache.addAll(SHELL))
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys()
-      .then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key))))
+      .then(keys => Promise.all(
+        keys
+          .filter(key => (
+            key !== CACHE &&
+            (key.startsWith("service-english-shell-") || key.startsWith("small-steps-shell-"))
+          ))
+          .map(key => caches.delete(key))
+      ))
       .then(() => self.clients.claim())
   );
 });
 
 self.addEventListener("fetch", event => {
   const request = event.request;
-  if (request.method !== "GET" || new URL(request.url).origin !== self.location.origin) return;
+  if (request.method !== "GET") return;
+
   const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
 
-  // Data materi: coba jaringan dulu supaya materi baru langsung terlihat,
-  // jatuh ke cache hanya saat offline.
-  if (url.pathname.endsWith(".json")) {
-    event.respondWith(
-      fetch(request)
-        .then(response => {
-          const copy = response.clone();
-          caches.open(CACHE).then(cache => cache.put(request, copy));
-          return response;
-        })
-        .catch(() => caches.match(request))
-    );
-    return;
-  }
-
-  // Halaman: selalu ambil versi terbaru dari jaringan, cache sebagai cadangan offline.
+  // Navigasi: ambil versi terbaru, lalu gunakan index.html saat offline.
   if (request.mode === "navigate") {
     event.respondWith(
       fetch(request)
         .then(response => {
-          const copy = response.clone();
-          caches.open(CACHE).then(cache => cache.put(request, copy));
+          if (response && response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE).then(cache => cache.put(request, copy));
+          }
           return response;
         })
-        .catch(() => caches.match("./index.html"))
+        .catch(() => caches.match("./index.html", { ignoreSearch: true }))
     );
     return;
   }
 
-  // Aset lain (css/js/gambar): sajikan dari cache lalu perbarui di belakang layar.
+  // Aset: cache-first. ignoreSearch membuat versi berversi (?v=...) tetap
+  // cocok dengan entri cache yang disimpan tanpa query.
   event.respondWith(
-    caches.match(request).then(cached => {
+    caches.match(request, { ignoreSearch: true }).then(cached => {
       const network = fetch(request)
         .then(response => {
           if (response && response.ok) {

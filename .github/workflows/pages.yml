@@ -30,8 +30,11 @@ jobs:
       - name: Stage site files
         run: |
           mkdir -p _site
-          cp index.html app.js styles.css sw.js manifest.webmanifest icon.svg lessons.json reading-plan.json _site/
-          cp -r audio _site/
+          cp index.html styles.css sw.js manifest.webmanifest icon.svg _site/
+          cp -r js _site/
+          touch _site/.nojekyll
+          test -f _site/js/app.js
+          test -f _site/js/views/dashboard.js
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
