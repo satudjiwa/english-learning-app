@@ -2,11 +2,9 @@
 
 import { CATEGORIES, PHRASES } from "../data.js";
 import { icon } from "../icons.js";
+import { getProgramProgress } from "../program.js";
 import {
-  getDailyPlan,
   getDuePhrases,
-  getPlanProgress,
-  getSettings,
   getStats
 } from "../store.js";
 import { progressBarHTML, statCardHTML } from "../ui.js";
@@ -26,7 +24,7 @@ const MODULES = [
     route: "daily",
     icon: "calendar",
     title: "Latihan Harian",
-    description: "Lima frasa baru dalam konteks kerja, dengan audio dan arti."
+    description: "Program 35 hari, lima frasa per sesi, dengan pola dan latihan."
   },
   {
     route: "phrases",
@@ -85,65 +83,45 @@ function ringHTML(learned, total) {
   `;
 }
 
-function recommendation({ plan, planProgress, due, stats }) {
-  if (plan && !planProgress.complete) {
+function recommendation({ program, due }) {
+  if (!program.allComplete) {
+    const current = program.days.find(day => day.day === program.currentDay);
     return {
-      eyebrow: "Langkah berikutnya",
-      title: "Latihan harian",
-      text: `Kamu sudah menandai ${planProgress.learned} dari ${planProgress.total} frasa hari ini. Lanjutkan sesi yang sudah dimulai.`,
-      cta: planProgress.learned ? "Lanjutkan Belajar" : "Mulai Belajar",
-      route: "daily",
-      icon: "calendar"
+      eyebrow: `Hari ${current.day} dari ${program.totalDays}`,
+      title: current.title,
+      text: `${current.goal} Kamu bisa belajar dengan tempo sendiri; tidak ada kunci waktu.`,
+      cta: current.progress.learned ? `Lanjutkan Hari ${current.day}` : `Mulai Hari ${current.day}`,
+      route: `daily/${current.day}`,
+      icon: "calendar",
+      progress: current.progress
     };
   }
   if (due > 0) {
     return {
       eyebrow: "Jadwal review",
       title: `${due} frasa jatuh tempo`,
-      text: "Ulangi frasa ini sebelum menambah materi baru. Recall singkat lebih efektif daripada membaca ulang.",
+      text: "Program sudah tuntas. Ulangi frasa yang jatuh tempo agar tetap tajam.",
       cta: "Mulai review",
       route: "recall",
       icon: "refresh"
     };
   }
-  if (planProgress.complete) {
-    return {
-      eyebrow: "Target hari ini",
-      title: "Latihan hari ini selesai",
-      text: "Bagus. Kamu bisa menjaga ingatan dengan latihan mendengar atau roleplay singkat.",
-      cta: "Latihan mendengar",
-      route: "listen",
-      icon: "check-circle"
-    };
-  }
-  if (stats.learned >= stats.total) {
-    return {
-      eyebrow: "Semua materi",
-      title: "Semua frasa sudah dipelajari",
-      text: "Tidak ada frasa baru hari ini. Fokus ke review dan latihan berbicara agar tetap tajam.",
-      cta: "Buka Listen & Speak",
-      route: "listen",
-      icon: "award"
-    };
-  }
   return {
-    eyebrow: "Mulai dari sini",
-    title: "Belum ada sesi hari ini",
-    text: "Mulai dengan frasa yang paling sering dipakai saat memanggil engineer remote.",
-    cta: "Mulai Belajar",
-    route: "daily",
-    icon: "sparkles"
+    eyebrow: "Program selesai",
+    title: "Semua 35 hari sudah dipelajari",
+    text: "Jaga ingatan dengan recall, listening, dan roleplay. Kamu juga bisa mengulang hari mana pun.",
+    cta: "Lihat progres program",
+    route: "progress",
+    icon: "award"
   };
 }
 
 export function render() {
   const now = new Date();
   const stats = getStats(now);
-  const settings = getSettings();
-  const plan = getDailyPlan(now);
-  const planProgress = getPlanProgress(plan);
+  const program = getProgramProgress();
   const duePhrases = getDuePhrases(now);
-  const rec = recommendation({ plan, planProgress, due: duePhrases.length, stats });
+  const rec = recommendation({ program, due: duePhrases.length });
   const hourly = getGreetingID(now);
   const progressPct = percent(stats.learned, stats.total);
   const isNewLearner = stats.learned === 0 && stats.seen === 0;
@@ -165,7 +143,7 @@ export function render() {
             <a class="hero-link" href="#/phrases">Lihat ${stats.total} frasa ${icon("arrow-right", 16)}</a>
           </div>
           <div class="hero-meta">
-            <span>${icon("target", 15)} Target ${settings.dailyTarget} frasa/hari</span>
+            <span>${icon("target", 15)} Program ${program.totalDays} hari · 5 frasa/hari</span>
             <span>${icon("flame", 15)} ${stats.streak} hari streak</span>
           </div>
         </div>
@@ -222,9 +200,9 @@ export function render() {
           <span class="starter-icon">${icon("sparkles", 22)}</span>
           <div>
             <strong>Baru pertama kali di sini?</strong>
-            <p>Mulai dari 5 frasa harian. Kamu tidak perlu akun, dan semua progres tersimpan di browser ini.</p>
+            <p>Mulai dari Hari 1 program: lima frasa, audio, konteks kerja, dan pola kalimat. Semua progres tersimpan di browser ini.</p>
           </div>
-          <a class="btn btn-secondary btn-sm" href="#/daily">Coba sesi pertama</a>
+          <a class="btn btn-secondary btn-sm" href="#/daily/1">Coba Hari 1</a>
         </section>
       ` : ""}
 
@@ -242,14 +220,18 @@ export function render() {
             <span class="eyebrow">${esc(rec.eyebrow)}</span>
             <h3>${esc(rec.title)}</h3>
             <p>${esc(rec.text)}</p>
-            ${plan ? `
+            ${rec.progress ? `
               <div class="today-progress">
-                ${progressBarHTML(planProgress.percent, "Progres latihan harian")}
-                <span>${planProgress.learned} / ${planProgress.total} frasa</span>
+                ${progressBarHTML(rec.progress.percent, "Progres hari ini")}
+                <span>${rec.progress.learned} / ${rec.progress.total} frasa</span>
               </div>
             ` : ""}
           </div>
           <a class="btn btn-primary today-action" href="#/${rec.route}">${esc(rec.cta)} ${icon("arrow-right", 16)}</a>
+        </div>
+        <div class="today-secondary">
+          <span>${icon("grid", 15)} Ingin belajar di luar urutan? <a href="#/daily/free">Buka Sesi Bebas</a></span>
+          <span>${icon("check-circle", 15)} ${program.completeDays} / ${program.totalDays} hari selesai · ${program.learnedPhrases} / ${program.totalPhrases} frasa</span>
         </div>
         ${duePhrases.length ? `
           <a class="due-strip" href="#/recall">

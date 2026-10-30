@@ -134,16 +134,16 @@ export function render() {
           <div class="settings-head">
             <span class="settings-icon">${icon("target", 21)}</span>
             <div>
-              <h2 id="target-settings-title">Target harian</h2>
-              <p>Pilih berapa frasa baru yang ingin kamu pelajari setiap sesi. Latihan tetap menyertakan review jika ada yang jatuh tempo.</p>
+              <h2 id="target-settings-title">Target Sesi Bebas</h2>
+              <p>Pilih berapa frasa baru untuk Sesi Bebas, yaitu latihan di luar urutan program. Program 35 hari selalu memakai lima frasa per hari.</p>
             </div>
           </div>
-          <div class="target-options" role="radiogroup" aria-label="Target frasa harian">
+          <div class="target-options" role="radiogroup" aria-label="Target frasa Sesi Bebas">
             ${targetOptionHTML(3, settings.dailyTarget, 6)}
             ${targetOptionHTML(4, settings.dailyTarget, 9)}
             ${targetOptionHTML(5, settings.dailyTarget, 12)}
           </div>
-          <p class="field-help">${icon("info", 15)} Maksimal lima frasa baru per sesi. Perubahan target berlaku untuk rencana hari berikutnya, bukan mengubah sesi yang sudah berjalan.</p>
+          <p class="field-help">${icon("info", 15)} Pengaturan ini tidak mengubah program 35 hari dan tidak mengubah sesi yang sudah berjalan. Latihan tetap menyertakan review jika ada frasa yang jatuh tempo.</p>
         </section>
 
         <section class="settings-card" aria-labelledby="data-settings-title">

@@ -237,12 +237,12 @@ export const PHRASES = [
   {
     id: "pr-04",
     category: "explaining-problem",
-    en: "The error message says ’Communication timeout.’",
-    idText: "Pesan kesalahan berbunyi ’Communication timeout’.",
+    en: "The error message says “Communication timeout.”",
+    idText: "Pesan kesalahan berbunyi “Communication timeout”.",
     note: "Sebutkan pesan error persis seperti yang muncul di layar. Jangan menerjemahkan teks error-nya.",
     dialogue: [
       { speaker: "engineer", en: "What does the screen say?", idText: "Apa yang tertulis di layar?" },
-      { speaker: "technician", en: "The error message says ’Communication timeout.’", idText: "Pesan kesalahan berbunyi ’Communication timeout’." }
+      { speaker: "technician", en: "The error message says “Communication timeout.”", idText: "Pesan kesalahan berbunyi “Communication timeout”." }
     ]
   },
   {
@@ -610,9 +610,9 @@ export const PHRASES = [
   {
     id: "test-03",
     category: "test-results",
-    en: "The test passed successfully.",
-    idText: "Tes berhasil lulus.",
-    note: "\"Passed\" adalah hasil tes yang memenuhi kriteria. Hindari \"success\" saja untuk hasil tes."
+    en: "The test completed successfully.",
+    idText: "Tes berhasil diselesaikan.",
+    note: "\"Completed successfully\" berarti tes selesai tanpa error. \"Passed\" berarti hasil tes memenuhi kriteria."
   },
   {
     id: "test-04",
@@ -1003,7 +1003,7 @@ export const SCENARIOS = [
         options: [
           { en: "Yes, the machine is still powered on.", correct: true },
           { en: "No, I’m waiting for the maintenance team.", correct: false },
-          { en: "The test passed successfully.", correct: false }
+          { en: "The test completed successfully.", correct: false }
         ],
         explanation: "\"Powered on\" berarti mesin mendapat daya dan menyala, walaupun mungkin belum berfungsi normal."
       },
@@ -1048,7 +1048,7 @@ export const SCENARIOS = [
         options: [
           { en: "Yes, I have a spare PSU.", correct: true },
           { en: "No, the machine is working normally now.", correct: false },
-          { en: "The error message says ’Communication timeout.’", correct: false }
+          { en: "The error message says “Communication timeout.”", correct: false }
         ],
         explanation: "Jawab langsung pertanyaan engineer tentang ketersediaan suku cadang."
       }
@@ -1173,7 +1173,7 @@ export const SCENARIOS = [
         engineer: { en: "Please keep me updated.", idText: "Tolong terus beri saya kabar." },
         options: [
           { en: "I’ll keep you updated.", correct: true },
-          { en: "The test passed successfully.", correct: false },
+          { en: "The test completed successfully.", correct: false },
           { en: "Could you repeat that?", correct: false }
         ],
         explanation: "Janjikan update secara berkala. \"Keep you updated\" adalah ungkapan yang natural."
@@ -1280,7 +1280,7 @@ export const SCENARIOS = [
       {
         engineer: { en: "Please send me the error message.", idText: "Tolong kirimkan pesan error-nya." },
         options: [
-          { en: "The error message says ’Communication timeout.’", correct: true },
+          { en: "The error message says “Communication timeout.”", correct: true },
           { en: "I’ve completed the checks.", correct: false },
           { en: "The cable is connected properly.", correct: false }
         ],
@@ -1326,7 +1326,7 @@ export const SCENARIOS = [
         engineer: { en: "Please also check the sensor connection.", idText: "Tolong periksa juga koneksi sensornya." },
         options: [
           { en: "Okay, I’ll do that. I’ll keep you updated.", correct: true },
-          { en: "The test passed successfully.", correct: false },
+          { en: "The test completed successfully.", correct: false },
           { en: "I’ve closed the remote session.", correct: false }
         ],
         explanation: "Konfirmasi instruksi tambahan dan beri komitmen untuk memberi kabar."

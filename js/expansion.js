@@ -64,6 +64,14 @@ export const EXTRA_CATEGORIES = [
     description: "LOTO, izin kerja, koordinasi operasi, dan izin tindakan berisiko."
   },
   {
+    id: "customer-operations",
+    label: "Pelanggan & dampak operasi",
+    short: "Pelanggan & operasi",
+    icon: "users",
+    level: "Menengah",
+    description: "Menanyakan dampak operasi, downtime, izin pelanggan, dan jadwal sesi remote."
+  },
+  {
     id: "reporting-team",
     label: "Laporan ke supervisor",
     short: "Laporan",
@@ -362,7 +370,7 @@ export const EXTRA_PHRASES = [
   {
     id: "follow-05",
     category: "following-instructions",
-    en: "Please wait a moment, I’m opening the panel.",
+    en: "Please wait a moment. I’m opening the panel now.",
     idText: "Mohon tunggu sebentar, saya sedang membuka panel.",
     note: "Membuka panel hanya boleh dilakukan dengan izin, work permit, dan prosedur keselamatan yang berlaku."
   },
@@ -546,7 +554,191 @@ export const EXTRA_PHRASES = [
     note: "Pastikan mesin dalam kondisi aman dan koordinasikan dengan operasi sebelum tes yang menggerakkan peralatan."
   },
 
-  // ── 8. Laporan ke supervisor ─────────────────────────────────────────────
+  // ── 8. Pelanggan & dampak operasi ────────────────────────────────────────
+  {
+    id: "cust-01",
+    category: "customer-operations",
+    en: "Will the remote session affect normal operations?",
+    idText: "Apakah sesi remote akan memengaruhi operasi normal?",
+    note: "Tanyakan dampaknya sebelum sesi dimulai. Sesi remote sendiri belum tentu menghentikan mesin, tetapi langkah troubleshooting bisa berdampak pada operasi."
+  },
+  {
+    id: "cust-02",
+    category: "customer-operations",
+    en: "Will the machine need to be stopped during the session?",
+    idText: "Apakah mesin perlu dihentikan selama sesi?",
+    note: "Bedakan antara sesi remote dan penghentian mesin. Hanya hentikan mesin jika prosedur dan izin operasi sudah disetujui."
+  },
+  {
+    id: "cust-03",
+    category: "customer-operations",
+    en: "Can we perform the remote session while the machine is running?",
+    idText: "Bisakah kita melakukan sesi remote saat mesin sedang berjalan?",
+    note: "Pertanyaan ini membuka pilihan kerja tanpa menghentikan mesin. Pastikan langkahnya memang aman dan disetujui, bukan sekadar ingin menghindari downtime."
+  },
+  {
+    id: "cust-04",
+    category: "customer-operations",
+    en: "Will there be any downtime during the process?",
+    idText: "Apakah akan ada downtime selama proses ini?",
+    note: "\"Downtime\" adalah waktu sistem tidak tersedia untuk operasi. Sampaikan perkiraan durasi jika sudah diketahui."
+  },
+  {
+    id: "cust-05",
+    category: "customer-operations",
+    en: "Do we need to take the system offline?",
+    idText: "Apakah kita perlu mematikan sistem dari jaringan?",
+    note: "\"Take the system offline\" berarti sistem dilepas dari layanan. Koordinasikan dampaknya dengan tim operasi sebelum melakukannya."
+  },
+  {
+    id: "cust-06",
+    category: "customer-operations",
+    en: "I need to discuss this with the customer.",
+    idText: "Saya perlu membahas ini dengan pelanggan.",
+    note: "Gunakan saat lingkup pekerjaan atau dampaknya perlu disepakati dengan pelanggan sebelum dilanjutkan."
+  },
+  {
+    id: "cust-07",
+    category: "customer-operations",
+    en: "I need to get the customer’s approval first.",
+    idText: "Saya perlu mendapatkan persetujuan pelanggan terlebih dahulu.",
+    note: "Persetujuan pelanggan untuk dampak operasi berbeda dari izin keselamatan. Keduanya bisa diperlukan untuk pekerjaan yang sama."
+  },
+  {
+    id: "cust-08",
+    category: "customer-operations",
+    en: "Let me check with the customer first.",
+    idText: "Saya cek dulu dengan pelanggan.",
+    note: "Kalimat singkat untuk menunda keputusan sampai kondisi pelanggan dikonfirmasi."
+  },
+  {
+    id: "cust-09",
+    category: "customer-operations",
+    en: "I need to coordinate with the operations team.",
+    idText: "Saya perlu berkoordinasi dengan tim operasi.",
+    note: "Koordinasi umum dengan tim operasi. Untuk mematikan sistem, gunakan kalimat yang lebih spesifik seperti pada kategori keselamatan."
+  },
+  {
+    id: "cust-10",
+    category: "customer-operations",
+    en: "The customer needs to approve the downtime.",
+    idText: "Pelanggan perlu menyetujui downtime-nya.",
+    note: "Downtime yang disetujui pelanggan tetap harus mengikuti prosedur operasi dan keselamatan di lokasi."
+  },
+  {
+    id: "cust-11",
+    category: "customer-operations",
+    en: "I’ll inform the customer before we start.",
+    idText: "Saya akan memberi tahu pelanggan sebelum kita mulai.",
+    note: "Beri tahu pelanggan tentang waktu, dampak, dan langkah yang akan dilakukan."
+  },
+  {
+    id: "cust-12",
+    category: "customer-operations",
+    en: "We need permission before proceeding.",
+    idText: "Kita perlu izin sebelum melanjutkan.",
+    note: "Sebutkan izin apa yang dimaksud: izin operasi, persetujuan pelanggan, work permit, atau otorisasi teknis."
+  },
+  {
+    id: "cust-13",
+    category: "customer-operations",
+    en: "When can we start the remote session?",
+    idText: "Kapan kita bisa memulai sesi remote?",
+    note: "Gunakan untuk menyepakati waktu yang tidak mengganggu operasi dan tersedia bagi engineer remote."
+  },
+  {
+    id: "cust-14",
+    category: "customer-operations",
+    en: "How long will the remote session take?",
+    idText: "Berapa lama sesi remote akan berlangsung?",
+    note: "Perkiraan waktu membantu tim operasi menyiapkan celah operasi. Hindari menjanjikan waktu pasti jika belum tahu."
+  },
+  {
+    id: "cust-15",
+    category: "customer-operations",
+    en: "Can we schedule the session after operating hours?",
+    idText: "Bisakah kita menjadwalkan sesi setelah jam operasi?",
+    note: "Pilihan yang baik jika pekerjaan membutuhkan mesin berhenti. Pastikan izin dan pengawasan tetap tersedia."
+  },
+  {
+    id: "cust-16",
+    category: "customer-operations",
+    en: "We have a limited time window for this work.",
+    idText: "Kita punya waktu terbatas untuk pekerjaan ini.",
+    note: "\"Time window\" adalah rentang waktu yang disetujui. Jangan mempersingkat prosedur keselamatan karena waktu terbatas."
+  },
+  {
+    id: "cust-17",
+    category: "customer-operations",
+    en: "Before we proceed, I need to confirm this with the customer.",
+    idText: "Sebelum kita lanjut, saya perlu mengonfirmasi ini dengan pelanggan.",
+    note: "Konfirmasi ulang jika ada perubahan langkah, dampak, atau waktu."
+  },
+  {
+    id: "cust-18",
+    category: "customer-operations",
+    en: "The machine is currently in operation.",
+    idText: "Mesin saat ini sedang beroperasi.",
+    note: "Informasi penting sebelum engineer meminta langkah yang dapat menghentikan atau mengganggu mesin."
+  },
+  {
+    id: "cust-19",
+    category: "customer-operations",
+    en: "We cannot stop the machine at the moment.",
+    idText: "Kita tidak bisa menghentikan mesin saat ini.",
+    note: "Sampaikan kendala operasi dengan jelas, lalu tanyakan langkah aman yang tidak memerlukan penghentian mesin."
+  },
+  {
+    id: "cust-20",
+    category: "customer-operations",
+    en: "Could we do this step without interrupting operations?",
+    idText: "Bisakah kita melakukan langkah ini tanpa mengganggu operasi?",
+    note: "Gunakan hanya jika langkah tersebut memang aman dilakukan saat mesin berjalan. Jangan melewati prosedur keselamatan demi menghindari gangguan."
+  },
+  {
+    id: "cust-21",
+    category: "customer-operations",
+    en: "Please let me know before restarting the system.",
+    idText: "Tolong beri tahu saya sebelum memulai ulang sistem.",
+    note: "Restart dapat memengaruhi operasi. Mintalah konfirmasi sebelum engineer remote melakukannya dari sisi mereka."
+  },
+  {
+    id: "cust-22",
+    category: "customer-operations",
+    en: "I’ll proceed once we get the customer’s approval.",
+    idText: "Saya akan melanjutkan setelah kita mendapat persetujuan pelanggan.",
+    note: "Persetujuan pelanggan belum tentu cukup untuk pekerjaan berisiko; pastikan izin keselamatan dan prosedur teknis juga siap."
+  },
+  {
+    id: "cust-23",
+    category: "customer-operations",
+    en: "We haven’t noticed any impact on operations.",
+    idText: "Kami belum melihat dampak pada operasi.",
+    note: "\"Haven’t noticed\" berarti belum terlihat, bukan jaminan tidak ada dampak. Tetap pantau setelah pekerjaan."
+  },
+  {
+    id: "cust-24",
+    category: "customer-operations",
+    en: "I’ll monitor the machine after the session.",
+    idText: "Saya akan memantau mesin setelah sesi.",
+    note: "Pemantauan setelah perubahan penting untuk memastikan masalah tidak muncul kembali."
+  },
+  {
+    id: "cust-25",
+    category: "customer-operations",
+    en: "I’ll update the customer on the results.",
+    idText: "Saya akan memberi tahu pelanggan tentang hasilnya.",
+    note: "Sertakan status mesin, hasil tes, dan langkah berikutnya dalam update."
+  },
+  {
+    id: "cust-26",
+    category: "customer-operations",
+    en: "The machine is ready to return to normal operation.",
+    idText: "Mesin siap dikembalikan ke operasi normal.",
+    note: "Gunakan setelah tes selesai dan kondisi mesin dikonfirmasi aman oleh pihak yang berwenang."
+  },
+
+  // ── 9. Laporan ke supervisor ─────────────────────────────────────────────
   {
     id: "report-01",
     category: "reporting-team",
@@ -681,8 +873,8 @@ export const EXTRA_PHRASES = [
     id: "pm-02",
     category: "preventive-maintenance",
     en: "I cleaned the dust from the fan and the filter.",
-    idText: "Saya sudah membersihkan debu dari fan dan filter.",
-    note: "Debu pada fan dan filter dapat menyebabkan panas berlebih. Catat kondisi filter setelah dibersihkan."
+    idText: "Saya sudah membersihkan debu dari kipas dan filter.",
+    note: "Debu pada kipas dan filter dapat menyebabkan panas berlebih. Catat kondisi filter setelah dibersihkan."
   },
   {
     id: "pm-03",
@@ -970,7 +1162,7 @@ export const EXTRA_SCENARIOS = [
         engineer: { en: "What’s the situation on site?", idText: "Bagaimana situasi di lokasi?" },
         options: [
           { en: "I’m on site now. The machine stopped at around 08:15, and the alarm is still active.", correct: true },
-          { en: "The test passed successfully.", correct: false },
+          { en: "The test completed successfully.", correct: false },
           { en: "I’ll leave the site at 4 PM.", correct: false }
         ],
         explanation: "Mulai dengan posisi Anda, waktu kejadian, dan status alarm. Tiga informasi ini langsung memberi konteks."
@@ -1160,14 +1352,14 @@ export const EXTRA_SCENARIOS = [
         options: [
           { en: "No, the problem is still there.", correct: true },
           { en: "Yes, the machine is working normally now.", correct: false },
-          { en: "The test passed successfully.", correct: false }
+          { en: "The test completed successfully.", correct: false }
         ],
         explanation: "Jawab jujur. Jangan menyatakan berhasil hanya karena satu tes selesai."
       },
       {
         engineer: { en: "Please send me the full error log.", idText: "Tolong kirimkan log error lengkap." },
         options: [
-          { en: "I’ll send you the log now. The error message says ’Communication timeout.’", correct: true },
+          { en: "I’ll send you the log now. The error message says “Communication timeout.”", correct: true },
           { en: "The sensor has been replaced.", correct: false },
           { en: "I’ll leave the site at 4 PM.", correct: false }
         ],
@@ -1205,7 +1397,7 @@ export const EXTRA_SCENARIOS = [
         options: [
           { en: "The machine is still under observation. The issue has not been fully resolved yet.", correct: true },
           { en: "The issue has been resolved, and the machine is in normal operation.", correct: false },
-          { en: "The test passed successfully.", correct: false }
+          { en: "The test completed successfully.", correct: false }
         ],
         explanation: "Sampaikan status sebenarnya. Jika masih ada pekerjaan tersisa, jangan katakan sudah selesai."
       },

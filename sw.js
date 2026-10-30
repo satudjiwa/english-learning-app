@@ -4,7 +4,7 @@
  * aset modul memakai cache-first dengan pembaruan di belakang layar.
  */
 
-const CACHE = "service-english-shell-v2";
+const CACHE = "service-english-shell-v3";
 const SHELL = [
   "./",
   "./index.html",
@@ -12,9 +12,11 @@ const SHELL = [
   "./manifest.webmanifest",
   "./icon.svg",
   "./js/app.js",
+  "./js/curriculum.js",
   "./js/data.js",
   "./js/expansion.js",
   "./js/icons.js",
+  "./js/program.js",
   "./js/srs.js",
   "./js/speech.js",
   "./js/store.js",

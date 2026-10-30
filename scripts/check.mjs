@@ -18,6 +18,14 @@ import {
   SCENARIOS
 } from "../js/data.js";
 import {
+  PROGRAM_DAYS,
+  PROGRAM_ITEM_BY_ID,
+  PROGRAM_PATTERN_BY_ID,
+  PROGRAM_PATTERNS,
+  PROGRAM_TOTAL_DAYS,
+  PROGRAM_TOTAL_PHRASES
+} from "../js/curriculum.js";
+import {
   MASTERY_MIN_INTERVAL,
   MASTERY_STREAK,
   isDue,
@@ -127,7 +135,7 @@ const REQUIRED_EXPANSION_PHRASES = [
   "Let me confirm: I should replace the LAN cable, then reboot the switch. Is that correct?",
   "I’ve done step 3. What’s next?",
   "I’ll let you know as soon as I finish.",
-  "Please wait a moment, I’m opening the panel.",
+  "Please wait a moment. I’m opening the panel now.",
   "I’m sending you a photo of the connector now.",
   "I’m sharing the screen so you can see the HMI.",
   "Could you show me which cable I need to check?",
@@ -208,6 +216,7 @@ const EXPECTED_CATEGORY_COUNTS = {
   "following-instructions": 8,
   "checks-repairs": 12,
   "safety-coordination": 10,
+  "customer-operations": 26,
   "reporting-team": 7,
   "site-handover": 10,
   "preventive-maintenance": 5,
@@ -222,9 +231,11 @@ const EXPECTED_MODULES = [
   "icon.svg",
   ".nojekyll",
   "js/app.js",
+  "js/curriculum.js",
   "js/data.js",
   "js/expansion.js",
   "js/icons.js",
+  "js/program.js",
   "js/srs.js",
   "js/speech.js",
   "js/store.js",
@@ -274,9 +285,9 @@ check("workflow GitHub Pages menyalin modul js dan .nojekyll", () => {
   assert.doesNotMatch(workflow, /lessons\.json|reading-plan\.json|audio/);
 });
 
-check("25 kategori dengan ID unik, level, dan deskripsi lengkap", () => {
-  assert.equal(CATEGORIES.length, 25);
-  assert.equal(new Set(CATEGORIES.map(category => category.id)).size, 25);
+check("26 kategori dengan ID unik, level, dan deskripsi lengkap", () => {
+  assert.equal(CATEGORIES.length, 26);
+  assert.equal(new Set(CATEGORIES.map(category => category.id)).size, 26);
   for (const category of CATEGORIES) {
     nonEmpty(category.label, `label kategori ${category.id}`);
     nonEmpty(category.short, `short kategori ${category.id}`);
@@ -286,8 +297,8 @@ check("25 kategori dengan ID unik, level, dan deskripsi lengkap", () => {
   }
 });
 
-check("minimal 198 frasa dengan ID dan terjemahan unik", () => {
-  assert.ok(PHRASES.length >= 198, `Baru ada ${PHRASES.length} frasa`);
+check("minimal 224 frasa dengan ID dan terjemahan unik", () => {
+  assert.ok(PHRASES.length >= 224, `Baru ada ${PHRASES.length} frasa`);
   assert.equal(new Set(PHRASES.map(phrase => phrase.id)).size, PHRASES.length);
   assert.equal(new Set(PHRASES.map(phrase => normalize(phrase.en))).size, PHRASES.length);
   for (const phrase of PHRASES) {
@@ -324,6 +335,103 @@ check("107 frasa tambahan tersedia persis", () => {
   const available = new Set(PHRASES.map(phrase => phrase.en));
   const missing = REQUIRED_EXPANSION_PHRASES.filter(phrase => !available.has(phrase));
   assert.deepEqual(missing, []);
+});
+
+check("kurikulum program berisi 35 hari berurutan dengan lima frasa per hari", () => {
+  assert.equal(PROGRAM_TOTAL_DAYS, 35);
+  assert.equal(PROGRAM_TOTAL_PHRASES, 175);
+  assert.equal(PROGRAM_DAYS.length, 35);
+  assert.equal(new Set(PROGRAM_DAYS.map(day => day.day)).size, 35);
+  PROGRAM_DAYS.forEach((day, index) => {
+    assert.equal(day.day, index + 1, `Nomor hari tidak berurutan pada indeks ${index}`);
+    nonEmpty(day.phase, `fase hari ${day.day}`);
+    nonEmpty(day.title, `judul hari ${day.day}`);
+    nonEmpty(day.goal, `tujuan hari ${day.day}`);
+    assert.equal(day.items.length, 5, `Hari ${day.day} harus berisi lima frasa`);
+  });
+});
+
+check("175 frasa program unik dan semuanya ada di bank frasa", () => {
+  const ids = PROGRAM_DAYS.flatMap(day => day.items.map(item => item.id));
+  assert.equal(ids.length, 175);
+  assert.equal(new Set(ids).size, 175);
+  for (const id of ids) {
+    assert.ok(PHRASE_BY_ID[id], `Frasa program tidak ditemukan: ${id}`);
+    assert.ok(PROGRAM_ITEM_BY_ID[id], `Item program tidak terdaftar: ${id}`);
+    assert.equal(PROGRAM_ITEM_BY_ID[id].id, id);
+  }
+});
+
+check("setiap frasa program memiliki pola, konteks, fokus, 2–3 contoh, dan latihan", () => {
+  const exampleTexts = [];
+  for (const day of PROGRAM_DAYS) {
+    for (const item of day.items) {
+      const pattern = PROGRAM_PATTERN_BY_ID[item.pattern];
+      assert.ok(pattern, `Pola ${item.pattern} tidak ditemukan pada ${item.id}`);
+      nonEmpty(item.focus, `fokus ${item.id}`);
+      nonEmpty(item.context, `konteks ${item.id}`);
+      nonEmpty(item.prompt, `latihan ${item.id}`);
+      assert.ok(Array.isArray(item.examples), `contoh ${item.id} harus berupa array`);
+      assert.ok(item.examples.length >= 2 && item.examples.length <= 3, `contoh ${item.id}: ${item.examples.length}`);
+      const target = PHRASE_BY_ID[item.id].en;
+      for (const example of item.examples) {
+        nonEmpty(example, `contoh ${item.id}`);
+        assert.notEqual(normalize(example), normalize(target), `Contoh ${item.id} mengulang frasa target`);
+        exampleTexts.push(example);
+      }
+    }
+  }
+  assert.equal(new Set(exampleTexts).size, exampleTexts.length, "Ada contoh kalimat yang duplikat antar frasa");
+});
+
+check("pola program memiliki formula, penjelasan, dan bentuk yang lengkap", () => {
+  assert.ok(PROGRAM_PATTERNS.length >= 40, `Pola program baru ${PROGRAM_PATTERNS.length}`);
+  assert.equal(new Set(PROGRAM_PATTERNS.map(pattern => pattern.id)).size, PROGRAM_PATTERNS.length);
+  const used = new Set(PROGRAM_DAYS.flatMap(day => day.items.map(item => item.pattern)));
+  for (const pattern of PROGRAM_PATTERNS) {
+    nonEmpty(pattern.name, `nama pola ${pattern.id}`);
+    nonEmpty(pattern.formula, `formula ${pattern.id}`);
+    nonEmpty(pattern.explanation, `penjelasan ${pattern.id}`);
+    assert.ok(Array.isArray(pattern.forms) && pattern.forms.length > 0, `bentuk pola ${pattern.id}`);
+    assert.ok(used.has(pattern.id), `Pola tidak dipakai: ${pattern.id}`);
+  }
+  for (const id of used) {
+    assert.ok(PROGRAM_PATTERN_BY_ID[id], `Pola tidak terdaftar: ${id}`);
+  }
+});
+
+check("program mencakup seluruh frasa pelanggan, handover, perawatan, dan laporan", () => {
+  const requiredCategories = {
+    "customer-operations": 26,
+    "site-handover": 10,
+    "preventive-maintenance": 5,
+    "reporting-team": 7
+  };
+  for (const [categoryId, expected] of Object.entries(requiredCategories)) {
+    const categoryIds = PHRASES
+      .filter(phrase => phrase.category === categoryId)
+      .map(phrase => phrase.id);
+    assert.equal(categoryIds.length, expected, `Kategori ${categoryId} berubah`);
+    const missing = categoryIds.filter(id => !PROGRAM_ITEM_BY_ID[id]);
+    assert.deepEqual(missing, [], `Frasa ${categoryId} belum masuk program: ${missing.join(", ")}`);
+  }
+});
+
+check("pola izin dan keselamatan tetap membedakan LOTO dan work permit", () => {
+  for (const id of ["canq", "could", "may"]) {
+    const pattern = PROGRAM_PATTERN_BY_ID[id];
+    assert.ok(pattern, `Pola ${id} hilang`);
+    assert.match(pattern.safety || "", /LOTO/i, `Pola ${id} tidak menyebut LOTO`);
+    assert.match(pattern.safety || "", /work permit/i, `Pola ${id} tidak menyebut work permit`);
+  }
+  const risky = PROGRAM_DAYS
+    .flatMap(day => day.items)
+    .filter(item => ["psu-04", "safe-09", "rst-02", "help-06"].includes(item.id));
+  assert.ok(risky.length >= 4, "Frasa berisiko tidak lengkap di program");
+  for (const item of risky) {
+    const phrase = PHRASE_BY_ID[item.id];
+    assert.match(phrase.note.toLowerCase(), /loto|work permit|prosedur|izin/, `Catatan keselamatan ${item.id}`);
+  }
 });
 
 check("placeholder [time] dan [name] serta contoh handover tersedia", () => {

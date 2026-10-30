@@ -2,12 +2,11 @@
 
 import { PHRASE_BY_ID } from "../data.js";
 import { icon } from "../icons.js";
+import { getProgramProgress } from "../program.js";
 import { RATING_META } from "../srs.js";
 import {
   getActivity,
-  getDailyPlan,
   getDuePhrases,
-  getPlanProgress,
   getReviewHistory,
   getStats,
   getStorageStatus,
@@ -30,7 +29,7 @@ import {
 
 export const navLabel = "Progres & Review";
 export const title = "Progres & Review";
-export const description = "Pantau frasa yang dipelajari, jadwal review, dan aktivitas belajarmu.";
+export const description = "Pantau progres program 35 hari, frasa yang dipelajari, jadwal review, dan aktivitas belajarmu.";
 
 function activityChartHTML(activity) {
   const max = Math.max(1, ...activity.map(day => day.count));
@@ -122,8 +121,7 @@ function dueListHTML(duePhrases) {
 export function render(ctx) {
   const now = new Date();
   const stats = getStats(now);
-  const plan = getDailyPlan(now);
-  const planProgress = getPlanProgress(plan);
+  const program = getProgramProgress();
   const duePhrases = getDuePhrases(now);
   const activity = getActivity(14, now);
   const history = getReviewHistory(10);
@@ -207,27 +205,26 @@ export function render(ctx) {
           <p class="overview-foot">${icon("info", 15)} Frasa dianggap dikuasai setelah 4 recall sukses berturut-turut dengan interval minimal 14 hari.</p>
         </section>
 
-        <section class="daily-progress-card">
+        <section class="daily-progress-card program-progress-card">
           <div class="overview-head">
             <div>
-              <span class="eyebrow">Target hari ini</span>
-              <h2>${planProgress.total ? `${planProgress.learned} dari ${planProgress.total} frasa` : "Belum ada sesi"}</h2>
+              <span class="eyebrow">Program ${program.totalDays} hari</span>
+              <h2>${program.completeDays} dari ${program.totalDays} hari selesai</h2>
             </div>
-            <span class="daily-status-badge ${planProgress.complete ? "is-done" : ""}">${planProgress.complete ? "Selesai" : planProgress.total ? "Berjalan" : "Kosong"}</span>
+            <span class="daily-status-badge ${program.allComplete ? "is-done" : ""}">${program.allComplete ? "Tuntas" : `Hari ${program.currentDay}`}</span>
           </div>
-          ${progressBarHTML(planProgress.percent, "Target harian")}
-          <p class="daily-progress-note">${planProgress.complete
-            ? "Target hari ini tuntas. Review berikutnya sudah dijadwalkan otomatis."
-            : planProgress.total
-              ? "Selesaikan sisa frasa untuk menuntaskan target harian."
-              : "Semua frasa baru sudah dipelajari. Fokus ke review."}</p>
+          ${progressBarHTML(program.percentPhrases, "Progres frasa program")}
+          <p class="daily-progress-note">${program.allComplete
+            ? "Seluruh hari program sudah dipelajari. Ulangi hari mana pun atau fokus ke review."
+            : `${program.learnedPhrases} dari ${program.totalPhrases} frasa program sudah ditandai. Hari berikutnya: Hari ${program.currentDay}.`}</p>
           <div class="daily-progress-actions">
-            <a class="btn btn-primary btn-sm" href="#/daily">${planProgress.complete ? "Lihat ringkasan" : "Lanjutkan latihan"}</a>
+            <a class="btn btn-primary btn-sm" href="#/daily/${program.currentDay}">${program.allComplete ? "Ulangi hari terakhir" : `Lanjut Hari ${program.currentDay}`}</a>
+            <a class="btn btn-ghost btn-sm" href="#/daily/free">${icon("grid", 15)} Sesi Bebas</a>
             ${stats.due > 0 ? `<a class="btn btn-ghost btn-sm" href="#/recall">Review ${stats.due}</a>` : ""}
           </div>
           <div class="streak-explainer">
-            ${icon("flame", 17)}
-            <span>Streak dihitung dari hari dengan review atau frasa yang ditandai, bukan dari membuka halaman.</span>
+            ${icon("info", 17)}
+            <span>Hari dianggap selesai jika kelima frasa sudah ditandai. Progres dihitung dari data belajar yang sudah ada.</span>
           </div>
         </section>
       </div>
