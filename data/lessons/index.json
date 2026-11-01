@@ -22,5 +22,11 @@
     "moduleId": "M1",
     "title": "Explaining What Happened",
     "difficulty": "Beginner"
+  },
+  {
+    "id": "M1-L05",
+    "moduleId": "M1",
+    "title": "Giving a Basic Troubleshooting Update",
+    "difficulty": "Beginner"
   }
 ]
