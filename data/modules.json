@@ -1,0 +1,50 @@
+[
+  {
+    "id": "M1",
+    "number": 1,
+    "title": "Basic Technical Communication",
+    "level": "Beginner",
+    "description": "Introduce yourself, describe locations and machines, and handle short technical calls with confidence.",
+    "lessonCount": 5
+  },
+  {
+    "id": "M2",
+    "number": 2,
+    "title": "Machine Troubleshooting",
+    "level": "Beginner–Elementary",
+    "description": "Explain symptoms, check simple causes, and report what you find in clear technical English.",
+    "lessonCount": 5
+  },
+  {
+    "id": "M3",
+    "number": 3,
+    "title": "Remote Technical Support",
+    "level": "Elementary",
+    "description": "Coordinate remote sessions, follow instructions, and confirm each step before moving on.",
+    "lessonCount": 5
+  },
+  {
+    "id": "M4",
+    "number": 4,
+    "title": "Maintenance and Repair",
+    "level": "Elementary",
+    "description": "Talk about inspections, replacement parts, testing, and safe handover after repair work.",
+    "lessonCount": 5
+  },
+  {
+    "id": "M5",
+    "number": 5,
+    "title": "Customer Communication",
+    "level": "Elementary–Intermediate",
+    "description": "Discuss downtime, approvals, schedules, and operational impact with airport customers.",
+    "lessonCount": 5
+  },
+  {
+    "id": "M6",
+    "number": 6,
+    "title": "Technical Reporting",
+    "level": "Intermediate",
+    "description": "Report root causes, escalate issues, and write clear handover summaries for the next team.",
+    "lessonCount": 5
+  }
+]
