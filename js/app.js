@@ -5,9 +5,15 @@ import { teleprompterView } from "./views/teleprompter.js";
 import { shadowingView } from "./views/shadowing.js";
 import { notFoundView } from "./views/not-found.js";
 import { esc } from "./utils.js";
+import { icon } from "./icons.js";
 
 const app = document.querySelector("#app");
 const navLinks = [...document.querySelectorAll("[data-nav]")];
+
+document.querySelectorAll("[data-bottom-icon]").forEach(node => {
+  const name = node.dataset.bottomIcon === "home" ? "home" : "library";
+  node.innerHTML = icon(name, 20);
+});
 let cleanupCurrent = () => {};
 let navigationToken = 0;
 
