@@ -2,6 +2,10 @@ import { getPreferences, updatePreferences } from "../store.js";
 import { icon } from "../icons.js";
 import { esc } from "../utils.js";
 
+const PIXELS_PER_SPEED_UNIT = 10;
+const MAX_FRAME_SECONDS = 0.1;
+const SCROLL_KEYS = new Set(["ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End"]);
+
 export function teleprompterHTML(lesson) {
   const prefs = getPreferences("teleprompter");
   return `
@@ -104,6 +108,7 @@ export function mountTeleprompter(root, lesson) {
   let wakeLockRequest = null;
   let disposed = false;
   let currentIndex = -1;
+  let scrollPosition = scroll.scrollTop;
 
   function formatSpeed(value, suffix = "") {
     return `${value}${suffix}`;
@@ -127,6 +132,10 @@ export function mountTeleprompter(root, lesson) {
     spacers.forEach(spacer => {
       spacer.style.height = `${height}px`;
     });
+  }
+
+  function syncScrollPosition() {
+    scrollPosition = scroll.scrollTop;
   }
 
   function markCurrent(index) {
@@ -162,15 +171,23 @@ export function mountTeleprompter(root, lesson) {
     markCurrent(winner);
   }
 
-  function setPlaying(next) {
-    if (playing === next) return;
-    playing = next;
+  function renderPlayState() {
     stopButton.innerHTML = playing
       ? `${icon("pause", 18)} <span>Pause</span>`
       : `${icon("play", 18)} <span>Play</span>`;
     page.classList.toggle("is-playing", playing);
+  }
+
+  function setPlaying(next) {
+    if (playing === next) {
+      renderPlayState();
+      return;
+    }
+    playing = next;
+    renderPlayState();
 
     if (playing) {
+      scrollPosition = scroll.scrollTop;
       lastTime = performance.now();
       raf = requestAnimationFrame(tick);
       requestWakeLock();
@@ -183,17 +200,21 @@ export function mountTeleprompter(root, lesson) {
 
   function tick(time) {
     if (!playing) return;
-    const delta = Math.min(0.06, Math.max(0, (time - lastTime) / 1000));
+    const delta = Math.min(MAX_FRAME_SECONDS, Math.max(0, (time - lastTime) / 1000));
     lastTime = time;
-    const pixelsPerSecond = 6 + prefs.speed * 8;
-    scroll.scrollTop += pixelsPerSecond * delta;
-    updateCurrent();
 
-    const max = scroll.scrollHeight - scroll.clientHeight;
-    if (scroll.scrollTop >= max - 1) {
+    const max = Math.max(0, scroll.scrollHeight - scroll.clientHeight);
+    scrollPosition += prefs.speed * PIXELS_PER_SPEED_UNIT * delta;
+    if (scrollPosition >= max) {
+      scrollPosition = max;
+      scroll.scrollTop = max;
+      updateCurrent();
       setPlaying(false);
       return;
     }
+
+    scroll.scrollTop = scrollPosition;
+    updateCurrent();
     raf = requestAnimationFrame(tick);
   }
 
@@ -233,14 +254,20 @@ export function mountTeleprompter(root, lesson) {
 
   function restart() {
     setPlaying(false);
+    scrollPosition = 0;
     scroll.scrollTop = 0;
     updateCurrent();
   }
 
   function togglePlay() {
     if (!playing) {
-      const max = scroll.scrollHeight - scroll.clientHeight;
-      if (scroll.scrollTop >= max - 1) scroll.scrollTop = 0;
+      const max = Math.max(0, scroll.scrollHeight - scroll.clientHeight);
+      if (scrollPosition >= max - 0.5) {
+        scrollPosition = 0;
+        scroll.scrollTop = 0;
+      } else {
+        scrollPosition = scroll.scrollTop;
+      }
       updateCurrent();
     }
     setPlaying(!playing);
@@ -248,9 +275,12 @@ export function mountTeleprompter(root, lesson) {
 
   function onUserScroll() {
     if (playing) setPlaying(false);
+    scrollPosition = scroll.scrollTop;
   }
 
   function onScroll() {
+    // Programmatic scrollTop updates also emit "scroll". Never pause here;
+    // pause only on real user input such as wheel, touch, pointer, or keys.
     updateCurrent();
   }
 
@@ -263,18 +293,22 @@ export function mountTeleprompter(root, lesson) {
     prefs = updatePreferences("teleprompter", { fontSize: fontInput.value });
     applyPreferences();
     updateSpacers();
+    syncScrollPosition();
     updateCurrent();
   }
 
   function onSpaceInput() {
     prefs = updatePreferences("teleprompter", { lineSpacing: spaceInput.value });
     applyPreferences();
+    syncScrollPosition();
     updateCurrent();
   }
 
   function onLanguage() {
     prefs = updatePreferences("teleprompter", { showIndonesian: !prefs.showIndonesian });
     applyPreferences();
+    syncScrollPosition();
+    updateCurrent();
   }
 
   function onFullscreen() {
@@ -294,22 +328,37 @@ export function mountTeleprompter(root, lesson) {
       : `${icon("expand", 17)} <span>Fullscreen</span>`;
     window.setTimeout(() => {
       updateSpacers();
+      syncScrollPosition();
       updateCurrent();
     }, 50);
   }
 
   function onKeydown(event) {
     if (event.target instanceof HTMLInputElement) return;
+
     if (event.code === "Space") {
+      // Let a focused button handle Space itself, otherwise the page handler
+      // and the button's click would toggle playback twice.
+      if (event.target instanceof HTMLButtonElement) return;
       event.preventDefault();
       togglePlay();
-    } else if (event.key.toLowerCase() === "r") {
+      return;
+    }
+
+    if (event.key.toLowerCase() === "r") {
       restart();
+      return;
+    }
+
+    if (SCROLL_KEYS.has(event.key)) {
+      if (playing) setPlaying(false);
+      requestAnimationFrame(syncScrollPosition);
     }
   }
 
   function onResize() {
     updateSpacers();
+    syncScrollPosition();
     updateCurrent();
   }
 
@@ -336,6 +385,7 @@ export function mountTeleprompter(root, lesson) {
   applyPreferences();
   requestAnimationFrame(() => {
     updateSpacers();
+    syncScrollPosition();
     updateCurrent();
   });
 
