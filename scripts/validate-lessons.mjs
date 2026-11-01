@@ -242,10 +242,66 @@ for (const filename of lessonFiles) {
     }
   }
 
+  if (Array.isArray(lesson.keyExpressions)) {
+    lesson.keyExpressions.forEach((item, index) => {
+      if (!item || typeof item !== "object") {
+        fail(relativePath, `keyExpressions[${index}] is not an object`);
+        return;
+      }
+      for (const field of ["english", "indonesian"]) {
+        if (!present(item[field])) {
+          fail(relativePath, `keyExpressions[${index}].${field} is missing`);
+        }
+      }
+    });
+  }
+
+  if (Array.isArray(lesson.sentencePatterns)) {
+    lesson.sentencePatterns.forEach((item, index) => {
+      if (!item || typeof item !== "object") {
+        fail(relativePath, `sentencePatterns[${index}] is not an object`);
+        return;
+      }
+      for (const field of ["pattern", "explanation"]) {
+        if (!present(item[field])) {
+          fail(relativePath, `sentencePatterns[${index}].${field} is missing`);
+        }
+      }
+      const examples = Array.isArray(item.examples)
+        ? item.examples
+        : present(item.example)
+          ? [item.example]
+          : [];
+      if (examples.length === 0) {
+        fail(relativePath, `sentencePatterns[${index}] needs at least one example`);
+      } else if (examples.some(example => !present(example))) {
+        fail(relativePath, `sentencePatterns[${index}] has an empty example`);
+      }
+    });
+  }
+
+  if (Array.isArray(lesson.learningNotes)) {
+    lesson.learningNotes.forEach((note, index) => {
+      if (!present(note)) fail(relativePath, `learningNotes[${index}] is empty`);
+    });
+  }
+
   if (!Array.isArray(lesson.pronunciationNotes) ||
       lesson.pronunciationNotes.length < 1 ||
       lesson.pronunciationNotes.length > 2) {
     fail(relativePath, "pronunciationNotes must contain 1–2 notes");
+  } else {
+    lesson.pronunciationNotes.forEach((item, index) => {
+      if (!item || typeof item !== "object") {
+        fail(relativePath, `pronunciationNotes[${index}] is not an object`);
+        return;
+      }
+      for (const field of ["title", "note"]) {
+        if (!present(item[field])) {
+          fail(relativePath, `pronunciationNotes[${index}].${field} is missing`);
+        }
+      }
+    });
   }
 
   if (errors.length === 0 || !errors.some(message => message.startsWith(relativePath))) {

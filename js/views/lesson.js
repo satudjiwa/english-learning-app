@@ -138,13 +138,20 @@ export async function lessonView(root, { id }) {
           </div>
           ${listOrFallback(lesson.sentencePatterns, items => `
             <ul class="pattern-list">
-              ${items.map(item => `
-                <li class="pattern-item">
-                  <span class="pattern-form">${esc(item.pattern)}</span>
-                  <p class="pattern-explanation">${esc(item.explanation)}</p>
-                  ${item.example ? `<p class="pattern-example" lang="en">“${esc(item.example)}”</p>` : ""}
-                </li>
-              `).join("")}
+              ${items.map(item => {
+                const examples = Array.isArray(item.examples) && item.examples.length
+                  ? item.examples
+                  : item.example
+                    ? [item.example]
+                    : [];
+                return `
+                  <li class="pattern-item">
+                    <span class="pattern-form">${esc(item.pattern)}</span>
+                    <p class="pattern-explanation">${esc(item.explanation)}</p>
+                    ${examples.map(example => `<p class="pattern-example" lang="en">“${esc(example)}”</p>`).join("")}
+                  </li>
+                `;
+              }).join("")}
             </ul>
           `)}
         </section>
