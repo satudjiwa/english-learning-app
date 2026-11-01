@@ -1,3 +1,4 @@
+import { statSync } from "node:fs";
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 
@@ -22,6 +23,14 @@ function fail(file, message) {
 
 function present(value) {
   return typeof value === "string" && value.trim().length > 0;
+}
+
+function audioFileExists(relativePath) {
+  try {
+    return statSync(path.join(ROOT, relativePath)).isFile();
+  } catch {
+    return false;
+  }
 }
 
 function normalizeLevel(value) {
@@ -201,6 +210,9 @@ for (const filename of lessonFiles) {
           } else if (Number(sentenceNumber) !== lineIndex + 1) {
             fail(relativePath, `${position}.audio should use sentence-${String(lineIndex + 1).padStart(2, "0")}.mp3`);
           }
+          if (!audioFileExists(line.audio)) {
+            fail(relativePath, `${position}.audio points to a missing file: ${line.audio}`);
+          }
         }
       }
     });
@@ -217,6 +229,9 @@ for (const filename of lessonFiles) {
       }
       if (audioLessonId !== lesson.id) {
         fail(relativePath, `fullAudio points to ${audioLessonId}, not ${lesson.id}`);
+      }
+      if (!audioFileExists(lesson.fullAudio)) {
+        fail(relativePath, `fullAudio points to a missing file: ${lesson.fullAudio}`);
       }
     }
   }

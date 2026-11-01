@@ -4,7 +4,7 @@
  * Cached assets keep the app usable offline after the first visit.
  */
 
-const CACHE = "small-steps-v2-shell-3";
+const CACHE = "small-steps-v2-shell-4";
 const SHELL = [
   "./",
   "./index.html",

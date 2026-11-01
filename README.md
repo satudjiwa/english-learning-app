@@ -11,6 +11,8 @@ preserved by the `backup-before-rebuild` tag.
 
 - **6 modules** with titles, levels, descriptions, and five planned lesson slots each.
 - **1 finished lesson**: `M1-L01 — Introducing Yourself as a Service Engineer`.
+- **Real MP3 audio** for `M1-L01`: 16 sentence files plus `full.mp3`, generated
+  with Piper TTS (neural, not human).
 - **29 “Coming soon” slots** that are visible but not clickable.
 - **Teleprompter** and **Shadowing** are reusable components driven by lesson JSON.
 - No backend, no login, no paid API, and no build framework.
@@ -38,6 +40,9 @@ manifest.webmanifest           installable PWA metadata
 sw.js                          offline app shell and runtime cache
 icon.svg                       app icon
 
+public/
+  audio/M1/M1-L01/             real MP3s (sentence-01…16.mp3, full.mp3)
+
 data/
   modules.json                 six modules and planned lesson counts
   lessons/
@@ -60,6 +65,10 @@ scripts/
   validate-lessons.mjs         lesson/schema validation
   build.mjs                    static `_site/` build
   serve.mjs                    dependency-free local server
+
+tools/
+  generate_audio.py            local Piper → MP3 generator
+  voices/                      local Piper models and tracked model cards
 
 .github/workflows/pages.yml    validate -> build -> deploy to GitHub Pages
 ```
@@ -110,8 +119,8 @@ Adding a lesson means adding its JSON file **and** its index entry.
   - Elementary–Intermediate: 14–20
   - Intermediate: 14–20
 - optional audio paths match
-  `public/audio/M{1-6}/M{1-6}-L{NN}/sentence-{NN}.mp3` or `.../full.mp3`
-  and belong to the same lesson;
+  `public/audio/M{1-6}/M{1-6}-L{NN}/sentence-{NN}.mp3` or `.../full.mp3`,
+  belong to the same lesson, and point to a real file;
 - each lesson has key expressions, sentence patterns, learning notes, and 1–2
   pronunciation notes.
 
@@ -125,17 +134,63 @@ Audio paths come only from lesson data. Components do not hard-code file names.
    synthesis and shows **“Computer voice — temporary”**.
 3. If speech synthesis also fails, the app shows **“Audio unavailable”**.
 
-There are currently **no MP3 files** in this repository. No placeholder or empty
-MP3s were created. Teleprompter and Shadowing therefore use the browser voice.
-Add real files later at the paths above and they will be used automatically:
+`M1-L01` ships with real audio:
 
 ```text
 public/audio/M1/M1-L01/
-  sentence-01.mp3 ... sentence-16.mp3
+  sentence-01.mp3 … sentence-16.mp3
   full.mp3
 ```
 
-The build script copies `public/` into `_site/` when it exists.
+The build copies `public/` into `_site/public/`, so the app requests
+`public/audio/...` relative to the deployed root. There is no separate `audio/`
+folder on the deployed site.
+
+Generated with Piper TTS (neural, not human).
+
+### Generate audio with Piper
+
+Requirements: Python 3.10+, `ffmpeg`, and local Piper voices. Models are large and
+stay local; `.gitignore` excludes `*.onnx` and `*.onnx.json`. The small
+`*.MODEL_CARD` files are tracked so the voice licenses remain visible.
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install piper-tts
+.venv/bin/python -m piper.download_voices \
+  en_US-ryan-medium en_US-hfc_female-medium --download-dir tools/voices
+
+export PIPER_BIN=.venv/bin/piper
+python3 tools/generate_audio.py --lesson M1-L01
+```
+
+Voice mapping is editable at the top of `tools/generate_audio.py`:
+
+| Speaker | Piper voice | Model-card license |
+| --- | --- | --- |
+| Technician | `en_US-ryan-medium` | CC BY-NC-SA 4.0 |
+| Remote Engineer | `en_US-hfc_female-medium` | CC BY-NC-SA 4.0 |
+| any other speaker | fallback to the Technician voice | — |
+
+The generator:
+
+- reads `data/lessons/index.json` when using `--all`;
+- synthesizes each dialogue line with Piper;
+- converts WAV to mono 128 kbps MP3 with ffmpeg;
+- writes `sentence-01.mp3` … and `full.mp3` with 0.6 seconds of silence between
+  sentences;
+- skips files that already exist unless `--force` is passed;
+- updates each lesson JSON only for files that really exist.
+
+```bash
+python3 tools/generate_audio.py --lesson M1-L01
+python3 tools/generate_audio.py --all
+python3 tools/generate_audio.py --lesson M1-L01 --force
+```
+
+The model cards are at `tools/voices/*.MODEL_CARD`. Both current voices use
+non-commercial dataset licenses; review them before any commercial use. Piper
+prints each voice’s license from its model card on every generator run.
 
 ## Progress and preferences
 
@@ -190,6 +245,12 @@ npm test                   # validate only
 npm run serve              # local server at http://localhost:8080/
 ```
 
+Audio generation is separate from npm:
+
+```bash
+python3 tools/generate_audio.py --lesson M1-L01
+```
+
 There are no npm dependencies to install. A local server is required because the app
 loads lesson JSON with `fetch`; opening `index.html` with `file://` will not work.
 
@@ -214,7 +275,9 @@ lives on branch `rebuild-v2` until it is merged.
 ## Known limitations
 
 - Only `M1-L01` is written; the other 29 lesson slots are intentionally “Coming soon”.
-- No MP3 files are included yet, so audio depends on browser speech synthesis.
+- Only `M1-L01` has generated MP3s. Lessons added without audio fall back to browser
+  speech synthesis.
+- Piper audio is neural, not human; pronunciation and prosody are synthetic.
 - Computer voice quality varies by device and browser; some environments have no
   speech engine and correctly show “Audio unavailable”.
 - Shadowing is self-practice only: there is no microphone recording, pronunciation

@@ -11,3 +11,14 @@ node_modules/
 
 # Local staging for the Pages deploy workflow
 _site/
+
+# Python local environment and cache
+.venv/
+__pycache__/
+*.pyc
+
+# Piper TTS models are large and must never be committed.
+# Voice model cards stay tracked so their licenses are visible.
+tools/voices/*.onnx
+tools/voices/*.onnx.json
+tools/piper/
