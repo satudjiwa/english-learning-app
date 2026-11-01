@@ -4,5 +4,11 @@
     "moduleId": "M1",
     "title": "Introducing Yourself as a Service Engineer",
     "difficulty": "Beginner"
+  },
+  {
+    "id": "M1-L02",
+    "moduleId": "M1",
+    "title": "Starting a Technical Support Call",
+    "difficulty": "Beginner"
   }
 ]

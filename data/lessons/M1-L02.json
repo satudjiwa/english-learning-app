@@ -1,0 +1,171 @@
+{
+  "id": "M1-L02",
+  "moduleId": "M1",
+  "title": "Starting a Technical Support Call",
+  "difficulty": "Beginner",
+  "situation": "Alex is at the airport and calls technical support because the baggage scanner is not ready. He gives the machine ID and location, spells the ID, waits while support checks the record, and closes the call politely.",
+  "objective": "Start a support call, identify the machine and location, spell a machine ID, wait politely, and close the call.",
+  "dialogue": [
+    {
+      "speaker": "Remote Engineer",
+      "english": "Good morning, technical support. Sam speaking.",
+      "indonesian": "Selamat pagi, dukungan teknis. Saya Sam."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Good morning, Sam. This is Alex from the airport service team.",
+      "indonesian": "Selamat pagi, Sam. Ini Alex dari tim layanan bandara."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Hello, Alex. What can I do for you today?",
+      "indonesian": "Halo, Alex. Ada yang bisa saya bantu hari ini?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "I am calling about the baggage scanner on line two.",
+      "indonesian": "Saya menelepon soal pemindai bagasi di jalur dua."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Thank you. What is the machine ID?",
+      "indonesian": "Terima kasih. Apa ID mesinnya?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "The machine ID is B-H-S seven-two.",
+      "indonesian": "ID mesinnya B-H-S tujuh dua."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Sorry, could you spell that for me?",
+      "indonesian": "Maaf, bisa Anda eja untuk saya?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Yes. B, H, S, seven, two.",
+      "indonesian": "Baik. B, H, S, tujuh, dua."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Thank you. Please wait a moment while I check the record.",
+      "indonesian": "Terima kasih. Mohon tunggu sebentar sementara saya memeriksa catatannya."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Okay, I will wait.",
+      "indonesian": "Baik, saya tunggu."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Thank you for waiting. I found the machine record.",
+      "indonesian": "Terima kasih sudah menunggu. Saya menemukan catatan mesinnya."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Great. Can you help me with the startup problem?",
+      "indonesian": "Bagus. Bisakah Anda membantu saya dengan masalah saat menyalakan mesin?"
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Yes. I will open a support ticket and send you the first step.",
+      "indonesian": "Tentu. Saya akan membuka tiket dukungan dan mengirimkan langkah pertamanya."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Thank you, Sam. I will wait for the ticket. Goodbye.",
+      "indonesian": "Terima kasih, Sam. Saya akan menunggu tiketnya. Selamat tinggal."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Goodbye, Alex. Have a good day.",
+      "indonesian": "Selamat tinggal, Alex. Semoga harimu menyenangkan."
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "Good morning, technical support. Sam speaking.",
+      "indonesian": "Selamat pagi, dukungan teknis. Saya Sam.",
+      "note": "Sebutkan nama saat menerima panggilan."
+    },
+    {
+      "english": "This is Alex from the airport service team.",
+      "indonesian": "Ini Alex dari tim layanan bandara.",
+      "note": "Gunakan This is ... untuk memperkenalkan diri di telepon."
+    },
+    {
+      "english": "I am calling about the baggage scanner on line two.",
+      "indonesian": "Saya menelepon soal pemindai bagasi di jalur dua.",
+      "note": "Sebutkan mesin dan lokasinya di awal panggilan."
+    },
+    {
+      "english": "What is the machine ID?",
+      "indonesian": "Apa ID mesinnya?",
+      "note": "ID adalah singkatan dari identification."
+    },
+    {
+      "english": "The machine ID is B-H-S seven-two.",
+      "indonesian": "ID mesinnya B-H-S tujuh dua.",
+      "note": "Eja huruf dan angka dengan jelas."
+    },
+    {
+      "english": "Please wait a moment while I check the record.",
+      "indonesian": "Mohon tunggu sebentar sementara saya memeriksa catatannya.",
+      "note": "Frasa sopan untuk meminta waktu."
+    },
+    {
+      "english": "I will open a support ticket and send you the first step.",
+      "indonesian": "Saya akan membuka tiket dukungan dan mengirimkan langkah pertamanya.",
+      "note": "Sebutkan tindakan berikutnya dengan jelas."
+    }
+  ],
+  "sentencePatterns": [
+    {
+      "pattern": "This is + name + from + place.",
+      "explanation": "Memperkenalkan diri saat menelepon.",
+      "examples": [
+        "This is Alex from the airport service team.",
+        "This is Sam from technical support."
+      ]
+    },
+    {
+      "pattern": "I am calling about + noun.",
+      "explanation": "Menyebutkan alasan panggilan.",
+      "examples": [
+        "I am calling about the baggage scanner on line two.",
+        "I am calling about a problem with the display."
+      ]
+    },
+    {
+      "pattern": "Could you + verb + ...?",
+      "explanation": "Permintaan sopan, misalnya meminta seseorang mengeja.",
+      "examples": [
+        "Could you spell that for me?",
+        "Could you check the machine record?"
+      ]
+    },
+    {
+      "pattern": "Please wait + time + while I + verb.",
+      "explanation": "Meminta seseorang menunggu dengan sopan.",
+      "examples": [
+        "Please wait a moment while I check the record.",
+        "Please wait a minute while I open the ticket."
+      ]
+    }
+  ],
+  "learningNotes": [
+    "Sebutkan nama, mesin, dan lokasi di awal panggilan agar lawan bicara cepat memahami situasi.",
+    "Saat mengeja ID, beri jeda singkat di antara huruf dan angka.",
+    "Tutup panggilan dengan mengulang tindakan berikutnya dan berterima kasih."
+  ],
+  "pronunciationNotes": [
+    {
+      "title": "scanner",
+      "note": "Tekanan ada di suku kata pertama: SKAN-ner (/ˈskænər/). Akhiran -er diucapkan ringan."
+    },
+    {
+      "title": "technical",
+      "note": "Tekanan ada di suku kata pertama: TEK-ni-kal. Bunyi ch adalah /k/, bukan /tʃ/."
+    }
+  ]
+}
