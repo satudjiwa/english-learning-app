@@ -1,0 +1,166 @@
+{
+  "id": "M1-L04",
+  "moduleId": "M1",
+  "title": "Explaining What Happened",
+  "difficulty": "Beginner",
+  "situation": "The X-ray machine stopped earlier that morning. Sam asks Alex to explain when it started, what he saw, what he did first, and what he did not do.",
+  "objective": "Explain a past event in order using simple past tense, answer short follow-up questions, and describe actions you did and did not take.",
+  "dialogue": [
+    {
+      "speaker": "Remote Engineer",
+      "english": "Alex, can you tell me what happened this morning?",
+      "indonesian": "Alex, bisakah Anda menceritakan apa yang terjadi pagi ini?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Yes. The X-ray machine stopped at eight thirty.",
+      "indonesian": "Bisa. Mesin X-ray berhenti pada pukul delapan tiga puluh."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Where were you when it stopped?",
+      "indonesian": "Di mana Anda saat mesin itu berhenti?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "I was near the screening line. I saw a red light on the panel.",
+      "indonesian": "Saya berada di dekat jalur pemeriksaan. Saya melihat lampu merah di panel."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "What did you do first?",
+      "indonesian": "Apa yang pertama Anda lakukan?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "I pressed the reset button once.",
+      "indonesian": "Saya menekan tombol reset satu kali."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Did the machine start again?",
+      "indonesian": "Apakah mesinnya menyala lagi?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Yes, it started for a moment, and then it stopped again.",
+      "indonesian": "Ya, mesin menyala sebentar, lalu berhenti lagi."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Did you open the side door?",
+      "indonesian": "Apakah Anda membuka pintu samping?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "No, I did not open the side door. I did not move the machine.",
+      "indonesian": "Tidak, saya tidak membuka pintu samping. Saya tidak memindahkan mesinnya."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Did you call your supervisor?",
+      "indonesian": "Apakah Anda menelepon supervisor Anda?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Yes, I called Jordan, my supervisor, and I wrote down the time.",
+      "indonesian": "Ya, saya menelepon Jordan, supervisor saya, dan mencatat waktunya."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Thank you. That is clear. I will check the error history and call you back.",
+      "indonesian": "Terima kasih. Jelas sekali. Saya akan memeriksa riwayat error dan menelepon Anda kembali."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Okay, Sam. Thank you.",
+      "indonesian": "Baik, Sam. Terima kasih."
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "The X-ray machine stopped at eight thirty.",
+      "indonesian": "Mesin X-ray berhenti pada pukul delapan tiga puluh.",
+      "note": "Gunakan simple past untuk kejadian yang sudah selesai."
+    },
+    {
+      "english": "I was near the screening line.",
+      "indonesian": "Saya berada di dekat jalur pemeriksaan.",
+      "note": "Was adalah bentuk past dari am dan is."
+    },
+    {
+      "english": "I saw a red light on the panel.",
+      "indonesian": "Saya melihat lampu merah di panel.",
+      "note": "Saw adalah bentuk past dari see."
+    },
+    {
+      "english": "I pressed the reset button once.",
+      "indonesian": "Saya menekan tombol reset satu kali.",
+      "note": "Pressed menunjukkan tindakan yang sudah dilakukan."
+    },
+    {
+      "english": "It started for a moment, and then it stopped again.",
+      "indonesian": "Mesin menyala sebentar, lalu berhenti lagi.",
+      "note": "Then membantu menunjukkan urutan kejadian."
+    },
+    {
+      "english": "I did not open the side door.",
+      "indonesian": "Saya tidak membuka pintu samping.",
+      "note": "Gunakan did not + kata kerja dasar."
+    },
+    {
+      "english": "I called Jordan, my supervisor, and I wrote down the time.",
+      "indonesian": "Saya menelepon Jordan, supervisor saya, dan mencatat waktunya.",
+      "note": "Sebutkan tindakan dan informasi yang dicatat."
+    }
+  ],
+  "sentencePatterns": [
+    {
+      "pattern": "The + noun + stopped at + time.",
+      "explanation": "Menceritakan kapan suatu mesin berhenti.",
+      "examples": [
+        "The X-ray machine stopped at eight thirty.",
+        "The belt stopped at ten fifteen."
+      ]
+    },
+    {
+      "pattern": "I saw + noun + on + place.",
+      "explanation": "Menceritakan apa yang dilihat dan di mana.",
+      "examples": [
+        "I saw a red light on the panel.",
+        "I saw a warning message on the screen."
+      ]
+    },
+    {
+      "pattern": "I pressed + noun + once.",
+      "explanation": "Menceritakan tindakan pertama yang dilakukan.",
+      "examples": [
+        "I pressed the reset button once.",
+        "I pressed the start button once."
+      ]
+    },
+    {
+      "pattern": "I did not + verb + noun.",
+      "explanation": "Menyebutkan tindakan yang tidak dilakukan.",
+      "examples": [
+        "I did not open the side door.",
+        "I did not move the machine."
+      ]
+    }
+  ],
+  "learningNotes": [
+    "Gunakan simple past untuk kejadian yang sudah selesai: stopped, saw, pressed.",
+    "Untuk kalimat negatif, gunakan did not + kata kerja dasar: did not open.",
+    "Ceritakan urutan kejadian dengan kata first, then, dan and then."
+  ],
+  "pronunciationNotes": [
+    {
+      "title": "stopped",
+      "note": "Bunyi akhir -ed adalah /t/: stopt."
+    },
+    {
+      "title": "pressed",
+      "note": "Bunyi akhir -ed adalah /t/: prest."
+    }
+  ]
+}

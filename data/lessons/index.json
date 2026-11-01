@@ -16,5 +16,11 @@
     "moduleId": "M1",
     "title": "Reporting a Machine Problem",
     "difficulty": "Beginner"
+  },
+  {
+    "id": "M1-L04",
+    "moduleId": "M1",
+    "title": "Explaining What Happened",
+    "difficulty": "Beginner"
   }
 ]
