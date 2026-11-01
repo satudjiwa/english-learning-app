@@ -1,13 +1,13 @@
 {
-  "name": "English for Service Engineer",
-  "short_name": "Service English",
-  "description": "Latihan bahasa Inggris praktis untuk service engineer dan teknisi bandara Indonesia.",
+  "name": "Small Steps English",
+  "short_name": "Small Steps",
+  "description": "Calm English speaking practice for Indonesian airport service engineers.",
   "lang": "id",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f3f5f7",
-  "theme_color": "#0b2239",
+  "background_color": "#12161b",
+  "theme_color": "#12161b",
   "icons": [
     {
       "src": "icon.svg",
