@@ -2969,3 +2969,478 @@ body.sheet-open {
     font-size: 18px;
   }
 }
+
+/* ==========================================================================
+   UX overhaul: shadowing stepper, dock, transcript
+   ========================================================================== */
+
+.sh-page {
+  padding: 0 14px calc(150px + env(safe-area-inset-bottom));
+}
+
+.sh-page .mode-bar {
+  margin-right: -14px;
+  margin-left: -14px;
+  padding-right: 14px;
+  padding-left: 14px;
+}
+
+.how-to {
+  margin-top: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+}
+
+.how-to summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 14px;
+  color: var(--text-soft);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 650;
+  list-style: none;
+}
+
+.how-to summary::-webkit-details-marker {
+  display: none;
+}
+
+.how-to summary small {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.how-to summary::after {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  content: "";
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.15s ease;
+}
+
+.how-to[open] summary::after {
+  transform: rotate(-135deg) translateY(-2px);
+}
+
+.how-to-list {
+  display: grid;
+  gap: 10px;
+  padding: 0 14px 14px;
+}
+
+.how-to-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.how-to-number {
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  flex: none;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--bg-deep);
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.how-to-list strong {
+  color: var(--text-soft);
+  font-size: 15px;
+}
+
+.how-to-list p {
+  margin-top: 1px;
+}
+
+.sh-stepper {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.sh-stepper-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.sh-stepper-title {
+  min-width: 0;
+}
+
+.sh-stepper-title .eyebrow {
+  font-size: 9px;
+}
+
+.sh-stepper-title strong {
+  display: block;
+  margin-top: 2px;
+  font-size: 19px;
+  line-height: 1.15;
+}
+
+.sh-next-step {
+  flex: none;
+  min-height: 44px;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.sh-step-track {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 4px;
+  margin-top: 10px;
+}
+
+.sh-step-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  min-width: 0;
+  min-height: 48px;
+  padding: 2px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg-deep);
+  color: var(--muted);
+  text-align: center;
+}
+
+.sh-step-dot > span {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.sh-step-dot small {
+  max-width: 100%;
+  overflow: hidden;
+  font-size: 8.5px;
+  font-weight: 550;
+  line-height: 1.1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sh-step-dot.is-active {
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.sh-step-dot:hover {
+  border-color: var(--line-strong);
+  color: var(--text);
+}
+
+.sh-step-note {
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.sh-layout {
+  display: block;
+  padding-top: 12px;
+}
+
+.sh-player {
+  padding: 14px;
+}
+
+.sh-player-head {
+  align-items: center;
+}
+
+.sh-current {
+  min-height: 176px;
+  padding: 14px 0;
+}
+
+.sh-en {
+  margin-top: 6px;
+  font-size: clamp(22px, 6.4vw, 29px);
+  line-height: 1.32;
+}
+
+.sh-id {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.sh-text-hint {
+  margin-top: 6px;
+  color: var(--accent-strong);
+  font-size: 14px;
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.sh-turn-hint {
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: 1px solid rgba(232, 201, 138, 0.32);
+  border-radius: 8px;
+  background: rgba(232, 201, 138, 0.1);
+  color: var(--warning);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.sh-page.is-en-hidden .sh-en,
+.sh-page.is-all-en-hidden .sh-line-en {
+  display: none;
+}
+
+.sh-page.is-id-hidden .sh-id,
+.sh-page.is-id-hidden .sh-line-id {
+  display: none;
+}
+
+.audio-status {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.sh-transcript-card {
+  margin-top: 12px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.sh-transcript-card > summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 52px;
+  padding: 0 16px;
+  color: var(--text-soft);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 650;
+  list-style: none;
+}
+
+.sh-transcript-card > summary::-webkit-details-marker {
+  display: none;
+}
+
+.sh-transcript-card > summary small {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.sh-transcript-card > summary::after {
+  width: 8px;
+  height: 8px;
+  flex: none;
+  border-right: 2px solid var(--muted);
+  border-bottom: 2px solid var(--muted);
+  content: "";
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 0.15s ease;
+}
+
+.sh-transcript-card[open] > summary::after {
+  transform: rotate(-135deg) translateY(-2px);
+}
+
+.sh-transcript {
+  max-height: 340px;
+  margin: 0 16px 16px;
+  gap: 3px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.sh-line {
+  min-height: 44px;
+  padding: 10px 8px;
+}
+
+.sh-line-number {
+  font-size: 10px;
+}
+
+.sh-line-speaker {
+  font-size: 9px;
+}
+
+.sh-line-en {
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.sh-line-id {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.sh-player-dock {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 36;
+  padding: 8px 12px max(8px, env(safe-area-inset-bottom));
+  border-top: 1px solid var(--line);
+  background: var(--bg-deep);
+}
+
+.sh-dock-inner {
+  width: min(720px, 100%);
+  margin: 0 auto;
+}
+
+.sh-dock-controls {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) 52px 52px;
+  gap: 8px;
+  align-items: center;
+}
+
+.sh-dock-btn {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  min-height: 52px;
+  border: 1px solid var(--line-strong);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text-soft);
+}
+
+.sh-dock-btn:hover {
+  border-color: var(--accent-border);
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+.sh-dock-btn:disabled {
+  color: var(--muted-2);
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.sh-dock-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-width: 0;
+  min-height: 56px;
+  padding: 8px 12px;
+  border: 1px solid var(--accent);
+  border-radius: 14px;
+  background: var(--accent);
+  color: #0b1624;
+  font-size: 17px;
+  font-weight: 720;
+}
+
+.sh-dock-play:hover {
+  border-color: var(--accent-strong);
+  background: var(--accent-strong);
+}
+
+.sh-dock-speed {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.sh-dock-speed .chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 6px 8px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg-deep);
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.sh-dock-speed .chip:hover {
+  border-color: var(--line-strong);
+  color: var(--text);
+}
+
+.sh-dock-speed .chip.is-active {
+  border-color: var(--accent-border);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.sheet .check-row {
+  gap: 10px;
+  min-height: 48px;
+  padding: 0 4px;
+  color: var(--text-soft);
+  font-size: 16px;
+}
+
+.sheet .check-row input {
+  width: 22px;
+  height: 22px;
+}
+
+.sheet-note {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 420px) {
+  .sh-step-dot small {
+    font-size: 8px;
+  }
+
+  .sh-stepper-title strong {
+    font-size: 17px;
+  }
+
+  .sh-next-step {
+    padding-inline: 8px;
+    font-size: 12px;
+  }
+
+  .sh-dock-play {
+    font-size: 16px;
+  }
+}
