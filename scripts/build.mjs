@@ -66,7 +66,11 @@ const required = [
   "js/components/shadowing.js",
   "data/modules.json",
   "data/lessons/index.json",
-  "data/lessons/M1-L01.json"
+  "data/lessons/M1-L01.json",
+  "data/lessons/M1-L02.json",
+  "data/lessons/M1-L03.json",
+  "data/lessons/M1-L04.json",
+  "data/lessons/M1-L05.json"
 ];
 
 for (const file of required) {
