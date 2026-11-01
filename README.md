@@ -3,17 +3,17 @@
 English for Service Engineers — calm, mobile-first speaking practice for Indonesian
 airport service engineers.
 
-This repository is the `rebuild-v2` foundation: six planned modules, **one complete
-sample lesson**, and two reusable practice modes. The old 35-day / 224-phrase app is
+This repository is the `rebuild-v2` foundation: six planned modules, **five complete
+lessons**, and two reusable practice modes. The old 35-day / 224-phrase app is
 preserved by the `backup-before-rebuild` tag.
 
 ## Current state
 
 - **6 modules** with titles, levels, descriptions, and five planned lesson slots each.
-- **1 finished lesson**: `M1-L01 — Introducing Yourself as a Service Engineer`.
-- **Real MP3 audio** for `M1-L01`: 16 sentence files plus `full.mp3`, generated
-  with Piper TTS (neural, not human).
-- **29 “Coming soon” slots** that are visible but not clickable.
+- **5 finished lessons**: `M1-L01` through `M1-L05`.
+- **Real MP3 audio** for all five lessons: 75 sentence files plus five `full.mp3`
+  files, generated with Piper TTS (neural, not human).
+- **25 “Coming soon” slots** that are visible but not clickable.
 - **Teleprompter** and **Shadowing** are reusable components driven by lesson JSON.
 - No backend, no login, no paid API, and no build framework.
 - Static vanilla ES modules, hash routing, and GitHub Pages deployment.
@@ -42,12 +42,17 @@ icon.svg                       app icon
 
 public/
   audio/M1/M1-L01/             real MP3s (sentence-01…16.mp3, full.mp3)
+  audio/M1/M1-L02/             real MP3s (sentence-01…15.mp3, full.mp3)
+  audio/M1/M1-L03/             real MP3s (sentence-01…15.mp3, full.mp3)
+  audio/M1/M1-L04/             real MP3s (sentence-01…14.mp3, full.mp3)
+  audio/M1/M1-L05/             real MP3s (sentence-01…15.mp3, full.mp3)
 
 data/
   modules.json                 six modules and planned lesson counts
   lessons/
     index.json                 manifest of finished, openable lessons
     M1-L01.json                complete sample lesson
+    M1-L02.json … M1-L05.json  finished lessons one through five
 
 js/
   app.js                       hash router, route chrome, error states
@@ -134,11 +139,14 @@ Audio paths come only from lesson data. Components do not hard-code file names.
    synthesis and shows **“Computer voice — temporary”**.
 3. If speech synthesis also fails, the app shows **“Audio unavailable”**.
 
-`M1-L01` ships with real audio:
+`M1-L01` through `M1-L05` ship with real audio:
 
 ```text
 public/audio/M1/M1-L01/
   sentence-01.mp3 … sentence-16.mp3
+  full.mp3
+public/audio/M1/M1-L02/ … M1-L05/
+  sentence-01.mp3 … sentence-14/15.mp3
   full.mp3
 ```
 
@@ -161,7 +169,7 @@ python3 -m venv .venv
   en_US-ryan-medium en_US-hfc_female-medium --download-dir tools/voices
 
 export PIPER_BIN=.venv/bin/piper
-python3 tools/generate_audio.py --lesson M1-L01
+python3 tools/generate_audio.py --all
 ```
 
 Voice mapping is editable at the top of `tools/generate_audio.py`:
@@ -183,9 +191,9 @@ The generator:
 - updates each lesson JSON only for files that really exist.
 
 ```bash
-python3 tools/generate_audio.py --lesson M1-L01
+python3 tools/generate_audio.py --lesson M1-L02
 python3 tools/generate_audio.py --all
-python3 tools/generate_audio.py --lesson M1-L01 --force
+python3 tools/generate_audio.py --lesson M1-L02 --force
 ```
 
 The model cards are at `tools/voices/*.MODEL_CARD`. Both current voices use
@@ -248,7 +256,7 @@ npm run serve              # local server at http://localhost:8080/
 Audio generation is separate from npm:
 
 ```bash
-python3 tools/generate_audio.py --lesson M1-L01
+python3 tools/generate_audio.py --lesson M1-L02
 ```
 
 There are no npm dependencies to install. A local server is required because the app
@@ -274,9 +282,10 @@ lives on branch `rebuild-v2` until it is merged.
 
 ## Known limitations
 
-- Only `M1-L01` is written; the other 29 lesson slots are intentionally “Coming soon”.
-- Only `M1-L01` has generated MP3s. Lessons added without audio fall back to browser
-  speech synthesis.
+- `M1-L01` through `M1-L05` are written; the other 25 lesson slots are intentionally
+  “Coming soon”.
+- `M1-L01` through `M1-L05` have generated MP3s. Lessons added without audio fall
+  back to browser speech synthesis.
 - Piper audio is neural, not human; pronunciation and prosody are synthetic.
 - Computer voice quality varies by device and browser; some environments have no
   speech engine and correctly show “Audio unavailable”.
@@ -288,6 +297,6 @@ lives on branch `rebuild-v2` until it is merged.
 
 ## Safety
 
-The lesson is language practice, not a maintenance procedure. It does not invent
+The lessons are language practice, not a maintenance procedure. They do not invent
 electrical steps. For real work, follow site isolation/LOTO, work permits, and
 authorization rules.
