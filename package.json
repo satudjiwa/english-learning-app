@@ -1,11 +1,14 @@
 {
   "name": "english-learning-app",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
-  "description": "English for Service Engineer — latihan bahasa Inggris untuk service engineer dan teknisi bandara Indonesia.",
+  "description": "Small Steps English — a calm speaking-practice app for Indonesian airport service engineers.",
   "scripts": {
-    "check": "node scripts/check.mjs",
-    "test": "node scripts/check.mjs"
+    "build": "node scripts/build.mjs",
+    "validate:lessons": "node scripts/validate-lessons.mjs",
+    "check": "npm run validate:lessons && npm run build",
+    "test": "npm run validate:lessons",
+    "serve": "node scripts/serve.mjs"
   }
 }

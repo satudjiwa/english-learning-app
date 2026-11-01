@@ -23,22 +23,36 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate lesson data
+        run: npm run validate:lessons
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Verify build output
+        run: |
+          test -f _site/index.html
+          test -f _site/styles.css
+          test -f _site/js/app.js
+          test -f _site/data/lessons/M1-L01.json
+          test -f _site/data/modules.json
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
           enablement: true
-      - name: Stage site files
-        run: |
-          mkdir -p _site
-          cp index.html styles.css sw.js manifest.webmanifest icon.svg _site/
-          cp -r js _site/
-          touch _site/.nojekyll
-          test -f _site/js/app.js
-          test -f _site/js/views/dashboard.js
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
