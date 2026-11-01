@@ -10,5 +10,11 @@
     "moduleId": "M1",
     "title": "Starting a Technical Support Call",
     "difficulty": "Beginner"
+  },
+  {
+    "id": "M1-L03",
+    "moduleId": "M1",
+    "title": "Reporting a Machine Problem",
+    "difficulty": "Beginner"
   }
 ]
