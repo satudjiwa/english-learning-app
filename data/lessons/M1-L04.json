@@ -9,72 +9,86 @@
     {
       "speaker": "Remote Engineer",
       "english": "Alex, can you tell me what happened this morning?",
-      "indonesian": "Alex, bisakah Anda menceritakan apa yang terjadi pagi ini?"
+      "indonesian": "Alex, bisakah Anda menceritakan apa yang terjadi pagi ini?",
+      "audio": "public/audio/M1/M1-L04/sentence-01.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Yes. The X-ray machine stopped at eight thirty.",
-      "indonesian": "Bisa. Mesin X-ray berhenti pada pukul delapan tiga puluh."
+      "indonesian": "Bisa. Mesin X-ray berhenti pada pukul delapan tiga puluh.",
+      "audio": "public/audio/M1/M1-L04/sentence-02.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Where were you when it stopped?",
-      "indonesian": "Di mana Anda saat mesin itu berhenti?"
+      "indonesian": "Di mana Anda saat mesin itu berhenti?",
+      "audio": "public/audio/M1/M1-L04/sentence-03.mp3"
     },
     {
       "speaker": "Technician",
       "english": "I was near the screening line. I saw a red light on the panel.",
-      "indonesian": "Saya berada di dekat jalur pemeriksaan. Saya melihat lampu merah di panel."
+      "indonesian": "Saya berada di dekat jalur pemeriksaan. Saya melihat lampu merah di panel.",
+      "audio": "public/audio/M1/M1-L04/sentence-04.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "What did you do first?",
-      "indonesian": "Apa yang pertama Anda lakukan?"
+      "indonesian": "Apa yang pertama Anda lakukan?",
+      "audio": "public/audio/M1/M1-L04/sentence-05.mp3"
     },
     {
       "speaker": "Technician",
       "english": "I pressed the reset button once.",
-      "indonesian": "Saya menekan tombol reset satu kali."
+      "indonesian": "Saya menekan tombol reset satu kali.",
+      "audio": "public/audio/M1/M1-L04/sentence-06.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Did the machine start again?",
-      "indonesian": "Apakah mesinnya menyala lagi?"
+      "indonesian": "Apakah mesinnya menyala lagi?",
+      "audio": "public/audio/M1/M1-L04/sentence-07.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Yes, it started for a moment, and then it stopped again.",
-      "indonesian": "Ya, mesin menyala sebentar, lalu berhenti lagi."
+      "indonesian": "Ya, mesin menyala sebentar, lalu berhenti lagi.",
+      "audio": "public/audio/M1/M1-L04/sentence-08.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Did you open the side door?",
-      "indonesian": "Apakah Anda membuka pintu samping?"
+      "indonesian": "Apakah Anda membuka pintu samping?",
+      "audio": "public/audio/M1/M1-L04/sentence-09.mp3"
     },
     {
       "speaker": "Technician",
       "english": "No, I did not open the side door. I did not move the machine.",
-      "indonesian": "Tidak, saya tidak membuka pintu samping. Saya tidak memindahkan mesinnya."
+      "indonesian": "Tidak, saya tidak membuka pintu samping. Saya tidak memindahkan mesinnya.",
+      "audio": "public/audio/M1/M1-L04/sentence-10.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Did you call your supervisor?",
-      "indonesian": "Apakah Anda menelepon supervisor Anda?"
+      "indonesian": "Apakah Anda menelepon supervisor Anda?",
+      "audio": "public/audio/M1/M1-L04/sentence-11.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Yes, I called Jordan, my supervisor, and I wrote down the time.",
-      "indonesian": "Ya, saya menelepon Jordan, supervisor saya, dan mencatat waktunya."
+      "indonesian": "Ya, saya menelepon Jordan, supervisor saya, dan mencatat waktunya.",
+      "audio": "public/audio/M1/M1-L04/sentence-12.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Thank you. That is clear. I will check the error history and call you back.",
-      "indonesian": "Terima kasih. Jelas sekali. Saya akan memeriksa riwayat error dan menelepon Anda kembali."
+      "indonesian": "Terima kasih. Jelas sekali. Saya akan memeriksa riwayat error dan menelepon Anda kembali.",
+      "audio": "public/audio/M1/M1-L04/sentence-13.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Okay, Sam. Thank you.",
-      "indonesian": "Baik, Sam. Terima kasih."
+      "indonesian": "Baik, Sam. Terima kasih.",
+      "audio": "public/audio/M1/M1-L04/sentence-14.mp3"
     }
   ],
   "keyExpressions": [
@@ -162,5 +176,6 @@
       "title": "pressed",
       "note": "Bunyi akhir -ed adalah /t/: prest."
     }
-  ]
+  ],
+  "fullAudio": "public/audio/M1/M1-L04/full.mp3"
 }

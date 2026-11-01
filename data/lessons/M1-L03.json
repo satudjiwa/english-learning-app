@@ -9,77 +9,92 @@
     {
       "speaker": "Remote Engineer",
       "english": "Technical support. How may I help you?",
-      "indonesian": "Dukungan teknis. Ada yang bisa saya bantu?"
+      "indonesian": "Dukungan teknis. Ada yang bisa saya bantu?",
+      "audio": "public/audio/M1/M1-L03/sentence-01.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Hello. This is Alex. I have a problem with the X-ray machine.",
-      "indonesian": "Halo. Ini Alex. Saya mengalami masalah dengan mesin X-ray."
+      "indonesian": "Halo. Ini Alex. Saya mengalami masalah dengan mesin X-ray.",
+      "audio": "public/audio/M1/M1-L03/sentence-02.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Which line is the machine on?",
-      "indonesian": "Mesinnya ada di jalur mana?"
+      "indonesian": "Mesinnya ada di jalur mana?",
+      "audio": "public/audio/M1/M1-L03/sentence-03.mp3"
     },
     {
       "speaker": "Technician",
       "english": "It is on screening line two, near gate B.",
-      "indonesian": "Mesin itu ada di jalur pemeriksaan dua, dekat gate B."
+      "indonesian": "Mesin itu ada di jalur pemeriksaan dua, dekat gate B.",
+      "audio": "public/audio/M1/M1-L03/sentence-04.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "What is the machine doing now?",
-      "indonesian": "Apa yang terjadi pada mesin itu sekarang?"
+      "indonesian": "Apa yang terjadi pada mesin itu sekarang?",
+      "audio": "public/audio/M1/M1-L03/sentence-05.mp3"
     },
     {
       "speaker": "Technician",
       "english": "The belt stops again and again, and the screen shows an error message.",
-      "indonesian": "Belt-nya berhenti berulang kali, dan layar menampilkan pesan error."
+      "indonesian": "Belt-nya berhenti berulang kali, dan layar menampilkan pesan error.",
+      "audio": "public/audio/M1/M1-L03/sentence-06.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "What does the error message say?",
-      "indonesian": "Apa isi pesan error-nya?"
+      "indonesian": "Apa isi pesan error-nya?",
+      "audio": "public/audio/M1/M1-L03/sentence-07.mp3"
     },
     {
       "speaker": "Technician",
       "english": "It says BELT JAM. The letters are in red.",
-      "indonesian": "Pesannya BELT JAM. Huruf-hurufnya berwarna merah."
+      "indonesian": "Pesannya BELT JAM. Huruf-hurufnya berwarna merah.",
+      "audio": "public/audio/M1/M1-L03/sentence-08.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Is the machine still running?",
-      "indonesian": "Apakah mesinnya masih berjalan?"
+      "indonesian": "Apakah mesinnya masih berjalan?",
+      "audio": "public/audio/M1/M1-L03/sentence-09.mp3"
     },
     {
       "speaker": "Technician",
       "english": "No. The belt is not moving now.",
-      "indonesian": "Tidak. Belt-nya sekarang tidak bergerak."
+      "indonesian": "Tidak. Belt-nya sekarang tidak bergerak.",
+      "audio": "public/audio/M1/M1-L03/sentence-10.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Is this urgent for your operation?",
-      "indonesian": "Apakah ini mendesak untuk operasi Anda?"
+      "indonesian": "Apakah ini mendesak untuk operasi Anda?",
+      "audio": "public/audio/M1/M1-L03/sentence-11.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Yes. It is urgent because passengers are waiting. What should I check next?",
-      "indonesian": "Ya. Ini mendesak karena penumpang sedang menunggu. Apa yang harus saya periksa selanjutnya?"
+      "indonesian": "Ya. Ini mendesak karena penumpang sedang menunggu. Apa yang harus saya periksa selanjutnya?",
+      "audio": "public/audio/M1/M1-L03/sentence-12.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Please follow the official SOP. I will check the belt sensor log and call you back.",
-      "indonesian": "Mohon ikuti SOP resmi. Saya akan memeriksa log sensor belt dan menelepon Anda kembali."
+      "indonesian": "Mohon ikuti SOP resmi. Saya akan memeriksa log sensor belt dan menelepon Anda kembali.",
+      "audio": "public/audio/M1/M1-L03/sentence-13.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Understood. I will wait for your call. Thank you.",
-      "indonesian": "Baik. Saya akan menunggu telepon Anda. Terima kasih."
+      "indonesian": "Baik. Saya akan menunggu telepon Anda. Terima kasih.",
+      "audio": "public/audio/M1/M1-L03/sentence-14.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Goodbye, Alex. Call us if anything changes.",
-      "indonesian": "Selamat tinggal, Alex. Hubungi kami jika ada perubahan."
+      "indonesian": "Selamat tinggal, Alex. Hubungi kami jika ada perubahan.",
+      "audio": "public/audio/M1/M1-L03/sentence-15.mp3"
     }
   ],
   "keyExpressions": [
@@ -172,5 +187,6 @@
       "title": "urgent",
       "note": "Tekanan ada di suku kata pertama: UR-jent (/ˈɜːrdʒənt/)."
     }
-  ]
+  ],
+  "fullAudio": "public/audio/M1/M1-L03/full.mp3"
 }

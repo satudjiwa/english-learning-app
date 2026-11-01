@@ -9,77 +9,92 @@
     {
       "speaker": "Remote Engineer",
       "english": "Good morning, technical support. Sam speaking.",
-      "indonesian": "Selamat pagi, dukungan teknis. Saya Sam."
+      "indonesian": "Selamat pagi, dukungan teknis. Saya Sam.",
+      "audio": "public/audio/M1/M1-L02/sentence-01.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Good morning, Sam. This is Alex from the airport service team.",
-      "indonesian": "Selamat pagi, Sam. Ini Alex dari tim layanan bandara."
+      "indonesian": "Selamat pagi, Sam. Ini Alex dari tim layanan bandara.",
+      "audio": "public/audio/M1/M1-L02/sentence-02.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Hello, Alex. What can I do for you today?",
-      "indonesian": "Halo, Alex. Ada yang bisa saya bantu hari ini?"
+      "indonesian": "Halo, Alex. Ada yang bisa saya bantu hari ini?",
+      "audio": "public/audio/M1/M1-L02/sentence-03.mp3"
     },
     {
       "speaker": "Technician",
       "english": "I am calling about the baggage scanner on line two.",
-      "indonesian": "Saya menelepon soal pemindai bagasi di jalur dua."
+      "indonesian": "Saya menelepon soal pemindai bagasi di jalur dua.",
+      "audio": "public/audio/M1/M1-L02/sentence-04.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Thank you. What is the machine ID?",
-      "indonesian": "Terima kasih. Apa ID mesinnya?"
+      "indonesian": "Terima kasih. Apa ID mesinnya?",
+      "audio": "public/audio/M1/M1-L02/sentence-05.mp3"
     },
     {
       "speaker": "Technician",
       "english": "The machine ID is B-H-S seven-two.",
-      "indonesian": "ID mesinnya B-H-S tujuh dua."
+      "indonesian": "ID mesinnya B-H-S tujuh dua.",
+      "audio": "public/audio/M1/M1-L02/sentence-06.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Sorry, could you spell that for me?",
-      "indonesian": "Maaf, bisa Anda eja untuk saya?"
+      "indonesian": "Maaf, bisa Anda eja untuk saya?",
+      "audio": "public/audio/M1/M1-L02/sentence-07.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Yes. B, H, S, seven, two.",
-      "indonesian": "Baik. B, H, S, tujuh, dua."
+      "indonesian": "Baik. B, H, S, tujuh, dua.",
+      "audio": "public/audio/M1/M1-L02/sentence-08.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Thank you. Please wait a moment while I check the record.",
-      "indonesian": "Terima kasih. Mohon tunggu sebentar sementara saya memeriksa catatannya."
+      "indonesian": "Terima kasih. Mohon tunggu sebentar sementara saya memeriksa catatannya.",
+      "audio": "public/audio/M1/M1-L02/sentence-09.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Okay, I will wait.",
-      "indonesian": "Baik, saya tunggu."
+      "indonesian": "Baik, saya tunggu.",
+      "audio": "public/audio/M1/M1-L02/sentence-10.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Thank you for waiting. I found the machine record.",
-      "indonesian": "Terima kasih sudah menunggu. Saya menemukan catatan mesinnya."
+      "indonesian": "Terima kasih sudah menunggu. Saya menemukan catatan mesinnya.",
+      "audio": "public/audio/M1/M1-L02/sentence-11.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Great. Can you help me with the startup problem?",
-      "indonesian": "Bagus. Bisakah Anda membantu saya dengan masalah saat menyalakan mesin?"
+      "indonesian": "Bagus. Bisakah Anda membantu saya dengan masalah saat menyalakan mesin?",
+      "audio": "public/audio/M1/M1-L02/sentence-12.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Yes. I will open a support ticket and send you the first step.",
-      "indonesian": "Tentu. Saya akan membuka tiket dukungan dan mengirimkan langkah pertamanya."
+      "indonesian": "Tentu. Saya akan membuka tiket dukungan dan mengirimkan langkah pertamanya.",
+      "audio": "public/audio/M1/M1-L02/sentence-13.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Thank you, Sam. I will wait for the ticket. Goodbye.",
-      "indonesian": "Terima kasih, Sam. Saya akan menunggu tiketnya. Selamat tinggal."
+      "indonesian": "Terima kasih, Sam. Saya akan menunggu tiketnya. Selamat tinggal.",
+      "audio": "public/audio/M1/M1-L02/sentence-14.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Goodbye, Alex. Have a good day.",
-      "indonesian": "Selamat tinggal, Alex. Semoga harimu menyenangkan."
+      "indonesian": "Selamat tinggal, Alex. Semoga harimu menyenangkan.",
+      "audio": "public/audio/M1/M1-L02/sentence-15.mp3"
     }
   ],
   "keyExpressions": [
@@ -167,5 +182,6 @@
       "title": "technical",
       "note": "Tekanan ada di suku kata pertama: TEK-ni-kal. Bunyi ch adalah /k/, bukan /tʃ/."
     }
-  ]
+  ],
+  "fullAudio": "public/audio/M1/M1-L02/full.mp3"
 }
