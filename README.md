@@ -1,135 +1,230 @@
-# English for Service Engineer
+# Small Steps English
 
-Aplikasi latihan bahasa Inggris praktis untuk **service engineer dan teknisi bandara Indonesia**. Materi berfokus pada pekerjaan lapangan dan dukungan remote: melaporkan status awal, menjelaskan masalah, mengikuti instruksi, melakukan pemeriksaan dan perbaikan, mematuhi keselamatan, melaporkan hasil, serta menyerahkan pekerjaan ke tim berikutnya.
+English for Service Engineers — calm, mobile-first speaking practice for Indonesian
+airport service engineers.
 
-Aplikasi ini statis, tanpa akun, tanpa backend, dan tanpa API berbayar. Seluruh progres belajar disimpan di `localStorage` perangkat.
+This repository is the `rebuild-v2` foundation: six planned modules, **one complete
+sample lesson**, and two reusable practice modes. The old 35-day / 224-phrase app is
+preserved by the `backup-before-rebuild` tag.
 
-**Produksi:** <https://satudjiwa.github.io/english-learning-app/>
+## Current state
 
-## Siklus belajar
+- **6 modules** with titles, levels, descriptions, and five planned lesson slots each.
+- **1 finished lesson**: `M1-L01 — Introducing Yourself as a Service Engineer`.
+- **29 “Coming soon” slots** that are visible but not clickable.
+- **Teleprompter** and **Shadowing** are reusable components driven by lesson JSON.
+- No backend, no login, no paid API, and no build framework.
+- Static vanilla ES modules, hash routing, and GitHub Pages deployment.
 
-`LISTEN → UNDERSTAND → RECALL → SPEAK → REVIEW`
+## Pages and routes
 
-Fitur utama:
+| Page | Route |
+| --- | --- |
+| Home | `#/` |
+| Module Library | `#/modules` |
+| Lesson | `#/lesson/M1-L01` |
+| Teleprompter | `#/lesson/M1-L01/teleprompter` |
+| Shadowing | `#/lesson/M1-L01/shadowing` |
 
-- **Beranda** — rekomendasi hari program berikutnya, progres 35 hari, frasa jatuh tempo, dan pintu masuk semua modul.
-- **Latihan Harian** — program **35 hari × 5 frasa** (175 frasa) dengan audio, arti, konteks kerja, pola kalimat, 2–3 contoh tambahan, dan prompt latihan untuk setiap frasa. Hari bisa dipilih bebas, diulang, dan diselesaikan tanpa timer atau kunci.
-- **Sesi Bebas** — jalur latihan lama di `#/daily/free`: rencana 3–5 frasa per tanggal dari bank frasa, cocok untuk belajar di luar urutan program.
-- **Bank Frasa** — 224 kalimat dalam 26 kategori, pencarian dua bahasa, filter kategori dan level (Pemula/Menengah), status review, contoh dialog, dan audio.
-- **Latihan Recall** — prompt bahasa Indonesia, jawaban bahasa Inggris, penjelasan singkat, penilaian **Again / Difficult / Easy**, dan penjadwalan ulang. Frasa yang sering dinilai Again atau Difficult didahulukan.
-- **Pola Pertanyaan** — 8 pola bertanya (`Can I`, `Could you`, `How do I`, `What is`, `What should I`, `Why is`, `Where is`, `Is it`) dengan 34 contoh kalimat dan pembeda fungsi.
-- **Listen & Speak** — text-to-speech, mode lambat, sembunyikan teks, terjemahan, dan perekaman suara opsional.
-- **Simulator Remote Session** — 17 skenario roleplay berurutan dengan pilihan respons dan penjelasan, termasuk laporan awal, ketersediaan remote, jaringan, PSU, eskalasi, dan handover.
-- **Progres & Review** — statistik dari data nyata, progres program, grafik 14 hari, jadwal review, riwayat, dan reset dengan konfirmasi.
-- **Pengaturan** — suara Inggris, kecepatan bicara, target Sesi Bebas, dan informasi penyimpanan lokal.
+Unknown routes and lessons that are not in `data/lessons/index.json` show a clear
+not-found or “Coming soon” page.
 
-## Program 35 hari
-
-Program disusun dari frasa yang sudah ada di bank frasa, lalu diberi penjelasan pola per frasa. Setiap hari selalu berisi lima frasa dan setiap frasa memiliki konteks kerja, fokus pola, contoh kalimat tambahan, serta prompt latihan.
-
-| Hari | Fase | Fokus |
-| --- | --- | --- |
-| 1–11 | Fondasi | Status awal, gejala, kabel, sensor, jaringan, dan hasil pemeriksaan |
-| 12–15 | Komunikasi | Klarifikasi, instruksi lambat, bantuan remote, dan ketersediaan engineer |
-| 16–20 | Troubleshooting | Mengikuti langkah, melaporkan progres, restart, dan hasilnya |
-| 21–25 | Perbaikan | Penggantian PSU, perbaikan kabel, pengujian, dan konfirmasi |
-| 26–31 | Pelanggan & perawatan | Dampak operasi, persetujuan, jadwal, downtime, pemantauan, dan inspeksi rutin |
-| 32–33 | Laporan & handover awal | Rekomendasi, akar masalah, eskalasi, komitmen pemantauan, dan awal serah terima |
-| 34–35 | Handover & penutupan | Briefing tim berikutnya, status terbuka, dan penutupan sesi |
-
-Hari dianggap selesai jika kelima frasanya sudah ditandai. Status ini **dihitung dari `learnedAt` yang sudah ada**, bukan dari field progres baru, sehingga data belajar lama tetap valid dan tidak perlu migrasi. Semua hari bisa dibuka kapan saja; tidak ada kunci tanggal, timer, atau syarat menyelesaikan hari sebelumnya.
-
-### Keselamatan
-
-Materi keselamatan menekankan **LOTO (lockout/tagout)**, **work permit**, koordinasi dengan tim operasi, dan prosedur yang disetujui. Izin dari engineer remote tidak pernah digambarkan sebagai pengganti prosedur keselamatan: untuk pekerjaan berisiko, konfirmasi isolasi energi dan tegangan nol sebelum bertindak.
-
-### Spaced repetition
-
-- **Again** — muncul lagi di sesi yang sama; jadwal tetap jatuh tempo.
-- **Difficult** — review besok.
-- **Easy** — 3, 7, 15, 34, lalu 60 hari.
-- **Dikuasai** — butuh 4 recall sukses berturut-turut dan interval minimal 14 hari.
-
-Label tombol berubah menjadi Again/Difficult/Easy, tetapi kunci penyimpanan (`again`/`hard`/`good`) dan riwayat lama tidak berubah, sehingga progres pengguna tetap terbaca.
-
-Tanggal review disimpan sebagai ISO date di browser. Perhitungan dilakukan ulang setiap halaman dibuka, sehingga tidak bergantung pada timer atau server.
-
-## Menjalankan secara lokal
-
-Tidak ada proses build. Karena aplikasi memakai ES modules, jalankan lewat server HTTP (bukan `file://`).
-
-Dari folder repositori:
-
-```bash
-cd /home/misbah/english-learning-app
-python3 -m http.server 8080
-```
-
-Buka <http://localhost:8080/>.
-
-Untuk menguji base path yang sama seperti GitHub Pages, jalankan server dari folder induk:
-
-```bash
-cd /home/misbah
-python3 -m http.server 8080
-```
-
-Buka <http://localhost:8080/english-learning-app/>.
-
-## Pemeriksaan
-
-```bash
-npm test
-```
-
-Pemeriksaan menjalankan 28 cek: 26 kategori, 224 frasa, 107 frasa tambahan wajib, kurikulum 35 hari dengan 175 frasa unik, kelengkapan pola/konteks/contoh/prompt, cakupan frasa pelanggan–handover–perawatan–laporan, placeholder `[time]`/`[name]`, keunikan ID dan teks, kelengkapan terjemahan, 8 pola pertanyaan dengan 34 contoh, 17 skenario dengan tepat satu jawaban benar, aturan keselamatan LOTO/work permit, berkas deployment, serta perhitungan jadwal spaced repetition. Tidak ada dependensi yang dipasang.
-
-## Struktur
+## Project structure
 
 ```text
-index.html                 shell, navigasi, dialog, toast
-styles.css                 design system dan seluruh tampilan responsif
-js/app.js                  router hash, navigasi, status penyimpanan
-js/data.js                 kategori, frasa, dialog, skenario, pola pertanyaan
-js/expansion.js            paket 133 frasa, 12 kategori, 6 skenario baru
-js/curriculum.js           46 pola kalimat dan kurikulum 35 hari/175 frasa
-js/program.js              progres program dari learnedAt, navigasi hari
-js/store.js                localStorage berversi, statistik, reset
-js/srs.js                  penjadwalan review dan aturan mastery
-js/speech.js               Web Speech API dan pemilihan suara en-US
-js/ui.js                   komponen bersama (toast, dialog, progres)
-js/utils.js                tanggal, format, pencarian, escape HTML
-js/icons.js                ikon SVG inline
-js/views/                  satu modul per halaman, termasuk patterns.js
-scripts/check.mjs          pemeriksaan konten dan logika
-sw.js                      cache shell untuk penggunaan offline
-manifest.webmanifest       metadata PWA
+index.html                     app shell and navigation
+styles.css                     mobile-first design system and mode layouts
+manifest.webmanifest           installable PWA metadata
+sw.js                          offline app shell and runtime cache
+icon.svg                       app icon
+
+data/
+  modules.json                 six modules and planned lesson counts
+  lessons/
+    index.json                 manifest of finished, openable lessons
+    M1-L01.json                complete sample lesson
+
+js/
+  app.js                       hash router, route chrome, error states
+  data.js                      JSON loading, lesson-slot generation, progress math
+  store.js                     localStorage schema and preferences
+  lib/audio.js                 MP3 probe, browser TTS fallback, sequential playback
+  components/
+    teleprompter.js            auto-scroll reader
+    shadowing.js               five-step audio practice player
+  views/                       home, modules, lesson, teleprompter, shadowing, 404
+  icons.js                     inline icon set
+  utils.js                     HTML escaping
+
+scripts/
+  validate-lessons.mjs         lesson/schema validation
+  build.mjs                    static `_site/` build
+  serve.mjs                    dependency-free local server
+
+.github/workflows/pages.yml    validate -> build -> deploy to GitHub Pages
 ```
 
-## Penyimpanan data
+## Lesson data
 
-- Kunci: `service-english.progress.v1`
-- Skema diberi versi dan divalidasi saat dibaca.
-- Progres program 35 hari tidak menambah kunci atau field baru; status hari dihitung dari `learnedAt` pada frasa yang sudah ditandai.
-- Rencana Sesi Bebas lama di `state.daily` tetap dibaca dan dibatasi maksimal lima ID.
-- Data rusak tidak dikirim ke mana pun; aplikasi memulai progres baru dan menyimpan cadangan mentah dengan prefiks `service-english.progress.backup.`.
-- Jika `localStorage` diblokir, aplikasi tetap berjalan dan menampilkan peringatan bahwa progres hanya bertahan selama tab terbuka.
-- Reset progres menghapus frasa, jadwal, riwayat, dan streak; pengaturan suara/target tetap disimpan.
+Lesson JSON is separate from the UI. A lesson contains:
 
-## Deployment GitHub Pages
+```json
+{
+  "id": "M1-L01",
+  "moduleId": "M1",
+  "title": "Introducing Yourself as a Service Engineer",
+  "difficulty": "Beginner",
+  "situation": "...",
+  "objective": "...",
+  "dialogue": [
+    {
+      "speaker": "Technician",
+      "english": "Good morning, and my name is Alex.",
+      "indonesian": "Selamat pagi, dan nama saya Alex.",
+      "audio": "public/audio/M1/M1-L01/sentence-01.mp3"
+    }
+  ],
+  "keyExpressions": [],
+  "sentencePatterns": [],
+  "learningNotes": [],
+  "pronunciationNotes": [],
+  "fullAudio": "public/audio/M1/M1-L01/full.mp3"
+}
+```
 
-Workflow `.github/workflows/pages.yml` menyalin hanya berkas aplikasi ke `_site`, menambahkan `.nojekyll`, lalu mengunggah artefak ke GitHub Pages. Tidak ada langkah build.
+`data/lessons/index.json` is the source of truth for which lessons can be opened.
+Adding a lesson means adding its JSON file **and** its index entry.
 
-1. Buka **Settings → Pages** di repositori GitHub.
-2. Pilih **Source: GitHub Actions**.
-3. Push ke branch `main` atau jalankan workflow secara manual.
-4. Situs terbit di <https://satudjiwa.github.io/english-learning-app/>.
+### Validation rules
 
-Semua path aset relatif dan navigasi memakai hash (`#/recall`), sehingga tidak memerlukan rewrite server atau konfigurasi base path tambahan.
+`npm run validate:lessons` checks:
 
-## Batasan
+- six modules with unique IDs, correct module numbers, and five lessons each;
+- unique lesson IDs in both the lesson files and `index.json`;
+- every index entry has a matching lesson file, title, difficulty, and module;
+- every dialogue line has `speaker`, `english`, and `indonesian`;
+- dialogue length is inside the range for the lesson difficulty:
+  - Beginner: 12–16
+  - Beginner–Elementary: 12–18
+  - Elementary: 12–18
+  - Elementary–Intermediate: 14–20
+  - Intermediate: 14–20
+- optional audio paths match
+  `public/audio/M{1-6}/M{1-6}-L{NN}/sentence-{NN}.mp3` or `.../full.mp3`
+  and belong to the same lesson;
+- each lesson has key expressions, sentence patterns, learning notes, and 1–2
+  pronunciation notes.
 
-- Audio memakai **text-to-speech browser**, bukan narator profesional. Kualitas dan ketersediaan suara bergantung pada perangkat.
-- Perekaman suara memakai `MediaRecorder` bila didukung; audio hanya berada di memori tab dan tidak diunggah.
-- Progres tidak disinkronkan antarperangkat dan dapat hilang jika data situs dihapus.
-- Materi adalah konten latihan orisinal; bukan pengganti pelatihan teknis resmi.
+## Audio behavior
+
+Audio paths come only from lesson data. Components do not hard-code file names.
+
+1. If a sentence or full-conversation MP3 path exists, the app verifies it with a
+   `HEAD` request (2.5 second timeout) and plays it first.
+2. If the MP3 is missing or fails, the app uses the browser’s `en-US` speech
+   synthesis and shows **“Computer voice — temporary”**.
+3. If speech synthesis also fails, the app shows **“Audio unavailable”**.
+
+There are currently **no MP3 files** in this repository. No placeholder or empty
+MP3s were created. Teleprompter and Shadowing therefore use the browser voice.
+Add real files later at the paths above and they will be used automatically:
+
+```text
+public/audio/M1/M1-L01/
+  sentence-01.mp3 ... sentence-16.mp3
+  full.mp3
+```
+
+The build script copies `public/` into `_site/` when it exists.
+
+## Progress and preferences
+
+Stored under the single localStorage key:
+
+```text
+small-steps-english.v2
+```
+
+Saved values:
+
+- `lastLessonId`
+- `completedLessons`
+- `preferences.teleprompter.speed` (1–10)
+- `preferences.teleprompter.fontSize` (18–36 px)
+- `preferences.teleprompter.lineSpacing` (1.2–2.2)
+- `preferences.teleprompter.showIndonesian`
+- `preferences.shadowing.speed` (0.75, 0.85, 1.0)
+- `preferences.shadowing.showIndonesian`
+
+Progress is local to the browser. There is no migration from the old app and no
+sync between devices. Storage failures are handled silently so the app remains
+usable in private browsing.
+
+## Practice modes
+
+### Teleprompter
+
+- Starts paused, at the top, with the sentence crossing the center line highlighted.
+- Play/Pause, restart, manual scroll (which pauses), fullscreen, and Wake Lock while
+  playing. Wake Lock and fullscreen fail silently when unsupported.
+- Speed 1–10, text 18–36 px, line spacing 1.2–2.2, English only / English + Indonesian.
+- Dark reading surface with mobile controls and safe-area padding.
+
+### Shadowing
+
+- Play/Pause, replay current sentence, whole conversation, sentence-by-sentence,
+  repeat sentence, repeat lesson.
+- Current-sentence highlight, sentence counter, progress bar, transcript jump links.
+- Speeds 0.75×, 0.85×, 1.0× and optional Indonesian translation.
+- Five-step guide: Listen → Listen & Read → Repeat → Shadow → Without translation.
+- Whole-conversation mode advances sequentially through sentence audio so the
+  highlight and progress stay accurate.
+
+## Commands
+
+```bash
+npm run validate:lessons   # validate modules, lessons, IDs, languages, audio paths
+npm run build              # build _site/
+npm run check              # validate + build
+npm test                   # validate only
+npm run serve              # local server at http://localhost:8080/
+```
+
+There are no npm dependencies to install. A local server is required because the app
+loads lesson JSON with `fetch`; opening `index.html` with `file://` will not work.
+
+## Deploy to GitHub Pages
+
+The workflow validates lesson data, builds `_site/`, verifies required files, and
+deploys the artifact. It runs on pushes to `main` and on manual dispatch.
+
+```bash
+git switch main
+git merge --no-ff rebuild-v2
+git push origin main
+```
+
+Then confirm **Settings → Pages → Source** is set to **GitHub Actions**. All paths are
+relative and routing is hash-based, so the app works from the repository subpath
+without a base-path setting.
+
+The pre-rebuild state is available at tag `backup-before-rebuild`. The rebuild work
+lives on branch `rebuild-v2` until it is merged.
+
+## Known limitations
+
+- Only `M1-L01` is written; the other 29 lesson slots are intentionally “Coming soon”.
+- No MP3 files are included yet, so audio depends on browser speech synthesis.
+- Computer voice quality varies by device and browser; some environments have no
+  speech engine and correctly show “Audio unavailable”.
+- Shadowing is self-practice only: there is no microphone recording, pronunciation
+  scoring, or speech recognition.
+- Wake Lock and fullscreen depend on browser support and may be unavailable.
+- Progress is device-local. Clearing browser data removes it.
+- No migration from the old `v1` app.
+
+## Safety
+
+The lesson is language practice, not a maintenance procedure. It does not invent
+electrical steps. For real work, follow site isolation/LOTO, work permits, and
+authorization rules.

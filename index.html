@@ -3,104 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b2239">
-  <meta name="description" content="Aplikasi latihan bahasa Inggris praktis untuk service engineer dan teknisi bandara Indonesia. Latihan harian, recall, listening, dan simulator percakapan teknis.">
-  <meta name="color-scheme" content="light">
-  <title>English for Service Engineer</title>
+  <meta name="theme-color" content="#101419">
+  <meta name="description" content="Small Steps English — latihan percakapan teknis untuk service engineer bandara Indonesia. Teleprompter dan Shadowing dengan satu pelajaran lengkap.">
+  <meta name="color-scheme" content="dark">
+  <title>Small Steps English — English for Service Engineers</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20261029-service3">
+  <link rel="stylesheet" href="styles.css?v=20261101-2">
 </head>
 <body>
-  <a class="skip-link" href="#app-content">Lewati ke konten utama</a>
+  <a class="skip-link" href="#app" data-skip-link>Skip to content</a>
 
-  <div class="app-shell">
-    <aside class="sidebar" aria-label="Navigasi utama">
-      <a class="brand" href="#/home" aria-label="English for Service Engineer, beranda">
-        <span class="brand-mark" aria-hidden="true">SE</span>
-        <span class="brand-copy">
-          <strong>Service English</strong>
-          <small>untuk teknisi bandara</small>
-        </span>
-      </a>
+  <header class="site-header">
+    <a class="brand" href="#/" aria-label="Small Steps English, home">
+      <span class="brand-mark" aria-hidden="true">SS</span>
+      <span class="brand-copy">
+        <strong>Small Steps English</strong>
+        <small>for service engineers</small>
+      </span>
+    </a>
 
-      <div id="sidebar-nav" class="side-nav"></div>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#/" data-nav="home">Home</a>
+      <a href="#/modules" data-nav="modules">Modules</a>
+    </nav>
+  </header>
 
-      <div class="sidebar-note">
-        <span class="sidebar-note-icon" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4"/><path d="M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg>
-        </span>
-        <strong>15 menit sehari</strong>
-        <p>Frasa pendek, konteks nyata. Ulangi sedikit-sedikit sampai otomatis.</p>
-      </div>
-
-      <div class="sidebar-footer">
-        <span class="status-dot" aria-hidden="true"></span>
-        <span>Progres tersimpan di perangkat ini</span>
-      </div>
-    </aside>
-
-    <div class="main-shell">
-      <header class="topbar">
-        <div class="topbar-left">
-          <a class="mobile-brand" href="#/home" aria-label="English for Service Engineer, beranda">
-            <span class="brand-mark brand-mark--small" aria-hidden="true">SE</span>
-            <span>Service English</span>
-          </a>
-          <div class="breadcrumb" id="breadcrumb">Belajar <span>/</span> Beranda</div>
-        </div>
-        <div class="topbar-right">
-          <span class="topbar-date" id="today-label"></span>
-          <span class="storage-chip" id="storage-chip">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
-            <span>Data lokal</span>
-          </span>
-        </div>
-      </header>
-
-      <div class="storage-warning" id="storage-warning" role="alert" hidden>
-        <strong>Penyimpanan browser tidak tersedia.</strong>
-        <span>Progres hanya bertahan selama tab ini terbuka. Periksa mode privat atau izin penyimpanan situs.</span>
-      </div>
-
-      <main id="app-content" class="content" tabindex="-1">
-        <div class="app-loading" role="status">
-          <span class="loading-spinner" aria-hidden="true"></span>
-          <p>Menyiapkan materi belajar...</p>
-        </div>
-      </main>
-
-      <footer class="app-footer">
-        <span>Service English · English for Service Engineer</span>
-        <span>Latihan mandiri, tanpa akun. Data tersimpan di browser.</span>
-      </footer>
+  <main id="app" class="app-main" tabindex="-1">
+    <div class="loading-state" role="status" aria-live="polite">
+      <span class="loading-mark" aria-hidden="true">…</span>
+      <p>Loading lesson data</p>
     </div>
-  </div>
+  </main>
 
-  <nav id="mobile-nav" class="mobile-nav" aria-label="Navigasi bawah"></nav>
-
-  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true"></div>
-  <div id="route-announcer" class="sr-only" aria-live="polite"></div>
-
-  <dialog id="app-dialog" class="dialog" aria-labelledby="dialog-title" aria-describedby="dialog-message">
-    <form method="dialog" class="dialog-card">
-      <span class="dialog-icon" id="dialog-icon" aria-hidden="true"></span>
-      <h2 id="dialog-title">Konfirmasi</h2>
-      <p id="dialog-message"></p>
-      <div class="dialog-actions">
-        <button id="dialog-cancel" class="btn btn-secondary" type="submit" value="cancel">Batal</button>
-        <button id="dialog-confirm" class="btn btn-danger" type="submit" value="confirm">Lanjutkan</button>
-      </div>
-    </form>
-  </dialog>
+  <footer class="site-footer">
+    <span>Small Steps English · English for Service Engineers</span>
+    <span>Progress stays on this device. No account needed.</span>
+  </footer>
 
   <noscript>
-    <div class="noscript-message">
-      <strong>Aplikasi ini memerlukan JavaScript.</strong>
-      <p>Aktifkan JavaScript di browser untuk membuka latihan English for Service Engineer.</p>
-    </div>
+    <p class="noscript-note">This app needs JavaScript. Please enable it in your browser.</p>
   </noscript>
 
-  <script type="module" src="./js/app.js?v=20261029-service3"></script>
+  <script type="module" src="js/app.js?v=20261101-2"></script>
 </body>
 </html>
