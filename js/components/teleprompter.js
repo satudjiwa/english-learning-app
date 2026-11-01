@@ -1,10 +1,28 @@
-import { getPreferences, updatePreferences } from "../store.js";
+import { getPreferences, markPracticeStarted, updatePreferences } from "../store.js";
+import { mountSheet } from "./sheet.js";
 import { icon } from "../icons.js";
 import { esc } from "../utils.js";
 
 const PIXELS_PER_SPEED_UNIT = 10;
 const MAX_FRAME_SECONDS = 0.1;
+const HINT_KEY = "small-steps-teleprompter-hint";
 const SCROLL_KEYS = new Set(["ArrowDown", "ArrowUp", "PageDown", "PageUp", "Home", "End"]);
+
+function hintIsDismissed() {
+  try {
+    return window.localStorage.getItem(HINT_KEY) === "1";
+  } catch {
+    return false;
+  }
+}
+
+function rememberHint() {
+  try {
+    window.localStorage.setItem(HINT_KEY, "1");
+  } catch {
+    // The hint simply appears again when storage is unavailable.
+  }
+}
 
 export function teleprompterHTML(lesson) {
   const prefs = getPreferences("teleprompter");
@@ -18,17 +36,14 @@ export function teleprompterHTML(lesson) {
           <span class="eyebrow">Teleprompter</span>
           <strong>${esc(lesson.title)}</strong>
         </div>
-        <button class="btn btn-ghost btn-sm" type="button" data-tp-fullscreen>
-          ${icon("expand", 17)} <span>Fullscreen</span>
-        </button>
       </header>
 
       <div class="tp-stage" data-tp-stage>
-        <div class="tp-center-line" aria-hidden="true">
-          <span>current sentence</span>
+        <div class="tp-guide" data-tp-guide aria-hidden="true">
+          <span>Current sentence</span>
         </div>
         <div class="tp-scroll" data-tp-scroll tabindex="0" aria-label="Teleprompter script">
-          <div class="tp-spacer" data-tp-spacer></div>
+          <div class="tp-spacer" data-tp-spacer="top"></div>
           <div class="tp-script" style="--tp-font-size:${prefs.fontSize}px; --tp-line-height:${prefs.lineSpacing};">
             ${lesson.dialogue.map((line, index) => `
               <article class="tp-line" data-tp-line="${index}">
@@ -38,42 +53,76 @@ export function teleprompterHTML(lesson) {
               </article>
             `).join("")}
           </div>
-          <div class="tp-spacer" data-tp-spacer></div>
+          <div class="tp-spacer" data-tp-spacer="bottom"></div>
+        </div>
+
+        <div class="tp-toast" data-tp-hint role="status" hidden>
+          <span>Touch the script to pause. Open Settings for speed, text size, and language.</span>
+          <button class="tp-toast-close" type="button" data-tp-hint-close aria-label="Dismiss hint">
+            ${icon("x", 16)}
+          </button>
         </div>
       </div>
 
-      <div class="tp-controls" data-tp-controls>
-        <div class="tp-transport">
-          <button class="btn btn-primary" type="button" data-tp-play>
-            ${icon("play", 18)} <span>Play</span>
-          </button>
-          <button class="btn btn-secondary" type="button" data-tp-restart>
-            ${icon("rotate-ccw", 17)} <span>Restart</span>
-          </button>
-          <button class="btn btn-secondary" type="button" data-tp-lang aria-pressed="${prefs.showIndonesian}">
-            ${icon("globe", 17)} <span>${prefs.showIndonesian ? "EN + ID" : "EN only"}</span>
-          </button>
-        </div>
+      <div class="tp-controls">
+        <button class="tp-icon-btn" type="button" data-tp-restart aria-label="Restart" title="Restart">
+          ${icon("rotate-ccw", 21)}
+        </button>
+        <button class="tp-play" type="button" data-tp-play>
+          ${icon("play", 22)} <span>Play</span>
+        </button>
+        <button class="tp-icon-btn" type="button" data-tp-settings aria-label="Settings" title="Settings">
+          ${icon("settings", 21)}
+        </button>
+      </div>
 
-        <div class="tp-sliders">
-          <label class="range-field">
-            <span>${icon("gauge", 15)} Speed <output data-tp-speed-output>${prefs.speed}</output></span>
-            <input type="range" min="1" max="10" step="1" value="${prefs.speed}" data-tp-speed>
-          </label>
-          <label class="range-field">
-            <span>${icon("text-size", 15)} Text <output data-tp-font-output>${prefs.fontSize}px</output></span>
-            <input type="range" min="18" max="36" step="1" value="${prefs.fontSize}" data-tp-font>
-          </label>
-          <label class="range-field">
-            <span>${icon("line-height", 15)} Spacing <output data-tp-space-output>${prefs.lineSpacing.toFixed(1)}</output></span>
-            <input type="range" min="1.2" max="2.2" step="0.1" value="${prefs.lineSpacing}" data-tp-space>
-          </label>
-        </div>
+      <div class="sheet-layer" data-tp-sheet hidden>
+        <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="tp-settings-title" tabindex="-1">
+          <div class="sheet-grabber" aria-hidden="true"></div>
+          <header class="sheet-head">
+            <h2 id="tp-settings-title">Teleprompter settings</h2>
+            <button class="sheet-close" type="button" data-sheet-close data-sheet-focus aria-label="Close settings">
+              ${icon("x", 20)}
+            </button>
+          </header>
+          <div class="sheet-body">
+            <label class="setting-field">
+              <span class="setting-label">Speed <output data-tp-speed-output>${prefs.speed}</output></span>
+              <input type="range" min="1" max="10" step="1" value="${prefs.speed}" data-tp-speed>
+              <span class="setting-scale"><span>Slow</span><span>Fast</span></span>
+            </label>
 
-        <p class="tp-hint">
-          ${icon("circle-help", 15)}
-          <span>Play starts the scroll. Touch or scroll the script to pause. The highlighted line is the one crossing the center line.</span>
-        </p>
+            <label class="setting-field">
+              <span class="setting-label">Text size <output data-tp-font-output>${prefs.fontSize}px</output></span>
+              <input type="range" min="18" max="36" step="1" value="${prefs.fontSize}" data-tp-font>
+              <span class="setting-scale"><span>Small</span><span>Large</span></span>
+            </label>
+
+            <label class="setting-field">
+              <span class="setting-label">Line spacing <output data-tp-space-output>${prefs.lineSpacing.toFixed(1)}</output></span>
+              <input type="range" min="1.2" max="2.2" step="0.1" value="${prefs.lineSpacing}" data-tp-space>
+              <span class="setting-scale"><span>Tight</span><span>Loose</span></span>
+            </label>
+
+            <div class="setting-field">
+              <span class="setting-label">Language</span>
+              <div class="segmented" role="group" aria-label="Teleprompter language">
+                <button type="button" data-tp-lang-choice="en" aria-pressed="${!prefs.showIndonesian}">EN only</button>
+                <button type="button" data-tp-lang-choice="both" aria-pressed="${prefs.showIndonesian}">EN + Indonesian</button>
+              </div>
+            </div>
+
+            <button class="setting-row" type="button" data-tp-fullscreen>
+              <span class="setting-row-label">
+                ${icon("expand", 19)}
+                <span data-tp-fullscreen-label>Fullscreen</span>
+              </span>
+              ${icon("chevron-right", 18)}
+            </button>
+
+            <button class="btn btn-primary btn-wide" type="button" data-sheet-close>Done</button>
+          </div>
+        </section>
       </div>
     </div>
   `;
@@ -83,10 +132,9 @@ export function mountTeleprompter(root, lesson) {
   const page = root.querySelector("[data-tp]");
   if (!page) return () => {};
 
-  const stopButton = page.querySelector("[data-tp-play]");
+  const playButton = page.querySelector("[data-tp-play]");
   const restartButton = page.querySelector("[data-tp-restart]");
-  const languageButton = page.querySelector("[data-tp-lang]");
-  const fullscreenButton = page.querySelector("[data-tp-fullscreen]");
+  const settingsButton = page.querySelector("[data-tp-settings]");
   const scroll = page.querySelector("[data-tp-scroll]");
   const stage = page.querySelector("[data-tp-stage]");
   const script = page.querySelector(".tp-script");
@@ -96,9 +144,21 @@ export function mountTeleprompter(root, lesson) {
   const speedOutput = page.querySelector("[data-tp-speed-output]");
   const fontOutput = page.querySelector("[data-tp-font-output]");
   const spaceOutput = page.querySelector("[data-tp-space-output]");
-  const spacers = [...page.querySelectorAll("[data-tp-spacer]")];
+  const languageChoices = [...page.querySelectorAll("[data-tp-lang-choice]")];
+  const fullscreenButton = page.querySelector("[data-tp-fullscreen]");
+  const fullscreenLabel = page.querySelector("[data-tp-fullscreen-label]");
+  const topSpacer = page.querySelector('[data-tp-spacer="top"]');
+  const bottomSpacer = page.querySelector('[data-tp-spacer="bottom"]');
+  const hint = page.querySelector("[data-tp-hint]");
+  const hintClose = page.querySelector("[data-tp-hint-close]");
   const lines = [...page.querySelectorAll("[data-tp-line]")];
-  if (!stopButton || !scroll || !stage || !script || !lines.length) return () => {};
+  if (!playButton || !scroll || !stage || !script || !lines.length) return () => {};
+
+  const sheet = mountSheet({
+    layer: page.querySelector("[data-tp-sheet]"),
+    openButton: settingsButton,
+    onOpen: () => setPlaying(false)
+  });
 
   let prefs = getPreferences("teleprompter");
   let playing = false;
@@ -109,29 +169,31 @@ export function mountTeleprompter(root, lesson) {
   let disposed = false;
   let currentIndex = -1;
   let scrollPosition = scroll.scrollTop;
-
-  function formatSpeed(value, suffix = "") {
-    return `${value}${suffix}`;
-  }
+  let guideY = 0;
 
   function applyPreferences() {
     script.style.setProperty("--tp-font-size", `${prefs.fontSize}px`);
     script.style.setProperty("--tp-line-height", String(prefs.lineSpacing));
     page.classList.toggle("is-id-hidden", !prefs.showIndonesian);
-    languageButton?.setAttribute("aria-pressed", String(prefs.showIndonesian));
-    if (languageButton) {
-      languageButton.innerHTML = `${icon("globe", 17)} <span>${prefs.showIndonesian ? "EN + ID" : "EN only"}</span>`;
-    }
-    if (speedOutput) speedOutput.textContent = formatSpeed(prefs.speed);
-    if (fontOutput) fontOutput.textContent = formatSpeed(prefs.fontSize, "px");
+    languageChoices.forEach(button => {
+      button.setAttribute("aria-pressed", String(
+        button.dataset.tpLangChoice === "both" ? prefs.showIndonesian : !prefs.showIndonesian
+      ));
+    });
+    if (speedOutput) speedOutput.textContent = String(prefs.speed);
+    if (fontOutput) fontOutput.textContent = `${prefs.fontSize}px`;
     if (spaceOutput) spaceOutput.textContent = prefs.lineSpacing.toFixed(1);
   }
 
-  function updateSpacers() {
-    const height = Math.max(20, Math.round(stage.clientHeight / 2));
-    spacers.forEach(spacer => {
-      spacer.style.height = `${height}px`;
-    });
+  function updateGeometry() {
+    const stageHeight = stage.clientHeight;
+    const stageTop = stage.getBoundingClientRect().top;
+    const comfortable = stageHeight > 160 ? 60 : 20;
+    const target = window.innerHeight * 0.4 - stageTop;
+    guideY = Math.round(Math.max(comfortable, Math.min(stageHeight - comfortable, target)));
+    stage.style.setProperty("--tp-guide-y", `${guideY}px`);
+    if (topSpacer) topSpacer.style.height = `${guideY}px`;
+    if (bottomSpacer) bottomSpacer.style.height = `${Math.max(0, stageHeight - guideY)}px`;
   }
 
   function syncScrollPosition() {
@@ -149,18 +211,17 @@ export function mountTeleprompter(root, lesson) {
   }
 
   function updateCurrent() {
-    const box = scroll.getBoundingClientRect();
-    const center = box.top + box.height / 2;
+    const guide = stage.getBoundingClientRect().top + guideY;
     let winner = 0;
     let closest = Number.POSITIVE_INFINITY;
 
     lines.forEach((line, index) => {
       const rect = line.getBoundingClientRect();
-      if (rect.top <= center && rect.bottom >= center) {
+      if (rect.top <= guide && rect.bottom >= guide) {
         winner = index;
         closest = -1;
       } else if (closest >= 0) {
-        const distance = Math.abs((rect.top + rect.bottom) / 2 - center);
+        const distance = Math.abs((rect.top + rect.bottom) / 2 - guide);
         if (distance < closest) {
           closest = distance;
           winner = index;
@@ -172,9 +233,9 @@ export function mountTeleprompter(root, lesson) {
   }
 
   function renderPlayState() {
-    stopButton.innerHTML = playing
-      ? `${icon("pause", 18)} <span>Pause</span>`
-      : `${icon("play", 18)} <span>Play</span>`;
+    playButton.innerHTML = playing
+      ? `${icon("pause", 22)} <span>Pause</span>`
+      : `${icon("play", 22)} <span>Play</span>`;
     page.classList.toggle("is-playing", playing);
   }
 
@@ -261,6 +322,7 @@ export function mountTeleprompter(root, lesson) {
 
   function togglePlay() {
     if (!playing) {
+      markPracticeStarted(lesson.id);
       const max = Math.max(0, scroll.scrollHeight - scroll.clientHeight);
       if (scrollPosition >= max - 0.5) {
         scrollPosition = 0;
@@ -292,7 +354,7 @@ export function mountTeleprompter(root, lesson) {
   function onFontInput() {
     prefs = updatePreferences("teleprompter", { fontSize: fontInput.value });
     applyPreferences();
-    updateSpacers();
+    updateGeometry();
     syncScrollPosition();
     updateCurrent();
   }
@@ -304,33 +366,41 @@ export function mountTeleprompter(root, lesson) {
     updateCurrent();
   }
 
-  function onLanguage() {
-    prefs = updatePreferences("teleprompter", { showIndonesian: !prefs.showIndonesian });
+  function setLanguage(showIndonesian) {
+    prefs = updatePreferences("teleprompter", { showIndonesian });
     applyPreferences();
     syncScrollPosition();
     updateCurrent();
   }
 
+  function onLanguageChoice(event) {
+    const button = event.target.closest("[data-tp-lang-choice]");
+    if (!button) return;
+    setLanguage(button.dataset.tpLangChoice === "both");
+  }
+
   function onFullscreen() {
-    const target = page;
+    sheet.close();
     if (!document.fullscreenElement) {
-      target.requestFullscreen?.().catch(() => {});
+      page.requestFullscreen?.().catch(() => {});
     } else {
       document.exitFullscreen?.().catch(() => {});
     }
   }
 
   function onFullscreenChange() {
-    if (!fullscreenButton) return;
     const active = document.fullscreenElement === page;
-    fullscreenButton.innerHTML = active
-      ? `${icon("minimize", 17)} <span>Exit full</span>`
-      : `${icon("expand", 17)} <span>Fullscreen</span>`;
+    if (fullscreenLabel) fullscreenLabel.textContent = active ? "Exit fullscreen" : "Fullscreen";
     window.setTimeout(() => {
-      updateSpacers();
+      updateGeometry();
       syncScrollPosition();
       updateCurrent();
     }, 50);
+  }
+
+  function onHintClose() {
+    hint.hidden = true;
+    rememberHint();
   }
 
   function onKeydown(event) {
@@ -357,7 +427,7 @@ export function mountTeleprompter(root, lesson) {
   }
 
   function onResize() {
-    updateSpacers();
+    updateGeometry();
     syncScrollPosition();
     updateCurrent();
   }
@@ -366,13 +436,14 @@ export function mountTeleprompter(root, lesson) {
     if (document.hidden) setPlaying(false);
   }
 
-  stopButton.addEventListener("click", togglePlay);
+  playButton.addEventListener("click", togglePlay);
   restartButton?.addEventListener("click", restart);
-  languageButton?.addEventListener("click", onLanguage);
-  fullscreenButton?.addEventListener("click", onFullscreen);
   speedInput?.addEventListener("input", onSpeedInput);
   fontInput?.addEventListener("input", onFontInput);
   spaceInput?.addEventListener("input", onSpaceInput);
+  languageChoices.forEach(button => button.addEventListener("click", onLanguageChoice));
+  fullscreenButton?.addEventListener("click", onFullscreen);
+  hintClose?.addEventListener("click", onHintClose);
   scroll.addEventListener("wheel", onUserScroll, { passive: true });
   scroll.addEventListener("touchstart", onUserScroll, { passive: true });
   scroll.addEventListener("pointerdown", onUserScroll);
@@ -383,8 +454,9 @@ export function mountTeleprompter(root, lesson) {
   document.addEventListener("visibilitychange", onVisibility);
 
   applyPreferences();
+  if (!hintIsDismissed() && hint) hint.hidden = false;
   requestAnimationFrame(() => {
-    updateSpacers();
+    updateGeometry();
     syncScrollPosition();
     updateCurrent();
   });
@@ -392,6 +464,7 @@ export function mountTeleprompter(root, lesson) {
   return () => {
     disposed = true;
     setPlaying(false);
+    sheet.dispose();
     scroll.removeEventListener("wheel", onUserScroll);
     scroll.removeEventListener("touchstart", onUserScroll);
     scroll.removeEventListener("pointerdown", onUserScroll);

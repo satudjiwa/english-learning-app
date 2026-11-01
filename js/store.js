@@ -6,7 +6,7 @@ const DEFAULT_PREFERENCES = {
   teleprompter: {
     speed: 4,
     fontSize: 24,
-    lineSpacing: 1.7,
+    lineSpacing: 1.5,
     showIndonesian: true
   },
   shadowing: {
@@ -145,6 +145,25 @@ export function toggleLessonComplete(id) {
   state.completedLessons.push(id);
   save();
   return true;
+}
+
+export function markPracticeStarted(id) {
+  if (!LESSON_ID.test(String(id || ""))) return false;
+  try {
+    window.sessionStorage.setItem(`small-steps-practice:${id}`, "1");
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export function hasPracticeStarted(id) {
+  if (!LESSON_ID.test(String(id || ""))) return false;
+  try {
+    return window.sessionStorage.getItem(`small-steps-practice:${id}`) === "1";
+  } catch {
+    return false;
+  }
 }
 
 export function getPreferences(mode) {
