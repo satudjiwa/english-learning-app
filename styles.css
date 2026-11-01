@@ -3444,3 +3444,70 @@ body.sheet-open {
     font-size: 16px;
   }
 }
+
+/* ==========================================================================
+   UX overhaul: accessibility pass
+   ========================================================================== */
+
+/* 44px minimum targets, with breathing room between list rows. */
+.skip-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+.brand {
+  min-height: 44px;
+}
+
+/* Keep adjacent controls at least 8px apart where the layout allows it. */
+.lesson-tabs,
+.segmented,
+.sh-step-track {
+  gap: 8px;
+}
+
+.lesson-list {
+  gap: 8px;
+}
+
+.lesson-link {
+  min-height: 44px;
+  padding: 10px 8px;
+  font-size: 16px;
+}
+
+/* Reading copy at 16px; labels and metadata stay compact. */
+.hero-text,
+.hero-note,
+.page-head > p,
+.module-desc,
+.continue-copy p,
+.mode-card p,
+.home-note-panel p,
+.library-note p,
+.empty-state > p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.hero-note {
+  color: var(--muted);
+}
+
+.how-to-list li,
+.how-to-list strong,
+.sh-step-note,
+.sh-text-hint,
+.sh-turn-hint,
+.sh-line-id,
+.sheet-note {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.how-to-list strong {
+  font-weight: 650;
+}
