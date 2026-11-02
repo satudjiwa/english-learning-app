@@ -1,0 +1,65 @@
+{
+  "id": "HAVE-P03",
+  "moduleId": "HAVE",
+  "title": "Have a Problem & Have a Question",
+  "partTitle": "Have a Problem & Have a Question",
+  "level": "Beginner (A1–A2)",
+  "situation": "Reporting a machine problem during a shift.",
+  "objective": "Use have a problem and have a question to ask for help at work.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "Sometimes I have a problem with the conveyor during my shift.",
+      "indonesian": "Terkadang saya punya masalah dengan konveyor selama shift saya.",
+      "audio": "public/audio/HAVE/HAVE-P03/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "When I have a problem, I tell my supervisor right away.",
+      "indonesian": "Ketika saya punya masalah, saya langsung memberi tahu supervisor saya.",
+      "audio": "public/audio/HAVE/HAVE-P03/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "If I have a question about the machine, I ask the senior technician.",
+      "indonesian": "Jika saya punya pertanyaan tentang mesin, saya bertanya kepada teknisi senior.",
+      "audio": "public/audio/HAVE/HAVE-P03/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Before I do the repair, I have a question about the spare part.",
+      "indonesian": "Sebelum melakukan perbaikan, saya punya pertanyaan tentang suku cadang.",
+      "audio": "public/audio/HAVE/HAVE-P03/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "My supervisor says, \"If you have a question, please ask me.\"",
+      "indonesian": "Supervisor saya berkata, \"Kalau kamu punya pertanyaan, silakan tanya saya.\"",
+      "audio": "public/audio/HAVE/HAVE-P03/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "have a problem",
+      "indonesian": "punya masalah"
+    },
+    {
+      "english": "have a question",
+      "indonesian": "punya pertanyaan"
+    },
+    {
+      "english": "have a problem with the machine",
+      "indonesian": "punya masalah dengan mesin"
+    },
+    {
+      "english": "ask a question",
+      "indonesian": "mengajukan pertanyaan"
+    }
+  ],
+  "learningNotes": [
+    "problem dan question adalah benda yang bisa dihitung, jadi memakai a.",
+    "Gunakan have a problem with + benda: have a problem with the conveyor.",
+    "Untuk bertanya dengan sopan, kamu bisa bilang: Can I ask a question?"
+  ],
+  "fullAudio": "public/audio/HAVE/HAVE-P03/full.mp3"
+}

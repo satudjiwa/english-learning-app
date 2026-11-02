@@ -1,0 +1,65 @@
+{
+  "id": "HAVE-P02",
+  "moduleId": "HAVE",
+  "title": "Have a Meeting & Have Time",
+  "partTitle": "Have a Meeting & Have Time",
+  "level": "Beginner (A1–A2)",
+  "situation": "A short team meeting before the shift starts.",
+  "objective": "Use have a meeting and have time to talk about schedules at work.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "Every morning, we have a short meeting with the supervisor.",
+      "indonesian": "Setiap pagi, kami mengadakan rapat singkat dengan supervisor.",
+      "audio": "public/audio/HAVE/HAVE-P02/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "In the meeting, we talk about the schedule and the machines for today.",
+      "indonesian": "Dalam rapat, kami membahas jadwal dan mesin untuk hari ini.",
+      "audio": "public/audio/HAVE/HAVE-P02/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Sometimes I do not have time to finish my coffee before the meeting.",
+      "indonesian": "Terkadang saya tidak punya waktu untuk menghabiskan kopi sebelum rapat.",
+      "audio": "public/audio/HAVE/HAVE-P02/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "If we have time, we check the machine together after the meeting.",
+      "indonesian": "Jika punya waktu, kami memeriksa mesin bersama setelah rapat.",
+      "audio": "public/audio/HAVE/HAVE-P02/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "When the day is very busy, we do not have time for a long meeting.",
+      "indonesian": "Ketika hari sangat sibuk, kami tidak punya waktu untuk rapat panjang.",
+      "audio": "public/audio/HAVE/HAVE-P02/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "have a meeting",
+      "indonesian": "mengadakan rapat"
+    },
+    {
+      "english": "have time",
+      "indonesian": "punya waktu"
+    },
+    {
+      "english": "do not have time",
+      "indonesian": "tidak punya waktu"
+    },
+    {
+      "english": "after the meeting",
+      "indonesian": "setelah rapat"
+    }
+  ],
+  "learningNotes": [
+    "have a meeting memakai a karena meeting adalah benda yang bisa dihitung.",
+    "have time tidak memakai a: have time, bukan have a time.",
+    "Bentuk negatifnya: I do not have time, atau I don't have time."
+  ],
+  "fullAudio": "public/audio/HAVE/HAVE-P02/full.mp3"
+}

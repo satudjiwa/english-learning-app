@@ -1,0 +1,65 @@
+{
+  "id": "HAVE-P04",
+  "moduleId": "HAVE",
+  "title": "Have To (Obligation)",
+  "partTitle": "Have To (Obligation)",
+  "level": "Beginner (A1–A2)",
+  "situation": "Tasks that must be finished before the shift ends.",
+  "objective": "Use have to to say what you must do at work.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "Before I start the machine, I have to follow the SOP.",
+      "indonesian": "Sebelum menyalakan mesin, saya harus mengikuti SOP.",
+      "audio": "public/audio/HAVE/HAVE-P04/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "At the end of the shift, I have to write a short report.",
+      "indonesian": "Di akhir shift, saya harus menulis laporan singkat.",
+      "audio": "public/audio/HAVE/HAVE-P04/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "If a part is broken, I have to replace it with a new part.",
+      "indonesian": "Jika ada bagian yang rusak, saya harus menggantinya dengan bagian baru.",
+      "audio": "public/audio/HAVE/HAVE-P04/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "When the machine stops, we have to check it together.",
+      "indonesian": "Ketika mesin berhenti, kami harus memeriksanya bersama.",
+      "audio": "public/audio/HAVE/HAVE-P04/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "During a busy shift, I have to work quickly, but I do not have to skip any check.",
+      "indonesian": "Selama shift sibuk, saya harus bekerja cepat, tapi saya tidak perlu melewati pemeriksaan apa pun.",
+      "audio": "public/audio/HAVE/HAVE-P04/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "have to",
+      "indonesian": "harus"
+    },
+    {
+      "english": "have to follow the SOP",
+      "indonesian": "harus mengikuti SOP"
+    },
+    {
+      "english": "have to write a report",
+      "indonesian": "harus menulis laporan"
+    },
+    {
+      "english": "do not have to",
+      "indonesian": "tidak perlu"
+    }
+  ],
+  "learningNotes": [
+    "have to diikuti kata kerja bentuk dasar: have to check, have to write.",
+    "Diucapkan menyambung: hafta.",
+    "Hati-hati: do not have to berarti tidak perlu, bukan tidak boleh."
+  ],
+  "fullAudio": "public/audio/HAVE/HAVE-P04/full.mp3"
+}

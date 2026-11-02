@@ -3,20 +3,41 @@
 English for Service Engineers — calm, mobile-first speaking practice for Indonesian
 airport service engineers.
 
-This repository is the `rebuild-v2` foundation: six planned modules, **five complete
-lessons**, and two reusable practice modes. The old 35-day / 224-phrase app is
-preserved by the `backup-before-rebuild` tag.
+The app is rebuilt around **verb modules**: one everyday verb, five short parts, and
+two reusable practice modes (Teleprompter and Shadowing). The old 35-day / 224-phrase
+app is preserved by the `backup-before-rebuild` tag.
 
 ## Current state
 
-- **6 modules** with titles, levels, descriptions, and five planned lesson slots each.
-- **5 finished lessons**: `M1-L01` through `M1-L05`.
-- **Real MP3 audio** for all five lessons: 75 sentence files plus five `full.mp3`
-  files, generated with Piper TTS (neural, not human).
-- **25 “Coming soon” slots** that are visible but not clickable.
+- **13 verb modules** — GO, COME, HAVE, BRING, GIVE, TAKE, MAKE, GET, DO, PUT, WORK,
+  SEE, and KEEP — with five planned parts each (65 parts total).
+- **5 finished parts**, all in the HAVE module: `HAVE-P01` through `HAVE-P05`.
+- **Real MP3 audio** for all five finished parts: 25 sentence files plus five
+  `full.mp3` files, generated with Piper TTS (neural, not human).
+- **60 “Coming soon” parts** that are visible but not openable.
 - **Teleprompter** and **Shadowing** are reusable components driven by lesson JSON.
 - No backend, no login, no paid API, and no build framework.
 - Static vanilla ES modules, hash routing, and GitHub Pages deployment.
+
+### Curriculum
+
+| # | Module | Focus | Parts |
+| --- | --- | --- | --- |
+| 01 | GO | go to work, go home, go back, go wrong, go through | Coming soon |
+| 02 | COME | come in, come back, come from, come up with, come across | Coming soon |
+| 03 | **HAVE** | meals, meetings, time, problems, questions, obligation, a look, a rest | **Complete (5/5)** |
+| 04 | BRING | bring things, bring back, bring up, bring out, bring together | Coming soon |
+| 05 | GIVE | give a hand, an update, instructions, feedback, give up | Coming soon |
+| 06 | TAKE | take a break, a look, care of, take off/out, take over | Coming soon |
+| 07 | MAKE | make coffee, a plan, a decision, a mistake, progress | Coming soon |
+| 08 | GET | get to work, get a part, get ready, get better, get back | Coming soon |
+| 09 | DO | do the job, a check, paperwork, do well, do without | Coming soon |
+| 10 | PUT | put away, put on, put back, put together, put off | Coming soon |
+| 11 | WORK | work at a job, work on, work with, work out, a machine works | Coming soon |
+| 12 | SEE | see things, see a problem, see if, see you later, I see | Coming soon |
+| 13 | KEEP | keep going, keep calm, keep a record, keep in touch, keep up | Coming soon |
+
+The module list and part titles live in `data/modules.json`.
 
 ## Pages and routes
 
@@ -24,9 +45,9 @@ preserved by the `backup-before-rebuild` tag.
 | --- | --- |
 | Home | `#/` |
 | Module Library | `#/modules` |
-| Lesson | `#/lesson/M1-L01` |
-| Teleprompter | `#/lesson/M1-L01/teleprompter` |
-| Shadowing | `#/lesson/M1-L01/shadowing` |
+| Lesson | `#/lesson/HAVE-P01` |
+| Teleprompter | `#/lesson/HAVE-P01/teleprompter` |
+| Shadowing | `#/lesson/HAVE-P01/shadowing` |
 
 Unknown routes and lessons that are not in `data/lessons/index.json` show a clear
 not-found or “Coming soon” page.
@@ -41,22 +62,18 @@ sw.js                          offline app shell and runtime cache
 icon.svg                       app icon
 
 public/
-  audio/M1/M1-L01/             real MP3s (sentence-01…16.mp3, full.mp3)
-  audio/M1/M1-L02/             real MP3s (sentence-01…15.mp3, full.mp3)
-  audio/M1/M1-L03/             real MP3s (sentence-01…15.mp3, full.mp3)
-  audio/M1/M1-L04/             real MP3s (sentence-01…14.mp3, full.mp3)
-  audio/M1/M1-L05/             real MP3s (sentence-01…15.mp3, full.mp3)
+  audio/HAVE/HAVE-P01/         real MP3s (sentence-01…05.mp3, full.mp3)
+  audio/HAVE/HAVE-P02/ … P05/  real MP3s for the finished module
 
 data/
-  modules.json                 six modules and planned lesson counts
+  modules.json                 13 verb modules with five planned parts each
   lessons/
-    index.json                 manifest of finished, openable lessons
-    M1-L01.json                complete sample lesson
-    M1-L02.json … M1-L05.json  finished lessons one through five
+    index.json                 manifest of finished, openable parts
+    HAVE-P01.json … P05.json   finished lessons
 
 js/
   app.js                       hash router, route chrome, error states
-  data.js                      JSON loading, lesson-slot generation, progress math
+  data.js                      JSON loading, part slots, progress math
   store.js                     localStorage schema and preferences
   lib/audio.js                 MP3 probe, browser TTS fallback, sequential playback
   components/
@@ -80,54 +97,56 @@ tools/
 
 ## Lesson data
 
-Lesson JSON is separate from the UI. A lesson contains:
+Lesson JSON is separate from the UI. Each file is one part of a verb module:
 
 ```json
 {
-  "id": "M1-L01",
-  "moduleId": "M1",
-  "title": "Introducing Yourself as a Service Engineer",
-  "difficulty": "Beginner",
-  "situation": "...",
-  "objective": "...",
+  "id": "HAVE-P01",
+  "moduleId": "HAVE",
+  "title": "Have Breakfast & Have Lunch",
+  "partTitle": "Have Breakfast & Have Lunch",
+  "level": "Beginner (A1–A2)",
+  "situation": "Meals around a morning shift at the airport.",
+  "objective": "Use have breakfast and have lunch to talk about your daily meals at work.",
   "dialogue": [
     {
-      "speaker": "Technician",
-      "english": "Good morning, and my name is Alex.",
-      "indonesian": "Selamat pagi, dan nama saya Alex.",
-      "audio": "public/audio/M1/M1-L01/sentence-01.mp3"
+      "speaker": "Narrator",
+      "english": "I have breakfast at home before my morning shift.",
+      "indonesian": "Saya sarapan di rumah sebelum shift pagi.",
+      "audio": "public/audio/HAVE/HAVE-P01/sentence-01.mp3"
     }
   ],
-  "keyExpressions": [],
-  "sentencePatterns": [],
-  "learningNotes": [],
-  "pronunciationNotes": [],
-  "fullAudio": "public/audio/M1/M1-L01/full.mp3"
+  "keyExpressions": [
+    {
+      "english": "have breakfast",
+      "indonesian": "sarapan"
+    }
+  ],
+  "learningNotes": [
+    "Kata kerja have dipakai untuk makan: have breakfast, have lunch, have dinner."
+  ],
+  "fullAudio": "public/audio/HAVE/HAVE-P01/full.mp3"
 }
 ```
 
-`data/lessons/index.json` is the source of truth for which lessons can be opened.
-Adding a lesson means adding its JSON file **and** its index entry.
+`data/lessons/index.json` is the source of truth for which parts can be opened.
+Adding a part means adding its JSON file, its index entry, and an entry in the
+`parts` list of `data/modules.json` (the list is already complete for all 65 parts).
 
 ### Validation rules
 
 `npm run validate:lessons` checks:
 
-- six modules with unique IDs, correct module numbers, and five lessons each;
+- 13 modules with unique IDs, sequential numbers, and exactly five parts each;
+- every part id is `<MODULE>-P01` … `<MODULE>-P05` and declared once in `modules.json`;
 - unique lesson IDs in both the lesson files and `index.json`;
-- every index entry has a matching lesson file, title, difficulty, and module;
+- every index entry has a matching lesson file with the same title and module;
 - every dialogue line has `speaker`, `english`, and `indonesian`;
-- dialogue length is inside the range for the lesson difficulty:
-  - Beginner: 12–16
-  - Beginner–Elementary: 12–18
-  - Elementary: 12–18
-  - Elementary–Intermediate: 14–20
-  - Intermediate: 14–20
+- each part has **3–8 short sentences**;
 - optional audio paths match
-  `public/audio/M{1-6}/M{1-6}-L{NN}/sentence-{NN}.mp3` or `.../full.mp3`,
+  `public/audio/<MODULE>/<MODULE>-Pnn/sentence-nn.mp3` or `.../full.mp3`,
   belong to the same lesson, and point to a real file;
-- each lesson has key expressions, sentence patterns, learning notes, and 1–2
-  pronunciation notes.
+- each part has key expressions and learning notes.
 
 ## Audio behavior
 
@@ -139,14 +158,14 @@ Audio paths come only from lesson data. Components do not hard-code file names.
    synthesis and shows **“Computer voice — temporary”**.
 3. If speech synthesis also fails, the app shows **“Audio unavailable”**.
 
-`M1-L01` through `M1-L05` ship with real audio:
+`HAVE-P01` through `HAVE-P05` ship with real audio:
 
 ```text
-public/audio/M1/M1-L01/
-  sentence-01.mp3 … sentence-16.mp3
+public/audio/HAVE/HAVE-P01/
+  sentence-01.mp3 … sentence-05.mp3
   full.mp3
-public/audio/M1/M1-L02/ … M1-L05/
-  sentence-01.mp3 … sentence-14/15.mp3
+public/audio/HAVE/HAVE-P02/ … P05/
+  sentence-01.mp3 … sentence-05.mp3
   full.mp3
 ```
 
@@ -177,6 +196,7 @@ Voice mapping is editable at the top of `tools/generate_audio.py`:
 | Speaker | Piper voice | Model-card license |
 | --- | --- | --- |
 | Technician | `en_US-ryan-medium` | CC BY-NC-SA 4.0 |
+| Narrator | `en_US-ryan-medium` | CC BY-NC-SA 4.0 |
 | Remote Engineer | `en_US-hfc_female-medium` | CC BY-NC-SA 4.0 |
 | any other speaker | fallback to the Technician voice | — |
 
@@ -191,9 +211,9 @@ The generator:
 - updates each lesson JSON only for files that really exist.
 
 ```bash
-python3 tools/generate_audio.py --lesson M1-L02
+python3 tools/generate_audio.py --lesson HAVE-P01
 python3 tools/generate_audio.py --all
-python3 tools/generate_audio.py --lesson M1-L02 --force
+python3 tools/generate_audio.py --lesson HAVE-P01 --force
 ```
 
 The model cards are at `tools/voices/*.MODEL_CARD`. Both current voices use
@@ -205,7 +225,7 @@ prints each voice’s license from its model card on every generator run.
 Stored under the single localStorage key:
 
 ```text
-small-steps-english.v2
+small-steps-english.v3
 ```
 
 Saved values:
@@ -219,27 +239,22 @@ Saved values:
 - `preferences.shadowing.speed` (0.75, 0.85, 1.0)
 - `preferences.shadowing.showIndonesian`
 
-Progress is local to the browser. There is no migration from the old app and no
-sync between devices. Storage failures are handled silently so the app remains
-usable in private browsing.
+When the app sees the retired `small-steps-english.v2` payload, it keeps the user’s
+practice preferences but starts a fresh progress list, because the old `M1-L01`
+lesson IDs no longer exist.
 
 ## Practice modes
 
 ### Teleprompter
 
-- Starts paused, at the top, with the sentence crossing the center line highlighted.
-- Play/Pause, restart, manual scroll (which pauses), fullscreen, and Wake Lock while
-  playing. Wake Lock and fullscreen fail silently when unsupported.
-- Speed 1–10, text 18–36 px, line spacing 1.2–2.2, English only / English + Indonesian.
-- Dark reading surface with mobile controls and safe-area padding.
+- Auto-scrolls the script at speed 1–10, with adjustable text size and line spacing.
+- Current-sentence highlight, sentence counter, progress bar, transcript jump links.
+- Optional Indonesian translation.
 
 ### Shadowing
 
-- Play/Pause, replay current sentence, whole conversation, sentence-by-sentence,
-  repeat sentence, repeat lesson.
-- Current-sentence highlight, sentence counter, progress bar, transcript jump links.
-- Speeds 0.75×, 0.85×, 1.0× and optional Indonesian translation.
 - Five-step guide: Listen → Listen & Read → Repeat → Shadow → Without translation.
+- Audio speeds 0.75×, 0.85×, and 1.0×, with optional Indonesian translation.
 - Whole-conversation mode advances sequentially through sentence audio so the
   highlight and progress stay accurate.
 
@@ -256,7 +271,7 @@ npm run serve              # local server at http://localhost:8080/
 Audio generation is separate from npm:
 
 ```bash
-python3 tools/generate_audio.py --lesson M1-L02
+python3 tools/generate_audio.py --lesson HAVE-P01
 ```
 
 There are no npm dependencies to install. A local server is required because the app
@@ -268,8 +283,7 @@ The workflow validates lesson data, builds `_site/`, verifies required files, an
 deploys the artifact. It runs on pushes to `main` and on manual dispatch.
 
 ```bash
-git switch main
-git merge --no-ff rebuild-v2
+npm run check
 git push origin main
 ```
 
@@ -277,14 +291,14 @@ Then confirm **Settings → Pages → Source** is set to **GitHub Actions**. All
 relative and routing is hash-based, so the app works from the repository subpath
 without a base-path setting.
 
-The pre-rebuild state is available at tag `backup-before-rebuild`. The rebuild work
-lives on branch `rebuild-v2` until it is merged.
+The pre-rebuild state is available at tag `backup-before-rebuild`. The verb
+curriculum now lives on `main`; the older `rebuild-v2` branch is no longer used.
 
 ## Known limitations
 
-- `M1-L01` through `M1-L05` are written; the other 25 lesson slots are intentionally
-  “Coming soon”.
-- `M1-L01` through `M1-L05` have generated MP3s. Lessons added without audio fall
+- Only `HAVE-P01` through `HAVE-P05` are written; the other 60 parts are
+  intentionally “Coming soon”.
+- Only the finished HAVE parts have generated MP3s. Parts added without audio fall
   back to browser speech synthesis.
 - Piper audio is neural, not human; pronunciation and prosody are synthetic.
 - Computer voice quality varies by device and browser; some environments have no
@@ -293,7 +307,7 @@ lives on branch `rebuild-v2` until it is merged.
   scoring, or speech recognition.
 - Wake Lock and fullscreen depend on browser support and may be unavailable.
 - Progress is device-local. Clearing browser data removes it.
-- No migration from the old `v1` app.
+- No migration of old `v1`/`v2` progress, only of practice preferences.
 
 ## Safety
 

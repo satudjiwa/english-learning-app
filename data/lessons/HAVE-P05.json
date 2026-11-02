@@ -1,0 +1,65 @@
+{
+  "id": "HAVE-P05",
+  "moduleId": "HAVE",
+  "title": "Have a Look & Have a Rest",
+  "partTitle": "Have a Look & Have a Rest",
+  "level": "Beginner (A1–A2)",
+  "situation": "Checking a machine and taking a short break after a busy morning.",
+  "objective": "Use have a look and have a rest to offer help and talk about a break.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "When the conveyor stops, my supervisor says, \"Can you have a look?\"",
+      "indonesian": "Ketika konveyor berhenti, supervisor saya berkata, \"Bisa kamu cek?\"",
+      "audio": "public/audio/HAVE/HAVE-P05/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I have a look at the sensor and the cable first.",
+      "indonesian": "Saya memeriksa sensor dan kabel terlebih dahulu.",
+      "audio": "public/audio/HAVE/HAVE-P05/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "After I finish the repair, I usually have a short rest and drink some water.",
+      "indonesian": "Setelah selesai memperbaiki, saya biasanya istirahat sebentar dan minum air.",
+      "audio": "public/audio/HAVE/HAVE-P05/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "My teammate says, \"You can have a rest. I will check the machine.\"",
+      "indonesian": "Rekan kerja saya berkata, \"Kamu bisa istirahat. Saya akan memeriksa mesinnya.\"",
+      "audio": "public/audio/HAVE/HAVE-P05/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "If we have a rest, we can start the next shift with more energy.",
+      "indonesian": "Jika kami sempat istirahat, kami bisa memulai shift berikutnya dengan lebih segar.",
+      "audio": "public/audio/HAVE/HAVE-P05/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "have a look",
+      "indonesian": "melihat / memeriksa sebentar"
+    },
+    {
+      "english": "have a rest",
+      "indonesian": "istirahat"
+    },
+    {
+      "english": "have a look at the machine",
+      "indonesian": "memeriksa mesin"
+    },
+    {
+      "english": "have a short rest",
+      "indonesian": "istirahat sebentar"
+    }
+  ],
+  "learningNotes": [
+    "have a look memakai a karena look di sini berarti satu kali melihat.",
+    "Setelah have a look, gunakan at untuk menyebut bendanya: have a look at the sensor.",
+    "have a rest sama artinya dengan take a break, dan keduanya sama-sama benar."
+  ],
+  "fullAudio": "public/audio/HAVE/HAVE-P05/full.mp3"
+}

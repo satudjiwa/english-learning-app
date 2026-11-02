@@ -1,0 +1,65 @@
+{
+  "id": "HAVE-P01",
+  "moduleId": "HAVE",
+  "title": "Have Breakfast & Have Lunch",
+  "partTitle": "Have Breakfast & Have Lunch",
+  "level": "Beginner (A1–A2)",
+  "situation": "Meals around a morning shift at the airport.",
+  "objective": "Use have breakfast and have lunch to talk about your daily meals at work.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "I have breakfast at home before my morning shift.",
+      "indonesian": "Saya sarapan di rumah sebelum shift pagi.",
+      "audio": "public/audio/HAVE/HAVE-P01/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "On busy days, I only have a quick breakfast and a glass of water.",
+      "indonesian": "Pada hari sibuk, saya hanya sarapan cepat dan segelas air.",
+      "audio": "public/audio/HAVE/HAVE-P01/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "When the morning is busy, I have lunch a little late.",
+      "indonesian": "Ketika pagi sibuk, saya makan siang agak terlambat.",
+      "audio": "public/audio/HAVE/HAVE-P01/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "My team usually has lunch together in the small room near the office.",
+      "indonesian": "Tim saya biasanya makan siang bersama di ruangan kecil dekat kantor.",
+      "audio": "public/audio/HAVE/HAVE-P01/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "We try to have lunch before the next flight arrives.",
+      "indonesian": "Kami berusaha makan siang sebelum penerbangan berikutnya tiba.",
+      "audio": "public/audio/HAVE/HAVE-P01/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "have breakfast",
+      "indonesian": "sarapan"
+    },
+    {
+      "english": "have lunch",
+      "indonesian": "makan siang"
+    },
+    {
+      "english": "have a quick breakfast",
+      "indonesian": "sarapan cepat"
+    },
+    {
+      "english": "have lunch together",
+      "indonesian": "makan siang bersama"
+    }
+  ],
+  "learningNotes": [
+    "Kata kerja have dipakai untuk makan: have breakfast, have lunch, have dinner.",
+    "Untuk orang ketiga tunggal, have berubah menjadi has: my team has lunch.",
+    "Jangan menambahkan a sebelum breakfast atau lunch: have breakfast, bukan have a breakfast. Jika ada kata sifat, a boleh dipakai: have a quick breakfast."
+  ],
+  "fullAudio": "public/audio/HAVE/HAVE-P01/full.mp3"
+}

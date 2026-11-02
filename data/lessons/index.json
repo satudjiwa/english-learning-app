@@ -1,1 +1,27 @@
-[]
+[
+  {
+    "id": "HAVE-P01",
+    "moduleId": "HAVE",
+    "title": "Have Breakfast & Have Lunch"
+  },
+  {
+    "id": "HAVE-P02",
+    "moduleId": "HAVE",
+    "title": "Have a Meeting & Have Time"
+  },
+  {
+    "id": "HAVE-P03",
+    "moduleId": "HAVE",
+    "title": "Have a Problem & Have a Question"
+  },
+  {
+    "id": "HAVE-P04",
+    "moduleId": "HAVE",
+    "title": "Have To (Obligation)"
+  },
+  {
+    "id": "HAVE-P05",
+    "moduleId": "HAVE",
+    "title": "Have a Look & Have a Rest"
+  }
+]
