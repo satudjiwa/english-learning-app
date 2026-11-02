@@ -1,0 +1,63 @@
+{
+  "id": "COME-P02",
+  "moduleId": "COME",
+  "title": "Come Back & Come Over",
+  "partTitle": "Come Back & Come Over",
+  "level": "Beginner (A1–A2)",
+  "situation": "Leaving the work area and coming back to help a teammate.",
+  "objective": "Use come back and come over to talk about returning and approaching someone.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "Sometimes I leave the work area to get a tool.",
+      "indonesian": "Terkadang saya meninggalkan area kerja untuk mengambil alat.",
+      "audio": "public/audio/COME/COME-P02/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I always come back quickly because the machine needs my attention.",
+      "indonesian": "Saya selalu kembali dengan cepat karena mesin membutuhkan perhatian saya.",
+      "audio": "public/audio/COME/COME-P02/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "If a machine stops, my teammate calls me and says, 'Can you come over here?'",
+      "indonesian": "Jika mesin berhenti, rekan kerja saya menelepon dan berkata, 'Bisa datang ke sini?'",
+      "audio": "public/audio/COME/COME-P02/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I come over, look at the problem, and we check it together.",
+      "indonesian": "Saya datang menghampiri, melihat masalahnya, dan kami memeriksanya bersama.",
+      "audio": "public/audio/COME/COME-P02/sentence-04.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "come back",
+      "indonesian": "kembali"
+    },
+    {
+      "english": "come over",
+      "indonesian": "datang menghampiri"
+    },
+    {
+      "english": "work area",
+      "indonesian": "area kerja"
+    },
+    {
+      "english": "get a tool",
+      "indonesian": "mengambil alat"
+    },
+    {
+      "english": "needs my attention",
+      "indonesian": "membutuhkan perhatian saya"
+    }
+  ],
+  "learningNotes": [
+    "come back berarti kembali ke tempat semula.",
+    "come over berarti datang ke tempat orang lain berada.",
+    "Perhatikan polanya: come back to the work area, come over here."
+  ],
+  "fullAudio": "public/audio/COME/COME-P02/full.mp3"
+}

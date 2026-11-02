@@ -1,0 +1,63 @@
+{
+  "id": "COME-P04",
+  "moduleId": "COME",
+  "title": "Come Up & Come Up With",
+  "partTitle": "Come Up & Come Up With",
+  "level": "Beginner (A1–A2)",
+  "situation": "A new problem during the shift and a team solution.",
+  "objective": "Use come up and come up with to talk about new problems and ideas.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "Sometimes a new problem comes up during the shift.",
+      "indonesian": "Terkadang masalah baru muncul selama shift.",
+      "audio": "public/audio/COME/COME-P04/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "When that happens, I tell my supervisor right away.",
+      "indonesian": "Ketika itu terjadi, saya langsung memberi tahu supervisor saya.",
+      "audio": "public/audio/COME/COME-P04/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "After we check the machine, we try to come up with a solution.",
+      "indonesian": "Setelah kami memeriksa mesin, kami mencoba menemukan solusi.",
+      "audio": "public/audio/COME/COME-P04/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "If I come up with a good idea, I share it with the team.",
+      "indonesian": "Jika saya mendapat ide yang bagus, saya membagikannya kepada tim.",
+      "audio": "public/audio/COME/COME-P04/sentence-04.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "come up",
+      "indonesian": "muncul"
+    },
+    {
+      "english": "come up with",
+      "indonesian": "menemukan / mendapatkan"
+    },
+    {
+      "english": "right away",
+      "indonesian": "langsung"
+    },
+    {
+      "english": "solution",
+      "indonesian": "solusi"
+    },
+    {
+      "english": "share an idea",
+      "indonesian": "membagikan ide"
+    }
+  ],
+  "learningNotes": [
+    "come up berarti muncul, biasanya untuk masalah atau situasi baru.",
+    "come up with berarti menemukan ide atau solusi.",
+    "Setelah come up with, gunakan benda: come up with a solution."
+  ],
+  "fullAudio": "public/audio/COME/COME-P04/full.mp3"
+}

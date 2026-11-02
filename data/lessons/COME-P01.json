@@ -1,0 +1,63 @@
+{
+  "id": "COME-P01",
+  "moduleId": "COME",
+  "title": "Come In & Come to Work",
+  "partTitle": "Come In & Come to Work",
+  "level": "Beginner (A1–A2)",
+  "situation": "Arriving at the airport and starting the morning shift.",
+  "objective": "Use come in and come to work to talk about arriving and entering the workplace.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "I come to the airport every morning.",
+      "indonesian": "Saya datang ke bandara setiap pagi.",
+      "audio": "public/audio/COME/COME-P01/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I come in through the staff entrance and check in at the office.",
+      "indonesian": "Saya masuk lewat pintu masuk staf dan melapor di kantor.",
+      "audio": "public/audio/COME/COME-P01/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "My team usually comes to work early, so we can talk before the shift starts.",
+      "indonesian": "Tim saya biasanya datang bekerja lebih awal, jadi kami bisa berbicara sebelum shift dimulai.",
+      "audio": "public/audio/COME/COME-P01/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "When my supervisor says, 'Please come in,' I go into the meeting room.",
+      "indonesian": "Ketika supervisor saya berkata, 'Silakan masuk,' saya masuk ke ruang rapat.",
+      "audio": "public/audio/COME/COME-P01/sentence-04.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "come to work",
+      "indonesian": "datang bekerja"
+    },
+    {
+      "english": "come in",
+      "indonesian": "masuk"
+    },
+    {
+      "english": "staff entrance",
+      "indonesian": "pintu masuk staf"
+    },
+    {
+      "english": "check in",
+      "indonesian": "melapor"
+    },
+    {
+      "english": "before the shift starts",
+      "indonesian": "sebelum shift dimulai"
+    }
+  ],
+  "learningNotes": [
+    "come in berarti masuk ke dalam ruangan atau tempat.",
+    "come to work memakai to karena work adalah tujuan.",
+    "comes memakai -s karena subjeknya my team, yang dianggap satu tim."
+  ],
+  "fullAudio": "public/audio/COME/COME-P01/full.mp3"
+}

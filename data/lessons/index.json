@@ -25,6 +25,31 @@
     "title": "Go On & Go Through"
   },
   {
+    "id": "COME-P01",
+    "moduleId": "COME",
+    "title": "Come In & Come to Work"
+  },
+  {
+    "id": "COME-P02",
+    "moduleId": "COME",
+    "title": "Come Back & Come Over"
+  },
+  {
+    "id": "COME-P03",
+    "moduleId": "COME",
+    "title": "Come From"
+  },
+  {
+    "id": "COME-P04",
+    "moduleId": "COME",
+    "title": "Come Up & Come Up With"
+  },
+  {
+    "id": "COME-P05",
+    "moduleId": "COME",
+    "title": "Come Out & Come Across"
+  },
+  {
     "id": "HAVE-P01",
     "moduleId": "HAVE",
     "title": "Have Breakfast & Have Lunch"

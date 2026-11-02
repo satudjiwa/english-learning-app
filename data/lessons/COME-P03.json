@@ -1,0 +1,69 @@
+{
+  "id": "COME-P03",
+  "moduleId": "COME",
+  "title": "Come From",
+  "partTitle": "Come From",
+  "level": "Beginner (A1–A2)",
+  "situation": "Finding the source of a machine problem.",
+  "objective": "Use come from to ask and explain where something comes from.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "Where does the problem come from?",
+      "indonesian": "Dari mana masalah ini berasal?",
+      "audio": "public/audio/COME/COME-P03/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "This is the first question I ask.",
+      "indonesian": "Ini pertanyaan pertama yang saya ajukan.",
+      "audio": "public/audio/COME/COME-P03/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Sometimes the problem comes from a loose cable.",
+      "indonesian": "Terkadang masalahnya berasal dari kabel yang longgar.",
+      "audio": "public/audio/COME/COME-P03/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Sometimes it comes from a dirty sensor.",
+      "indonesian": "Terkadang berasal dari sensor yang kotor.",
+      "audio": "public/audio/COME/COME-P03/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "The new spare part comes from the warehouse, and it usually comes in a small box.",
+      "indonesian": "Suku cadang baru datang dari gudang, dan biasanya dikemas dalam kotak kecil.",
+      "audio": "public/audio/COME/COME-P03/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "come from",
+      "indonesian": "berasal dari"
+    },
+    {
+      "english": "loose cable",
+      "indonesian": "kabel yang longgar"
+    },
+    {
+      "english": "dirty sensor",
+      "indonesian": "sensor yang kotor"
+    },
+    {
+      "english": "spare part",
+      "indonesian": "suku cadang"
+    },
+    {
+      "english": "warehouse",
+      "indonesian": "gudang"
+    }
+  ],
+  "learningNotes": [
+    "come from dipakai untuk menjelaskan asal sesuatu: comes from a loose cable.",
+    "Pertanyaan dengan does: Where does the problem come from?",
+    "comes memakai -s karena subjeknya the problem atau it."
+  ],
+  "fullAudio": "public/audio/COME/COME-P03/full.mp3"
+}

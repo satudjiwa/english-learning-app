@@ -1,0 +1,63 @@
+{
+  "id": "COME-P05",
+  "moduleId": "COME",
+  "title": "Come Out & Come Across",
+  "partTitle": "Come Out & Come Across",
+  "level": "Beginner (A1–A2)",
+  "situation": "Checking the result of a repair with a test bag.",
+  "objective": "Use come out and come across to talk about results and finding something.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "When I finish a repair, I wait for the test bag to come out of the machine.",
+      "indonesian": "Setelah selesai memperbaiki, saya menunggu tas uji keluar dari mesin.",
+      "audio": "public/audio/COME/COME-P05/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "If the bag comes out normally, the machine is working well.",
+      "indonesian": "Jika tas keluar dengan normal, berarti mesin berfungsi dengan baik.",
+      "audio": "public/audio/COME/COME-P05/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Sometimes I come across a damaged cable while I am checking the machine.",
+      "indonesian": "Terkadang saya menemukan kabel yang rusak saat memeriksa mesin.",
+      "audio": "public/audio/COME/COME-P05/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "When I come across something unusual, I take a photo and write it in my report.",
+      "indonesian": "Ketika menemukan sesuatu yang tidak biasa, saya memotret dan menulisnya di laporan saya.",
+      "audio": "public/audio/COME/COME-P05/sentence-04.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "come out",
+      "indonesian": "keluar"
+    },
+    {
+      "english": "come across",
+      "indonesian": "menemukan tanpa sengaja"
+    },
+    {
+      "english": "test bag",
+      "indonesian": "tas uji"
+    },
+    {
+      "english": "damaged cable",
+      "indonesian": "kabel yang rusak"
+    },
+    {
+      "english": "unusual",
+      "indonesian": "tidak biasa"
+    }
+  ],
+  "learningNotes": [
+    "come out berarti keluar dari suatu tempat.",
+    "come across berarti menemukan sesuatu tanpa sengaja.",
+    "while I am checking berarti saat saya sedang memeriksa."
+  ],
+  "fullAudio": "public/audio/COME/COME-P05/full.mp3"
+}
