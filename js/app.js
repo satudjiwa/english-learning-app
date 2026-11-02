@@ -3,6 +3,7 @@ import { modulesView } from "./views/modules.js";
 import { lessonView } from "./views/lesson.js";
 import { teleprompterView } from "./views/teleprompter.js";
 import { shadowingView } from "./views/shadowing.js";
+import { speakingView } from "./views/speaking.js";
 import { notFoundView } from "./views/not-found.js";
 import { esc } from "./utils.js";
 import { icon } from "./icons.js";
@@ -30,6 +31,7 @@ function parseRoute(hash) {
 function chromeRoute(route) {
   if (route.name === "lesson" && route.parts[2] === "teleprompter") return "teleprompter";
   if (route.name === "lesson" && route.parts[2] === "shadowing") return "shadowing";
+  if (route.name === "lesson" && route.parts[2] === "speaking") return "speaking";
   return route.name;
 }
 
@@ -102,6 +104,8 @@ async function renderRoute() {
         result = await teleprompterView(app, { id });
       } else if (route.parts.length === 3 && route.parts[2] === "shadowing") {
         result = await shadowingView(app, { id });
+      } else if (route.parts.length === 3 && route.parts[2] === "speaking") {
+        result = await speakingView(app, { id });
       } else {
         result = notFoundView(app);
       }

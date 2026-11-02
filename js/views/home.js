@@ -116,10 +116,10 @@ export async function homeView(root) {
       <section class="section" aria-labelledby="modes-title">
         <div class="section-heading">
           <div>
-            <span class="eyebrow">Two practice modes</span>
-            <h2 id="modes-title">Read it. Then follow it.</h2>
+            <span class="eyebrow">Three practice modes</span>
+            <h2 id="modes-title">Read it. Follow it. Say it.</h2>
           </div>
-          <span class="section-note">Same text, two different skills</span>
+          <span class="section-note">Same text, three different skills</span>
         </div>
 
         <div class="mode-grid">
@@ -138,6 +138,14 @@ export async function homeView(root) {
                 <h3>Shadowing</h3>
                 <p>Listen, repeat, and speak along with the audio. Five short steps, one sentence at a time.</p>
                 <span class="text-link">Open Shadowing ${icon("arrow-right", 15)}</span>
+              </div>
+            </a>
+            <a class="mode-card" href="#/lesson/${esc(target.id)}/speaking">
+              <span class="mode-card-icon" aria-hidden="true">${icon("message-square", 21)}</span>
+              <div>
+                <h3>Speaking</h3>
+                <p>Hide the English, say the sentence from the Indonesian prompt, then reveal it to check.</p>
+                <span class="text-link">Open Speaking ${icon("arrow-right", 15)}</span>
               </div>
             </a>
           ` : ""}

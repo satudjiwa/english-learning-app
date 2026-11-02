@@ -62,8 +62,10 @@ const required = [
   "js/views/lesson.js",
   "js/views/teleprompter.js",
   "js/views/shadowing.js",
+  "js/views/speaking.js",
   "js/components/teleprompter.js",
   "js/components/shadowing.js",
+  "js/components/speaking.js",
   "data/modules.json",
   "data/lessons/index.json"
 ];

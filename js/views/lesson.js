@@ -126,6 +126,9 @@ export async function lessonView(root, { id }) {
           <a class="btn btn-secondary btn-lg" href="#/lesson/${esc(id)}/teleprompter">
             ${icon("text-size", 19)} <span>Read aloud</span>
           </a>
+          <a class="btn btn-secondary btn-lg lesson-action-wide" href="#/lesson/${esc(id)}/speaking">
+            ${icon("message-square", 19)} <span>Speaking mode</span>
+          </a>
         </div>
       </header>
 

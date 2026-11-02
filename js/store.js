@@ -1,7 +1,7 @@
 const STORAGE_KEY = "small-steps-english.v3";
 const LEGACY_STORAGE_KEYS = ["small-steps-english.v2"];
 const LESSON_ID = /^[A-Z]{2,5}-P\d{2}$/;
-const SHADOWING_SPEEDS = [0.75, 0.85, 1];
+const AUDIO_SPEEDS = [0.75, 0.85, 1];
 
 const DEFAULT_PREFERENCES = {
   teleprompter: {
@@ -11,6 +11,10 @@ const DEFAULT_PREFERENCES = {
     showIndonesian: true
   },
   shadowing: {
+    speed: 1,
+    showIndonesian: true
+  },
+  speaking: {
     speed: 1,
     showIndonesian: true
   }
@@ -29,7 +33,8 @@ function defaultState() {
     completedLessons: [],
     preferences: {
       teleprompter: { ...DEFAULT_PREFERENCES.teleprompter },
-      shadowing: { ...DEFAULT_PREFERENCES.shadowing }
+      shadowing: { ...DEFAULT_PREFERENCES.shadowing },
+      speaking: { ...DEFAULT_PREFERENCES.speaking }
     }
   };
 }
@@ -79,10 +84,21 @@ function sanitize(raw) {
   if (shadowing && typeof shadowing === "object") {
     const requestedSpeed = Number(shadowing.speed);
     clean.preferences.shadowing = {
-      speed: SHADOWING_SPEEDS.includes(requestedSpeed)
+      speed: AUDIO_SPEEDS.includes(requestedSpeed)
         ? requestedSpeed
         : DEFAULT_PREFERENCES.shadowing.speed,
       showIndonesian: shadowing.showIndonesian !== false
+    };
+  }
+
+  const speaking = raw.preferences?.speaking;
+  if (speaking && typeof speaking === "object") {
+    const requestedSpeed = Number(speaking.speed);
+    clean.preferences.speaking = {
+      speed: AUDIO_SPEEDS.includes(requestedSpeed)
+        ? requestedSpeed
+        : DEFAULT_PREFERENCES.speaking.speed,
+      showIndonesian: speaking.showIndonesian !== false
     };
   }
 
@@ -206,17 +222,20 @@ export function hasPracticeStarted(id) {
 }
 
 export function getPreferences(mode) {
-  if (mode === "teleprompter" || mode === "shadowing") {
+  if (mode === "teleprompter" || mode === "shadowing" || mode === "speaking") {
     return { ...state.preferences[mode] };
   }
   return {
     teleprompter: { ...state.preferences.teleprompter },
-    shadowing: { ...state.preferences.shadowing }
+    shadowing: { ...state.preferences.shadowing },
+    speaking: { ...state.preferences.speaking }
   };
 }
 
 export function updatePreferences(mode, patch) {
-  if (mode !== "teleprompter" && mode !== "shadowing") return getPreferences();
+  if (mode !== "teleprompter" && mode !== "shadowing" && mode !== "speaking") {
+    return getPreferences();
+  }
   if (!patch || typeof patch !== "object") return getPreferences(mode);
 
   if (mode === "teleprompter") {
@@ -226,10 +245,10 @@ export function updatePreferences(mode, patch) {
     if ("lineSpacing" in patch) current.lineSpacing = clamp(patch.lineSpacing, 1.2, 2.2, current.lineSpacing);
     if ("showIndonesian" in patch) current.showIndonesian = Boolean(patch.showIndonesian);
   } else {
-    const current = state.preferences.shadowing;
+    const current = state.preferences[mode];
     if ("speed" in patch) {
       const next = Number(patch.speed);
-      if (SHADOWING_SPEEDS.includes(next)) current.speed = next;
+      if (AUDIO_SPEEDS.includes(next)) current.speed = next;
     }
     if ("showIndonesian" in patch) current.showIndonesian = Boolean(patch.showIndonesian);
   }

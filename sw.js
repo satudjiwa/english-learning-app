@@ -4,7 +4,7 @@
  * Cached assets keep the app usable offline after the first visit.
  */
 
-const CACHE = "small-steps-v3-shell-2";
+const CACHE = "small-steps-v3-shell-3";
 const SHELL = [
   "./",
   "./index.html",
@@ -19,11 +19,13 @@ const SHELL = [
   "./js/lib/audio.js",
   "./js/components/teleprompter.js",
   "./js/components/shadowing.js",
+  "./js/components/speaking.js",
   "./js/views/home.js",
   "./js/views/modules.js",
   "./js/views/lesson.js",
   "./js/views/teleprompter.js",
   "./js/views/shadowing.js",
+  "./js/views/speaking.js",
   "./js/views/not-found.js",
   "./data/modules.json",
   "./data/lessons/index.json"
