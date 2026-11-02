@@ -1,3 +1,5 @@
+import { retainKnownLessons } from "./store.js";
+
 const MODULE_ID = /^[A-Z]{2,5}$/;
 const LESSON_ID = /^[A-Z]{2,5}-P\d{2}$/;
 
@@ -37,10 +39,20 @@ export function loadModules() {
 
 export function loadLessonIndex() {
   if (!lessonIndexPromise) {
-    lessonIndexPromise = fetchJSON("lessons/index.json").catch(error => {
-      lessonIndexPromise = null;
-      throw error;
-    });
+    lessonIndexPromise = fetchJSON("lessons/index.json")
+      .then(index => {
+        // Progress saved by a removed or renamed part is dropped once the
+        // current index is known. Old curriculum ids never reach this point
+        // because store.js already rejects ids that do not use <VERB>-Pnn.
+        if (Array.isArray(index)) {
+          retainKnownLessons(index.map(entry => entry.id));
+        }
+        return index;
+      })
+      .catch(error => {
+        lessonIndexPromise = null;
+        throw error;
+      });
   }
   return lessonIndexPromise;
 }

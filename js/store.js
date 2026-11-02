@@ -126,6 +126,29 @@ function save() {
   }
 }
 
+export function retainKnownLessons(knownIds) {
+  if (!Array.isArray(knownIds)) return false;
+
+  const known = new Set(
+    knownIds.filter(id => typeof id === "string" && LESSON_ID.test(id))
+  );
+  let changed = false;
+
+  if (state.lastLessonId && !known.has(state.lastLessonId)) {
+    state.lastLessonId = null;
+    changed = true;
+  }
+
+  const completed = state.completedLessons.filter(id => known.has(id));
+  if (completed.length !== state.completedLessons.length) {
+    state.completedLessons = completed;
+    changed = true;
+  }
+
+  if (changed) save();
+  return changed;
+}
+
 export function isStorageAvailable() {
   return storageAvailable;
 }
