@@ -1,0 +1,63 @@
+{
+  "id": "GO-P01",
+  "moduleId": "GO",
+  "title": "Go to Work",
+  "partTitle": "Go to Work",
+  "level": "Beginner (A1–A2)",
+  "situation": "The morning trip to work at the airport.",
+  "objective": "Use go to work and go by to talk about your daily trip to the airport.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "I go to work every morning.",
+      "indonesian": "Saya pergi bekerja setiap pagi.",
+      "audio": "public/audio/GO/GO-P01/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I usually leave home early because I don't want to be late.",
+      "indonesian": "Biasanya saya berangkat dari rumah lebih awal karena tidak ingin terlambat.",
+      "audio": "public/audio/GO/GO-P01/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Sometimes I go to work by car, and sometimes I go by motorcycle.",
+      "indonesian": "Terkadang saya pergi bekerja dengan mobil dan terkadang dengan sepeda motor.",
+      "audio": "public/audio/GO/GO-P01/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Before I go to work, I usually have breakfast and drink a cup of coffee.",
+      "indonesian": "Sebelum berangkat kerja, saya biasanya sarapan dan minum secangkir kopi.",
+      "audio": "public/audio/GO/GO-P01/sentence-04.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "go to work",
+      "indonesian": "pergi bekerja"
+    },
+    {
+      "english": "leave home early",
+      "indonesian": "berangkat dari rumah lebih awal"
+    },
+    {
+      "english": "go to work by car",
+      "indonesian": "pergi bekerja dengan mobil"
+    },
+    {
+      "english": "go by motorcycle",
+      "indonesian": "pergi dengan sepeda motor"
+    },
+    {
+      "english": "have breakfast",
+      "indonesian": "sarapan"
+    }
+  ],
+  "learningNotes": [
+    "go to work memakai to karena work adalah tujuan: go to work, bukan go work.",
+    "Untuk transportasi, gunakan by + kendaraan tanpa a atau the: by car, by motorcycle.",
+    "Simple present dipakai untuk kebiasaan: I go, I usually leave, I have."
+  ],
+  "fullAudio": "public/audio/GO/GO-P01/full.mp3"
+}

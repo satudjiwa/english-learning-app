@@ -218,7 +218,7 @@ export function shadowingHTML(lesson) {
               <span>Repeat lesson</span>
             </label>
             <label class="check-row">
-              <input type="checkbox" data-sh-translation ${STEPS[0].indonesian ? "checked" : ""}>
+              <input type="checkbox" data-sh-translation ${prefs.showIndonesian ? "checked" : ""}>
               <span>Indonesian translation</span>
             </label>
             <p class="sheet-note">Choosing a step sets these options for that step. You can adjust them here at any time.</p>
@@ -278,7 +278,8 @@ export function mountShadowing(root, lesson) {
   let playing = false;
   let sentenceMode = STEPS[0].sentenceMode;
   let speed = prefs.speed;
-  let showIndonesian = STEPS[0].indonesian;
+  let translationPreference = prefs.showIndonesian;
+  let showIndonesian = STEPS[0].indonesian ? translationPreference : false;
   let repeatSentence = false;
   let repeatLesson = false;
   let step = 0;
@@ -508,7 +509,8 @@ export function mountShadowing(root, lesson) {
   }
 
   function setTranslation(next) {
-    showIndonesian = Boolean(next);
+    translationPreference = Boolean(next);
+    showIndonesian = translationPreference;
     updatePreferences("shadowing", { showIndonesian });
     if (translationInput) translationInput.checked = showIndonesian;
     renderVisibility();
@@ -520,12 +522,11 @@ export function mountShadowing(root, lesson) {
     step = next;
     const config = STEPS[next];
     sentenceMode = config.sentenceMode;
-    showIndonesian = config.indonesian;
+    showIndonesian = config.indonesian ? translationPreference : false;
     englishRevealed = config.english === true;
     showTurnHint = false;
     if (sentenceModeInput) sentenceModeInput.checked = sentenceMode;
     if (translationInput) translationInput.checked = showIndonesian;
-    updatePreferences("shadowing", { showIndonesian });
     updateStep();
     renderCurrent(false);
   }

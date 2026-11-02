@@ -1,0 +1,63 @@
+{
+  "id": "GO-P02",
+  "moduleId": "GO",
+  "title": "Go Home & Go Out",
+  "partTitle": "Go Home & Go Out",
+  "level": "Beginner (A1–A2)",
+  "situation": "Evening and weekend plans with family.",
+  "objective": "Use go home and go out to talk about plans after work.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "After work, I usually go home.",
+      "indonesian": "Setelah bekerja, saya biasanya pulang.",
+      "audio": "public/audio/GO/GO-P02/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Sometimes I go out with my family to have dinner.",
+      "indonesian": "Terkadang saya pergi bersama keluarga untuk makan malam.",
+      "audio": "public/audio/GO/GO-P02/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "On weekends, we like to go to different places.",
+      "indonesian": "Pada akhir pekan, kami suka pergi ke berbagai tempat.",
+      "audio": "public/audio/GO/GO-P02/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "If we have enough time, we go to a coffee shop and enjoy our time together.",
+      "indonesian": "Jika punya cukup waktu, kami pergi ke kedai kopi dan menikmati waktu bersama.",
+      "audio": "public/audio/GO/GO-P02/sentence-04.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "go home",
+      "indonesian": "pulang"
+    },
+    {
+      "english": "go out",
+      "indonesian": "pergi keluar"
+    },
+    {
+      "english": "have dinner",
+      "indonesian": "makan malam"
+    },
+    {
+      "english": "on weekends",
+      "indonesian": "pada akhir pekan"
+    },
+    {
+      "english": "go to a coffee shop",
+      "indonesian": "pergi ke kedai kopi"
+    }
+  ],
+  "learningNotes": [
+    "go home tidak memakai to: go home, bukan go to home.",
+    "go out berarti keluar untuk bersenang-senang atau bertemu orang.",
+    "on weekends memakai on untuk kebiasaan yang berulang di akhir pekan."
+  ],
+  "fullAudio": "public/audio/GO/GO-P02/full.mp3"
+}

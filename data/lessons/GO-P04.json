@@ -1,0 +1,69 @@
+{
+  "id": "GO-P04",
+  "moduleId": "GO",
+  "title": "Go Wrong & Go Well",
+  "partTitle": "Go Wrong & Go Well",
+  "level": "Beginner (A1–A2)",
+  "situation": "A machine problem during a shift.",
+  "objective": "Use go wrong and go well to talk about problems and results.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "At work, not everything goes well all the time.",
+      "indonesian": "Di tempat kerja, tidak semuanya selalu berjalan lancar.",
+      "audio": "public/audio/GO/GO-P04/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Sometimes something goes wrong with the machine.",
+      "indonesian": "Terkadang ada sesuatu yang bermasalah pada mesin.",
+      "audio": "public/audio/GO/GO-P04/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "When that happens, I need to check the problem and find a solution.",
+      "indonesian": "Ketika itu terjadi, saya perlu memeriksa masalah dan mencari solusi.",
+      "audio": "public/audio/GO/GO-P04/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I don't want to make a quick decision without checking the machine first.",
+      "indonesian": "Saya tidak ingin mengambil keputusan terburu-buru tanpa memeriksa mesin terlebih dahulu.",
+      "audio": "public/audio/GO/GO-P04/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I hope everything goes well after the repair.",
+      "indonesian": "Saya berharap semuanya berjalan lancar setelah perbaikan.",
+      "audio": "public/audio/GO/GO-P04/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "go well",
+      "indonesian": "berjalan lancar"
+    },
+    {
+      "english": "go wrong",
+      "indonesian": "bermasalah"
+    },
+    {
+      "english": "find a solution",
+      "indonesian": "mencari solusi"
+    },
+    {
+      "english": "check the machine",
+      "indonesian": "memeriksa mesin"
+    },
+    {
+      "english": "after the repair",
+      "indonesian": "setelah perbaikan"
+    }
+  ],
+  "learningNotes": [
+    "go wrong berarti ada masalah atau tidak berjalan sesuai rencana.",
+    "go well berarti berjalan lancar.",
+    "not everything goes well all the time berarti tidak semuanya selalu berjalan lancar."
+  ],
+  "fullAudio": "public/audio/GO/GO-P04/full.mp3"
+}

@@ -1,0 +1,63 @@
+{
+  "id": "GO-P05",
+  "moduleId": "GO",
+  "title": "Go On & Go Through",
+  "partTitle": "Go On & Go Through",
+  "level": "Beginner (A1–A2)",
+  "situation": "Troubleshooting a machine problem until it works again.",
+  "objective": "Use go on and go through to talk about continuing and following steps.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "When I have a problem, I don't give up easily.",
+      "indonesian": "Ketika menghadapi masalah, saya tidak mudah menyerah.",
+      "audio": "public/audio/GO/GO-P05/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I keep going and try to find the cause.",
+      "indonesian": "Saya terus berusaha dan mencoba menemukan penyebabnya.",
+      "audio": "public/audio/GO/GO-P05/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Sometimes I need to go through several troubleshooting steps before I find the problem.",
+      "indonesian": "Terkadang saya harus melalui beberapa langkah troubleshooting sebelum menemukan masalah.",
+      "audio": "public/audio/GO/GO-P05/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Even if it takes time, I want to do my best and get the machine working again.",
+      "indonesian": "Meskipun membutuhkan waktu, saya ingin melakukan yang terbaik dan membuat mesin berfungsi kembali.",
+      "audio": "public/audio/GO/GO-P05/sentence-04.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "go on",
+      "indonesian": "terus berlanjut"
+    },
+    {
+      "english": "go through",
+      "indonesian": "melalui / menjalani"
+    },
+    {
+      "english": "give up",
+      "indonesian": "menyerah"
+    },
+    {
+      "english": "find the cause",
+      "indonesian": "menemukan penyebab"
+    },
+    {
+      "english": "troubleshooting steps",
+      "indonesian": "langkah troubleshooting"
+    }
+  ],
+  "learningNotes": [
+    "go on berarti terus berlanjut atau melanjutkan.",
+    "go through berarti menjalani atau melewati serangkaian langkah.",
+    "do my best berarti melakukan yang terbaik; get the machine working again berarti membuat mesin berfungsi kembali."
+  ],
+  "fullAudio": "public/audio/GO/GO-P05/full.mp3"
+}

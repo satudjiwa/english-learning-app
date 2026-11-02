@@ -1,5 +1,30 @@
 [
   {
+    "id": "GO-P01",
+    "moduleId": "GO",
+    "title": "Go to Work"
+  },
+  {
+    "id": "GO-P02",
+    "moduleId": "GO",
+    "title": "Go Home & Go Out"
+  },
+  {
+    "id": "GO-P03",
+    "moduleId": "GO",
+    "title": "Go Back & Go Ahead"
+  },
+  {
+    "id": "GO-P04",
+    "moduleId": "GO",
+    "title": "Go Wrong & Go Well"
+  },
+  {
+    "id": "GO-P05",
+    "moduleId": "GO",
+    "title": "Go On & Go Through"
+  },
+  {
     "id": "HAVE-P01",
     "moduleId": "HAVE",
     "title": "Have Breakfast & Have Lunch"

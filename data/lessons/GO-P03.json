@@ -1,0 +1,53 @@
+{
+  "id": "GO-P03",
+  "moduleId": "GO",
+  "title": "Go Back & Go Ahead",
+  "partTitle": "Go Back & Go Ahead",
+  "level": "Beginner (A1–A2)",
+  "situation": "Returning to the office and continuing a task.",
+  "objective": "Use go back and go ahead to talk about returning and continuing.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "Sometimes I need to go back to the office because I forget something.",
+      "indonesian": "Terkadang saya perlu kembali ke kantor karena lupa sesuatu.",
+      "audio": "public/audio/GO/GO-P03/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "When my manager asks me to continue a task, I usually say, 'Okay, I'll go ahead with it.'",
+      "indonesian": "Ketika manajer meminta saya melanjutkan pekerjaan, biasanya saya mengatakan, 'Baik, saya akan melanjutkannya.'",
+      "audio": "public/audio/GO/GO-P03/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "If I finish my work, I can go home and take a rest.",
+      "indonesian": "Jika pekerjaan selesai, saya bisa pulang dan beristirahat.",
+      "audio": "public/audio/GO/GO-P03/sentence-03.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "go back",
+      "indonesian": "kembali"
+    },
+    {
+      "english": "go ahead",
+      "indonesian": "melanjutkan"
+    },
+    {
+      "english": "continue a task",
+      "indonesian": "melanjutkan pekerjaan"
+    },
+    {
+      "english": "take a rest",
+      "indonesian": "beristirahat"
+    }
+  ],
+  "learningNotes": [
+    "go back berarti kembali ke tempat sebelumnya dan biasanya diikuti to + tempat: go back to the office.",
+    "go ahead berarti melanjutkan atau memulai sesuatu.",
+    "I'll adalah singkatan dari I will, dipakai untuk rencana atau keputusan saat berbicara."
+  ],
+  "fullAudio": "public/audio/GO/GO-P03/full.mp3"
+}
