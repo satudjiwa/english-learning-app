@@ -2,15 +2,15 @@
 """Generate lesson MP3 audio with local Piper TTS.
 
 The web app fetches lesson audio from paths such as
-``public/audio/M1/M1-L01/sentence-01.mp3``.  The static build copies the
+``public/audio/GO/GO-P01/sentence-01.mp3``.  The static build copies the
 ``public/`` directory into ``_site/public/``, so the same relative path works
 locally and on GitHub Pages.
 
 Typical usage:
 
-    PIPER_BIN=.venv/bin/piper python3 tools/generate_audio.py --lesson M1-L01
+    PIPER_BIN=.venv/bin/piper python3 tools/generate_audio.py --lesson GO-P01
     PIPER_BIN=.venv/bin/piper python3 tools/generate_audio.py --all
-    PIPER_BIN=.venv/bin/piper python3 tools/generate_audio.py --lesson M1-L01 --force
+    PIPER_BIN=.venv/bin/piper python3 tools/generate_audio.py --lesson GO-P01 --force
 
 Piper models are intentionally not committed.  Keep them in ``tools/voices/``;
 ``.gitignore`` excludes the ``.onnx`` and ``.onnx.json`` files.
@@ -35,8 +35,8 @@ LESSONS_DIR = ROOT / "data" / "lessons"
 PUBLIC_DIR = ROOT / "public"
 VOICES_DIR = ROOT / "tools" / "voices"
 
-LESSON_ID_RE = re.compile(r"^M[1-6]-L\d{2}$")
-MODULE_ID_RE = re.compile(r"^M[1-6]$")
+LESSON_ID_RE = re.compile(r"^[A-Z]{2,5}-P\d{2}$")
+MODULE_ID_RE = re.compile(r"^[A-Z]{2,5}$")
 
 SENTENCE_GAP_SECONDS = 0.6
 SAMPLE_RATE = 22050
@@ -79,6 +79,7 @@ VOICES: dict[str, Voice] = {
 # separate voice for narrators or other characters.
 SPEAKER_VOICES: dict[str, str] = {
     "Technician": "technician",
+    "Narrator": "technician",
     "Remote Engineer": "remote_engineer",
 }
 FALLBACK_VOICE = "technician"

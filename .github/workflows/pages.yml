@@ -40,7 +40,7 @@ jobs:
           test -f _site/index.html
           test -f _site/styles.css
           test -f _site/js/app.js
-          test -f _site/data/lessons/M1-L01.json
+          test -f _site/data/lessons/index.json
           test -f _site/data/modules.json
 
       - name: Configure Pages

@@ -6,13 +6,10 @@ import { esc } from "../utils.js";
 import { notFoundView } from "./not-found.js";
 
 const TABS = [
-  { id: "conversation", label: "Conversation" },
+  { id: "conversation", label: "Script" },
   { id: "expressions", label: "Expressions" },
-  { id: "patterns", label: "Patterns" },
   { id: "notes", label: "Notes" }
 ];
-
-const COLLAPSED_LINES = 6;
 
 function listOrFallback(items, render) {
   if (!Array.isArray(items) || items.length === 0) {
@@ -35,27 +32,6 @@ function expressionList(items) {
   `;
 }
 
-function patternList(items) {
-  return `
-    <ul class="pattern-list">
-      ${items.map(item => {
-        const examples = Array.isArray(item.examples) && item.examples.length
-          ? item.examples
-          : item.example
-            ? [item.example]
-            : [];
-        return `
-          <li class="pattern-item">
-            <span class="pattern-form">${esc(item.pattern)}</span>
-            <p class="pattern-explanation">${esc(item.explanation)}</p>
-            ${examples.map(example => `<p class="pattern-example" lang="en">“${esc(example)}”</p>`).join("")}
-          </li>
-        `;
-      }).join("")}
-    </ul>
-  `;
-}
-
 function notesPanel(lesson) {
   return `
     <div class="lesson-context-card">
@@ -74,11 +50,11 @@ function notesPanel(lesson) {
       `)}
     </div>
 
-    <div class="lesson-notes-group">
-      <h2>American pronunciation</h2>
-      ${listOrFallback(lesson.pronunciationNotes, items => `
+    ${Array.isArray(lesson.pronunciationNotes) && lesson.pronunciationNotes.length ? `
+      <div class="lesson-notes-group">
+        <h2>American pronunciation</h2>
         <ul class="pronunciation-list">
-          ${items.map(item => `
+          ${lesson.pronunciationNotes.map(item => `
             <li class="pronunciation-item">
               <span class="pronunciation-icon" aria-hidden="true">${icon("volume", 18)}</span>
               <div>
@@ -88,8 +64,8 @@ function notesPanel(lesson) {
             </li>
           `).join("")}
         </ul>
-      `)}
-    </div>
+      </div>
+    ` : ""}
   `;
 }
 
@@ -100,8 +76,8 @@ export async function lessonView(root, { id }) {
   if (!entry) {
     return notFoundView(root, {
       eyebrow: "Coming soon",
-      title: "This lesson is not available yet.",
-      message: "Only finished lessons can be opened. Go back to the module library to see what is available now.",
+      title: "This part is not available yet.",
+      message: "Only finished parts can be opened. Go back to the module library to see what is available now.",
       actionHref: "#/modules",
       actionLabel: "Back to module library"
     });
@@ -112,45 +88,35 @@ export async function lessonView(root, { id }) {
   const completed = isLessonComplete(id);
   const canComplete = completed || hasPracticeStarted(id);
   const currentIndex = index.findIndex(item => item.id === id);
-  const nextEntry = currentIndex >= 0 ? index[currentIndex + 1] : null;
+  const siblingIds = (module?.parts || []).map(part => part.id);
+  const previousId = siblingIds[siblingIds.indexOf(id) - 1] || null;
+  const nextId = siblingIds[siblingIds.indexOf(id) + 1] || null;
+  const previousEntry = previousId ? index.find(item => item.id === previousId) : null;
+  const nextEntry = nextId ? index.find(item => item.id === nextId) : null;
   setLastLesson(id);
 
   const lineCount = lesson.dialogue.length;
-  const moduleNumber = module?.number || Number(lesson.moduleId.replace("M", "")) || 1;
-  const lessonNumber = Number(id.slice(-2));
-  const moduleTitle = module?.title || "Module";
-
-  const nextAction = nextEntry
-    ? `
-      <a class="lesson-bar-btn" href="#/lesson/${esc(nextEntry.id)}">
-        ${icon("arrow-right", 18)}
-        <span>Next lesson</span>
-      </a>
-    `
-    : `
-      <button class="lesson-bar-btn" type="button" disabled aria-label="Next lesson, coming soon">
-        ${icon("arrow-right", 18)}
-        <span>Next lesson</span>
-        <small>Coming soon</small>
-      </button>
-    `;
+  const partNumber = Number(String(id).slice(-2)) || currentIndex + 1;
+  const partCount = siblingIds.length || 5;
+  const verb = module?.verb || lesson.moduleId;
 
   root.innerHTML = `
     <div class="view lesson-view">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
         <a href="#/modules">Module Library</a>
         <span aria-hidden="true">/</span>
-        <span>Module ${moduleNumber}</span>
+        <span>${esc(verb)}</span>
         <span aria-hidden="true">/</span>
-        <span>Lesson ${lessonNumber}</span>
+        <span>Part ${partNumber}</span>
       </nav>
 
       <header class="lesson-head">
-        <span class="eyebrow">Module ${moduleNumber} · ${esc(moduleTitle)}</span>
+        <span class="eyebrow">${esc(verb)} · Part ${partNumber} of ${partCount}</span>
         <h1>${esc(lesson.title)}</h1>
+        ${module?.subtitle ? `<p class="lesson-subtitle">${esc(module.subtitle)}</p>` : ""}
         <div class="lesson-meta-row">
-          <span class="chip chip-accent">${esc(lesson.difficulty)}</span>
-          <span class="chip">${lineCount} dialogue lines</span>
+          <span class="chip chip-accent">${esc(lesson.level || module?.level || "Beginner (A1–A2)")}</span>
+          <span class="chip">${lineCount} sentences</span>
           <span class="chip ${completed ? "chip-success" : ""}" data-complete-chip>${completed ? "Completed" : "Not completed"}</span>
         </div>
         <div class="lesson-actions">
@@ -163,7 +129,7 @@ export async function lessonView(root, { id }) {
         </div>
       </header>
 
-      <div class="lesson-tabs" role="tablist" aria-label="Lesson content">
+      <div class="lesson-tabs" role="tablist" aria-label="Part content">
         ${TABS.map((tab, tabIndex) => `
           <button
             class="lesson-tab"
@@ -187,7 +153,7 @@ export async function lessonView(root, { id }) {
       >
         <ol class="dialogue-list">
           ${lesson.dialogue.map((line, index) => `
-            <li class="dialogue-line ${index >= COLLAPSED_LINES ? "is-collapsed" : ""}" data-dialogue-line>
+            <li class="dialogue-line" data-dialogue-line>
               <div class="dialogue-copy">
                 <div class="dialogue-top">
                   <span class="dialogue-speaker">${esc(line.speaker)}</span>
@@ -206,11 +172,6 @@ export async function lessonView(root, { id }) {
             </li>
           `).join("")}
         </ol>
-        ${lineCount > COLLAPSED_LINES ? `
-          <button class="btn btn-secondary btn-wide conversation-more" type="button" data-show-all aria-expanded="false">
-            Show all ${lineCount} lines
-          </button>
-        ` : ""}
       </section>
 
       <section
@@ -223,24 +184,9 @@ export async function lessonView(root, { id }) {
       >
         <div class="lesson-panel-head">
           <span class="eyebrow">Key expressions</span>
-          <h2>Useful lines</h2>
+          <h2>Verb phrases</h2>
         </div>
         ${listOrFallback(lesson.keyExpressions, expressionList)}
-      </section>
-
-      <section
-        class="lesson-panel"
-        id="lesson-panel-patterns"
-        role="tabpanel"
-        aria-labelledby="lesson-tab-patterns"
-        data-lesson-panel="patterns"
-        hidden
-      >
-        <div class="lesson-panel-head">
-          <span class="eyebrow">Sentence patterns</span>
-          <h2>Build your own</h2>
-        </div>
-        ${listOrFallback(lesson.sentencePatterns, patternList)}
       </section>
 
       <section
@@ -254,7 +200,44 @@ export async function lessonView(root, { id }) {
         ${notesPanel(lesson)}
       </section>
 
-      <div class="lesson-sticky-bar" aria-label="Lesson actions">
+      <nav class="part-nav" aria-label="Other parts">
+        ${previousEntry ? `
+          <a class="part-nav-btn" href="#/lesson/${esc(previousEntry.id)}">
+            ${icon("chevron-left", 17)}
+            <span>
+              <small>Previous</small>
+              <strong>${esc(previousEntry.title)}</strong>
+            </span>
+          </a>
+        ` : `
+          <button class="part-nav-btn" type="button" disabled>
+            ${icon("chevron-left", 17)}
+            <span>
+              <small>Previous</small>
+              <strong>This is part 1</strong>
+            </span>
+          </button>
+        `}
+        ${nextEntry ? `
+          <a class="part-nav-btn is-next" href="#/lesson/${esc(nextEntry.id)}">
+            <span>
+              <small>Next</small>
+              <strong>${esc(nextEntry.title)}</strong>
+            </span>
+            ${icon("chevron-right", 17)}
+          </a>
+        ` : `
+          <button class="part-nav-btn is-next" type="button" disabled>
+            <span>
+              <small>Next</small>
+              <strong>Coming soon</strong>
+            </span>
+            ${icon("chevron-right", 17)}
+          </button>
+        `}
+      </nav>
+
+      <div class="lesson-sticky-bar" aria-label="Part actions">
         <div class="lesson-sticky-inner">
           <a class="lesson-bar-btn is-primary" href="#/lesson/${esc(id)}/shadowing">
             ${icon("mic", 18)}
@@ -272,7 +255,18 @@ export async function lessonView(root, { id }) {
             <span data-complete-label>${completed ? "Completed" : "Mark complete"}</span>
             <small id="lesson-complete-note" data-complete-note ${canComplete ? "hidden" : ""}>After practice</small>
           </button>
-          ${nextAction}
+          ${nextEntry ? `
+            <a class="lesson-bar-btn" href="#/lesson/${esc(nextEntry.id)}">
+              ${icon("arrow-right", 18)}
+              <span>Next part</span>
+            </a>
+          ` : `
+            <button class="lesson-bar-btn" type="button" disabled aria-label="Next part, coming soon">
+              ${icon("arrow-right", 18)}
+              <span>Next part</span>
+              <small>Coming soon</small>
+            </button>
+          `}
         </div>
       </div>
     </div>
@@ -286,8 +280,6 @@ export async function lessonView(root, { id }) {
   const completeIcon = root.querySelector("[data-complete-icon]");
   const completeLabel = root.querySelector("[data-complete-label]");
   const completeNote = root.querySelector("[data-complete-note]");
-  const showAllButton = root.querySelector("[data-show-all]");
-  const collapsedLines = [...root.querySelectorAll(".dialogue-line.is-collapsed")];
   const audioButtons = [...root.querySelectorAll("[data-lesson-audio]")];
   const audio = new LessonAudio();
   let activeLine = -1;
@@ -362,14 +354,6 @@ export async function lessonView(root, { id }) {
     renderLineAudio();
   }
 
-  function onShowAll() {
-    const expanded = showAllButton.getAttribute("aria-expanded") === "true";
-    const next = !expanded;
-    showAllButton.setAttribute("aria-expanded", String(next));
-    showAllButton.textContent = next ? "Show fewer lines" : `Show all ${lineCount} lines`;
-    collapsedLines.forEach(line => line.classList.toggle("is-collapsed", !next));
-  }
-
   function renderComplete(isComplete) {
     if (!completeButton) return;
     completeButton.disabled = false;
@@ -390,7 +374,6 @@ export async function lessonView(root, { id }) {
 
   tabList?.addEventListener("click", onTabClick);
   tabList?.addEventListener("keydown", onTabKeydown);
-  showAllButton?.addEventListener("click", onShowAll);
   audioButtons.forEach(button => button.addEventListener("click", onLineAudio));
   completeButton?.addEventListener("click", onComplete);
 
@@ -401,7 +384,6 @@ export async function lessonView(root, { id }) {
       audio.stop();
       tabList?.removeEventListener("click", onTabClick);
       tabList?.removeEventListener("keydown", onTabKeydown);
-      showAllButton?.removeEventListener("click", onShowAll);
       audioButtons.forEach(button => button.removeEventListener("click", onLineAudio));
       completeButton?.removeEventListener("click", onComplete);
     }

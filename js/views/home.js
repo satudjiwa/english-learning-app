@@ -8,17 +8,17 @@ export async function homeView(root) {
   const completed = getCompletedLessons();
   const lastId = getLastLessonId();
 
-  const plannedLessons = modules.reduce((sum, module) => sum + module.lessonCount, 0);
-  const availableLessons = index.filter(entry => modules.some(module => module.id === entry.moduleId));
+  const plannedParts = modules.reduce((sum, module) => sum + (module.parts?.length || 0), 0);
+  const availableParts = index.filter(entry => modules.some(module => module.id === entry.moduleId));
   const completedCount = modules.reduce((sum, module) => {
     return sum + moduleProgress(module, index, completed).completedCount;
   }, 0);
-  const percent = plannedLessons ? Math.round((completedCount / plannedLessons) * 100) : 0;
+  const percent = plannedParts ? Math.round((completedCount / plannedParts) * 100) : 0;
 
-  const target = availableLessons.find(entry => entry.id === lastId) || availableLessons[0] || null;
+  const target = availableParts.find(entry => entry.id === lastId) || availableParts[0] || null;
   const targetModule = modules.find(module => module.id === target?.moduleId) || null;
   const returning = Boolean(target && lastId === target.id);
-  const primaryLabel = returning ? "Continue lesson" : "Start first lesson";
+  const primaryLabel = returning ? "Continue practice" : "Start first part";
   const storageText = isStorageAvailable()
     ? "Progress is saved on this device."
     : "Progress cannot be saved in this browser.";
@@ -28,11 +28,11 @@ export async function homeView(root) {
       <section class="home-hero">
         <div class="hero-copy">
           <span class="eyebrow">Small Steps English</span>
-          <h1>English for Service Engineers</h1>
-          <p class="hero-subtitle">Percakapan teknis untuk service engineer bandara Indonesia.</p>
+          <h1>One verb. Five everyday parts.</h1>
+          <p class="hero-subtitle">Latihan speaking untuk service engineer bandara Indonesia.</p>
           <p class="hero-text">
-            Latih satu percakapan pendek setiap hari. Baca dengan tenang di Teleprompter,
-            lalu ikuti irama suara lewat Shadowing. Tanpa akun, tanpa biaya.
+            Setiap modul memakai satu kata kerja dasar. Baca naskahnya dengan tenang,
+            dengarkan suara American English, lalu ucapkan sendiri. Tanpa akun, tanpa biaya.
           </p>
           <div class="hero-actions">
             ${target ? `
@@ -52,14 +52,14 @@ export async function homeView(root) {
             <span class="eyebrow" id="home-progress-title">Your progress</span>
             <span class="chip">${percent}%</span>
           </div>
-          <p class="stat-number"><strong>${completedCount}</strong><span>/ ${plannedLessons} planned lessons</span></p>
-          <div class="progress-track" role="progressbar" aria-label="Planned lessons completed" aria-valuemin="0" aria-valuemax="${plannedLessons}" aria-valuenow="${completedCount}">
+          <p class="stat-number"><strong>${completedCount}</strong><span>/ ${plannedParts} planned parts</span></p>
+          <div class="progress-track" role="progressbar" aria-label="Planned parts completed" aria-valuemin="0" aria-valuemax="${plannedParts}" aria-valuenow="${completedCount}">
             <span style="width:${percent}%"></span>
           </div>
           <dl class="mini-stats">
             <div>
               <dt>Available now</dt>
-              <dd>${availableLessons.length} lesson${availableLessons.length === 1 ? "" : "s"}</dd>
+              <dd>${availableParts.length} part${availableParts.length === 1 ? "" : "s"}</dd>
             </div>
             <div>
               <dt>Completed</dt>
@@ -83,7 +83,7 @@ export async function homeView(root) {
             <span class="eyebrow">Keep going</span>
             <h2 id="continue-title">Continue learning</h2>
           </div>
-          <span class="section-note">${returning ? "Pick up where you stopped" : "Your first conversation"}</span>
+          <span class="section-note">${returning ? "Pick up where you stopped" : "Your first part"}</span>
         </div>
 
         ${target ? `
@@ -91,21 +91,21 @@ export async function homeView(root) {
             <span class="continue-icon" aria-hidden="true">${icon("book", 22)}</span>
             <div class="continue-copy">
               <span class="continue-meta">
-                Module ${esc(targetModule?.number || "1")} · Lesson ${esc(target.id.slice(-2))} ·
-                ${esc(target.difficulty || targetModule?.level || "Beginner")}
+                ${esc(targetModule?.verb || target.moduleId)} · Part ${Number(String(target.id).slice(-2))} ·
+                ${esc(targetModule?.level || "Beginner (A1–A2)")}
               </span>
               <h3>${esc(target.title)}</h3>
-              <p>${esc(targetModule?.title || "Basic Technical Communication")}</p>
+              <p>${esc(targetModule?.title || "GO – Expressing Different Ideas")}</p>
             </div>
             <a class="btn btn-primary" href="#/lesson/${esc(target.id)}">
-              <span>${returning ? "Continue" : "Open lesson"}</span> ${icon("arrow-right", 17)}
+              <span>${returning ? "Continue" : "Open part"}</span> ${icon("arrow-right", 17)}
             </a>
           </article>
         ` : `
           <article class="continue-card">
             <span class="continue-icon" aria-hidden="true">${icon("clock", 22)}</span>
             <div class="continue-copy">
-              <h3>The first lesson is being prepared</h3>
+              <h3>The first part is being prepared</h3>
               <p>Browse the module library to see what is planned.</p>
             </div>
             <a class="btn btn-secondary" href="#/modules">Browse modules</a>
@@ -119,7 +119,7 @@ export async function homeView(root) {
             <span class="eyebrow">Two practice modes</span>
             <h2 id="modes-title">Read it. Then follow it.</h2>
           </div>
-          <span class="section-note">Same conversation, two different skills</span>
+          <span class="section-note">Same text, two different skills</span>
         </div>
 
         <div class="mode-grid">
@@ -128,7 +128,7 @@ export async function homeView(root) {
               <span class="mode-card-icon" aria-hidden="true">${icon("text-size", 21)}</span>
               <div>
                 <h3>Teleprompter</h3>
-                <p>Auto-scroll the conversation at your own pace. The sentence crossing the center line stays highlighted.</p>
+                <p>Auto-scroll the script at your own pace. The sentence crossing the center line stays highlighted.</p>
                 <span class="text-link">Open Teleprompter ${icon("arrow-right", 15)}</span>
               </div>
             </a>
@@ -148,7 +148,7 @@ export async function homeView(root) {
         <div class="home-note-icon" aria-hidden="true">${icon("target", 21)}</div>
         <div>
           <h2>A small, clear goal</h2>
-          <p>Use one lesson until the sentences feel natural. Short practice that you repeat is better than a long session you skip.</p>
+          <p>Use one part until the sentences feel natural. Short practice that you repeat is better than a long session you skip.</p>
         </div>
         <a class="btn btn-secondary" href="#/modules">See all modules</a>
       </section>
@@ -156,7 +156,7 @@ export async function homeView(root) {
   `;
 
   return {
-    title: "Small Steps English — English for Service Engineers",
+    title: "Small Steps English — One Verb, Five Everyday Parts",
     cleanup: () => {}
   };
 }

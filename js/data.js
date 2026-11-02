@@ -1,4 +1,5 @@
-const LESSON_ID = /^M[1-6]-L\d{2}$/;
+const MODULE_ID = /^[A-Z]{2,5}$/;
+const LESSON_ID = /^[A-Z]{2,5}-P\d{2}$/;
 
 let modulesPromise = null;
 let lessonIndexPromise = null;
@@ -14,6 +15,14 @@ async function fetchJSON(path) {
     throw new Error(`Could not load ${path} (${response.status})`);
   }
   return response.json();
+}
+
+export function isLessonId(value) {
+  return LESSON_ID.test(String(value || ""));
+}
+
+export function isModuleId(value) {
+  return MODULE_ID.test(String(value || ""));
 }
 
 export function loadModules() {
@@ -44,37 +53,34 @@ export function loadLesson(id) {
   if (!lessonPromises.has(lessonId)) {
     const promise = fetchJSON(`lessons/${lessonId}.json`).catch(error => {
       lessonPromises.delete(lessonId);
-      throw error;
+      return Promise.reject(error);
     });
     lessonPromises.set(lessonId, promise);
   }
   return lessonPromises.get(lessonId);
 }
 
-export function moduleLessons(module, index) {
+export function moduleParts(module, index) {
   const available = new Map((index || []).map(entry => [entry.id, entry]));
-  return Array.from({ length: module.lessonCount }, (_, offset) => {
-    const number = offset + 1;
-    const id = `${module.id}-L${String(number).padStart(2, "0")}`;
-    return {
-      id,
-      number,
-      available: available.has(id),
-      title: available.get(id)?.title || `Lesson ${number}`
-    };
-  });
+  const parts = Array.isArray(module.parts) ? module.parts : [];
+  return parts.map(part => ({
+    id: part.id,
+    number: part.number,
+    available: available.has(part.id),
+    title: available.get(part.id)?.title || part.title || `Part ${part.number}`
+  }));
 }
 
 export function moduleProgress(module, index, completedLessons) {
-  const lessons = moduleLessons(module, index);
-  const available = lessons.filter(lesson => lesson.available);
-  const completed = available.filter(lesson => completedLessons.includes(lesson.id));
+  const parts = moduleParts(module, index);
+  const available = parts.filter(part => part.available);
+  const completed = available.filter(part => completedLessons.includes(part.id));
   return {
-    lessons,
+    parts,
     availableCount: available.length,
     completedCount: completed.length,
-    percent: module.lessonCount
-      ? Math.round((completed.length / module.lessonCount) * 100)
+    percent: parts.length
+      ? Math.round((completed.length / parts.length) * 100)
       : 0
   };
 }

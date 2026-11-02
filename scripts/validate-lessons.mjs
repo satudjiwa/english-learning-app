@@ -3,16 +3,14 @@ import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 
 const ROOT = process.cwd();
-const LESSON_ID = /^M[1-6]-L\d{2}$/;
-const MODULE_ID = /^M[1-6]$/;
-const AUDIO_PATH = /^public\/audio\/M([1-6])\/(M[1-6]-L\d{2})\/(sentence-(\d{2})|full)\.mp3$/;
-const LEVEL_RANGES = new Map([
-  ["Beginner", [12, 16]],
-  ["Beginner–Elementary", [12, 18]],
-  ["Elementary", [12, 18]],
-  ["Elementary–Intermediate", [14, 20]],
-  ["Intermediate", [14, 20]]
-]);
+const LESSON_ID = /^[A-Z]{2,5}-P\d{2}$/;
+const MODULE_ID = /^[A-Z]{2,5}$/;
+const AUDIO_PATH = /^public\/audio\/([A-Z]{2,5})\/([A-Z]{2,5}-P\d{2})\/(sentence-(\d{2})|full)\.mp3$/;
+
+// Every part is one part of a verb module: 3–8 short sentences.
+const MIN_SENTENCES = 3;
+const MAX_SENTENCES = 8;
+const PARTS_PER_MODULE = 5;
 
 const errors = [];
 const files = [];
@@ -31,10 +29,6 @@ function audioFileExists(relativePath) {
   } catch {
     return false;
   }
-}
-
-function normalizeLevel(value) {
-  return String(value || "").replace(/\s*[-–]\s*/g, "–");
 }
 
 async function readJSON(relativePath) {
@@ -66,10 +60,11 @@ const lessonFiles = dirEntries
   .sort();
 
 const moduleIds = new Set();
+const declaredParts = new Set();
 
 if (Array.isArray(modules)) {
-  if (modules.length !== 6) {
-    fail("data/modules.json", `expected 6 modules, found ${modules.length}`);
+  if (modules.length === 0) {
+    fail("data/modules.json", "must declare at least one module");
   }
 
   modules.forEach((module, position) => {
@@ -80,22 +75,51 @@ if (Array.isArray(modules)) {
     }
     if (!MODULE_ID.test(String(module.id || ""))) {
       fail(file, `module ${position + 1} has an invalid id: ${JSON.stringify(module.id)}`);
-    } else if (moduleIds.has(module.id)) {
+      return;
+    }
+    if (moduleIds.has(module.id)) {
       fail(file, `duplicate module id: ${module.id}`);
-    } else {
-      moduleIds.add(module.id);
+      return;
     }
+    moduleIds.add(module.id);
+
     if (module.number !== position + 1) {
-      fail(file, `${module.id || `module ${position + 1}`} number should be ${position + 1}`);
+      fail(file, `${module.id} number should be ${position + 1}`);
     }
+    if (!present(module.verb)) fail(file, `${module.id}: verb is missing`);
     if (!present(module.title)) fail(file, `${module.id}: title is missing`);
+    if (!present(module.subtitle)) fail(file, `${module.id}: subtitle is missing`);
     if (!present(module.level)) fail(file, `${module.id}: level is missing`);
     if (!present(module.description)) fail(file, `${module.id}: description is missing`);
-    if (module.lessonCount !== 5) {
-      fail(file, `${module.id}: lessonCount should be 5, found ${module.lessonCount}`);
+    if (present(module.verb) && module.title && !module.title.startsWith(String(module.verb))) {
+      fail(file, `${module.id}: title should start with the verb ${module.verb}`);
     }
+
+    if (!Array.isArray(module.parts) || module.parts.length !== PARTS_PER_MODULE) {
+      fail(file, `${module.id}: parts should contain ${PARTS_PER_MODULE} entries`);
+      return;
+    }
+
+    module.parts.forEach((part, partIndex) => {
+      const expectedId = `${module.id}-P${String(partIndex + 1).padStart(2, "0")}`;
+      if (!part || typeof part !== "object") {
+        fail(file, `${module.id}: parts[${partIndex}] is not an object`);
+        return;
+      }
+      if (part.number !== partIndex + 1) {
+        fail(file, `${expectedId}: number should be ${partIndex + 1}`);
+      }
+      if (part.id !== expectedId) {
+        fail(file, `${module.id}: parts[${partIndex}] id should be ${expectedId}, found ${JSON.stringify(part.id)}`);
+      } else if (declaredParts.has(part.id)) {
+        fail(file, `duplicate part id: ${part.id}`);
+      } else {
+        declaredParts.add(part.id);
+      }
+      if (!present(part.title)) fail(file, `${expectedId}: title is missing`);
+    });
   });
-  console.log(`  OK  data/modules.json — ${modules.length} modules`);
+  console.log(`  OK  data/modules.json — ${modules.length} modules, ${declaredParts.size} planned parts`);
 } else {
   fail("data/modules.json", "must contain an array");
 }
@@ -117,16 +141,18 @@ if (Array.isArray(index)) {
       indexIds.add(entry.id);
     }
     if (!present(entry.title)) fail(file, `${entry.id}: title is missing`);
-    if (!present(entry.difficulty)) fail(file, `${entry.id}: difficulty is missing`);
     if (!MODULE_ID.test(String(entry.moduleId || ""))) {
       fail(file, `${entry.id}: invalid moduleId ${JSON.stringify(entry.moduleId)}`);
     } else if (!moduleIds.has(entry.moduleId)) {
       fail(file, `${entry.id}: moduleId ${entry.moduleId} does not exist in modules.json`);
-    } else if (!String(entry.id).startsWith(`${entry.moduleId}-`)) {
+    } else if (!String(entry.id).startsWith(`${entry.moduleId}-P`)) {
       fail(file, `${entry.id}: moduleId ${entry.moduleId} does not match the lesson id`);
     }
+    if (declaredParts.size > 0 && !declaredParts.has(entry.id)) {
+      fail(file, `${entry.id} is not declared in the parts list of modules.json`);
+    }
   });
-  console.log(`  OK  data/lessons/index.json — ${index.length} available lesson${index.length === 1 ? "" : "s"}`);
+  console.log(`  OK  data/lessons/index.json — ${index.length} available part${index.length === 1 ? "" : "s"}`);
 } else {
   fail("data/lessons/index.json", "must contain an array");
 }
@@ -161,26 +187,20 @@ for (const filename of lessonFiles) {
     fail(relativePath, `invalid moduleId: ${JSON.stringify(lesson.moduleId)}`);
   } else if (!moduleIds.has(lesson.moduleId)) {
     fail(relativePath, `moduleId ${lesson.moduleId} does not exist in modules.json`);
-  } else if (!String(lesson.id).startsWith(`${lesson.moduleId}-`)) {
+  } else if (!String(lesson.id).startsWith(`${lesson.moduleId}-P`)) {
     fail(relativePath, `moduleId ${lesson.moduleId} does not match lesson id ${lesson.id}`);
   }
 
-  for (const field of ["title", "difficulty", "situation", "objective"]) {
+  for (const field of ["title", "partTitle", "situation", "objective"]) {
     if (!present(lesson[field])) fail(relativePath, `${field} is missing`);
-  }
-
-  const level = normalizeLevel(lesson.difficulty);
-  const range = LEVEL_RANGES.get(level);
-  if (!range) {
-    fail(relativePath, `unknown difficulty level: ${JSON.stringify(lesson.difficulty)}`);
   }
 
   const dialogue = lesson.dialogue;
   if (!Array.isArray(dialogue) || dialogue.length === 0) {
     fail(relativePath, "dialogue must be a non-empty array");
   } else {
-    if (range && (dialogue.length < range[0] || dialogue.length > range[1])) {
-      fail(relativePath, `${dialogue.length} dialogue lines is outside the ${level} range ${range[0]}–${range[1]}`);
+    if (dialogue.length < MIN_SENTENCES || dialogue.length > MAX_SENTENCES) {
+      fail(relativePath, `${dialogue.length} sentences is outside the allowed range ${MIN_SENTENCES}–${MAX_SENTENCES}`);
     }
 
     dialogue.forEach((line, lineIndex) => {
@@ -198,9 +218,9 @@ for (const filename of lessonFiles) {
         if (!match) {
           fail(relativePath, `${position}.audio has an invalid path: ${JSON.stringify(line.audio)}`);
         } else {
-          const [, moduleNumber, audioLessonId, , sentenceNumber] = match;
-          if (lesson.moduleId && moduleNumber !== String(lesson.moduleId).slice(1)) {
-            fail(relativePath, `${position}.audio is in M${moduleNumber}, not ${lesson.moduleId}`);
+          const [, moduleName, audioLessonId, , sentenceNumber] = match;
+          if (lesson.moduleId && moduleName !== lesson.moduleId) {
+            fail(relativePath, `${position}.audio is in ${moduleName}, not ${lesson.moduleId}`);
           }
           if (audioLessonId !== lesson.id) {
             fail(relativePath, `${position}.audio points to ${audioLessonId}, not ${lesson.id}`);
@@ -223,9 +243,9 @@ for (const filename of lessonFiles) {
     if (!match || !match[0].endsWith("/full.mp3")) {
       fail(relativePath, `fullAudio has an invalid path: ${JSON.stringify(lesson.fullAudio)}`);
     } else {
-      const [, moduleNumber, audioLessonId] = match;
-      if (lesson.moduleId && moduleNumber !== String(lesson.moduleId).slice(1)) {
-        fail(relativePath, `fullAudio is in M${moduleNumber}, not ${lesson.moduleId}`);
+      const [, moduleName, audioLessonId] = match;
+      if (lesson.moduleId && moduleName !== lesson.moduleId) {
+        fail(relativePath, `fullAudio is in ${moduleName}, not ${lesson.moduleId}`);
       }
       if (audioLessonId !== lesson.id) {
         fail(relativePath, `fullAudio points to ${audioLessonId}, not ${lesson.id}`);
@@ -236,78 +256,35 @@ for (const filename of lessonFiles) {
     }
   }
 
-  for (const field of ["keyExpressions", "sentencePatterns", "learningNotes"]) {
+  for (const field of ["keyExpressions", "learningNotes"]) {
     if (!Array.isArray(lesson[field]) || lesson[field].length === 0) {
       fail(relativePath, `${field} must be a non-empty array`);
     }
   }
 
   if (Array.isArray(lesson.keyExpressions)) {
-    lesson.keyExpressions.forEach((item, index) => {
+    lesson.keyExpressions.forEach((item, itemIndex) => {
       if (!item || typeof item !== "object") {
-        fail(relativePath, `keyExpressions[${index}] is not an object`);
+        fail(relativePath, `keyExpressions[${itemIndex}] is not an object`);
         return;
       }
       for (const field of ["english", "indonesian"]) {
         if (!present(item[field])) {
-          fail(relativePath, `keyExpressions[${index}].${field} is missing`);
+          fail(relativePath, `keyExpressions[${itemIndex}].${field} is missing`);
         }
-      }
-    });
-  }
-
-  if (Array.isArray(lesson.sentencePatterns)) {
-    lesson.sentencePatterns.forEach((item, index) => {
-      if (!item || typeof item !== "object") {
-        fail(relativePath, `sentencePatterns[${index}] is not an object`);
-        return;
-      }
-      for (const field of ["pattern", "explanation"]) {
-        if (!present(item[field])) {
-          fail(relativePath, `sentencePatterns[${index}].${field} is missing`);
-        }
-      }
-      const examples = Array.isArray(item.examples)
-        ? item.examples
-        : present(item.example)
-          ? [item.example]
-          : [];
-      if (examples.length === 0) {
-        fail(relativePath, `sentencePatterns[${index}] needs at least one example`);
-      } else if (examples.some(example => !present(example))) {
-        fail(relativePath, `sentencePatterns[${index}] has an empty example`);
       }
     });
   }
 
   if (Array.isArray(lesson.learningNotes)) {
-    lesson.learningNotes.forEach((note, index) => {
-      if (!present(note)) fail(relativePath, `learningNotes[${index}] is empty`);
-    });
-  }
-
-  if (!Array.isArray(lesson.pronunciationNotes) ||
-      lesson.pronunciationNotes.length < 1 ||
-      lesson.pronunciationNotes.length > 2) {
-    fail(relativePath, "pronunciationNotes must contain 1–2 notes");
-  } else {
-    lesson.pronunciationNotes.forEach((item, index) => {
-      if (!item || typeof item !== "object") {
-        fail(relativePath, `pronunciationNotes[${index}] is not an object`);
-        return;
-      }
-      for (const field of ["title", "note"]) {
-        if (!present(item[field])) {
-          fail(relativePath, `pronunciationNotes[${index}].${field} is missing`);
-        }
-      }
+    lesson.learningNotes.forEach((note, noteIndex) => {
+      if (!present(note)) fail(relativePath, `learningNotes[${noteIndex}] is empty`);
     });
   }
 
   if (errors.length === 0 || !errors.some(message => message.startsWith(relativePath))) {
     const count = Array.isArray(dialogue) ? dialogue.length : 0;
-    const rangeLabel = range ? `${range[0]}–${range[1]}` : "unknown";
-    console.log(`  OK  ${lesson.id || fileId} — ${count} sentences (${level}, allowed ${rangeLabel}), audio paths valid`);
+    console.log(`  OK  ${lesson.id || fileId} — ${count} sentences (allowed ${MIN_SENTENCES}–${MAX_SENTENCES}), audio paths valid`);
     files.push({ id: lesson.id, count });
   }
 }
@@ -322,9 +299,6 @@ for (const entry of Array.isArray(index) ? index : []) {
   if (entry.title !== match.lesson.title) {
     fail("data/lessons/index.json", `${entry.id} title does not match the lesson file`);
   }
-  if (normalizeLevel(entry.difficulty) !== normalizeLevel(match.lesson.difficulty)) {
-    fail("data/lessons/index.json", `${entry.id} difficulty does not match the lesson file`);
-  }
   if (entry.moduleId !== match.lesson.moduleId) {
     fail("data/lessons/index.json", `${entry.id} moduleId does not match the lesson file`);
   }
@@ -337,5 +311,5 @@ if (errors.length > 0) {
   errors.forEach(error => console.error(`  FAIL ${error}`));
   process.exitCode = 1;
 } else {
-  console.log(`Validation passed: ${files.length} lesson${files.length === 1 ? "" : "s"}, ${moduleIds.size} modules, ${indexIds.size} available lesson${indexIds.size === 1 ? "" : "s"}.`);
+  console.log(`Validation passed: ${files.length} part${files.length === 1 ? "" : "s"}, ${moduleIds.size} modules, ${indexIds.size} available part${indexIds.size === 1 ? "" : "s"}.`);
 }

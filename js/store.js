@@ -1,5 +1,6 @@
-const STORAGE_KEY = "small-steps-english.v2";
-const LESSON_ID = /^M[1-6]-L\d{2}$/;
+const STORAGE_KEY = "small-steps-english.v3";
+const LEGACY_STORAGE_KEYS = ["small-steps-english.v2"];
+const LESSON_ID = /^[A-Z]{2,5}-P\d{2}$/;
 const SHADOWING_SPEEDS = [0.75, 0.85, 1];
 
 const DEFAULT_PREFERENCES = {
@@ -23,7 +24,7 @@ function clamp(value, min, max, fallback) {
 
 function defaultState() {
   return {
-    version: 2,
+    version: 3,
     lastLessonId: null,
     completedLessons: [],
     preferences: {
@@ -52,6 +53,9 @@ function sanitize(raw) {
   const clean = defaultState();
   if (!raw || typeof raw !== "object") return clean;
 
+  // Lessons saved by an older curriculum (for example M1-L01) no longer
+  // exist. They are dropped here instead of crashing a view that cannot
+  // resolve them.
   if (typeof raw.lastLessonId === "string" && LESSON_ID.test(raw.lastLessonId)) {
     clean.lastLessonId = raw.lastLessonId;
   }
@@ -88,9 +92,21 @@ function sanitize(raw) {
 function readState() {
   if (!storageAvailable) return defaultState();
   try {
+    // v3 is the verb curriculum. A v2 payload belongs to the retired
+    // service-engineer curriculum, so only its preferences are carried over.
     const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) return defaultState();
-    return sanitize(JSON.parse(raw));
+    if (raw) return sanitize(JSON.parse(raw));
+
+    for (const legacyKey of LEGACY_STORAGE_KEYS) {
+      const legacy = window.localStorage.getItem(legacyKey);
+      if (!legacy) continue;
+      const carried = sanitize(JSON.parse(legacy));
+      const clean = defaultState();
+      clean.preferences = carried.preferences;
+      return clean;
+    }
+
+    return defaultState();
   } catch (error) {
     console.warn("Small Steps English: progress could not be read.", error);
     return defaultState();

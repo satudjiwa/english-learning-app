@@ -1,50 +1,210 @@
 [
   {
-    "id": "M1",
+    "id": "GO",
     "number": 1,
-    "title": "Basic Technical Communication",
-    "level": "Beginner",
-    "description": "Introduce yourself, describe locations and machines, and handle short technical calls with confidence.",
-    "lessonCount": 5
+    "verb": "GO",
+    "title": "GO – Expressing Different Ideas",
+    "subtitle": "Daily Activities, Everyday Situations, and Workplace English",
+    "level": "Beginner (A1–A2)",
+    "description": "Use GO to talk about moving to work, going home, going back, going wrong, and going through a problem.",
+    "parts": [
+      { "number": 1, "id": "GO-P01", "title": "Go to Work" },
+      { "number": 2, "id": "GO-P02", "title": "Go Home & Go Out" },
+      { "number": 3, "id": "GO-P03", "title": "Go Back & Go Ahead" },
+      { "number": 4, "id": "GO-P04", "title": "Go Wrong & Go Well" },
+      { "number": 5, "id": "GO-P05", "title": "Go On & Go Through" }
+    ]
   },
   {
-    "id": "M2",
+    "id": "COME",
     "number": 2,
-    "title": "Machine Troubleshooting",
-    "level": "Beginner–Elementary",
-    "description": "Explain symptoms, check simple causes, and report what you find in clear technical English.",
-    "lessonCount": 5
+    "verb": "COME",
+    "title": "COME – Expressing Different Ideas",
+    "subtitle": "Daily Activities, Everyday Situations, and Workplace English",
+    "level": "Beginner (A1–A2)",
+    "description": "Use COME to talk about arriving, coming back, where a problem comes from, and coming up with an idea.",
+    "parts": [
+      { "number": 1, "id": "COME-P01", "title": "Come In & Come to Work" },
+      { "number": 2, "id": "COME-P02", "title": "Come Back & Come Over" },
+      { "number": 3, "id": "COME-P03", "title": "Come From" },
+      { "number": 4, "id": "COME-P04", "title": "Come Up & Come Up With" },
+      { "number": 5, "id": "COME-P05", "title": "Come Out & Come Across" }
+    ]
   },
   {
-    "id": "M3",
+    "id": "HAVE",
     "number": 3,
-    "title": "Remote Technical Support",
-    "level": "Elementary",
-    "description": "Coordinate remote sessions, follow instructions, and confirm each step before moving on.",
-    "lessonCount": 5
+    "verb": "HAVE",
+    "title": "HAVE – Expressing Different Ideas",
+    "subtitle": "Daily Activities, Everyday Situations, and Workplace English",
+    "level": "Beginner (A1–A2)",
+    "description": "Use HAVE to talk about meals, meetings, time, problems, questions, and things you have to do.",
+    "parts": [
+      { "number": 1, "id": "HAVE-P01", "title": "Have Breakfast & Have Lunch" },
+      { "number": 2, "id": "HAVE-P02", "title": "Have a Meeting & Have Time" },
+      { "number": 3, "id": "HAVE-P03", "title": "Have a Problem & Have a Question" },
+      { "number": 4, "id": "HAVE-P04", "title": "Have To (Obligation)" },
+      { "number": 5, "id": "HAVE-P05", "title": "Have a Look & Have a Rest" }
+    ]
   },
   {
-    "id": "M4",
+    "id": "BRING",
     "number": 4,
-    "title": "Maintenance and Repair",
-    "level": "Elementary",
-    "description": "Talk about inspections, replacement parts, testing, and safe handover after repair work.",
-    "lessonCount": 5
+    "verb": "BRING",
+    "title": "BRING – Expressing Different Ideas",
+    "subtitle": "Daily Activities, Everyday Situations, and Workplace English",
+    "level": "Beginner (A1–A2)",
+    "description": "Use BRING to talk about tools and documents, bringing things back, and bringing up a topic.",
+    "parts": [
+      { "number": 1, "id": "BRING-P01", "title": "Bring Things & Bring Along" },
+      { "number": 2, "id": "BRING-P02", "title": "Bring Back & Bring In" },
+      { "number": 3, "id": "BRING-P03", "title": "Bring Up" },
+      { "number": 4, "id": "BRING-P04", "title": "Bring Down & Bring Out" },
+      { "number": 5, "id": "BRING-P05", "title": "Bring Together & Bring About" }
+    ]
   },
   {
-    "id": "M5",
+    "id": "GIVE",
     "number": 5,
-    "title": "Customer Communication",
-    "level": "Elementary–Intermediate",
-    "description": "Discuss downtime, approvals, schedules, and operational impact with airport customers.",
-    "lessonCount": 5
+    "verb": "GIVE",
+    "title": "GIVE – Expressing Different Ideas",
+    "subtitle": "Daily Activities, Everyday Situations, and Workplace English",
+    "level": "Beginner (A1–A2)",
+    "description": "Use GIVE to talk about helping, giving updates, giving instructions, and giving up or giving it a try.",
+    "parts": [
+      { "number": 1, "id": "GIVE-P01", "title": "Give a Hand & Give Help" },
+      { "number": 2, "id": "GIVE-P02", "title": "Give an Update & Give Information" },
+      { "number": 3, "id": "GIVE-P03", "title": "Give Back & Give Out" },
+      { "number": 4, "id": "GIVE-P04", "title": "Give Instructions & Give Feedback" },
+      { "number": 5, "id": "GIVE-P05", "title": "Give Up & Give It a Try" }
+    ]
   },
   {
-    "id": "M6",
+    "id": "TAKE",
     "number": 6,
-    "title": "Technical Reporting",
-    "level": "Intermediate",
-    "description": "Report root causes, escalate issues, and write clear handover summaries for the next team.",
-    "lessonCount": 5
+    "verb": "TAKE",
+    "title": "TAKE – Expressing Different Ideas",
+    "subtitle": "Daily Activities, Everyday Situations, and Workplace English",
+    "level": "Beginner (A1–A2)",
+    "description": "Use TAKE to talk about breaks, taking a look, taking care of something, and taking over a task.",
+    "parts": [
+      { "number": 1, "id": "TAKE-P01", "title": "Take a Break & Take Time" },
+      { "number": 2, "id": "TAKE-P02", "title": "Take a Look & Take a Photo" },
+      { "number": 3, "id": "TAKE-P03", "title": "Take Care Of" },
+      { "number": 4, "id": "TAKE-P04", "title": "Take Off & Take Out" },
+      { "number": 5, "id": "TAKE-P05", "title": "Take Over & Take Place" }
+    ]
+  },
+  {
+    "id": "MAKE",
+    "number": 7,
+    "verb": "MAKE",
+    "title": "MAKE – Expressing Different Ideas",
+    "subtitle": "Daily Activities, Everyday Situations, and Workplace English",
+    "level": "Beginner (A1–A2)",
+    "description": "Use MAKE to talk about plans, decisions, mistakes, reports, and making progress at work.",
+    "parts": [
+      { "number": 1, "id": "MAKE-P01", "title": "Make Coffee & Make a Plan" },
+      { "number": 2, "id": "MAKE-P02", "title": "Make a Decision" },
+      { "number": 3, "id": "MAKE-P03", "title": "Make a Mistake & Make Sure" },
+      { "number": 4, "id": "MAKE-P04", "title": "Make a Report & Make a Call" },
+      { "number": 5, "id": "MAKE-P05", "title": "Make It Work & Make Progress" }
+    ]
+  },
+  {
+    "id": "GET",
+    "number": 8,
+    "verb": "GET",
+    "title": "GET – Expressing Different Ideas",
+    "subtitle": "Daily Activities, Everyday Situations, and Workplace English",
+    "level": "Beginner (A1–A2)",
+    "description": "Use GET to talk about getting to work, getting a spare part, getting ready, and getting better or worse.",
+    "parts": [
+      { "number": 1, "id": "GET-P01", "title": "Get to Work & Get Home" },
+      { "number": 2, "id": "GET-P02", "title": "Get a Part & Get Help" },
+      { "number": 3, "id": "GET-P03", "title": "Get Ready & Get Started" },
+      { "number": 4, "id": "GET-P04", "title": "Get Better & Get Worse" },
+      { "number": 5, "id": "GET-P05", "title": "Get Back & Get Up" }
+    ]
+  },
+  {
+    "id": "DO",
+    "number": 9,
+    "verb": "DO",
+    "title": "DO – Expressing Different Ideas",
+    "subtitle": "Daily Activities, Everyday Situations, and Workplace English",
+    "level": "Beginner (A1–A2)",
+    "description": "Use DO to talk about doing the job, doing a check, doing a report, and doing your best.",
+    "parts": [
+      { "number": 1, "id": "DO-P01", "title": "Do the Job & Do Your Best" },
+      { "number": 2, "id": "DO-P02", "title": "Do a Check & Do a Test" },
+      { "number": 3, "id": "DO-P03", "title": "Do Paperwork & Do a Report" },
+      { "number": 4, "id": "DO-P04", "title": "Do Well & Do Better" },
+      { "number": 5, "id": "DO-P05", "title": "Do Without & Do It Again" }
+    ]
+  },
+  {
+    "id": "PUT",
+    "number": 10,
+    "verb": "PUT",
+    "title": "PUT – Expressing Different Ideas",
+    "subtitle": "Daily Activities, Everyday Situations, and Workplace English",
+    "level": "Beginner (A1–A2)",
+    "description": "Use PUT to talk about putting tools away, putting on a cover, putting parts together, and putting off a task.",
+    "parts": [
+      { "number": 1, "id": "PUT-P01", "title": "Put Things & Put Away" },
+      { "number": 2, "id": "PUT-P02", "title": "Put On & Put In" },
+      { "number": 3, "id": "PUT-P03", "title": "Put Back & Put Down" },
+      { "number": 4, "id": "PUT-P04", "title": "Put Together & Put Up" },
+      { "number": 5, "id": "PUT-P05", "title": "Put Off & Put Up With" }
+    ]
+  },
+  {
+    "id": "WORK",
+    "number": 11,
+    "verb": "WORK",
+    "title": "WORK – Expressing Different Ideas",
+    "subtitle": "Daily Activities, Everyday Situations, and Workplace English",
+    "level": "Beginner (A1–A2)",
+    "description": "Use WORK to talk about your job, working on a task, working with people, and a machine that works.",
+    "parts": [
+      { "number": 1, "id": "WORK-P01", "title": "Work at a Job" },
+      { "number": 2, "id": "WORK-P02", "title": "Work On a Task" },
+      { "number": 3, "id": "WORK-P03", "title": "Work With People" },
+      { "number": 4, "id": "WORK-P04", "title": "Work Out" },
+      { "number": 5, "id": "WORK-P05", "title": "The Machine Works & Doesn’t Work" }
+    ]
+  },
+  {
+    "id": "SEE",
+    "number": 12,
+    "verb": "SEE",
+    "title": "SEE – Expressing Different Ideas",
+    "subtitle": "Daily Activities, Everyday Situations, and Workplace English",
+    "level": "Beginner (A1–A2)",
+    "description": "Use SEE to talk about seeing a problem, seeing the result, and checking what will happen next.",
+    "parts": [
+      { "number": 1, "id": "SEE-P01", "title": "See Things & See People" },
+      { "number": 2, "id": "SEE-P02", "title": "See a Problem & See the Result" },
+      { "number": 3, "id": "SEE-P03", "title": "See If & See What Happens" },
+      { "number": 4, "id": "SEE-P04", "title": "See You Later & See a Doctor" },
+      { "number": 5, "id": "SEE-P05", "title": "I See & See Why" }
+    ]
+  },
+  {
+    "id": "KEEP",
+    "number": 13,
+    "verb": "KEEP",
+    "title": "KEEP – Expressing Different Ideas",
+    "subtitle": "Daily Activities, Everyday Situations, and Workplace English",
+    "level": "Beginner (A1–A2)",
+    "description": "Use KEEP to talk about keeping going, keeping calm, keeping a record, and keeping in touch.",
+    "parts": [
+      { "number": 1, "id": "KEEP-P01", "title": "Keep Going & Keep Trying" },
+      { "number": 2, "id": "KEEP-P02", "title": "Keep Calm & Keep Safe" },
+      { "number": 3, "id": "KEEP-P03", "title": "Keep a Record & Keep Notes" },
+      { "number": 4, "id": "KEEP-P04", "title": "Keep the Part & Keep in Touch" },
+      { "number": 5, "id": "KEEP-P05", "title": "Keep Up & Keep Away" }
+    ]
   }
 ]

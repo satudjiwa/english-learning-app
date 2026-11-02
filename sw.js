@@ -4,7 +4,7 @@
  * Cached assets keep the app usable offline after the first visit.
  */
 
-const CACHE = "small-steps-v2-shell-5";
+const CACHE = "small-steps-v3-shell-1";
 const SHELL = [
   "./",
   "./index.html",
@@ -26,12 +26,7 @@ const SHELL = [
   "./js/views/shadowing.js",
   "./js/views/not-found.js",
   "./data/modules.json",
-  "./data/lessons/index.json",
-  "./data/lessons/M1-L01.json",
-  "./data/lessons/M1-L02.json",
-  "./data/lessons/M1-L03.json",
-  "./data/lessons/M1-L04.json",
-  "./data/lessons/M1-L05.json"
+  "./data/lessons/index.json"
 ];
 
 self.addEventListener("install", event => {
