@@ -1,0 +1,69 @@
+{
+  "id": "BRING-P01",
+  "moduleId": "BRING",
+  "title": "Bring Things & Bring Along",
+  "partTitle": "Bring Things & Bring Along",
+  "level": "Beginner (A1–A2)",
+  "situation": "Preparing tools and equipment before the shift starts.",
+  "objective": "Use bring things and bring along to talk about carrying what you need at work.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "Before my shift, I bring things that I need for the day.",
+      "indonesian": "Sebelum shift, saya membawa barang-barang yang saya butuhkan untuk hari ini.",
+      "audio": "public/audio/BRING/BRING-P01/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I bring my tools, my notebook, and my radio.",
+      "indonesian": "Saya membawa alat, buku catatan, dan radio saya.",
+      "audio": "public/audio/BRING/BRING-P01/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "My supervisor asks me to bring along the test bag to the work area.",
+      "indonesian": "Supervisor saya meminta saya membawa tas uji ke area kerja.",
+      "audio": "public/audio/BRING/BRING-P01/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I also bring along a spare cable because we may need it later.",
+      "indonesian": "Saya juga membawa kabel cadangan karena mungkin dibutuhkan nanti.",
+      "audio": "public/audio/BRING/BRING-P01/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "It is easier when I bring things in one small bag.",
+      "indonesian": "Lebih mudah jika saya membawa barang-barang dalam satu tas kecil.",
+      "audio": "public/audio/BRING/BRING-P01/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "bring things",
+      "indonesian": "membawa barang-barang"
+    },
+    {
+      "english": "bring along",
+      "indonesian": "membawa serta"
+    },
+    {
+      "english": "test bag",
+      "indonesian": "tas uji"
+    },
+    {
+      "english": "spare cable",
+      "indonesian": "kabel cadangan"
+    },
+    {
+      "english": "work area",
+      "indonesian": "area kerja"
+    }
+  ],
+  "learningNotes": [
+    "bring things memakai bentuk jamak karena barangnya lebih dari satu.",
+    "bring along berarti membawa sesuatu atau seseorang bersama kita.",
+    "bring adalah kata kerja yang tidak berubah: I bring, he brings."
+  ],
+  "fullAudio": "public/audio/BRING/BRING-P01/full.mp3"
+}

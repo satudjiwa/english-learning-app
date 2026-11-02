@@ -1,0 +1,69 @@
+{
+  "id": "BRING-P04",
+  "moduleId": "BRING",
+  "title": "Bring Down & Bring Out",
+  "partTitle": "Bring Down & Bring Out",
+  "level": "Beginner (A1–A2)",
+  "situation": "Moving boxes and taking test equipment out for a check.",
+  "objective": "Use bring down and bring out to talk about moving things to another place.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "Before the check, I bring down the tool box from the top shelf.",
+      "indonesian": "Sebelum pemeriksaan, saya menurunkan kotak alat dari rak paling atas.",
+      "audio": "public/audio/BRING/BRING-P04/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "When the box is heavy, I ask a teammate for help.",
+      "indonesian": "Jika kotaknya berat, saya meminta bantuan rekan kerja.",
+      "audio": "public/audio/BRING/BRING-P04/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "After the repair, we bring out the test bag from the room.",
+      "indonesian": "Setelah perbaikan, kami mengeluarkan tas uji dari ruangan.",
+      "audio": "public/audio/BRING/BRING-P04/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "We bring out the old cable and put it in the correct box.",
+      "indonesian": "Kami mengeluarkan kabel lama dan menaruhnya di kotak yang benar.",
+      "audio": "public/audio/BRING/BRING-P04/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Please bring down the small box from the shelf when you finish.",
+      "indonesian": "Tolong turunkan kotak kecil dari rak setelah selesai.",
+      "audio": "public/audio/BRING/BRING-P04/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "bring down",
+      "indonesian": "menurunkan"
+    },
+    {
+      "english": "bring out",
+      "indonesian": "mengeluarkan"
+    },
+    {
+      "english": "top shelf",
+      "indonesian": "rak paling atas"
+    },
+    {
+      "english": "test bag",
+      "indonesian": "tas uji"
+    },
+    {
+      "english": "heavy box",
+      "indonesian": "kotak yang berat"
+    }
+  ],
+  "learningNotes": [
+    "bring down berarti membawa sesuatu dari tempat yang lebih tinggi ke tempat yang lebih rendah.",
+    "bring out berarti membawa sesuatu keluar.",
+    "Pronoun diletakkan di tengah: bring it down, bring it out."
+  ],
+  "fullAudio": "public/audio/BRING/BRING-P04/full.mp3"
+}

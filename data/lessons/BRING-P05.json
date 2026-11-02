@@ -1,0 +1,69 @@
+{
+  "id": "BRING-P05",
+  "moduleId": "BRING",
+  "title": "Bring Together & Bring About",
+  "partTitle": "Bring Together & Bring About",
+  "level": "Beginner (A1–A2)",
+  "situation": "Teamwork that improves a difficult shift.",
+  "objective": "Use bring together and bring about to talk about unity and results.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "A difficult problem can bring the team together.",
+      "indonesian": "Masalah yang sulit bisa menyatukan tim.",
+      "audio": "public/audio/BRING/BRING-P05/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "We bring together people from different shifts to discuss the machine.",
+      "indonesian": "Kami menyatukan orang-orang dari shift berbeda untuk membahas mesin.",
+      "audio": "public/audio/BRING/BRING-P05/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Good communication can bring about a faster repair.",
+      "indonesian": "Komunikasi yang baik dapat menghasilkan perbaikan yang lebih cepat.",
+      "audio": "public/audio/BRING/BRING-P05/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Small changes can bring about a better result.",
+      "indonesian": "Perubahan kecil dapat menghasilkan hasil yang lebih baik.",
+      "audio": "public/audio/BRING/BRING-P05/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "When we work together, we bring about a smooth shift.",
+      "indonesian": "Saat bekerja sama, kita mewujudkan shift yang lancar.",
+      "audio": "public/audio/BRING/BRING-P05/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "bring together",
+      "indonesian": "menyatukan"
+    },
+    {
+      "english": "bring about",
+      "indonesian": "menyebabkan / mewujudkan"
+    },
+    {
+      "english": "different shifts",
+      "indonesian": "shift berbeda"
+    },
+    {
+      "english": "good communication",
+      "indonesian": "komunikasi yang baik"
+    },
+    {
+      "english": "better result",
+      "indonesian": "hasil yang lebih baik"
+    }
+  ],
+  "learningNotes": [
+    "bring together berarti menyatukan orang atau hal.",
+    "bring about berarti menyebabkan sesuatu terjadi, sering dengan perubahan atau hasil.",
+    "bring about biasanya diikuti benda: bring about a change."
+  ],
+  "fullAudio": "public/audio/BRING/BRING-P05/full.mp3"
+}

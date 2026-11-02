@@ -73,5 +73,30 @@
     "id": "HAVE-P05",
     "moduleId": "HAVE",
     "title": "Have a Look & Have a Rest"
+  },
+  {
+    "id": "BRING-P01",
+    "moduleId": "BRING",
+    "title": "Bring Things & Bring Along"
+  },
+  {
+    "id": "BRING-P02",
+    "moduleId": "BRING",
+    "title": "Bring Back & Bring In"
+  },
+  {
+    "id": "BRING-P03",
+    "moduleId": "BRING",
+    "title": "Bring Up"
+  },
+  {
+    "id": "BRING-P04",
+    "moduleId": "BRING",
+    "title": "Bring Down & Bring Out"
+  },
+  {
+    "id": "BRING-P05",
+    "moduleId": "BRING",
+    "title": "Bring Together & Bring About"
   }
 ]

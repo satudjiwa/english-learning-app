@@ -1,0 +1,69 @@
+{
+  "id": "BRING-P02",
+  "moduleId": "BRING",
+  "title": "Bring Back & Bring In",
+  "partTitle": "Bring Back & Bring In",
+  "level": "Beginner (A1–A2)",
+  "situation": "Returning tools and bringing new supplies into the office.",
+  "objective": "Use bring back and bring in to talk about returning and moving things inside.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "When I finish a task, I bring back the tools to the storage room.",
+      "indonesian": "Setelah menyelesaikan tugas, saya mengembalikan alat ke ruang penyimpanan.",
+      "audio": "public/audio/BRING/BRING-P02/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I always bring back the test bag after the check.",
+      "indonesian": "Saya selalu mengembalikan tas uji setelah pemeriksaan.",
+      "audio": "public/audio/BRING/BRING-P02/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "In the morning, I bring in the new spare parts from the delivery box.",
+      "indonesian": "Pada pagi hari, saya membawa masuk suku cadang baru dari kotak pengiriman.",
+      "audio": "public/audio/BRING/BRING-P02/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "My teammate helps me bring in the heavy box.",
+      "indonesian": "Rekan kerja saya membantu saya membawa masuk kotak yang berat.",
+      "audio": "public/audio/BRING/BRING-P02/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Please bring back the radio when you finish your shift.",
+      "indonesian": "Tolong kembalikan radio setelah shift selesai.",
+      "audio": "public/audio/BRING/BRING-P02/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "bring back",
+      "indonesian": "mengembalikan"
+    },
+    {
+      "english": "bring in",
+      "indonesian": "membawa masuk"
+    },
+    {
+      "english": "storage room",
+      "indonesian": "ruang penyimpanan"
+    },
+    {
+      "english": "spare parts",
+      "indonesian": "suku cadang"
+    },
+    {
+      "english": "delivery box",
+      "indonesian": "kotak pengiriman"
+    }
+  ],
+  "learningNotes": [
+    "bring back berarti membawa sesuatu kembali ke tempat asalnya.",
+    "bring in berarti membawa sesuatu dari luar ke dalam.",
+    "Untuk pronoun, letakkan di tengah: bring it back, bring it in."
+  ],
+  "fullAudio": "public/audio/BRING/BRING-P02/full.mp3"
+}

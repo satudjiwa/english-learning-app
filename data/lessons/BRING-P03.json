@@ -1,0 +1,69 @@
+{
+  "id": "BRING-P03",
+  "moduleId": "BRING",
+  "title": "Bring Up",
+  "partTitle": "Bring Up",
+  "level": "Beginner (A1–A2)",
+  "situation": "Raising a machine problem in a shift meeting.",
+  "objective": "Use bring up to talk about raising a problem or topic for discussion.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "During the shift meeting, I bring up a problem with the sensor.",
+      "indonesian": "Saat rapat shift, saya mengangkat masalah pada sensor.",
+      "audio": "public/audio/BRING/BRING-P03/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I bring up the issue because it happens again and again.",
+      "indonesian": "Saya mengangkat masalah itu karena terjadi berulang kali.",
+      "audio": "public/audio/BRING/BRING-P03/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "My supervisor listens and asks me to explain more.",
+      "indonesian": "Supervisor saya mendengarkan dan meminta saya menjelaskan lebih lanjut.",
+      "audio": "public/audio/BRING/BRING-P03/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "It is important to bring up a problem early.",
+      "indonesian": "Penting untuk mengangkat masalah lebih awal.",
+      "audio": "public/audio/BRING/BRING-P03/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "After the meeting, we write the problem in the report.",
+      "indonesian": "Setelah rapat, kami menulis masalah itu di laporan.",
+      "audio": "public/audio/BRING/BRING-P03/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "bring up",
+      "indonesian": "mengangkat / membahas"
+    },
+    {
+      "english": "shift meeting",
+      "indonesian": "rapat shift"
+    },
+    {
+      "english": "issue",
+      "indonesian": "masalah"
+    },
+    {
+      "english": "explain",
+      "indonesian": "menjelaskan"
+    },
+    {
+      "english": "early",
+      "indonesian": "lebih awal"
+    }
+  ],
+  "learningNotes": [
+    "bring up berarti mengangkat topik atau masalah untuk dibicarakan.",
+    "bring up a problem berarti mengangkat masalah; bring up a topic berarti membahas topik.",
+    "Pronoun diletakkan di tengah: bring it up."
+  ],
+  "fullAudio": "public/audio/BRING/BRING-P03/full.mp3"
+}
