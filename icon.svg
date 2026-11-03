@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Small Steps English">
-  <rect width="64" height="64" rx="15" fill="#101419"/>
-  <rect x="7.5" y="7.5" width="49" height="49" rx="11.5" fill="none" stroke="#2a323c"/>
-  <path d="M16 44h8v-9h8v-9h10" fill="none" stroke="#7db1ff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="46" cy="26" r="3.4" fill="#f3f5f8"/>
+  <rect width="64" height="64" rx="15" fill="#f7f3ea"/>
+  <rect x="7.5" y="7.5" width="49" height="49" rx="11.5" fill="none" stroke="#17140f" stroke-opacity=".28"/>
+  <path d="M16 44h8v-9h8v-9h10" fill="none" stroke="#c8452a" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="46" cy="26" r="3.4" fill="#17140f"/>
 </svg>

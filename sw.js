@@ -4,13 +4,18 @@
  * Cached assets keep the app usable offline after the first visit.
  */
 
-const CACHE = "small-steps-v3-shell-3";
+const CACHE = "small-steps-v4-shell-1";
 const SHELL = [
   "./",
   "./index.html",
   "./styles.css",
   "./manifest.webmanifest",
   "./icon.svg",
+  "./public/fonts/fraunces-400-700.woff2",
+  "./public/fonts/public-sans-300-700.woff2",
+  "./public/fonts/ibm-plex-mono-400.woff2",
+  "./public/fonts/ibm-plex-mono-500.woff2",
+  "./public/fonts/source-serif-4-400-600.woff2",
   "./js/app.js",
   "./js/data.js",
   "./js/icons.js",
