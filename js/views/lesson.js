@@ -1,4 +1,11 @@
-import { loadLesson, loadLessonIndex, loadModules } from "../data.js";
+import {
+  findTrackUnit,
+  loadLesson,
+  loadLessonIndex,
+  loadModules,
+  loadTracks,
+  trackForLessonId
+} from "../data.js";
 import { hasPracticeStarted, isLessonComplete, setLastLesson, toggleLessonComplete } from "../store.js";
 import { LessonAudio } from "../lib/audio.js";
 import { icon } from "../icons.js";
@@ -70,25 +77,42 @@ function notesPanel(lesson) {
 }
 
 export async function lessonView(root, { id }) {
-  const [modules, index] = await Promise.all([loadModules(), loadLessonIndex()]);
+  const [modules, index, tracks] = await Promise.all([loadModules(), loadLessonIndex(), loadTracks()]);
+  const track = trackForLessonId(tracks, id);
+  const catalogMatch = track?.kind === "unit-groups" ? findTrackUnit(track, id) : null;
   const entry = index.find(item => item.id === id);
 
   if (!entry) {
+    const actionHref = track?.id === "patterns" || track?.id === "expressions"
+      ? track.route
+      : "#/modules";
+    const actionLabel = track?.id === "patterns" || track?.id === "expressions"
+      ? `Back to ${track.label}`
+      : "Back to module library";
+    const pendingTitle = catalogMatch?.unit?.titlePending;
     return notFoundView(root, {
       eyebrow: "Coming soon",
-      title: "This part is not available yet.",
-      message: "Only finished parts can be opened. Go back to the module library to see what is available now.",
-      actionHref: "#/modules",
-      actionLabel: "Back to module library"
+      title: pendingTitle
+        ? "This pattern unit is not available yet."
+        : catalogMatch
+          ? `${catalogMatch.unit.title} is not available yet.`
+          : "This part is not available yet.",
+      message: "Only finished units can be opened. Go back to the library to see what is available now.",
+      actionHref,
+      actionLabel
     });
   }
 
   const [lesson] = await Promise.all([loadLesson(id)]);
-  const module = modules.find(item => item.id === lesson.moduleId);
+  const trackId = track?.id || "verbs";
+  const module = trackId === "verbs" ? modules.find(item => item.id === lesson.moduleId) : null;
+  const group = catalogMatch?.group || null;
   const completed = isLessonComplete(id);
   const canComplete = completed || hasPracticeStarted(id);
   const currentIndex = index.findIndex(item => item.id === id);
-  const siblingIds = (module?.parts || []).map(part => part.id);
+  const siblingIds = trackId === "verbs"
+    ? (module?.parts || []).map(part => part.id)
+    : (group?.units || []).map(unit => unit.id);
   const previousId = siblingIds[siblingIds.indexOf(id) - 1] || null;
   const nextId = siblingIds[siblingIds.indexOf(id) + 1] || null;
   const previousEntry = previousId ? index.find(item => item.id === previousId) : null;
@@ -96,24 +120,39 @@ export async function lessonView(root, { id }) {
   setLastLesson(id);
 
   const lineCount = lesson.dialogue.length;
-  const partNumber = Number(String(id).slice(-2)) || currentIndex + 1;
-  const partCount = siblingIds.length || 5;
-  const verb = module?.verb || lesson.moduleId;
+  const partNumber = trackId === "verbs"
+    ? (Number(String(id).slice(-2)) || currentIndex + 1)
+    : (siblingIds.indexOf(id) + 1 || 1);
+  const partCount = siblingIds.length || (trackId === "verbs" ? 5 : 10);
+  const trackLabel = module?.verb || track?.label || lesson.moduleId;
+  const backHref = track?.route || "#/modules";
+  const backLabel = trackId === "verbs" ? "Module Library" : (track?.label || "Library");
+  const breadcrumbMiddle = trackId === "verbs" ? trackLabel : (group?.title || trackLabel);
+  const breadcrumbEnd = trackId === "verbs" ? `Part ${partNumber}` : id;
+  const eyebrow = trackId === "verbs"
+    ? `${trackLabel} · Part ${partNumber} of ${partCount}`
+    : `${track?.label || "Library"} · ${id}`;
+  const subtitle = module?.subtitle || group?.description || "";
+  const expressionHeading = trackId === "patterns"
+    ? "Pattern examples"
+    : trackId === "expressions"
+      ? (group?.type === "dialogue" ? "Useful phrases" : "Expression examples")
+      : "Verb phrases";
 
   root.innerHTML = `
     <div class="view lesson-view">
       <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="#/modules">Module Library</a>
+        <a href="${esc(backHref)}">${esc(backLabel)}</a>
         <span aria-hidden="true">/</span>
-        <span>${esc(verb)}</span>
+        <span>${esc(breadcrumbMiddle)}</span>
         <span aria-hidden="true">/</span>
-        <span>Part ${partNumber}</span>
+        <span>${esc(breadcrumbEnd)}</span>
       </nav>
 
       <header class="lesson-head">
-        <span class="eyebrow">${esc(verb)} · Part ${partNumber} of ${partCount}</span>
+        <span class="eyebrow">${esc(eyebrow)}</span>
         <h1>${esc(lesson.title)}</h1>
-        ${module?.subtitle ? `<p class="lesson-subtitle">${esc(module.subtitle)}</p>` : ""}
+        ${subtitle ? `<p class="lesson-subtitle">${esc(subtitle)}</p>` : ""}
         <div class="lesson-meta-row">
           <span class="chip chip-accent">${esc(lesson.level || module?.level || "Beginner (A1–A2)")}</span>
           <span class="chip">${lineCount} sentences</span>
@@ -187,7 +226,7 @@ export async function lessonView(root, { id }) {
       >
         <div class="lesson-panel-head">
           <span class="eyebrow">Key expressions</span>
-          <h2>Verb phrases</h2>
+          <h2>${esc(expressionHeading)}</h2>
         </div>
         ${listOrFallback(lesson.keyExpressions, expressionList)}
       </section>

@@ -37,6 +37,13 @@ VOICES_DIR = ROOT / "tools" / "voices"
 
 LESSON_ID_RE = re.compile(r"^[A-Z]{2,5}-P\d{2}$")
 MODULE_ID_RE = re.compile(r"^[A-Z]{2,5}$")
+PATTERN_LESSON_ID_RE = re.compile(r"^PAT-D\d{2}$")
+EXPRESSION_LESSON_ID_RE = re.compile(r"^EXP-[A-Z0-9]+(?:-[A-Z0-9]+)*$")
+
+TRACK_FOLDERS = {
+    "patterns": "PATTERNS",
+    "expressions": "EXPRESSIONS",
+}
 
 SENTENCE_GAP_SECONDS = 0.6
 SAMPLE_RATE = 22050
@@ -180,6 +187,38 @@ def validate_voice_configuration() -> None:
         raise SystemExit(f"FALLBACK_VOICE {FALLBACK_VOICE!r} is not defined in VOICES")
 
 
+def lesson_track_id(lesson_id: str) -> str | None:
+    if PATTERN_LESSON_ID_RE.fullmatch(lesson_id):
+        return "patterns"
+    if EXPRESSION_LESSON_ID_RE.fullmatch(lesson_id):
+        return "expressions"
+    if LESSON_ID_RE.fullmatch(lesson_id):
+        return "verbs"
+    return None
+
+
+def is_lesson_id(value: object) -> bool:
+    return isinstance(value, str) and lesson_track_id(value) is not None
+
+
+def audio_folder_for_lesson(lesson: dict) -> str:
+    lesson_id = lesson["id"]
+    track = lesson_track_id(lesson_id)
+    if track == "verbs":
+        module_id = lesson.get("moduleId")
+        if not isinstance(module_id, str) or not MODULE_ID_RE.fullmatch(module_id):
+            raise SystemExit(f"{lesson_id}: invalid moduleId {module_id!r}")
+        return module_id
+
+    expected = TRACK_FOLDERS[track]
+    declared = lesson.get("track")
+    if declared is not None and declared != track:
+        raise SystemExit(
+            f"{lesson_id}: track {declared!r} does not match the lesson id (expected {track!r})"
+        )
+    return expected
+
+
 def load_lesson(lesson_id: str) -> dict:
     path = LESSONS_DIR / f"{lesson_id}.json"
     if not path.is_file():
@@ -195,9 +234,7 @@ def load_lesson(lesson_id: str) -> dict:
             f"{path.relative_to(ROOT)} has id {lesson.get('id')!r}, expected {lesson_id!r}"
         )
 
-    module_id = lesson.get("moduleId")
-    if not isinstance(module_id, str) or not MODULE_ID_RE.fullmatch(module_id):
-        raise SystemExit(f"{lesson_id}: invalid moduleId {module_id!r}")
+    audio_folder_for_lesson(lesson)
 
     dialogue = lesson.get("dialogue")
     if not isinstance(dialogue, list) or not dialogue:
@@ -337,9 +374,9 @@ def concatenate_wavs(wavs: list[Path], output: Path, gap_seconds: float) -> None
                 destination.writeframes(gap)
 
 
-def audio_relative_path(module_id: str, lesson_id: str, filename: str) -> str:
+def audio_relative_path(folder: str, lesson_id: str, filename: str) -> str:
     """Return the path used by the app and by the static build."""
-    return f"public/audio/{module_id}/{lesson_id}/{filename}"
+    return f"public/audio/{folder}/{lesson_id}/{filename}"
 
 
 def generate_lesson(
@@ -350,9 +387,9 @@ def generate_lesson(
     ffmpeg: str,
 ) -> None:
     lesson = load_lesson(lesson_id)
-    module_id = lesson["moduleId"]
+    audio_folder = audio_folder_for_lesson(lesson)
     dialogue = lesson["dialogue"]
-    output_dir = PUBLIC_DIR / "audio" / module_id / lesson_id
+    output_dir = PUBLIC_DIR / "audio" / audio_folder / lesson_id
     output_dir.mkdir(parents=True, exist_ok=True)
 
     sentence_paths = [
@@ -421,7 +458,7 @@ def generate_lesson(
     changed = False
     for index, line in enumerate(dialogue):
         expected = audio_relative_path(
-            module_id, lesson_id, f"sentence-{index + 1:02d}.mp3"
+            audio_folder, lesson_id, f"sentence-{index + 1:02d}.mp3"
         )
         if is_nonempty_file(sentence_paths[index]):
             if line.get("audio") != expected:
@@ -431,7 +468,7 @@ def generate_lesson(
             del line["audio"]
             changed = True
 
-    expected_full = audio_relative_path(module_id, lesson_id, "full.mp3")
+    expected_full = audio_relative_path(audio_folder, lesson_id, "full.mp3")
     if is_nonempty_file(full_path):
         if lesson.get("fullAudio") != expected_full:
             lesson["fullAudio"] = expected_full
@@ -467,15 +504,18 @@ def lesson_ids_from_arguments(args: argparse.Namespace) -> list[str]:
         ids: list[str] = []
         for entry in index:
             lesson_id = entry.get("id") if isinstance(entry, dict) else None
-            if not isinstance(lesson_id, str) or not LESSON_ID_RE.fullmatch(lesson_id):
+            if not is_lesson_id(lesson_id):
                 raise SystemExit(f"Invalid lesson id in {index_path.relative_to(ROOT)}: {lesson_id!r}")
             ids.append(lesson_id)
         return ids
 
     requested = args.lesson or []
     for lesson_id in requested:
-        if not LESSON_ID_RE.fullmatch(lesson_id):
-            raise SystemExit(f"Invalid lesson id: {lesson_id!r} (expected M1-L01 style)")
+        if not is_lesson_id(lesson_id):
+            raise SystemExit(
+                f"Invalid lesson id: {lesson_id!r} "
+                "(expected GO-P01, PAT-D21, or EXP-… style)"
+            )
     return requested
 
 
@@ -485,7 +525,7 @@ def parse_arguments() -> argparse.Namespace:
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=(
             "Examples:\n"
-            "  python3 tools/generate_audio.py --lesson M1-L01\n"
+            "  python3 tools/generate_audio.py --lesson GO-P01\n"
             "  python3 tools/generate_audio.py --all --force\n"
         ),
     )
@@ -494,7 +534,7 @@ def parse_arguments() -> argparse.Namespace:
         "--lesson",
         action="append",
         metavar="ID",
-        help="lesson to generate, e.g. M1-L01 (repeat for more than one)",
+        help="lesson to generate, e.g. GO-P01 or PAT-D21 (repeat for more than one)",
     )
     selection.add_argument(
         "--all",

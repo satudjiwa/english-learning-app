@@ -1,5 +1,6 @@
 import { homeView } from "./views/home.js";
 import { modulesView } from "./views/modules.js";
+import { trackView } from "./views/track.js";
 import { lessonView } from "./views/lesson.js";
 import { teleprompterView } from "./views/teleprompter.js";
 import { shadowingView } from "./views/shadowing.js";
@@ -41,7 +42,10 @@ function setChrome(routeName) {
     const nav = link.dataset.nav;
     const active = nav === "home"
       ? routeName === "home"
-      : routeName === "modules" || routeName === "lesson";
+      : routeName === "modules" ||
+        routeName === "patterns" ||
+        routeName === "expressions" ||
+        routeName === "lesson";
     if (active) {
       link.setAttribute("aria-current", "page");
     } else {
@@ -96,6 +100,10 @@ async function renderRoute() {
       result = await homeView(app);
     } else if (route.name === "modules" && route.parts.length === 1) {
       result = await modulesView(app);
+    } else if (route.name === "patterns" && route.parts.length === 1) {
+      result = await trackView(app, { trackId: "patterns" });
+    } else if (route.name === "expressions" && route.parts.length === 1) {
+      result = await trackView(app, { trackId: "expressions" });
     } else if (route.name === "lesson" && route.parts.length >= 2) {
       const id = decodeURIComponent(route.parts[1]).toUpperCase();
       if (route.parts.length === 2) {

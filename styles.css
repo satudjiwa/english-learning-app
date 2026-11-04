@@ -6261,3 +6261,126 @@ pre {
     height: 40px;
   }
 }
+
+/* Library tracks ---------------------------------------------------------- */
+
+.library-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 28px;
+  margin-bottom: clamp(26px, 4vw, 38px);
+  border-bottom: 1px solid var(--line);
+}
+
+.library-switch-link {
+  position: relative;
+  padding: 0 0 11px;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.library-switch-link:hover {
+  color: var(--text);
+}
+
+.library-switch-link[aria-current="page"] {
+  color: var(--text);
+}
+
+.library-switch-link[aria-current="page"]::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 1px;
+  background: var(--accent);
+  content: "";
+}
+
+.track-groups {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0 48px;
+  border-bottom: 1px solid var(--line);
+}
+
+.unit-group {
+  min-width: 0;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+}
+
+.unit-group-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.unit-group-note {
+  margin-top: 13px;
+  padding-left: 12px;
+  border-left: 1px solid var(--accent-border);
+  color: var(--muted-2);
+  font-size: 11.5px;
+  line-height: 1.6;
+}
+
+.coverage-block {
+  margin-top: 18px;
+  padding-top: 13px;
+  border-top: 1px solid var(--line);
+}
+
+.coverage-list {
+  display: grid;
+  gap: 5px;
+  margin: 7px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.coverage-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.45;
+}
+
+.coverage-item .lesson-badge {
+  max-width: 62%;
+  text-align: right;
+  white-space: normal;
+}
+
+.coverage-eyebrow {
+  display: block;
+  margin-top: 15px;
+}
+
+@media (min-width: 880px) {
+  .track-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .library-switch {
+    gap: 0 20px;
+  }
+
+  .coverage-item {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .coverage-item .lesson-badge {
+    max-width: none;
+    text-align: left;
+  }
+}

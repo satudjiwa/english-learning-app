@@ -123,5 +123,12 @@
     "id": "GIVE-P05",
     "moduleId": "GIVE",
     "title": "Give Up & Give It a Try"
+  },
+  {
+    "id": "PAT-D21",
+    "track": "patterns",
+    "groupId": "pattern-modals",
+    "type": "pattern",
+    "title": "Can You ~?"
   }
 ]

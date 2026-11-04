@@ -1,16 +1,20 @@
-import { loadLessonIndex, loadModules, moduleProgress } from "../data.js";
+import { loadLessonIndex, loadModules, loadTracks, moduleProgress } from "../data.js";
 import { getCompletedLessons } from "../store.js";
+import { libraryTabs } from "../components/library-tabs.js";
 import { icon } from "../icons.js";
 import { esc } from "../utils.js";
 
 export async function modulesView(root) {
-  const [modules, index] = await Promise.all([loadModules(), loadLessonIndex()]);
+  const [modules, index, tracks] = await Promise.all([loadModules(), loadLessonIndex(), loadTracks()]);
   const completed = getCompletedLessons();
-  const availableCount = index.length;
+  const moduleIds = new Set(modules.map(module => module.id));
+  const availableCount = index.filter(entry => moduleIds.has(entry.moduleId)).length;
   const plannedCount = modules.reduce((sum, module) => sum + (module.parts?.length || 0), 0);
 
   root.innerHTML = `
     <div class="view modules-view">
+      ${libraryTabs(tracks, "verbs")}
+
       <header class="page-head">
         <span class="eyebrow">Module library</span>
         <h1>${modules.length} verbs. One step at a time.</h1>

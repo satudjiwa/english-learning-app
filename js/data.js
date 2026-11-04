@@ -1,9 +1,12 @@
 import { retainKnownLessons } from "./store.js";
 
 const MODULE_ID = /^[A-Z]{2,5}$/;
-const LESSON_ID = /^[A-Z]{2,5}-P\d{2}$/;
+const VERB_LESSON_ID = /^[A-Z]{2,5}-P\d{2}$/;
+const PATTERN_LESSON_ID = /^PAT-D\d{2}$/;
+const EXPRESSION_LESSON_ID = /^EXP-[A-Z0-9]+(?:-[A-Z0-9]+)*$/;
 
 let modulesPromise = null;
+let tracksPromise = null;
 let lessonIndexPromise = null;
 const lessonPromises = new Map();
 
@@ -19,8 +22,16 @@ async function fetchJSON(path) {
   return response.json();
 }
 
+export function lessonTrackId(value) {
+  const id = String(value || "");
+  if (PATTERN_LESSON_ID.test(id)) return "patterns";
+  if (EXPRESSION_LESSON_ID.test(id)) return "expressions";
+  if (VERB_LESSON_ID.test(id)) return "verbs";
+  return null;
+}
+
 export function isLessonId(value) {
-  return LESSON_ID.test(String(value || ""));
+  return lessonTrackId(value) !== null;
 }
 
 export function isModuleId(value) {
@@ -37,13 +48,43 @@ export function loadModules() {
   return modulesPromise;
 }
 
+export function loadTracks() {
+  if (!tracksPromise) {
+    tracksPromise = fetchJSON("tracks.json").catch(error => {
+      tracksPromise = null;
+      throw error;
+    });
+  }
+  return tracksPromise;
+}
+
+export function trackById(tracks, trackId) {
+  return (Array.isArray(tracks) ? tracks : []).find(track => track.id === trackId) || null;
+}
+
+export function trackForLessonId(tracks, id) {
+  return trackById(tracks, lessonTrackId(id));
+}
+
+export function findTrackUnit(track, id) {
+  for (const group of track?.groups || []) {
+    const unit = (group.units || []).find(item => item.id === id);
+    if (unit) return { group, unit };
+  }
+  return null;
+}
+
+export function trackUnitIds(track) {
+  return (track?.groups || []).flatMap(group => (group.units || []).map(unit => unit.id));
+}
+
 export function loadLessonIndex() {
   if (!lessonIndexPromise) {
     lessonIndexPromise = fetchJSON("lessons/index.json")
       .then(index => {
         // Progress saved by a removed or renamed part is dropped once the
-        // current index is known. Old curriculum ids never reach this point
-        // because store.js already rejects ids that do not use <VERB>-Pnn.
+        // current index is known. Each track only retains ids that are still
+        // listed in data/lessons/index.json.
         if (Array.isArray(index)) {
           retainKnownLessons(index.map(entry => entry.id));
         }
@@ -59,7 +100,7 @@ export function loadLessonIndex() {
 
 export function loadLesson(id) {
   const lessonId = String(id || "");
-  if (!LESSON_ID.test(lessonId)) {
+  if (!isLessonId(lessonId)) {
     return Promise.reject(new Error("Invalid lesson id."));
   }
   if (!lessonPromises.has(lessonId)) {
@@ -93,6 +134,36 @@ export function moduleProgress(module, index, completedLessons) {
     completedCount: completed.length,
     percent: parts.length
       ? Math.round((completed.length / parts.length) * 100)
+      : 0
+  };
+}
+
+export function unitGroupProgress(group, index, completedLessons) {
+  const available = new Set((index || []).map(entry => entry.id));
+  const units = Array.isArray(group?.units) ? group.units : [];
+  const completed = units.filter(unit => available.has(unit.id) && completedLessons.includes(unit.id));
+  return {
+    units,
+    availableCount: units.filter(unit => available.has(unit.id)).length,
+    completedCount: completed.length,
+    percent: units.length
+      ? Math.round((completed.length / units.length) * 100)
+      : 0
+  };
+}
+
+export function trackProgress(track, index, completedLessons) {
+  const groups = Array.isArray(track?.groups) ? track.groups : [];
+  const units = groups.flatMap(group => group.units || []);
+  const available = new Set((index || []).map(entry => entry.id));
+  const completed = units.filter(unit => available.has(unit.id) && completedLessons.includes(unit.id));
+  return {
+    groups,
+    unitCount: units.length,
+    availableCount: units.filter(unit => available.has(unit.id)).length,
+    completedCount: completed.length,
+    percent: units.length
+      ? Math.round((completed.length / units.length) * 100)
       : 0
   };
 }

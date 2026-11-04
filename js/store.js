@@ -1,6 +1,9 @@
 const STORAGE_KEY = "small-steps-english.v3";
 const LEGACY_STORAGE_KEYS = ["small-steps-english.v2"];
-const LESSON_ID = /^[A-Z]{2,5}-P\d{2}$/;
+const VERB_LESSON_ID = /^[A-Z]{2,5}-P\d{2}$/;
+const PATTERN_LESSON_ID = /^PAT-D\d{2}$/;
+const EXPRESSION_LESSON_ID = /^EXP-[A-Z0-9]+(?:-[A-Z0-9]+)*$/;
+const TRACK_IDS = ["verbs", "patterns", "expressions"];
 const AUDIO_SPEEDS = [0.75, 0.85, 1];
 
 const DEFAULT_PREFERENCES = {
@@ -26,11 +29,34 @@ function clamp(value, min, max, fallback) {
   return Math.min(max, Math.max(min, number));
 }
 
+function lessonTrackId(value) {
+  const id = String(value || "");
+  if (PATTERN_LESSON_ID.test(id)) return "patterns";
+  if (EXPRESSION_LESSON_ID.test(id)) return "expressions";
+  if (VERB_LESSON_ID.test(id)) return "verbs";
+  return null;
+}
+
+function isLessonId(value) {
+  return lessonTrackId(value) !== null;
+}
+
+function defaultTrackProgress() {
+  return {
+    lastLessonId: null,
+    completedLessons: []
+  };
+}
+
 function defaultState() {
   return {
     version: 3,
     lastLessonId: null,
     completedLessons: [],
+    trackProgress: {
+      patterns: defaultTrackProgress(),
+      expressions: defaultTrackProgress()
+    },
     preferences: {
       teleprompter: { ...DEFAULT_PREFERENCES.teleprompter },
       shadowing: { ...DEFAULT_PREFERENCES.shadowing },
@@ -54,21 +80,41 @@ function canUseStorage() {
 
 const storageAvailable = canUseStorage();
 
-function sanitize(raw) {
-  const clean = defaultState();
+function sanitizeTrackProgress(raw, track) {
+  const clean = defaultTrackProgress();
   if (!raw || typeof raw !== "object") return clean;
+  const valid = track === "patterns" ? PATTERN_LESSON_ID : EXPRESSION_LESSON_ID;
 
-  // Lessons saved by an older curriculum (for example M1-L01) no longer
-  // exist. They are dropped here instead of crashing a view that cannot
-  // resolve them.
-  if (typeof raw.lastLessonId === "string" && LESSON_ID.test(raw.lastLessonId)) {
+  if (typeof raw.lastLessonId === "string" && valid.test(raw.lastLessonId)) {
     clean.lastLessonId = raw.lastLessonId;
   }
 
   if (Array.isArray(raw.completedLessons)) {
     clean.completedLessons = [...new Set(raw.completedLessons)]
-      .filter(id => typeof id === "string" && LESSON_ID.test(id));
+      .filter(id => typeof id === "string" && valid.test(id));
   }
+
+  return clean;
+}
+
+function sanitize(raw) {
+  const clean = defaultState();
+  if (!raw || typeof raw !== "object") return clean;
+
+  // Verb progress stays at the top level so existing v3 saves keep working.
+  // New tracks live under trackProgress.<track> and never share a progress key
+  // with a verb part.
+  if (typeof raw.lastLessonId === "string" && VERB_LESSON_ID.test(raw.lastLessonId)) {
+    clean.lastLessonId = raw.lastLessonId;
+  }
+
+  if (Array.isArray(raw.completedLessons)) {
+    clean.completedLessons = [...new Set(raw.completedLessons)]
+      .filter(id => typeof id === "string" && VERB_LESSON_ID.test(id));
+  }
+
+  clean.trackProgress.patterns = sanitizeTrackProgress(raw.trackProgress?.patterns, "patterns");
+  clean.trackProgress.expressions = sanitizeTrackProgress(raw.trackProgress?.expressions, "expressions");
 
   const teleprompter = raw.preferences?.teleprompter;
   if (teleprompter && typeof teleprompter === "object") {
@@ -142,24 +188,44 @@ function save() {
   }
 }
 
+function progressBucket(track) {
+  const normalized = TRACK_IDS.includes(track) ? track : "verbs";
+  return normalized === "verbs" ? state : state.trackProgress[normalized];
+}
+
 export function retainKnownLessons(knownIds) {
   if (!Array.isArray(knownIds)) return false;
 
-  const known = new Set(
-    knownIds.filter(id => typeof id === "string" && LESSON_ID.test(id))
-  );
+  const known = {
+    verbs: new Set(),
+    patterns: new Set(),
+    expressions: new Set()
+  };
+
+  for (const id of knownIds) {
+    if (typeof id !== "string") continue;
+    const track = lessonTrackId(id);
+    if (track) known[track].add(id);
+  }
+
   let changed = false;
 
-  if (state.lastLessonId && !known.has(state.lastLessonId)) {
-    state.lastLessonId = null;
-    changed = true;
+  function retain(bucket, knownForTrack) {
+    if (bucket.lastLessonId && !knownForTrack.has(bucket.lastLessonId)) {
+      bucket.lastLessonId = null;
+      changed = true;
+    }
+
+    const completed = bucket.completedLessons.filter(id => knownForTrack.has(id));
+    if (completed.length !== bucket.completedLessons.length) {
+      bucket.completedLessons = completed;
+      changed = true;
+    }
   }
 
-  const completed = state.completedLessons.filter(id => known.has(id));
-  if (completed.length !== state.completedLessons.length) {
-    state.completedLessons = completed;
-    changed = true;
-  }
+  retain(state, known.verbs);
+  retain(state.trackProgress.patterns, known.patterns);
+  retain(state.trackProgress.expressions, known.expressions);
 
   if (changed) save();
   return changed;
@@ -169,41 +235,47 @@ export function isStorageAvailable() {
   return storageAvailable;
 }
 
-export function getLastLessonId() {
-  return state.lastLessonId;
+export function getLastLessonId(track = "verbs") {
+  return progressBucket(track).lastLessonId;
 }
 
 export function setLastLesson(id) {
-  if (!LESSON_ID.test(String(id || ""))) return false;
-  if (state.lastLessonId === id) return true;
-  state.lastLessonId = id;
+  const track = lessonTrackId(id);
+  if (!track) return false;
+  const bucket = progressBucket(track);
+  if (bucket.lastLessonId === id) return true;
+  bucket.lastLessonId = id;
   save();
   return true;
 }
 
-export function getCompletedLessons() {
-  return [...state.completedLessons];
+export function getCompletedLessons(track = "verbs") {
+  return [...progressBucket(track).completedLessons];
 }
 
 export function isLessonComplete(id) {
-  return state.completedLessons.includes(id);
+  const track = lessonTrackId(id);
+  if (!track) return false;
+  return progressBucket(track).completedLessons.includes(id);
 }
 
 export function toggleLessonComplete(id) {
-  if (!LESSON_ID.test(String(id || ""))) return false;
-  const index = state.completedLessons.indexOf(id);
+  const track = lessonTrackId(id);
+  if (!track) return false;
+  const bucket = progressBucket(track);
+  const index = bucket.completedLessons.indexOf(id);
   if (index >= 0) {
-    state.completedLessons.splice(index, 1);
+    bucket.completedLessons.splice(index, 1);
     save();
     return false;
   }
-  state.completedLessons.push(id);
+  bucket.completedLessons.push(id);
   save();
   return true;
 }
 
 export function markPracticeStarted(id) {
-  if (!LESSON_ID.test(String(id || ""))) return false;
+  if (!isLessonId(id)) return false;
   try {
     window.sessionStorage.setItem(`small-steps-practice:${id}`, "1");
     return true;
@@ -213,7 +285,7 @@ export function markPracticeStarted(id) {
 }
 
 export function hasPracticeStarted(id) {
-  if (!LESSON_ID.test(String(id || ""))) return false;
+  if (!isLessonId(id)) return false;
   try {
     return window.sessionStorage.getItem(`small-steps-practice:${id}`) === "1";
   } catch {

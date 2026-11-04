@@ -59,14 +59,17 @@ const required = [
   "js/app.js",
   "js/views/home.js",
   "js/views/modules.js",
+  "js/views/track.js",
   "js/views/lesson.js",
   "js/views/teleprompter.js",
   "js/views/shadowing.js",
   "js/views/speaking.js",
+  "js/components/library-tabs.js",
   "js/components/teleprompter.js",
   "js/components/shadowing.js",
   "js/components/speaking.js",
   "data/modules.json",
+  "data/tracks.json",
   "data/lessons/index.json"
 ];
 

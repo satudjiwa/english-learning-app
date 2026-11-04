@@ -1,0 +1,111 @@
+{
+  "id": "PAT-D21",
+  "track": "patterns",
+  "groupId": "pattern-modals",
+  "type": "pattern",
+  "title": "Can You ~?",
+  "pattern": "Can you ~?",
+  "level": "Beginner (A1–A2)",
+  "situation": "Asking for help and small favors at work and at home.",
+  "objective": "Use Can you + base verb to make polite requests in work and daily situations.",
+  "dialogue": [
+    {
+      "speaker": "Technician",
+      "english": "Can you send me the checklist before the shift meeting?",
+      "indonesian": "Bisakah Anda mengirimkan daftar periksa kepada saya sebelum rapat shift?",
+      "audio": "public/audio/PATTERNS/PAT-D21/sentence-01.mp3"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Can you help me move the test bag to the work area?",
+      "indonesian": "Bisakah Anda membantu saya memindahkan tas uji ke area kerja?",
+      "audio": "public/audio/PATTERNS/PAT-D21/sentence-02.mp3"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Can you show me the new safety notice on the board?",
+      "indonesian": "Bisakah Anda menunjukkan pemberitahuan keselamatan baru di papan pengumuman?",
+      "audio": "public/audio/PATTERNS/PAT-D21/sentence-03.mp3"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Can you ask the remote engineer to join the call?",
+      "indonesian": "Bisakah Anda meminta engineer remote untuk bergabung dalam panggilan?",
+      "audio": "public/audio/PATTERNS/PAT-D21/sentence-04.mp3"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Can you remind the team to follow the SOP before the inspection?",
+      "indonesian": "Bisakah Anda mengingatkan tim untuk mengikuti SOP sebelum pemeriksaan?",
+      "audio": "public/audio/PATTERNS/PAT-D21/sentence-05.mp3"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Can you keep your radio with you during the shift?",
+      "indonesian": "Bisakah Anda membawa radio selama shift?",
+      "audio": "public/audio/PATTERNS/PAT-D21/sentence-06.mp3"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Can you open the window? It is warm in here.",
+      "indonesian": "Bisakah kamu membuka jendela? Di sini panas.",
+      "audio": "public/audio/PATTERNS/PAT-D21/sentence-07.mp3"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Can you pick up some water on your way home?",
+      "indonesian": "Bisakah kamu membeli air saat pulang?",
+      "audio": "public/audio/PATTERNS/PAT-D21/sentence-08.mp3"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Can you turn down the music a little?",
+      "indonesian": "Bisakah kamu mengecilkan musiknya sedikit?",
+      "audio": "public/audio/PATTERNS/PAT-D21/sentence-09.mp3"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Can you send me the address again? I lost the message.",
+      "indonesian": "Bisakah kamu mengirimkan alamatnya lagi? Saya kehilangan pesannya.",
+      "audio": "public/audio/PATTERNS/PAT-D21/sentence-10.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "send me the checklist",
+      "indonesian": "mengirimkan daftar periksa kepada saya"
+    },
+    {
+      "english": "help me move",
+      "indonesian": "membantu saya memindahkan"
+    },
+    {
+      "english": "show me",
+      "indonesian": "menunjukkan kepada saya"
+    },
+    {
+      "english": "join the call",
+      "indonesian": "bergabung dalam panggilan"
+    },
+    {
+      "english": "follow the SOP",
+      "indonesian": "mengikuti SOP"
+    },
+    {
+      "english": "on your way home",
+      "indonesian": "saat pulang"
+    },
+    {
+      "english": "turn down",
+      "indonesian": "mengecilkan"
+    }
+  ],
+  "learningNotes": [
+    "Pola Can you + kata kerja dasar dipakai untuk meminta bantuan atau tindakan dengan sopan. Setelah can, gunakan kata kerja dasar: Can you send, bukan Can you sends.",
+    "Can you help me + kata kerja memakai kata kerja setelah me: Can you help me move this bag? Untuk kata benda, gunakan with: Can you help me with this bag?",
+    "Bisakah Anda cocok untuk situasi kerja yang sopan. Bisakah kamu lebih santai dan cocok untuk keluarga atau teman.",
+    "Turn down berarti mengecilkan suara atau intensitas. Kebalikannya adalah turn up.",
+    "On your way home berarti saat dalam perjalanan pulang, bukan hanya setelah sampai di rumah."
+  ],
+  "fullAudio": "public/audio/PATTERNS/PAT-D21/full.mp3"
+}

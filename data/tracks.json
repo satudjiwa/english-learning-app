@@ -1,0 +1,204 @@
+[
+  {
+    "id": "verbs",
+    "label": "Verbs",
+    "route": "#/modules",
+    "kind": "modules",
+    "eyebrow": "Verb library",
+    "pageTitle": "13 verbs. One step at a time.",
+    "description": "Setiap modul berisi satu kata kerja dengan lima bagian: aktivitas harian, situasi sehari-hari, dan percakapan kerja."
+  },
+  {
+    "id": "patterns",
+    "label": "Patterns",
+    "route": "#/patterns",
+    "kind": "unit-groups",
+    "eyebrow": "Pattern library",
+    "pageTitle": "Patterns for everyday speaking.",
+    "description": "Kerangka kalimat untuk meminta, menjelaskan, dan menanyakan hal yang sama dengan cara berbeda. Setiap unit berisi sepuluh kalimat pendek.",
+    "groups": [
+      {
+        "id": "pattern-basic",
+        "code": "A",
+        "title": "Basic Patterns",
+        "description": "The foundational D01–D20 pattern list. These slots stay unchanged until the approved titles are supplied.",
+        "note": "The original D01–D20 title list was not found in this repository. No titles have been invented; each slot is shown with a pending title.",
+        "type": "pattern",
+        "units": [
+          { "id": "PAT-D01", "number": 1, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D02", "number": 2, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D03", "number": 3, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D04", "number": 4, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D05", "number": 5, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D06", "number": 6, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D07", "number": 7, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D08", "number": 8, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D09", "number": 9, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D10", "number": 10, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D11", "number": 11, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D12", "number": 12, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D13", "number": 13, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D14", "number": 14, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D15", "number": 15, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D16", "number": 16, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D17", "number": 17, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D18", "number": 18, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D19", "number": 19, "title": "Title to be confirmed", "titlePending": true },
+          { "id": "PAT-D20", "number": 20, "title": "Title to be confirmed", "titlePending": true }
+        ]
+      },
+      {
+        "id": "pattern-modals",
+        "code": "B",
+        "title": "Modals & Polite Requests",
+        "description": "Polite requests, permission, obligation, and softer ways to ask for help at work.",
+        "type": "pattern",
+        "units": [
+          { "id": "PAT-D21", "number": 21, "title": "Can you ~?", "pattern": "Can you ~?" },
+          { "id": "PAT-D22", "number": 22, "title": "Can you explain ~?", "pattern": "Can you explain ~?" },
+          { "id": "PAT-D23", "number": 23, "title": "Can you help ~?", "pattern": "Can you help ~?" },
+          { "id": "PAT-D24", "number": 24, "title": "Can you get me ~?", "pattern": "Can you get me ~?" },
+          { "id": "PAT-D25", "number": 25, "title": "Can you tell me ~?", "pattern": "Can you tell me ~?" },
+          { "id": "PAT-D26", "number": 26, "title": "Can you show me ~?", "pattern": "Can you show me ~?" },
+          { "id": "PAT-D27", "number": 27, "title": "I could use ~", "pattern": "I could use ~" },
+          { "id": "PAT-D28", "number": 28, "title": "Would you mind ~ing?", "pattern": "Would you mind ~ing?" },
+          { "id": "PAT-D29", "number": 29, "title": "I should have ~ (past participle)", "pattern": "I should have + past participle" },
+          { "id": "PAT-D30", "number": 30, "title": "Could you ~?", "pattern": "Could you ~?" },
+          { "id": "PAT-D31", "number": 31, "title": "Can I ~?", "pattern": "Can I ~?" },
+          { "id": "PAT-D32", "number": 32, "title": "May I ~?", "pattern": "May I ~?" },
+          { "id": "PAT-D33", "number": 33, "title": "I should ~", "pattern": "I should ~" },
+          { "id": "PAT-D34", "number": 34, "title": "I must ~", "pattern": "I must ~" },
+          { "id": "PAT-D35", "number": 35, "title": "I’d like to ~", "pattern": "I’d like to ~" }
+        ]
+      },
+      {
+        "id": "pattern-more",
+        "code": "C",
+        "title": "More Sentence Patterns",
+        "description": "Useful everyday frames for opinions, preferences, plans, and reactions.",
+        "type": "pattern",
+        "units": [
+          { "id": "PAT-D36", "number": 36, "title": "Don’t be + adjective", "pattern": "Don’t be + adjective" },
+          { "id": "PAT-D37", "number": 37, "title": "It sounds + adjective", "pattern": "It sounds + adjective" },
+          { "id": "PAT-D38", "number": 38, "title": "I like your + noun", "pattern": "I like your + noun" },
+          { "id": "PAT-D39", "number": 39, "title": "There must be + noun", "pattern": "There must be + noun" },
+          { "id": "PAT-D40", "number": 40, "title": "It’s time to + verb", "pattern": "It’s time to + verb" },
+          { "id": "PAT-D41", "number": 41, "title": "I’d rather + verb", "pattern": "I’d rather + verb" },
+          { "id": "PAT-D42", "number": 42, "title": "I prefer A to B", "pattern": "I prefer A to B" },
+          { "id": "PAT-D43", "number": 43, "title": "No matter + question word", "pattern": "No matter + question word" },
+          { "id": "PAT-D44", "number": 44, "title": "Let me know + information", "pattern": "Let me know + information" },
+          { "id": "PAT-D45", "number": 45, "title": "I can’t stand + noun / verb-ing", "pattern": "I can’t stand + noun / verb-ing" },
+          { "id": "PAT-D46", "number": 46, "title": "I’m used to + noun / verb-ing", "pattern": "I’m used to + noun / verb-ing" }
+        ]
+      },
+      {
+        "id": "pattern-questions",
+        "code": "D",
+        "title": "Question Patterns",
+        "description": "Question frames for checking, clarifying, asking permission, and learning from experience.",
+        "type": "pattern",
+        "units": [
+          { "id": "PAT-D47", "number": 47, "title": "Would you ~?", "pattern": "Would you ~?" },
+          { "id": "PAT-D48", "number": 48, "title": "Should I ~?", "pattern": "Should I ~?" },
+          { "id": "PAT-D49", "number": 49, "title": "Do you ~?", "pattern": "Do you ~?" },
+          { "id": "PAT-D50", "number": 50, "title": "Does it ~?", "pattern": "Does it ~?" },
+          { "id": "PAT-D51", "number": 51, "title": "Did you ~?", "pattern": "Did you ~?" },
+          { "id": "PAT-D52", "number": 52, "title": "How can I ~?", "pattern": "How can I ~?" },
+          { "id": "PAT-D53", "number": 53, "title": "What do you mean by ~?", "pattern": "What do you mean by ~?" },
+          { "id": "PAT-D54", "number": 54, "title": "Do you mind if I ~?", "pattern": "Do you mind if I ~?" },
+          { "id": "PAT-D55", "number": 55, "title": "Is it okay if I ~?", "pattern": "Is it okay if I ~?" },
+          { "id": "PAT-D56", "number": 56, "title": "Have you ever ~? (past participle)", "pattern": "Have you ever + past participle?" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "expressions",
+    "label": "Expressions",
+    "route": "#/expressions",
+    "kind": "unit-groups",
+    "eyebrow": "Expression library",
+    "pageTitle": "Expressions for real conversations.",
+    "description": "Kolokasi, phrasal verb, ungkapan harian, dan percakapan service engineer. Unit baru ditulis hanya jika belum tercakup di modul Verbs.",
+    "groups": [
+      {
+        "id": "collocations",
+        "code": "A",
+        "title": "Collocations",
+        "description": "Common verb + noun pairs used in short, natural sentences.",
+        "type": "expression",
+        "units": [
+          { "id": "EXP-COL-PAY-ATTENTION", "number": 1, "title": "Pay attention", "expression": "pay attention" }
+        ],
+        "coveredInVerbs": [
+          { "phrase": "Make a decision", "coveredBy": "MAKE-P02" },
+          { "phrase": "Make sure", "coveredBy": "MAKE-P03" },
+          { "phrase": "Make progress", "coveredBy": "MAKE-P05" },
+          { "phrase": "Take a break", "coveredBy": "TAKE-P01" },
+          { "phrase": "Take a look", "coveredBy": "TAKE-P02" },
+          { "phrase": "Have a meeting", "coveredBy": "HAVE-P02" },
+          { "phrase": "Keep in touch", "coveredBy": "KEEP-P04" }
+        ]
+      },
+      {
+        "id": "phrasal-verbs",
+        "code": "B",
+        "title": "Phrasal Verbs",
+        "description": "Two-word verbs for finding information, checking equipment, and changing machine state.",
+        "type": "expression",
+        "units": [
+          { "id": "EXP-PV-FIND-OUT", "number": 1, "title": "Find out", "expression": "find out" },
+          { "id": "EXP-PV-LOOK-INTO", "number": 2, "title": "Look into", "expression": "look into" },
+          { "id": "EXP-PV-CHECK-OUT", "number": 3, "title": "Check out", "expression": "check out" },
+          { "id": "EXP-PV-TURN-ON-OFF", "number": 4, "title": "Turn on / Turn off", "expression": "turn on / turn off" },
+          { "id": "EXP-PV-SET-UP", "number": 5, "title": "Set up", "expression": "set up" },
+          { "id": "EXP-PV-SHUT-DOWN", "number": 6, "title": "Shut down", "expression": "shut down" },
+          { "id": "EXP-PV-CARRY-OUT", "number": 7, "title": "Carry out", "expression": "carry out" }
+        ],
+        "coveredInVerbs": [
+          { "phrase": "Take over", "coveredBy": "TAKE-P05" },
+          { "phrase": "Go ahead", "coveredBy": "GO-P03" }
+        ]
+      },
+      {
+        "id": "daily-expressions",
+        "code": "C",
+        "title": "Daily Expressions",
+        "description": "Short, natural phrases for everyday conversation with teammates and customers.",
+        "type": "expression",
+        "units": [
+          { "id": "EXP-DAILY-NO-WORRIES", "number": 1, "title": "No worries", "expression": "no worries" },
+          { "id": "EXP-DAILY-THAT-MAKES-SENSE", "number": 2, "title": "That makes sense", "expression": "that makes sense" },
+          { "id": "EXP-DAILY-IT-DEPENDS", "number": 3, "title": "It depends", "expression": "it depends" },
+          { "id": "EXP-DAILY-AS-FAR-AS-I-KNOW", "number": 4, "title": "As far as I know", "expression": "as far as I know" },
+          { "id": "EXP-DAILY-BY-THE-WAY", "number": 5, "title": "By the way", "expression": "by the way" },
+          { "id": "EXP-DAILY-NEVER-MIND", "number": 6, "title": "Never mind", "expression": "never mind" }
+        ],
+        "duplicates": [
+          {
+            "phrase": "Let me know",
+            "includedAs": "PAT-D44",
+            "reason": "Listed once as the pattern “Let me know + information”."
+          }
+        ]
+      },
+      {
+        "id": "service-scenarios",
+        "code": "D",
+        "title": "Service Engineer Scenarios",
+        "description": "Longer dialogues for troubleshooting, remote support, reporting, and handover.",
+        "type": "dialogue",
+        "units": [
+          { "id": "EXP-SCN-TROUBLESHOOTING", "number": 1, "title": "Troubleshooting", "scenario": "Troubleshooting" },
+          { "id": "EXP-SCN-REPORTING-MACHINE-CONDITIONS", "number": 2, "title": "Reporting machine conditions", "scenario": "Reporting machine conditions" },
+          { "id": "EXP-SCN-REMOTE-SESSIONS", "number": 3, "title": "Remote sessions", "scenario": "Remote sessions" },
+          { "id": "EXP-SCN-REQUESTING-PERMISSION", "number": 4, "title": "Requesting permission", "scenario": "Requesting permission" },
+          { "id": "EXP-SCN-EXPLAINING-TECHNICAL-PROBLEM", "number": 5, "title": "Explaining a technical problem", "scenario": "Explaining a technical problem" },
+          { "id": "EXP-SCN-GIVING-UPDATES", "number": 6, "title": "Giving updates", "scenario": "Giving updates" },
+          { "id": "EXP-SCN-ASKING-TECHNICAL-SUPPORT", "number": 7, "title": "Asking for technical support", "scenario": "Asking for technical support" },
+          { "id": "EXP-SCN-CONFIRMING-COMPLETED-WORK", "number": 8, "title": "Confirming completed work", "scenario": "Confirming completed work" }
+        ]
+      }
+    ]
+  }
+]
