@@ -98,5 +98,30 @@
     "id": "BRING-P05",
     "moduleId": "BRING",
     "title": "Bring Together & Bring About"
+  },
+  {
+    "id": "GIVE-P01",
+    "moduleId": "GIVE",
+    "title": "Give a Hand & Give Help"
+  },
+  {
+    "id": "GIVE-P02",
+    "moduleId": "GIVE",
+    "title": "Give an Update & Give Information"
+  },
+  {
+    "id": "GIVE-P03",
+    "moduleId": "GIVE",
+    "title": "Give Back & Give Out"
+  },
+  {
+    "id": "GIVE-P04",
+    "moduleId": "GIVE",
+    "title": "Give Instructions & Give Feedback"
+  },
+  {
+    "id": "GIVE-P05",
+    "moduleId": "GIVE",
+    "title": "Give Up & Give It a Try"
   }
 ]

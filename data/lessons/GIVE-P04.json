@@ -1,0 +1,69 @@
+{
+  "id": "GIVE-P04",
+  "moduleId": "GIVE",
+  "title": "Give Instructions & Give Feedback",
+  "partTitle": "Give Instructions & Give Feedback",
+  "level": "Beginner (A1–A2)",
+  "situation": "Explaining a task and reviewing work with a teammate.",
+  "objective": "Use give instructions and give feedback to guide and improve work.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "Before the task, I give instructions to my teammate.",
+      "indonesian": "Sebelum tugas, saya memberi instruksi kepada rekan kerja saya.",
+      "audio": "public/audio/GIVE/GIVE-P04/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I give clear instructions about the safety check.",
+      "indonesian": "Saya memberi instruksi yang jelas tentang pemeriksaan keselamatan.",
+      "audio": "public/audio/GIVE/GIVE-P04/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "After the repair, I give feedback on the work.",
+      "indonesian": "Setelah perbaikan, saya memberi masukan tentang pekerjaan itu.",
+      "audio": "public/audio/GIVE/GIVE-P04/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "My supervisor gives feedback about my report.",
+      "indonesian": "Supervisor saya memberi masukan tentang laporan saya.",
+      "audio": "public/audio/GIVE/GIVE-P04/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Good feedback helps us do the next task better.",
+      "indonesian": "Masukan yang baik membantu kami mengerjakan tugas berikutnya dengan lebih baik.",
+      "audio": "public/audio/GIVE/GIVE-P04/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "give instructions",
+      "indonesian": "memberi instruksi"
+    },
+    {
+      "english": "give feedback",
+      "indonesian": "memberi masukan"
+    },
+    {
+      "english": "safety check",
+      "indonesian": "pemeriksaan keselamatan"
+    },
+    {
+      "english": "after the repair",
+      "indonesian": "setelah perbaikan"
+    },
+    {
+      "english": "next task",
+      "indonesian": "tugas berikutnya"
+    }
+  ],
+  "learningNotes": [
+    "give instructions berarti memberi instruksi atau petunjuk.",
+    "Feedback tidak memakai s. Gunakan some feedback atau a piece of feedback.",
+    "Gunakan give instructions about atau for + hal: instructions about the safety check."
+  ],
+  "fullAudio": "public/audio/GIVE/GIVE-P04/full.mp3"
+}

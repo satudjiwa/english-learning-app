@@ -1,0 +1,69 @@
+{
+  "id": "GIVE-P02",
+  "moduleId": "GIVE",
+  "title": "Give an Update & Give Information",
+  "partTitle": "Give an Update & Give Information",
+  "level": "Beginner (A1–A2)",
+  "situation": "Reporting progress during a shift.",
+  "objective": "Use give an update and give information to report progress clearly.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "At the start of the shift, I give an update about my tasks.",
+      "indonesian": "Di awal shift, saya memberi kabar terbaru tentang tugas-tugas saya.",
+      "audio": "public/audio/GIVE/GIVE-P02/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I give an update to my supervisor after the check.",
+      "indonesian": "Saya memberi kabar terbaru kepada supervisor setelah pemeriksaan.",
+      "audio": "public/audio/GIVE/GIVE-P02/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "The update gives information about the machine.",
+      "indonesian": "Kabar terbaru itu memberi informasi tentang mesin.",
+      "audio": "public/audio/GIVE/GIVE-P02/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Please give information about the problem before you leave.",
+      "indonesian": "Tolong beri informasi tentang masalahnya sebelum Anda pergi.",
+      "audio": "public/audio/GIVE/GIVE-P02/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Clear information helps the team plan the next step.",
+      "indonesian": "Informasi yang jelas membantu tim merencanakan langkah berikutnya.",
+      "audio": "public/audio/GIVE/GIVE-P02/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "give an update",
+      "indonesian": "memberi kabar terbaru"
+    },
+    {
+      "english": "give information",
+      "indonesian": "memberi informasi"
+    },
+    {
+      "english": "at the start",
+      "indonesian": "di awal"
+    },
+    {
+      "english": "after the check",
+      "indonesian": "setelah pemeriksaan"
+    },
+    {
+      "english": "next step",
+      "indonesian": "langkah berikutnya"
+    }
+  ],
+  "learningNotes": [
+    "give an update berarti memberi kabar terbaru tentang pekerjaan atau situasi.",
+    "Information tidak berubah menjadi informations. Gunakan some information atau a piece of information.",
+    "Gunakan give an update to + orang: give an update to my supervisor."
+  ],
+  "fullAudio": "public/audio/GIVE/GIVE-P02/full.mp3"
+}

@@ -1,0 +1,69 @@
+{
+  "id": "GIVE-P05",
+  "moduleId": "GIVE",
+  "title": "Give Up & Give It a Try",
+  "partTitle": "Give Up & Give It a Try",
+  "level": "Beginner (A1–A2)",
+  "situation": "Facing a difficult repair and trying again.",
+  "objective": "Use give up and give it a try to talk about persistence and effort.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "When a repair is difficult, I do not give up.",
+      "indonesian": "Saat perbaikan sulit, saya tidak menyerah.",
+      "audio": "public/audio/GIVE/GIVE-P05/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I take a short break, then give it a try again.",
+      "indonesian": "Saya beristirahat sebentar, lalu mencobanya lagi.",
+      "audio": "public/audio/GIVE/GIVE-P05/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "My teammate gives it a try with a different tool.",
+      "indonesian": "Rekan kerja saya mencobanya dengan alat yang berbeda.",
+      "audio": "public/audio/GIVE/GIVE-P05/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "We do not give up before we ask for help.",
+      "indonesian": "Kami tidak menyerah sebelum meminta bantuan.",
+      "audio": "public/audio/GIVE/GIVE-P05/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "It is okay to give it a try, even when the answer is not clear.",
+      "indonesian": "Tidak apa-apa untuk mencoba, bahkan saat jawabannya belum jelas.",
+      "audio": "public/audio/GIVE/GIVE-P05/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "give up",
+      "indonesian": "menyerah"
+    },
+    {
+      "english": "give it a try",
+      "indonesian": "mencobanya"
+    },
+    {
+      "english": "difficult repair",
+      "indonesian": "perbaikan yang sulit"
+    },
+    {
+      "english": "short break",
+      "indonesian": "istirahat sebentar"
+    },
+    {
+      "english": "different tool",
+      "indonesian": "alat yang berbeda"
+    }
+  ],
+  "learningNotes": [
+    "give up berarti menyerah atau berhenti mencoba.",
+    "give it a try berarti mencoba sesuatu. Bentuk lain: give it another try.",
+    "Gunakan it sebelum a try: give it a try, bukan give a try."
+  ],
+  "fullAudio": "public/audio/GIVE/GIVE-P05/full.mp3"
+}

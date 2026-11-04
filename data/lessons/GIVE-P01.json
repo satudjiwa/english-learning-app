@@ -1,0 +1,69 @@
+{
+  "id": "GIVE-P01",
+  "moduleId": "GIVE",
+  "title": "Give a Hand & Give Help",
+  "partTitle": "Give a Hand & Give Help",
+  "level": "Beginner (A1–A2)",
+  "situation": "Helping a teammate during a busy shift.",
+  "objective": "Use give a hand and give help to offer assistance at work.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "When a teammate is busy, I give a hand with the tools.",
+      "indonesian": "Saat rekan kerja sibuk, saya membantu dengan alat-alat.",
+      "audio": "public/audio/GIVE/GIVE-P01/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I give help when a task needs two people.",
+      "indonesian": "Saya memberi bantuan saat tugas membutuhkan dua orang.",
+      "audio": "public/audio/GIVE/GIVE-P01/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "My teammate gives me a hand with the heavy box.",
+      "indonesian": "Rekan kerja saya membantu saya dengan kotak yang berat.",
+      "audio": "public/audio/GIVE/GIVE-P01/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "We give help to the new staff in the work area.",
+      "indonesian": "Kami memberi bantuan kepada staf baru di area kerja.",
+      "audio": "public/audio/GIVE/GIVE-P01/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "It is good to give a hand before someone asks.",
+      "indonesian": "Baik untuk membantu sebelum seseorang meminta.",
+      "audio": "public/audio/GIVE/GIVE-P01/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "give a hand",
+      "indonesian": "membantu"
+    },
+    {
+      "english": "give help",
+      "indonesian": "memberi bantuan"
+    },
+    {
+      "english": "work area",
+      "indonesian": "area kerja"
+    },
+    {
+      "english": "heavy box",
+      "indonesian": "kotak yang berat"
+    },
+    {
+      "english": "new staff",
+      "indonesian": "staf baru"
+    }
+  ],
+  "learningNotes": [
+    "give a hand berarti membantu, sama seperti give help, tetapi give a hand lebih santai.",
+    "Untuk give a hand, objek orang langsung mengikuti: give me a hand.",
+    "Untuk give help, gunakan give help to + orang: give help to the new staff."
+  ],
+  "fullAudio": "public/audio/GIVE/GIVE-P01/full.mp3"
+}

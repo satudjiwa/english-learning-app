@@ -1,0 +1,69 @@
+{
+  "id": "GIVE-P03",
+  "moduleId": "GIVE",
+  "title": "Give Back & Give Out",
+  "partTitle": "Give Back & Give Out",
+  "level": "Beginner (A1–A2)",
+  "situation": "Returning borrowed items and distributing supplies.",
+  "objective": "Use give back and give out to talk about returning and sharing things.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "After the check, I give back the test tools to the storage room.",
+      "indonesian": "Setelah pemeriksaan, saya mengembalikan alat uji ke ruang penyimpanan.",
+      "audio": "public/audio/GIVE/GIVE-P03/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "Please give back the radio before the end of the shift.",
+      "indonesian": "Tolong kembalikan radio sebelum akhir shift.",
+      "audio": "public/audio/GIVE/GIVE-P03/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "In the morning, we give out new gloves to the team.",
+      "indonesian": "Pada pagi hari, kami membagikan sarung tangan baru kepada tim.",
+      "audio": "public/audio/GIVE/GIVE-P03/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I give out the small parts from the delivery box.",
+      "indonesian": "Saya membagikan suku cadang kecil dari kotak pengiriman.",
+      "audio": "public/audio/GIVE/GIVE-P03/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "We give back what we borrow and give out what the team needs.",
+      "indonesian": "Kami mengembalikan apa yang kami pinjam dan membagikan apa yang dibutuhkan tim.",
+      "audio": "public/audio/GIVE/GIVE-P03/sentence-05.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "give back",
+      "indonesian": "mengembalikan"
+    },
+    {
+      "english": "give out",
+      "indonesian": "membagikan"
+    },
+    {
+      "english": "test tools",
+      "indonesian": "alat uji"
+    },
+    {
+      "english": "storage room",
+      "indonesian": "ruang penyimpanan"
+    },
+    {
+      "english": "delivery box",
+      "indonesian": "kotak pengiriman"
+    }
+  ],
+  "learningNotes": [
+    "give back berarti mengembalikan sesuatu, dan give out berarti membagikan sesuatu.",
+    "Pronoun diletakkan di tengah: give it back, give them out.",
+    "give out juga bisa berarti habis, tetapi di sini artinya membagikan."
+  ],
+  "fullAudio": "public/audio/GIVE/GIVE-P03/full.mp3"
+}
