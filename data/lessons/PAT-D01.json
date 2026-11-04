@@ -1,0 +1,108 @@
+{
+  "id": "PAT-D01",
+  "track": "patterns",
+  "groupId": "pattern-basic",
+  "type": "pattern",
+  "title": "I feel ~",
+  "pattern": "I feel ~",
+  "level": "Beginner (A1–A2)",
+  "situation": "Talking about feelings and body conditions at work and in daily life.",
+  "objective": "Use I feel + adjective to describe feelings and physical conditions.",
+  "dialogue": [
+    {
+      "speaker": "Narrator",
+      "english": "I feel tired after the night shift.",
+      "indonesian": "Saya merasa lelah setelah shift malam.",
+      "audio": "public/audio/PATTERNS/PAT-D01/sentence-01.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I feel hungry before lunch.",
+      "indonesian": "Saya merasa lapar sebelum makan siang.",
+      "audio": "public/audio/PATTERNS/PAT-D01/sentence-02.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I feel happy when the machine works well.",
+      "indonesian": "Saya merasa senang ketika mesin berfungsi dengan baik.",
+      "audio": "public/audio/PATTERNS/PAT-D01/sentence-03.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I feel nervous when I call the remote engineer.",
+      "indonesian": "Saya merasa gugup ketika menelepon engineer jarak jauh.",
+      "audio": "public/audio/PATTERNS/PAT-D01/sentence-04.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I feel confident about this repair.",
+      "indonesian": "Saya merasa yakin dengan perbaikan ini.",
+      "audio": "public/audio/PATTERNS/PAT-D01/sentence-05.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I feel better after a short break.",
+      "indonesian": "Saya merasa lebih baik setelah istirahat singkat.",
+      "audio": "public/audio/PATTERNS/PAT-D01/sentence-06.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I feel sleepy in the early morning.",
+      "indonesian": "Saya merasa mengantuk di pagi buta.",
+      "audio": "public/audio/PATTERNS/PAT-D01/sentence-07.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I feel worried about the conveyor.",
+      "indonesian": "Saya merasa khawatir tentang konveyor.",
+      "audio": "public/audio/PATTERNS/PAT-D01/sentence-08.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I feel proud of my team.",
+      "indonesian": "Saya merasa bangga dengan tim saya.",
+      "audio": "public/audio/PATTERNS/PAT-D01/sentence-09.mp3"
+    },
+    {
+      "speaker": "Narrator",
+      "english": "I feel relaxed after the shift.",
+      "indonesian": "Saya merasa santai setelah shift selesai.",
+      "audio": "public/audio/PATTERNS/PAT-D01/sentence-10.mp3"
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "feel tired",
+      "indonesian": "merasa lelah"
+    },
+    {
+      "english": "after the night shift",
+      "indonesian": "setelah shift malam"
+    },
+    {
+      "english": "feel nervous",
+      "indonesian": "merasa gugup"
+    },
+    {
+      "english": "feel confident about",
+      "indonesian": "merasa yakin dengan"
+    },
+    {
+      "english": "a short break",
+      "indonesian": "istirahat singkat"
+    },
+    {
+      "english": "feel proud of",
+      "indonesian": "merasa bangga dengan"
+    },
+    {
+      "english": "feel relaxed",
+      "indonesian": "merasa santai"
+    }
+  ],
+  "learningNotes": [
+    "Rumus: I feel + kata sifat (adjective). Pola ini dipakai untuk menyebut perasaan atau kondisi tubuh.",
+    "Boleh ditambah keterangan waktu atau alasan, misalnya: I feel tired after the shift."
+  ],
+  "fullAudio": "public/audio/PATTERNS/PAT-D01/full.mp3"
+}

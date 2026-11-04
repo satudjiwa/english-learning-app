@@ -130,5 +130,12 @@
     "groupId": "pattern-modals",
     "type": "pattern",
     "title": "Can You ~?"
+  },
+  {
+    "id": "PAT-D01",
+    "track": "patterns",
+    "groupId": "pattern-basic",
+    "type": "pattern",
+    "title": "I feel ~"
   }
 ]
