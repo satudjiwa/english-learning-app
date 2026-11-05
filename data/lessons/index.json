@@ -52,5 +52,11 @@
     "moduleId": "M2",
     "title": "No Signal From the Detector",
     "difficulty": "Beginner–Elementary"
+  },
+  {
+    "id": "M2-L05",
+    "moduleId": "M2",
+    "title": "Restart and Final Check",
+    "difficulty": "Beginner–Elementary"
   }
 ]

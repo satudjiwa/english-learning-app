@@ -1,0 +1,192 @@
+{
+  "id": "M2-L05",
+  "moduleId": "M2",
+  "title": "Restart and Final Check",
+  "difficulty": "Beginner–Elementary",
+  "situation": "Alex has finished several checks on the machine. The status light is green and the alarm is off, but the output is still low. He calls Sam for a final check. They review the belt, roller, motor, sensor, detector, cable, connector, PSU, and power switch before Alex restarts the machine and runs three test bags.",
+  "objective": "Give a complete final update, review the main machine parts, report a successful restart and test, and close a technical call.",
+  "dialogue": [
+    {
+      "speaker": "Remote Engineer",
+      "english": "Technical support. Good morning, this is Sam.",
+      "indonesian": "Dukungan teknis. Selamat pagi, ini Sam."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Good morning, Sam. This is Alex. I have a final update on the machine.",
+      "indonesian": "Selamat pagi, Sam. Ini Alex. Saya punya pembaruan terakhir tentang mesinnya."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Thank you, Alex. What is the status now?",
+      "indonesian": "Terima kasih, Alex. Bagaimana statusnya sekarang?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "The status light is green, and there is no error message, but the output is still low.",
+      "indonesian": "Lampu statusnya hijau, dan tidak ada pesan error, tetapi output-nya masih rendah."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "I see. Is the alarm sounding?",
+      "indonesian": "Saya mengerti. Apakah alarmnya berbunyi?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "No, the alarm is not sounding. The belt and the roller are moving normally.",
+      "indonesian": "Tidak, alarmnya tidak berbunyi. Belt dan roller-nya bergerak normal."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Good. How is the motor?",
+      "indonesian": "Bagus. Bagaimana dengan motornya?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "The motor is running, the PSU indicator is green, and the power switch is on.",
+      "indonesian": "Motornya berjalan, indikator PSU-nya hijau, dan sakelar dayanya menyala."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Did you check the sensor and the detector?",
+      "indonesian": "Apakah Anda sudah memeriksa sensor dan detektornya?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Yes, I checked both. The sensor is clean, and the detector is on.",
+      "indonesian": "Ya, saya sudah memeriksa keduanya. Sensornya bersih, dan detektornya menyala."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "What about the cable and the connector?",
+      "indonesian": "Bagaimana dengan kabel dan konektornya?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "The cable is fine, and the connector is in place.",
+      "indonesian": "Kabelnya baik, dan konektornya terpasang."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Okay. Please restart the machine and run three test bags. Then tell me the output for each bag.",
+      "indonesian": "Baik. Mohon mulai ulang mesinnya dan jalankan tiga tas uji. Lalu beri tahu saya output untuk setiap tas."
+    },
+    {
+      "speaker": "Technician",
+      "english": "I restarted the machine and ran three test bags.",
+      "indonesian": "Saya sudah memulai ulang mesinnya dan menjalankan tiga tas uji."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Good. What was the output for each bag?",
+      "indonesian": "Bagus. Berapa output untuk setiap tas?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "The output was normal for all three bags, and every bag moved through without an alarm.",
+      "indonesian": "Output-nya normal untuk ketiga tas, dan setiap tas melewati mesin tanpa alarm."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Excellent. Please write a short note about the alarm, the restart, and the test result. Call me if the output changes again. Goodbye, Alex.",
+      "indonesian": "Bagus sekali. Mohon tulis catatan singkat tentang alarm, restart, dan hasil pengujiannya. Hubungi saya jika output-nya berubah lagi. Selamat tinggal, Alex."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Okay. I'll write the note and call you if anything changes. Thank you, Sam. Goodbye.",
+      "indonesian": "Baik. Saya akan menulis catatannya dan menghubungi Anda jika ada yang berubah. Terima kasih, Sam. Selamat tinggal."
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "I have a final update on the machine.",
+      "indonesian": "Saya punya pembaruan terakhir tentang mesinnya.",
+      "note": "Final update menandakan laporan terakhir dalam rangkaian pemeriksaan."
+    },
+    {
+      "english": "There is no error message.",
+      "indonesian": "Tidak ada pesan error.",
+      "note": "There is no + noun untuk menyatakan tidak ada."
+    },
+    {
+      "english": "The output is still low.",
+      "indonesian": "Output-nya masih rendah.",
+      "note": "Still menunjukkan kondisi yang belum berubah."
+    },
+    {
+      "english": "The belt and the roller are moving normally.",
+      "indonesian": "Belt dan roller-nya bergerak normal.",
+      "note": "Subjek jamak memakai are."
+    },
+    {
+      "english": "The PSU indicator is green.",
+      "indonesian": "Indikator PSU-nya hijau.",
+      "note": "PSU adalah power supply unit."
+    },
+    {
+      "english": "I followed the official SOP and safety rules.",
+      "indonesian": "Saya sudah mengikuti SOP resmi dan aturan keselamatan.",
+      "note": "Sebutkan kepatuhan pada SOP saat melaporkan pemeriksaan."
+    },
+    {
+      "english": "The output was normal for all three bags.",
+      "indonesian": "Output-nya normal untuk ketiga tas.",
+      "note": "Was adalah bentuk past dari is."
+    },
+    {
+      "english": "Call me if the output changes again.",
+      "indonesian": "Hubungi saya jika output-nya berubah lagi.",
+      "note": "Imperative dengan if untuk instruksi bersyarat."
+    }
+  ],
+  "sentencePatterns": [
+    {
+      "pattern": "The + noun + is/are + adjective.",
+      "explanation": "Simple present untuk menjelaskan kondisi bagian mesin.",
+      "examples": [
+        "The status light is green.",
+        "The cable and the connector are fine."
+      ]
+    },
+    {
+      "pattern": "There is no + noun.",
+      "explanation": "Menyatakan tidak ada sesuatu.",
+      "examples": [
+        "There is no error message.",
+        "There is no alarm."
+      ]
+    },
+    {
+      "pattern": "The + noun + was + adjective + for + noun.",
+      "explanation": "Simple past untuk hasil pemeriksaan yang sudah selesai.",
+      "examples": [
+        "The output was normal for all three bags.",
+        "The result was good for both tests."
+      ]
+    },
+    {
+      "pattern": "Please + verb + ... and + verb + ...",
+      "explanation": "Imperative sopan untuk dua instruksi berurutan.",
+      "examples": [
+        "Please restart the machine and run three test bags.",
+        "Please write a short note and call me again."
+      ]
+    }
+  ],
+  "learningNotes": [
+    "Gunakan simple past untuk hasil yang sudah selesai: The output was normal.",
+    "Gunakan and untuk menyebut beberapa bagian sekaligus: The belt and the roller are moving normally.",
+    "Tutup panggilan dengan ringkasan singkat dan langkah berikutnya.",
+    "Follow the official SOP and safety rules before checking power or opening panels."
+  ],
+  "pronunciationNotes": [
+    {
+      "title": "indicator",
+      "note": "Tekanan ada di suku kata pertama: IN-dih-kay-ter (/ˈɪndɪkeɪtər/)."
+    },
+    {
+      "title": "test bag",
+      "note": "Ucapkan kedua kata dengan jelas: TEST bag; bag memakai bunyi /æ/ seperti pada cat."
+    }
+  ]
+}
