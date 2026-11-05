@@ -43,7 +43,7 @@ export async function modulesView(root) {
               <div class="module-progress">
                 <div class="progress-label">
                   <span>${progress.completedCount} of ${module.lessonCount} completed</span>
-                  <span>${progress.availableCount} available</span>
+                  <span>${progress.availableCount} of ${module.lessonCount} available</span>
                 </div>
                 <div class="progress-track" role="progressbar" aria-label="Module ${module.number} completed lessons" aria-valuemin="0" aria-valuemax="${module.lessonCount}" aria-valuenow="${progress.completedCount}">
                   <span style="width:${progress.percent}%"></span>
