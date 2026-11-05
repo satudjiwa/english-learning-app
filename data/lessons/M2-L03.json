@@ -1,0 +1,192 @@
+{
+  "id": "M2-L03",
+  "moduleId": "M2",
+  "title": "The Belt Will Not Move",
+  "difficulty": "Beginner–Elementary",
+  "situation": "After Alex restarts the machine, the belt does not move. The motor makes a low noise, and the indicator is yellow. Sam asks Alex to check the rollers from the outside, following the SOP. Alex finds a small object near a roller, clears it safely, and the belt moves again.",
+  "objective": "Explain that a machine part will not move, describe a sound with the present continuous, say that something is missing with there is no and there isn't any, and report a safe visual check.",
+  "dialogue": [
+    {
+      "speaker": "Remote Engineer",
+      "english": "Support desk. Sam speaking.",
+      "indonesian": "Layanan dukungan. Saya Sam."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Hi, Sam. This is Alex. I restarted the machine, but the belt will not move.",
+      "indonesian": "Hai, Sam. Ini Alex. Saya sudah memulai ulang mesinnya, tetapi belt-nya tidak mau bergerak."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Okay. Is the motor making any noise?",
+      "indonesian": "Baik. Apakah motornya mengeluarkan suara?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Yes, the motor is making a low noise, but the belt is not moving.",
+      "indonesian": "Ya, motornya mengeluarkan suara rendah, tetapi belt-nya tidak bergerak."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Is the indicator on the control panel yellow?",
+      "indonesian": "Apakah indikator di panel kontrol berwarna kuning?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Yes, it is. The indicator is yellow, and there is no error message.",
+      "indonesian": "Ya. Indikatornya kuning, dan tidak ada pesan error."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Is the power switch still on?",
+      "indonesian": "Apakah sakelar dayanya masih menyala?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Yes, it is. The PSU indicator is green too.",
+      "indonesian": "Ya. Indikator PSU-nya juga hijau."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Good. Please check the rollers from the outside. Follow the official SOP and safety rules before you check the power or open any panel.",
+      "indonesian": "Bagus. Mohon periksa roller-nya dari luar. Ikuti SOP resmi dan aturan keselamatan sebelum memeriksa daya atau membuka panel apa pun."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Okay. I'm checking the rollers now.",
+      "indonesian": "Baik. Saya sedang memeriksa roller-nya sekarang."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "What do you see?",
+      "indonesian": "Apa yang Anda lihat?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "There is a small piece of plastic near the first roller.",
+      "indonesian": "Ada potongan plastik kecil di dekat roller pertama."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Thank you. Please follow the SOP and clear the area safely. Do not open the panel.",
+      "indonesian": "Terima kasih. Mohon ikuti SOP dan bersihkan area itu dengan aman. Jangan buka panelnya."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Understood. I followed the SOP and cleared the area. The roller is free now.",
+      "indonesian": "Dipahami. Saya sudah mengikuti SOP dan membersihkan area itu. Roller-nya sekarang bebas."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Good. Please restart the machine and tell me if the belt moves.",
+      "indonesian": "Bagus. Mohon mulai ulang mesinnya dan beri tahu saya apakah belt-nya bergerak."
+    },
+    {
+      "speaker": "Technician",
+      "english": "I restarted the machine. The belt is moving now, and the indicator is green.",
+      "indonesian": "Saya sudah memulai ulang mesinnya. Belt-nya sekarang bergerak, dan indikatornya hijau."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Excellent. Please run one test bag and check the output.",
+      "indonesian": "Bagus sekali. Mohon jalankan satu tas uji dan periksa output-nya."
+    },
+    {
+      "speaker": "Technician",
+      "english": "The test bag moved through the machine, and the output looks normal. I'll write the note. Thanks, Sam. Goodbye.",
+      "indonesian": "Tas uji itu bergerak melewati mesin, dan output-nya terlihat normal. Saya akan menulis catatannya. Terima kasih, Sam. Selamat tinggal."
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "The belt will not move.",
+      "indonesian": "Belt-nya tidak mau bergerak.",
+      "note": "Will not + verb dasar menunjukkan bagian yang tidak berfungsi."
+    },
+    {
+      "english": "The motor is making a low noise.",
+      "indonesian": "Motornya mengeluarkan suara rendah.",
+      "note": "Present continuous untuk bunyi yang sedang terjadi."
+    },
+    {
+      "english": "The indicator is yellow.",
+      "indonesian": "Indikatornya kuning.",
+      "note": "Warna indikator membantu menunjukkan status."
+    },
+    {
+      "english": "There is no error message.",
+      "indonesian": "Tidak ada pesan error.",
+      "note": "There is no + noun berarti tidak ada."
+    },
+    {
+      "english": "The PSU indicator is green.",
+      "indonesian": "Indikator PSU-nya hijau.",
+      "note": "PSU adalah power supply unit."
+    },
+    {
+      "english": "Please check the rollers from the outside.",
+      "indonesian": "Mohon periksa roller-nya dari luar.",
+      "note": "From the outside berarti tanpa membuka panel."
+    },
+    {
+      "english": "The roller is free now.",
+      "indonesian": "Roller-nya sekarang bebas.",
+      "note": "Free berarti tidak terhalang."
+    },
+    {
+      "english": "The output looks normal.",
+      "indonesian": "Output-nya terlihat normal.",
+      "note": "Looks + adjective untuk hasil pengamatan."
+    }
+  ],
+  "sentencePatterns": [
+    {
+      "pattern": "The + noun + will not + verb.",
+      "explanation": "Menjelaskan bagian yang tidak berfungsi.",
+      "examples": [
+        "The belt will not move.",
+        "The motor will not start."
+      ]
+    },
+    {
+      "pattern": "The + noun + is making + noun.",
+      "explanation": "Present continuous untuk bunyi atau gerakan yang sedang terjadi.",
+      "examples": [
+        "The motor is making a low noise.",
+        "The belt is making a strange sound."
+      ]
+    },
+    {
+      "pattern": "There is no + noun. / There isn't any + noun.",
+      "explanation": "Dua cara mengatakan 'tidak ada'.",
+      "examples": [
+        "There is no error message.",
+        "There isn't any output."
+      ]
+    },
+    {
+      "pattern": "Please + verb + noun + from the outside.",
+      "explanation": "Imperative sopan untuk pemeriksaan visual.",
+      "examples": [
+        "Please check the rollers from the outside.",
+        "Please look at the connector from the outside."
+      ]
+    }
+  ],
+  "learningNotes": [
+    "Gunakan will not + verb untuk bagian yang tidak mau bergerak atau bekerja.",
+    "There is no ... dan there isn't any ... sama-sama berarti 'tidak ada'.",
+    "Sebutkan hasil pemeriksaan secara singkat: The roller is free now.",
+    "Follow the official SOP and safety rules before checking power or opening panels."
+  ],
+  "pronunciationNotes": [
+    {
+      "title": "roller",
+      "note": "Tekanan di suku kata pertama: ROLL-er (/ˈroʊlər/)."
+    },
+    {
+      "title": "PSU",
+      "note": "Diucapkan per huruf: P-S-U (/ˌpiː ɛs ˈjuː/)."
+    }
+  ]
+}
