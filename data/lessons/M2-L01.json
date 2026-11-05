@@ -1,0 +1,187 @@
+{
+  "id": "M2-L01",
+  "moduleId": "M2",
+  "title": "Reading the Status Light",
+  "difficulty": "Beginner–Elementary",
+  "situation": "Alex starts his shift and sees a red status light on the machine. He calls Sam to describe the light and the error message. They check the power switch, the cable, and the connector, then restart the machine. The light is still red, so Sam asks Alex to stop and follow the official SOP.",
+  "objective": "Describe a status light and an error message, ask simple present questions with there is, check a cable and connector safely, and report the result of a restart.",
+  "dialogue": [
+    {
+      "speaker": "Remote Engineer",
+      "english": "Technical support. This is Sam.",
+      "indonesian": "Dukungan teknis. Ini Sam."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Hi, Sam. This is Alex. I'm calling about the machine on my line.",
+      "indonesian": "Hai, Sam. Ini Alex. Saya menelepon tentang mesin di jalur saya."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Hi, Alex. What is the machine doing right now?",
+      "indonesian": "Hai, Alex. Apa yang sedang dilakukan mesin itu sekarang?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "The status light is red, and it is blinking slowly.",
+      "indonesian": "Lampu statusnya merah, dan berkedip pelan."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Is there an error message on the display?",
+      "indonesian": "Apakah ada pesan error di layar?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Yes, there is. The message says, 'Check connection.'",
+      "indonesian": "Ya, ada. Pesannya berbunyi, 'Periksa koneksi.'"
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Thanks. Is the power switch on?",
+      "indonesian": "Terima kasih. Apakah sakelar dayanya menyala?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Yes, the power switch is on, and the display is on too.",
+      "indonesian": "Ya, sakelar dayanya menyala, dan layarnya juga menyala."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Okay. Please check the cable and the connector. Follow the official SOP and safety rules before you check the power or open any panel.",
+      "indonesian": "Baik. Mohon periksa kabel dan konektornya. Ikuti SOP resmi dan aturan keselamatan sebelum memeriksa daya atau membuka panel apa pun."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Understood. I'm checking the cable and the connector now.",
+      "indonesian": "Dipahami. Saya sedang memeriksa kabel dan konektornya sekarang."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Thank you. What do you see?",
+      "indonesian": "Terima kasih. Apa yang Anda lihat?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "The cable looks fine, and the connector is in place.",
+      "indonesian": "Kabelnya terlihat baik, dan konektornya terpasang."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Good. Please restart the machine and tell me what happens.",
+      "indonesian": "Bagus. Mohon mulai ulang mesinnya dan beri tahu saya apa yang terjadi."
+    },
+    {
+      "speaker": "Technician",
+      "english": "I restarted the machine, but the status light is still red, and the error message is still there.",
+      "indonesian": "Saya sudah memulai ulang mesinnya, tetapi lampu statusnya masih merah, dan pesan errornya masih ada."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Thank you, Alex. Please stop here and follow the official SOP. I'll ask Jordan to check the machine with you.",
+      "indonesian": "Terima kasih, Alex. Mohon berhenti di sini dan ikuti SOP resmi. Saya akan meminta Jordan memeriksa mesin itu bersama Anda."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Okay. I'll wait for Jordan. Thanks, Sam.",
+      "indonesian": "Baik. Saya akan menunggu Jordan. Terima kasih, Sam."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "You're welcome. Goodbye.",
+      "indonesian": "Sama-sama. Selamat tinggal."
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "I'm calling about the machine on my line.",
+      "indonesian": "Saya menelepon tentang mesin di jalur saya.",
+      "note": "Present continuous (am + verb-ing) untuk tindakan yang sedang berlangsung."
+    },
+    {
+      "english": "The status light is red.",
+      "indonesian": "Lampu statusnya merah.",
+      "note": "Simple present untuk kondisi mesin saat ini."
+    },
+    {
+      "english": "Is there an error message on the display?",
+      "indonesian": "Apakah ada pesan error di layar?",
+      "note": "Is there ...? menanyakan ada atau tidaknya sesuatu."
+    },
+    {
+      "english": "The message says, 'Check connection.'",
+      "indonesian": "Pesannya berbunyi, 'Periksa koneksi.'",
+      "note": "Pesan di layar dibaca dengan says."
+    },
+    {
+      "english": "Please check the cable and the connector.",
+      "indonesian": "Mohon periksa kabel dan konektornya.",
+      "note": "Imperative dengan please agar sopan."
+    },
+    {
+      "english": "The cable looks fine.",
+      "indonesian": "Kabelnya terlihat baik.",
+      "note": "Looks + adjective untuk kesan setelah melihat."
+    },
+    {
+      "english": "Please restart the machine.",
+      "indonesian": "Mohon mulai ulang mesinnya.",
+      "note": "Restart berarti menyalakan ulang mesin."
+    },
+    {
+      "english": "The status light is still red.",
+      "indonesian": "Lampu statusnya masih merah.",
+      "note": "Still menunjukkan kondisi yang belum berubah."
+    }
+  ],
+  "sentencePatterns": [
+    {
+      "pattern": "The + noun + is + adjective.",
+      "explanation": "Simple present untuk menjelaskan kondisi saat ini.",
+      "examples": [
+        "The status light is red.",
+        "The power switch is on."
+      ]
+    },
+    {
+      "pattern": "The + noun + is + verb-ing.",
+      "explanation": "Present continuous untuk kejadian yang sedang berlangsung.",
+      "examples": [
+        "The status light is blinking.",
+        "The display is showing an error message."
+      ]
+    },
+    {
+      "pattern": "Is there + noun + on + place?",
+      "explanation": "Menanyakan ada atau tidaknya sesuatu di suatu tempat.",
+      "examples": [
+        "Is there an error message on the display?",
+        "Is there a label on the connector?"
+      ]
+    },
+    {
+      "pattern": "Please + verb + noun.",
+      "explanation": "Imperative sopan untuk memberi instruksi.",
+      "examples": [
+        "Please check the cable and the connector.",
+        "Please restart the machine."
+      ]
+    }
+  ],
+  "learningNotes": [
+    "Gunakan simple present untuk kondisi saat ini dan present continuous untuk kejadian yang sedang berlangsung.",
+    "Gunakan is there ...? untuk menanyakan apakah sesuatu ada; jawab dengan Yes, there is. atau No, there isn't.",
+    "Baca pesan di layar dengan tenang, lalu ulangi pesan itu kepada rekan Anda.",
+    "Follow the official SOP and safety rules before checking power or opening panels."
+  ],
+  "pronunciationNotes": [
+    {
+      "title": "status",
+      "note": "Di Amerika, status umumnya diucapkan STAY-tus (/ˈsteɪtəs/), dengan tekanan di suku kata pertama."
+    },
+    {
+      "title": "connector",
+      "note": "Tekanan ada di suku kata kedua: kuh-NEK-tur (/kəˈnɛktər/)."
+    }
+  ]
+}

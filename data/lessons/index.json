@@ -28,5 +28,11 @@
     "moduleId": "M1",
     "title": "Giving a Basic Troubleshooting Update",
     "difficulty": "Beginner"
+  },
+  {
+    "id": "M2-L01",
+    "moduleId": "M2",
+    "title": "Reading the Status Light",
+    "difficulty": "Beginner–Elementary"
   }
 ]
