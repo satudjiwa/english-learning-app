@@ -9,92 +9,110 @@
     {
       "speaker": "Remote Engineer",
       "english": "Technical support. Good afternoon, this is Sam.",
-      "indonesian": "Dukungan teknis. Selamat siang, ini Sam."
+      "indonesian": "Dukungan teknis. Selamat siang, ini Sam.",
+      "audio": "public/audio/M2/M2-L04/sentence-01.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Hi, Sam. This is Alex. The machine is running, but there is no signal from the detector.",
-      "indonesian": "Hai, Sam. Ini Alex. Mesinnya berjalan, tetapi tidak ada sinyal dari detektornya."
+      "indonesian": "Hai, Sam. Ini Alex. Mesinnya berjalan, tetapi tidak ada sinyal dari detektornya.",
+      "audio": "public/audio/M2/M2-L04/sentence-02.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Okay. Is the status light green?",
-      "indonesian": "Baik. Apakah lampu statusnya hijau?"
+      "indonesian": "Baik. Apakah lampu statusnya hijau?",
+      "audio": "public/audio/M2/M2-L04/sentence-03.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Yes, the status light is green, but the output on the display is zero.",
-      "indonesian": "Ya, lampu statusnya hijau, tetapi output di layar nol."
+      "indonesian": "Ya, lampu statusnya hijau, tetapi output di layar nol.",
+      "audio": "public/audio/M2/M2-L04/sentence-04.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "I see. Is there an error message?",
-      "indonesian": "Saya mengerti. Apakah ada pesan error?"
+      "indonesian": "Saya mengerti. Apakah ada pesan error?",
+      "audio": "public/audio/M2/M2-L04/sentence-05.mp3"
     },
     {
       "speaker": "Technician",
       "english": "No, there isn't. The display shows no error message.",
-      "indonesian": "Tidak, tidak ada. Layar tidak menampilkan pesan error."
+      "indonesian": "Tidak, tidak ada. Layar tidak menampilkan pesan error.",
+      "audio": "public/audio/M2/M2-L04/sentence-06.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Did you check the cable and the connector?",
-      "indonesian": "Apakah Anda sudah memeriksa kabel dan konektornya?"
+      "indonesian": "Apakah Anda sudah memeriksa kabel dan konektornya?",
+      "audio": "public/audio/M2/M2-L04/sentence-07.mp3"
     },
     {
       "speaker": "Technician",
       "english": "I checked the cable, but I didn't check the connector yet.",
-      "indonesian": "Saya sudah memeriksa kabelnya, tetapi belum memeriksa konektornya."
+      "indonesian": "Saya sudah memeriksa kabelnya, tetapi belum memeriksa konektornya.",
+      "audio": "public/audio/M2/M2-L04/sentence-08.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Please check the connector from the outside. Follow the official SOP and safety rules before you check the power or open any panel.",
-      "indonesian": "Mohon periksa konektornya dari luar. Ikuti SOP resmi dan aturan keselamatan sebelum memeriksa daya atau membuka panel apa pun."
+      "indonesian": "Mohon periksa konektornya dari luar. Ikuti SOP resmi dan aturan keselamatan sebelum memeriksa daya atau membuka panel apa pun.",
+      "audio": "public/audio/M2/M2-L04/sentence-09.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Okay. The connector looks loose. I pushed it in, and it is in place now.",
-      "indonesian": "Baik. Konektornya terlihat longgar. Saya sudah mendorongnya masuk, dan sekarang sudah terpasang."
+      "indonesian": "Baik. Konektornya terlihat longgar. Saya sudah mendorongnya masuk, dan sekarang sudah terpasang.",
+      "audio": "public/audio/M2/M2-L04/sentence-10.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Good. Did the output change?",
-      "indonesian": "Bagus. Apakah output-nya berubah?"
+      "indonesian": "Bagus. Apakah output-nya berubah?",
+      "audio": "public/audio/M2/M2-L04/sentence-11.mp3"
     },
     {
       "speaker": "Technician",
       "english": "No, it didn't. The output is still zero.",
-      "indonesian": "Tidak. Output-nya masih nol."
+      "indonesian": "Tidak. Output-nya masih nol.",
+      "audio": "public/audio/M2/M2-L04/sentence-12.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Thank you. Please restart the machine and run one test bag.",
-      "indonesian": "Terima kasih. Mohon mulai ulang mesinnya dan jalankan satu tas uji."
+      "indonesian": "Terima kasih. Mohon mulai ulang mesinnya dan jalankan satu tas uji.",
+      "audio": "public/audio/M2/M2-L04/sentence-13.mp3"
     },
     {
       "speaker": "Technician",
       "english": "I restarted the machine and ran one test bag. The belt is moving, but there is still no detector output.",
-      "indonesian": "Saya sudah memulai ulang mesinnya dan menjalankan satu tas uji. Belt-nya bergerak, tetapi masih tidak ada output dari detektornya."
+      "indonesian": "Saya sudah memulai ulang mesinnya dan menjalankan satu tas uji. Belt-nya bergerak, tetapi masih tidak ada output dari detektornya.",
+      "audio": "public/audio/M2/M2-L04/sentence-14.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Is the detector indicator on?",
-      "indonesian": "Apakah indikator detektornya menyala?"
+      "indonesian": "Apakah indikator detektornya menyala?",
+      "audio": "public/audio/M2/M2-L04/sentence-15.mp3"
     },
     {
       "speaker": "Technician",
       "english": "No, it isn't. The detector indicator is off.",
-      "indonesian": "Tidak. Indikator detektornya mati."
+      "indonesian": "Tidak. Indikator detektornya mati.",
+      "audio": "public/audio/M2/M2-L04/sentence-16.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Okay. Please stop here and do not open the detector. I'll ask Jordan to check it with you. Goodbye, Alex.",
-      "indonesian": "Baik. Mohon berhenti di sini dan jangan buka detektornya. Saya akan meminta Jordan memeriksanya bersama Anda. Selamat tinggal, Alex."
+      "indonesian": "Baik. Mohon berhenti di sini dan jangan buka detektornya. Saya akan meminta Jordan memeriksanya bersama Anda. Selamat tinggal, Alex.",
+      "audio": "public/audio/M2/M2-L04/sentence-17.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Understood. I'll wait for Jordan. Thank you, Sam. Goodbye.",
-      "indonesian": "Dipahami. Saya akan menunggu Jordan. Terima kasih, Sam. Selamat tinggal."
+      "indonesian": "Dipahami. Saya akan menunggu Jordan. Terima kasih, Sam. Selamat tinggal.",
+      "audio": "public/audio/M2/M2-L04/sentence-18.mp3"
     }
   ],
   "keyExpressions": [
@@ -188,5 +206,6 @@
       "title": "output",
       "note": "Tekanan ada di suku kata pertama: OUT-put (/ˈaʊtpʊt/)."
     }
-  ]
+  ],
+  "fullAudio": "public/audio/M2/M2-L04/full.mp3"
 }

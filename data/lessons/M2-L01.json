@@ -9,87 +9,104 @@
     {
       "speaker": "Remote Engineer",
       "english": "Technical support. This is Sam.",
-      "indonesian": "Dukungan teknis. Ini Sam."
+      "indonesian": "Dukungan teknis. Ini Sam.",
+      "audio": "public/audio/M2/M2-L01/sentence-01.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Hi, Sam. This is Alex. I'm calling about the machine on my line.",
-      "indonesian": "Hai, Sam. Ini Alex. Saya menelepon tentang mesin di jalur saya."
+      "indonesian": "Hai, Sam. Ini Alex. Saya menelepon tentang mesin di jalur saya.",
+      "audio": "public/audio/M2/M2-L01/sentence-02.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Hi, Alex. What is the machine doing right now?",
-      "indonesian": "Hai, Alex. Apa yang sedang dilakukan mesin itu sekarang?"
+      "indonesian": "Hai, Alex. Apa yang sedang dilakukan mesin itu sekarang?",
+      "audio": "public/audio/M2/M2-L01/sentence-03.mp3"
     },
     {
       "speaker": "Technician",
       "english": "The status light is red, and it is blinking slowly.",
-      "indonesian": "Lampu statusnya merah, dan berkedip pelan."
+      "indonesian": "Lampu statusnya merah, dan berkedip pelan.",
+      "audio": "public/audio/M2/M2-L01/sentence-04.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Is there an error message on the display?",
-      "indonesian": "Apakah ada pesan error di layar?"
+      "indonesian": "Apakah ada pesan error di layar?",
+      "audio": "public/audio/M2/M2-L01/sentence-05.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Yes, there is. The message says, 'Check connection.'",
-      "indonesian": "Ya, ada. Pesannya berbunyi, 'Periksa koneksi.'"
+      "indonesian": "Ya, ada. Pesannya berbunyi, 'Periksa koneksi.'",
+      "audio": "public/audio/M2/M2-L01/sentence-06.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Thanks. Is the power switch on?",
-      "indonesian": "Terima kasih. Apakah sakelar dayanya menyala?"
+      "indonesian": "Terima kasih. Apakah sakelar dayanya menyala?",
+      "audio": "public/audio/M2/M2-L01/sentence-07.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Yes, the power switch is on, and the display is on too.",
-      "indonesian": "Ya, sakelar dayanya menyala, dan layarnya juga menyala."
+      "indonesian": "Ya, sakelar dayanya menyala, dan layarnya juga menyala.",
+      "audio": "public/audio/M2/M2-L01/sentence-08.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Okay. Please check the cable and the connector. Follow the official SOP and safety rules before you check the power or open any panel.",
-      "indonesian": "Baik. Mohon periksa kabel dan konektornya. Ikuti SOP resmi dan aturan keselamatan sebelum memeriksa daya atau membuka panel apa pun."
+      "indonesian": "Baik. Mohon periksa kabel dan konektornya. Ikuti SOP resmi dan aturan keselamatan sebelum memeriksa daya atau membuka panel apa pun.",
+      "audio": "public/audio/M2/M2-L01/sentence-09.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Understood. I'm checking the cable and the connector now.",
-      "indonesian": "Dipahami. Saya sedang memeriksa kabel dan konektornya sekarang."
+      "indonesian": "Dipahami. Saya sedang memeriksa kabel dan konektornya sekarang.",
+      "audio": "public/audio/M2/M2-L01/sentence-10.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Thank you. What do you see?",
-      "indonesian": "Terima kasih. Apa yang Anda lihat?"
+      "indonesian": "Terima kasih. Apa yang Anda lihat?",
+      "audio": "public/audio/M2/M2-L01/sentence-11.mp3"
     },
     {
       "speaker": "Technician",
       "english": "The cable looks fine, and the connector is in place.",
-      "indonesian": "Kabelnya terlihat baik, dan konektornya terpasang."
+      "indonesian": "Kabelnya terlihat baik, dan konektornya terpasang.",
+      "audio": "public/audio/M2/M2-L01/sentence-12.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Good. Please restart the machine and tell me what happens.",
-      "indonesian": "Bagus. Mohon mulai ulang mesinnya dan beri tahu saya apa yang terjadi."
+      "indonesian": "Bagus. Mohon mulai ulang mesinnya dan beri tahu saya apa yang terjadi.",
+      "audio": "public/audio/M2/M2-L01/sentence-13.mp3"
     },
     {
       "speaker": "Technician",
       "english": "I restarted the machine, but the status light is still red, and the error message is still there.",
-      "indonesian": "Saya sudah memulai ulang mesinnya, tetapi lampu statusnya masih merah, dan pesan errornya masih ada."
+      "indonesian": "Saya sudah memulai ulang mesinnya, tetapi lampu statusnya masih merah, dan pesan errornya masih ada.",
+      "audio": "public/audio/M2/M2-L01/sentence-14.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Thank you, Alex. Please stop here and follow the official SOP. I'll ask Jordan to check the machine with you.",
-      "indonesian": "Terima kasih, Alex. Mohon berhenti di sini dan ikuti SOP resmi. Saya akan meminta Jordan memeriksa mesin itu bersama Anda."
+      "indonesian": "Terima kasih, Alex. Mohon berhenti di sini dan ikuti SOP resmi. Saya akan meminta Jordan memeriksa mesin itu bersama Anda.",
+      "audio": "public/audio/M2/M2-L01/sentence-15.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Okay. I'll wait for Jordan. Thanks, Sam.",
-      "indonesian": "Baik. Saya akan menunggu Jordan. Terima kasih, Sam."
+      "indonesian": "Baik. Saya akan menunggu Jordan. Terima kasih, Sam.",
+      "audio": "public/audio/M2/M2-L01/sentence-16.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "You're welcome. Goodbye.",
-      "indonesian": "Sama-sama. Selamat tinggal."
+      "indonesian": "Sama-sama. Selamat tinggal.",
+      "audio": "public/audio/M2/M2-L01/sentence-17.mp3"
     }
   ],
   "keyExpressions": [
@@ -183,5 +200,6 @@
       "title": "connector",
       "note": "Tekanan ada di suku kata kedua: kuh-NEK-tur (/kəˈnɛktər/)."
     }
-  ]
+  ],
+  "fullAudio": "public/audio/M2/M2-L01/full.mp3"
 }

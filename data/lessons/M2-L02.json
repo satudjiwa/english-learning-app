@@ -9,92 +9,110 @@
     {
       "speaker": "Remote Engineer",
       "english": "Technical support. Sam here.",
-      "indonesian": "Dukungan teknis. Sam di sini."
+      "indonesian": "Dukungan teknis. Sam di sini.",
+      "audio": "public/audio/M2/M2-L02/sentence-01.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Hi, Sam. This is Alex. The alarm on my machine is sounding again.",
-      "indonesian": "Hai, Sam. Ini Alex. Alarm di mesin saya berbunyi lagi."
+      "indonesian": "Hai, Sam. Ini Alex. Alarm di mesin saya berbunyi lagi.",
+      "audio": "public/audio/M2/M2-L02/sentence-02.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "I'm sorry to hear that. When did the alarm start?",
-      "indonesian": "Saya turut mendengarnya. Kapan alarmnya mulai berbunyi?"
+      "indonesian": "Saya turut mendengarnya. Kapan alarmnya mulai berbunyi?",
+      "audio": "public/audio/M2/M2-L02/sentence-03.mp3"
     },
     {
       "speaker": "Technician",
       "english": "It started two minutes ago, right after I put a test bag on the belt.",
-      "indonesian": "Alarmnya mulai dua menit yang lalu, tepat setelah saya meletakkan tas uji di belt."
+      "indonesian": "Alarmnya mulai dua menit yang lalu, tepat setelah saya meletakkan tas uji di belt.",
+      "audio": "public/audio/M2/M2-L02/sentence-04.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Is the belt moving now?",
-      "indonesian": "Apakah belt-nya bergerak sekarang?"
+      "indonesian": "Apakah belt-nya bergerak sekarang?",
+      "audio": "public/audio/M2/M2-L02/sentence-05.mp3"
     },
     {
       "speaker": "Technician",
       "english": "No, the belt is stopped, and the alarm is still sounding.",
-      "indonesian": "Tidak, belt-nya berhenti, dan alarmnya masih berbunyi."
+      "indonesian": "Tidak, belt-nya berhenti, dan alarmnya masih berbunyi.",
+      "audio": "public/audio/M2/M2-L02/sentence-06.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Okay. Is there a red indicator on the control panel?",
-      "indonesian": "Baik. Apakah ada indikator merah di panel kontrol?"
+      "indonesian": "Baik. Apakah ada indikator merah di panel kontrol?",
+      "audio": "public/audio/M2/M2-L02/sentence-07.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Yes, there is. The indicator is red, and the display says 'Sensor error.'",
-      "indonesian": "Ya, ada. Indikatornya merah, dan layar menampilkan 'Sensor error.'"
+      "indonesian": "Ya, ada. Indikatornya merah, dan layar menampilkan 'Sensor error.'",
+      "audio": "public/audio/M2/M2-L02/sentence-08.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Thanks. Did you check the sensor and the detector?",
-      "indonesian": "Terima kasih. Apakah Anda sudah memeriksa sensor dan detektornya?"
+      "indonesian": "Terima kasih. Apakah Anda sudah memeriksa sensor dan detektornya?",
+      "audio": "public/audio/M2/M2-L02/sentence-09.mp3"
     },
     {
       "speaker": "Technician",
       "english": "I checked the sensor, but I didn't check the detector yet.",
-      "indonesian": "Saya sudah memeriksa sensornya, tetapi belum memeriksa detektornya."
+      "indonesian": "Saya sudah memeriksa sensornya, tetapi belum memeriksa detektornya.",
+      "audio": "public/audio/M2/M2-L02/sentence-10.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "That's okay. Please check the detector from the outside and tell me what you see. Follow the official SOP and safety rules before you check the power or open any panel.",
-      "indonesian": "Tidak apa-apa. Mohon periksa detektornya dari luar dan beri tahu saya apa yang Anda lihat. Ikuti SOP resmi dan aturan keselamatan sebelum memeriksa daya atau membuka panel apa pun."
+      "indonesian": "Tidak apa-apa. Mohon periksa detektornya dari luar dan beri tahu saya apa yang Anda lihat. Ikuti SOP resmi dan aturan keselamatan sebelum memeriksa daya atau membuka panel apa pun.",
+      "audio": "public/audio/M2/M2-L02/sentence-11.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Okay. I'm looking at the detector now. It looks clean, and there is no test bag inside.",
-      "indonesian": "Baik. Saya sedang melihat detektornya sekarang. Detektornya terlihat bersih, dan tidak ada tas uji di dalamnya."
+      "indonesian": "Baik. Saya sedang melihat detektornya sekarang. Detektornya terlihat bersih, dan tidak ada tas uji di dalamnya.",
+      "audio": "public/audio/M2/M2-L02/sentence-12.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Good. Please restart the machine and run one test bag again.",
-      "indonesian": "Bagus. Mohon mulai ulang mesinnya dan jalankan satu tas uji lagi."
+      "indonesian": "Bagus. Mohon mulai ulang mesinnya dan jalankan satu tas uji lagi.",
+      "audio": "public/audio/M2/M2-L02/sentence-13.mp3"
     },
     {
       "speaker": "Technician",
       "english": "I restarted the machine and ran one test bag. The belt is moving, and the alarm is not sounding now.",
-      "indonesian": "Saya sudah memulai ulang mesinnya dan menjalankan satu tas uji. Belt-nya bergerak, dan alarmnya tidak berbunyi lagi sekarang."
+      "indonesian": "Saya sudah memulai ulang mesinnya dan menjalankan satu tas uji. Belt-nya bergerak, dan alarmnya tidak berbunyi lagi sekarang.",
+      "audio": "public/audio/M2/M2-L02/sentence-14.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Did the detector show an output?",
-      "indonesian": "Apakah detektornya menunjukkan output?"
+      "indonesian": "Apakah detektornya menunjukkan output?",
+      "audio": "public/audio/M2/M2-L02/sentence-15.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Yes, it did. The output looks normal on the display.",
-      "indonesian": "Ya. Output-nya terlihat normal di layar."
+      "indonesian": "Ya. Output-nya terlihat normal di layar.",
+      "audio": "public/audio/M2/M2-L02/sentence-16.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Great. Please write a short note about the alarm and the test result. Call me if it happens again. Goodbye, Alex.",
-      "indonesian": "Bagus. Mohon tulis catatan singkat tentang alarm dan hasil pengujiannya. Hubungi saya jika itu terjadi lagi. Selamat tinggal, Alex."
+      "indonesian": "Bagus. Mohon tulis catatan singkat tentang alarm dan hasil pengujiannya. Hubungi saya jika itu terjadi lagi. Selamat tinggal, Alex.",
+      "audio": "public/audio/M2/M2-L02/sentence-17.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Okay, I will. Thank you, Sam. Goodbye.",
-      "indonesian": "Baik, saya akan melakukannya. Terima kasih, Sam. Selamat tinggal."
+      "indonesian": "Baik, saya akan melakukannya. Terima kasih, Sam. Selamat tinggal.",
+      "audio": "public/audio/M2/M2-L02/sentence-18.mp3"
     }
   ],
   "keyExpressions": [
@@ -188,5 +206,6 @@
       "title": "sensor",
       "note": "Akhiran -or diucapkan seperti 'er': SEN-ser (/ˈsɛnsər/)."
     }
-  ]
+  ],
+  "fullAudio": "public/audio/M2/M2-L02/full.mp3"
 }

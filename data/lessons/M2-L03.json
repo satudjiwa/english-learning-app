@@ -9,92 +9,110 @@
     {
       "speaker": "Remote Engineer",
       "english": "Support desk. Sam speaking.",
-      "indonesian": "Layanan dukungan. Saya Sam."
+      "indonesian": "Layanan dukungan. Saya Sam.",
+      "audio": "public/audio/M2/M2-L03/sentence-01.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Hi, Sam. This is Alex. I restarted the machine, but the belt will not move.",
-      "indonesian": "Hai, Sam. Ini Alex. Saya sudah memulai ulang mesinnya, tetapi belt-nya tidak mau bergerak."
+      "indonesian": "Hai, Sam. Ini Alex. Saya sudah memulai ulang mesinnya, tetapi belt-nya tidak mau bergerak.",
+      "audio": "public/audio/M2/M2-L03/sentence-02.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Okay. Is the motor making any noise?",
-      "indonesian": "Baik. Apakah motornya mengeluarkan suara?"
+      "indonesian": "Baik. Apakah motornya mengeluarkan suara?",
+      "audio": "public/audio/M2/M2-L03/sentence-03.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Yes, the motor is making a low noise, but the belt is not moving.",
-      "indonesian": "Ya, motornya mengeluarkan suara rendah, tetapi belt-nya tidak bergerak."
+      "indonesian": "Ya, motornya mengeluarkan suara rendah, tetapi belt-nya tidak bergerak.",
+      "audio": "public/audio/M2/M2-L03/sentence-04.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Is the indicator on the control panel yellow?",
-      "indonesian": "Apakah indikator di panel kontrol berwarna kuning?"
+      "indonesian": "Apakah indikator di panel kontrol berwarna kuning?",
+      "audio": "public/audio/M2/M2-L03/sentence-05.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Yes, it is. The indicator is yellow, and there is no error message.",
-      "indonesian": "Ya. Indikatornya kuning, dan tidak ada pesan error."
+      "indonesian": "Ya. Indikatornya kuning, dan tidak ada pesan error.",
+      "audio": "public/audio/M2/M2-L03/sentence-06.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Is the power switch still on?",
-      "indonesian": "Apakah sakelar dayanya masih menyala?"
+      "indonesian": "Apakah sakelar dayanya masih menyala?",
+      "audio": "public/audio/M2/M2-L03/sentence-07.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Yes, it is. The PSU indicator is green too.",
-      "indonesian": "Ya. Indikator PSU-nya juga hijau."
+      "indonesian": "Ya. Indikator PSU-nya juga hijau.",
+      "audio": "public/audio/M2/M2-L03/sentence-08.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Good. Please check the rollers from the outside. Follow the official SOP and safety rules before you check the power or open any panel.",
-      "indonesian": "Bagus. Mohon periksa roller-nya dari luar. Ikuti SOP resmi dan aturan keselamatan sebelum memeriksa daya atau membuka panel apa pun."
+      "indonesian": "Bagus. Mohon periksa roller-nya dari luar. Ikuti SOP resmi dan aturan keselamatan sebelum memeriksa daya atau membuka panel apa pun.",
+      "audio": "public/audio/M2/M2-L03/sentence-09.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Okay. I'm checking the rollers now.",
-      "indonesian": "Baik. Saya sedang memeriksa roller-nya sekarang."
+      "indonesian": "Baik. Saya sedang memeriksa roller-nya sekarang.",
+      "audio": "public/audio/M2/M2-L03/sentence-10.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "What do you see?",
-      "indonesian": "Apa yang Anda lihat?"
+      "indonesian": "Apa yang Anda lihat?",
+      "audio": "public/audio/M2/M2-L03/sentence-11.mp3"
     },
     {
       "speaker": "Technician",
       "english": "There is a small piece of plastic near the first roller.",
-      "indonesian": "Ada potongan plastik kecil di dekat roller pertama."
+      "indonesian": "Ada potongan plastik kecil di dekat roller pertama.",
+      "audio": "public/audio/M2/M2-L03/sentence-12.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Thank you. Please follow the SOP and clear the area safely. Do not open the panel.",
-      "indonesian": "Terima kasih. Mohon ikuti SOP dan bersihkan area itu dengan aman. Jangan buka panelnya."
+      "indonesian": "Terima kasih. Mohon ikuti SOP dan bersihkan area itu dengan aman. Jangan buka panelnya.",
+      "audio": "public/audio/M2/M2-L03/sentence-13.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Understood. I followed the SOP and cleared the area. The roller is free now.",
-      "indonesian": "Dipahami. Saya sudah mengikuti SOP dan membersihkan area itu. Roller-nya sekarang bebas."
+      "indonesian": "Dipahami. Saya sudah mengikuti SOP dan membersihkan area itu. Roller-nya sekarang bebas.",
+      "audio": "public/audio/M2/M2-L03/sentence-14.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Good. Please restart the machine and tell me if the belt moves.",
-      "indonesian": "Bagus. Mohon mulai ulang mesinnya dan beri tahu saya apakah belt-nya bergerak."
+      "indonesian": "Bagus. Mohon mulai ulang mesinnya dan beri tahu saya apakah belt-nya bergerak.",
+      "audio": "public/audio/M2/M2-L03/sentence-15.mp3"
     },
     {
       "speaker": "Technician",
       "english": "I restarted the machine. The belt is moving now, and the indicator is green.",
-      "indonesian": "Saya sudah memulai ulang mesinnya. Belt-nya sekarang bergerak, dan indikatornya hijau."
+      "indonesian": "Saya sudah memulai ulang mesinnya. Belt-nya sekarang bergerak, dan indikatornya hijau.",
+      "audio": "public/audio/M2/M2-L03/sentence-16.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Excellent. Please run one test bag and check the output.",
-      "indonesian": "Bagus sekali. Mohon jalankan satu tas uji dan periksa output-nya."
+      "indonesian": "Bagus sekali. Mohon jalankan satu tas uji dan periksa output-nya.",
+      "audio": "public/audio/M2/M2-L03/sentence-17.mp3"
     },
     {
       "speaker": "Technician",
       "english": "The test bag moved through the machine, and the output looks normal. I'll write the note. Thanks, Sam. Goodbye.",
-      "indonesian": "Tas uji itu bergerak melewati mesin, dan output-nya terlihat normal. Saya akan menulis catatannya. Terima kasih, Sam. Selamat tinggal."
+      "indonesian": "Tas uji itu bergerak melewati mesin, dan output-nya terlihat normal. Saya akan menulis catatannya. Terima kasih, Sam. Selamat tinggal.",
+      "audio": "public/audio/M2/M2-L03/sentence-18.mp3"
     }
   ],
   "keyExpressions": [
@@ -188,5 +206,6 @@
       "title": "PSU",
       "note": "Diucapkan per huruf: P-S-U (/ˌpiː ɛs ˈjuː/)."
     }
-  ]
+  ],
+  "fullAudio": "public/audio/M2/M2-L03/full.mp3"
 }

@@ -9,92 +9,110 @@
     {
       "speaker": "Remote Engineer",
       "english": "Technical support. Good morning, this is Sam.",
-      "indonesian": "Dukungan teknis. Selamat pagi, ini Sam."
+      "indonesian": "Dukungan teknis. Selamat pagi, ini Sam.",
+      "audio": "public/audio/M2/M2-L05/sentence-01.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Good morning, Sam. This is Alex. I have a final update on the machine.",
-      "indonesian": "Selamat pagi, Sam. Ini Alex. Saya punya pembaruan terakhir tentang mesinnya."
+      "indonesian": "Selamat pagi, Sam. Ini Alex. Saya punya pembaruan terakhir tentang mesinnya.",
+      "audio": "public/audio/M2/M2-L05/sentence-02.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Thank you, Alex. What is the status now?",
-      "indonesian": "Terima kasih, Alex. Bagaimana statusnya sekarang?"
+      "indonesian": "Terima kasih, Alex. Bagaimana statusnya sekarang?",
+      "audio": "public/audio/M2/M2-L05/sentence-03.mp3"
     },
     {
       "speaker": "Technician",
       "english": "The status light is green, and there is no error message, but the output is still low.",
-      "indonesian": "Lampu statusnya hijau, dan tidak ada pesan error, tetapi output-nya masih rendah."
+      "indonesian": "Lampu statusnya hijau, dan tidak ada pesan error, tetapi output-nya masih rendah.",
+      "audio": "public/audio/M2/M2-L05/sentence-04.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "I see. Is the alarm sounding?",
-      "indonesian": "Saya mengerti. Apakah alarmnya berbunyi?"
+      "indonesian": "Saya mengerti. Apakah alarmnya berbunyi?",
+      "audio": "public/audio/M2/M2-L05/sentence-05.mp3"
     },
     {
       "speaker": "Technician",
       "english": "No, the alarm is not sounding. The belt and the roller are moving normally.",
-      "indonesian": "Tidak, alarmnya tidak berbunyi. Belt dan roller-nya bergerak normal."
+      "indonesian": "Tidak, alarmnya tidak berbunyi. Belt dan roller-nya bergerak normal.",
+      "audio": "public/audio/M2/M2-L05/sentence-06.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Good. How is the motor?",
-      "indonesian": "Bagus. Bagaimana dengan motornya?"
+      "indonesian": "Bagus. Bagaimana dengan motornya?",
+      "audio": "public/audio/M2/M2-L05/sentence-07.mp3"
     },
     {
       "speaker": "Technician",
       "english": "The motor is running, the PSU indicator is green, and the power switch is on.",
-      "indonesian": "Motornya berjalan, indikator PSU-nya hijau, dan sakelar dayanya menyala."
+      "indonesian": "Motornya berjalan, indikator PSU-nya hijau, dan sakelar dayanya menyala.",
+      "audio": "public/audio/M2/M2-L05/sentence-08.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Did you check the sensor and the detector?",
-      "indonesian": "Apakah Anda sudah memeriksa sensor dan detektornya?"
+      "indonesian": "Apakah Anda sudah memeriksa sensor dan detektornya?",
+      "audio": "public/audio/M2/M2-L05/sentence-09.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Yes, I checked both. The sensor is clean, and the detector is on.",
-      "indonesian": "Ya, saya sudah memeriksa keduanya. Sensornya bersih, dan detektornya menyala."
+      "indonesian": "Ya, saya sudah memeriksa keduanya. Sensornya bersih, dan detektornya menyala.",
+      "audio": "public/audio/M2/M2-L05/sentence-10.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "What about the cable and the connector?",
-      "indonesian": "Bagaimana dengan kabel dan konektornya?"
+      "indonesian": "Bagaimana dengan kabel dan konektornya?",
+      "audio": "public/audio/M2/M2-L05/sentence-11.mp3"
     },
     {
       "speaker": "Technician",
       "english": "The cable is fine, and the connector is in place.",
-      "indonesian": "Kabelnya baik, dan konektornya terpasang."
+      "indonesian": "Kabelnya baik, dan konektornya terpasang.",
+      "audio": "public/audio/M2/M2-L05/sentence-12.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Okay. Please restart the machine and run three test bags. Then tell me the output for each bag.",
-      "indonesian": "Baik. Mohon mulai ulang mesinnya dan jalankan tiga tas uji. Lalu beri tahu saya output untuk setiap tas."
+      "indonesian": "Baik. Mohon mulai ulang mesinnya dan jalankan tiga tas uji. Lalu beri tahu saya output untuk setiap tas.",
+      "audio": "public/audio/M2/M2-L05/sentence-13.mp3"
     },
     {
       "speaker": "Technician",
       "english": "I restarted the machine and ran three test bags.",
-      "indonesian": "Saya sudah memulai ulang mesinnya dan menjalankan tiga tas uji."
+      "indonesian": "Saya sudah memulai ulang mesinnya dan menjalankan tiga tas uji.",
+      "audio": "public/audio/M2/M2-L05/sentence-14.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Good. What was the output for each bag?",
-      "indonesian": "Bagus. Berapa output untuk setiap tas?"
+      "indonesian": "Bagus. Berapa output untuk setiap tas?",
+      "audio": "public/audio/M2/M2-L05/sentence-15.mp3"
     },
     {
       "speaker": "Technician",
       "english": "The output was normal for all three bags, and every bag moved through without an alarm.",
-      "indonesian": "Output-nya normal untuk ketiga tas, dan setiap tas melewati mesin tanpa alarm."
+      "indonesian": "Output-nya normal untuk ketiga tas, dan setiap tas melewati mesin tanpa alarm.",
+      "audio": "public/audio/M2/M2-L05/sentence-16.mp3"
     },
     {
       "speaker": "Remote Engineer",
       "english": "Excellent. Please write a short note about the alarm, the restart, and the test result. Call me if the output changes again. Goodbye, Alex.",
-      "indonesian": "Bagus sekali. Mohon tulis catatan singkat tentang alarm, restart, dan hasil pengujiannya. Hubungi saya jika output-nya berubah lagi. Selamat tinggal, Alex."
+      "indonesian": "Bagus sekali. Mohon tulis catatan singkat tentang alarm, restart, dan hasil pengujiannya. Hubungi saya jika output-nya berubah lagi. Selamat tinggal, Alex.",
+      "audio": "public/audio/M2/M2-L05/sentence-17.mp3"
     },
     {
       "speaker": "Technician",
       "english": "Okay. I'll write the note and call you if anything changes. Thank you, Sam. Goodbye.",
-      "indonesian": "Baik. Saya akan menulis catatannya dan menghubungi Anda jika ada yang berubah. Terima kasih, Sam. Selamat tinggal."
+      "indonesian": "Baik. Saya akan menulis catatannya dan menghubungi Anda jika ada yang berubah. Terima kasih, Sam. Selamat tinggal.",
+      "audio": "public/audio/M2/M2-L05/sentence-18.mp3"
     }
   ],
   "keyExpressions": [
@@ -188,5 +206,6 @@
       "title": "test bag",
       "note": "Ucapkan kedua kata dengan jelas: TEST bag; bag memakai bunyi /æ/ seperti pada cat."
     }
-  ]
+  ],
+  "fullAudio": "public/audio/M2/M2-L05/full.mp3"
 }
