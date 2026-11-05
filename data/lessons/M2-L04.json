@@ -1,0 +1,192 @@
+{
+  "id": "M2-L04",
+  "moduleId": "M2",
+  "title": "No Signal From the Detector",
+  "difficulty": "Beginner–Elementary",
+  "situation": "The machine is running, but the detector shows no signal and the output stays at zero. Alex calls Sam. They check the status light, the display, the cable, and the connector. After a restart and a test bag, the detector is still off, so Sam asks Alex to stop and wait for Jordan.",
+  "objective": "Say that something is missing with there is no and there isn't any, describe a loose connector, and report that a detector is still off.",
+  "dialogue": [
+    {
+      "speaker": "Remote Engineer",
+      "english": "Technical support. Good afternoon, this is Sam.",
+      "indonesian": "Dukungan teknis. Selamat siang, ini Sam."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Hi, Sam. This is Alex. The machine is running, but there is no signal from the detector.",
+      "indonesian": "Hai, Sam. Ini Alex. Mesinnya berjalan, tetapi tidak ada sinyal dari detektornya."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Okay. Is the status light green?",
+      "indonesian": "Baik. Apakah lampu statusnya hijau?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Yes, the status light is green, but the output on the display is zero.",
+      "indonesian": "Ya, lampu statusnya hijau, tetapi output di layar nol."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "I see. Is there an error message?",
+      "indonesian": "Saya mengerti. Apakah ada pesan error?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "No, there isn't. The display shows no error message.",
+      "indonesian": "Tidak, tidak ada. Layar tidak menampilkan pesan error."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Did you check the cable and the connector?",
+      "indonesian": "Apakah Anda sudah memeriksa kabel dan konektornya?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "I checked the cable, but I didn't check the connector yet.",
+      "indonesian": "Saya sudah memeriksa kabelnya, tetapi belum memeriksa konektornya."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Please check the connector from the outside. Follow the official SOP and safety rules before you check the power or open any panel.",
+      "indonesian": "Mohon periksa konektornya dari luar. Ikuti SOP resmi dan aturan keselamatan sebelum memeriksa daya atau membuka panel apa pun."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Okay. The connector looks loose. I pushed it in, and it is in place now.",
+      "indonesian": "Baik. Konektornya terlihat longgar. Saya sudah mendorongnya masuk, dan sekarang sudah terpasang."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Good. Did the output change?",
+      "indonesian": "Bagus. Apakah output-nya berubah?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "No, it didn't. The output is still zero.",
+      "indonesian": "Tidak. Output-nya masih nol."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Thank you. Please restart the machine and run one test bag.",
+      "indonesian": "Terima kasih. Mohon mulai ulang mesinnya dan jalankan satu tas uji."
+    },
+    {
+      "speaker": "Technician",
+      "english": "I restarted the machine and ran one test bag. The belt is moving, but there is still no detector output.",
+      "indonesian": "Saya sudah memulai ulang mesinnya dan menjalankan satu tas uji. Belt-nya bergerak, tetapi masih tidak ada output dari detektornya."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Is the detector indicator on?",
+      "indonesian": "Apakah indikator detektornya menyala?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "No, it isn't. The detector indicator is off.",
+      "indonesian": "Tidak. Indikator detektornya mati."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Okay. Please stop here and do not open the detector. I'll ask Jordan to check it with you. Goodbye, Alex.",
+      "indonesian": "Baik. Mohon berhenti di sini dan jangan buka detektornya. Saya akan meminta Jordan memeriksanya bersama Anda. Selamat tinggal, Alex."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Understood. I'll wait for Jordan. Thank you, Sam. Goodbye.",
+      "indonesian": "Dipahami. Saya akan menunggu Jordan. Terima kasih, Sam. Selamat tinggal."
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "There is no signal from the detector.",
+      "indonesian": "Tidak ada sinyal dari detektornya.",
+      "note": "There is no + noun untuk menyatakan tidak ada."
+    },
+    {
+      "english": "The output on the display is zero.",
+      "indonesian": "Output di layar nol.",
+      "note": "Zero berarti tidak ada hasil yang terbaca."
+    },
+    {
+      "english": "Is there an error message?",
+      "indonesian": "Apakah ada pesan error?",
+      "note": "Is there ...? untuk menanyakan keberadaan sesuatu."
+    },
+    {
+      "english": "No, there isn't.",
+      "indonesian": "Tidak, tidak ada.",
+      "note": "Jawaban negatif singkat untuk is there."
+    },
+    {
+      "english": "The connector looks loose.",
+      "indonesian": "Konektornya terlihat longgar.",
+      "note": "Looks + adjective untuk kesan visual."
+    },
+    {
+      "english": "I pushed it in, and it is in place now.",
+      "indonesian": "Saya sudah mendorongnya masuk, dan sekarang sudah terpasang.",
+      "note": "In place berarti berada di posisi yang benar."
+    },
+    {
+      "english": "There is still no detector output.",
+      "indonesian": "Masih tidak ada output dari detektornya.",
+      "note": "Still no menegaskan hasilnya belum berubah."
+    },
+    {
+      "english": "The detector indicator is off.",
+      "indonesian": "Indikator detektornya mati.",
+      "note": "Off berarti tidak menyala."
+    }
+  ],
+  "sentencePatterns": [
+    {
+      "pattern": "There is no + noun.",
+      "explanation": "Menyatakan tidak ada sesuatu.",
+      "examples": [
+        "There is no signal from the detector.",
+        "There is no error message."
+      ]
+    },
+    {
+      "pattern": "There isn't any + noun.",
+      "explanation": "Bentuk negatif lain dari there is.",
+      "examples": [
+        "There isn't any output.",
+        "There isn't any alarm."
+      ]
+    },
+    {
+      "pattern": "Is there + noun? — No, there isn't.",
+      "explanation": "Pertanyaan dan jawaban singkat.",
+      "examples": [
+        "Is there an error message? No, there isn't.",
+        "Is there any output? No, there isn't."
+      ]
+    },
+    {
+      "pattern": "The + noun + looks + adjective.",
+      "explanation": "Simple present untuk kesan setelah melihat.",
+      "examples": [
+        "The connector looks loose.",
+        "The cable looks fine."
+      ]
+    }
+  ],
+  "learningNotes": [
+    "Gunakan there is no + noun atau there isn't any + noun untuk mengatakan bahwa sesuatu tidak ada.",
+    "Gunakan looks + adjective untuk menjelaskan kesan dari pemeriksaan visual.",
+    "Jika hasil belum berubah, gunakan still: The output is still zero.",
+    "Follow the official SOP and safety rules before checking power or opening panels."
+  ],
+  "pronunciationNotes": [
+    {
+      "title": "detector",
+      "note": "Tekanan ada di suku kata kedua: dih-TEK-tur (/dɪˈtɛktər/)."
+    },
+    {
+      "title": "output",
+      "note": "Tekanan ada di suku kata pertama: OUT-put (/ˈaʊtpʊt/)."
+    }
+  ]
+}

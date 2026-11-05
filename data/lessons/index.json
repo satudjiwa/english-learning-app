@@ -46,5 +46,11 @@
     "moduleId": "M2",
     "title": "The Belt Will Not Move",
     "difficulty": "Beginner–Elementary"
+  },
+  {
+    "id": "M2-L04",
+    "moduleId": "M2",
+    "title": "No Signal From the Detector",
+    "difficulty": "Beginner–Elementary"
   }
 ]
