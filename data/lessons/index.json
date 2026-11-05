@@ -34,5 +34,11 @@
     "moduleId": "M2",
     "title": "Reading the Status Light",
     "difficulty": "Beginner–Elementary"
+  },
+  {
+    "id": "M2-L02",
+    "moduleId": "M2",
+    "title": "The Alarm Keeps Sounding",
+    "difficulty": "Beginner–Elementary"
   }
 ]

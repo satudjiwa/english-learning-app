@@ -1,0 +1,192 @@
+{
+  "id": "M2-L02",
+  "moduleId": "M2",
+  "title": "The Alarm Keeps Sounding",
+  "difficulty": "Beginner–Elementary",
+  "situation": "An alarm sounds during a test, and the belt stops. Alex calls Sam. They talk about when the alarm started, what the indicator shows, and whether Alex checked the sensor and the detector. Alex restarts the machine and runs a test bag, and the output returns to normal.",
+  "objective": "Describe a sounding alarm, explain when a problem started, ask simple past questions, and report a successful test.",
+  "dialogue": [
+    {
+      "speaker": "Remote Engineer",
+      "english": "Technical support. Sam here.",
+      "indonesian": "Dukungan teknis. Sam di sini."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Hi, Sam. This is Alex. The alarm on my machine is sounding again.",
+      "indonesian": "Hai, Sam. Ini Alex. Alarm di mesin saya berbunyi lagi."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "I'm sorry to hear that. When did the alarm start?",
+      "indonesian": "Saya turut mendengarnya. Kapan alarmnya mulai berbunyi?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "It started two minutes ago, right after I put a test bag on the belt.",
+      "indonesian": "Alarmnya mulai dua menit yang lalu, tepat setelah saya meletakkan tas uji di belt."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Is the belt moving now?",
+      "indonesian": "Apakah belt-nya bergerak sekarang?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "No, the belt is stopped, and the alarm is still sounding.",
+      "indonesian": "Tidak, belt-nya berhenti, dan alarmnya masih berbunyi."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Okay. Is there a red indicator on the control panel?",
+      "indonesian": "Baik. Apakah ada indikator merah di panel kontrol?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Yes, there is. The indicator is red, and the display says 'Sensor error.'",
+      "indonesian": "Ya, ada. Indikatornya merah, dan layar menampilkan 'Sensor error.'"
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Thanks. Did you check the sensor and the detector?",
+      "indonesian": "Terima kasih. Apakah Anda sudah memeriksa sensor dan detektornya?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "I checked the sensor, but I didn't check the detector yet.",
+      "indonesian": "Saya sudah memeriksa sensornya, tetapi belum memeriksa detektornya."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "That's okay. Please check the detector from the outside and tell me what you see. Follow the official SOP and safety rules before you check the power or open any panel.",
+      "indonesian": "Tidak apa-apa. Mohon periksa detektornya dari luar dan beri tahu saya apa yang Anda lihat. Ikuti SOP resmi dan aturan keselamatan sebelum memeriksa daya atau membuka panel apa pun."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Okay. I'm looking at the detector now. It looks clean, and there is no test bag inside.",
+      "indonesian": "Baik. Saya sedang melihat detektornya sekarang. Detektornya terlihat bersih, dan tidak ada tas uji di dalamnya."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Good. Please restart the machine and run one test bag again.",
+      "indonesian": "Bagus. Mohon mulai ulang mesinnya dan jalankan satu tas uji lagi."
+    },
+    {
+      "speaker": "Technician",
+      "english": "I restarted the machine and ran one test bag. The belt is moving, and the alarm is not sounding now.",
+      "indonesian": "Saya sudah memulai ulang mesinnya dan menjalankan satu tas uji. Belt-nya bergerak, dan alarmnya tidak berbunyi lagi sekarang."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Did the detector show an output?",
+      "indonesian": "Apakah detektornya menunjukkan output?"
+    },
+    {
+      "speaker": "Technician",
+      "english": "Yes, it did. The output looks normal on the display.",
+      "indonesian": "Ya. Output-nya terlihat normal di layar."
+    },
+    {
+      "speaker": "Remote Engineer",
+      "english": "Great. Please write a short note about the alarm and the test result. Call me if it happens again. Goodbye, Alex.",
+      "indonesian": "Bagus. Mohon tulis catatan singkat tentang alarm dan hasil pengujiannya. Hubungi saya jika itu terjadi lagi. Selamat tinggal, Alex."
+    },
+    {
+      "speaker": "Technician",
+      "english": "Okay, I will. Thank you, Sam. Goodbye.",
+      "indonesian": "Baik, saya akan melakukannya. Terima kasih, Sam. Selamat tinggal."
+    }
+  ],
+  "keyExpressions": [
+    {
+      "english": "The alarm is sounding again.",
+      "indonesian": "Alarmnya berbunyi lagi.",
+      "note": "Present continuous untuk bunyi yang sedang berlangsung."
+    },
+    {
+      "english": "When did the alarm start?",
+      "indonesian": "Kapan alarmnya mulai berbunyi?",
+      "note": "Simple past question dengan did + verb dasar."
+    },
+    {
+      "english": "It started two minutes ago.",
+      "indonesian": "Alarmnya mulai dua menit yang lalu.",
+      "note": "Ago dipakai untuk waktu yang sudah lewat."
+    },
+    {
+      "english": "The belt is stopped.",
+      "indonesian": "Belt-nya berhenti.",
+      "note": "Is stopped menjelaskan kondisi saat ini."
+    },
+    {
+      "english": "The indicator is red.",
+      "indonesian": "Indikatornya merah.",
+      "note": "Indicator adalah lampu atau tanda status."
+    },
+    {
+      "english": "Did you check the sensor?",
+      "indonesian": "Apakah Anda sudah memeriksa sensornya?",
+      "note": "Pertanyaan simple past dengan did."
+    },
+    {
+      "english": "I didn't check the detector yet.",
+      "indonesian": "Saya belum memeriksa detektornya.",
+      "note": "Yet berarti 'belum' dalam konteks ini."
+    },
+    {
+      "english": "The output looks normal.",
+      "indonesian": "Output-nya terlihat normal.",
+      "note": "Output adalah hasil yang ditampilkan mesin."
+    }
+  ],
+  "sentencePatterns": [
+    {
+      "pattern": "The + noun + is + verb-ing.",
+      "explanation": "Present continuous untuk kejadian yang sedang berlangsung.",
+      "examples": [
+        "The alarm is sounding.",
+        "The belt is moving."
+      ]
+    },
+    {
+      "pattern": "When did + subject + verb?",
+      "explanation": "Simple past question untuk menanyakan waktu kejadian.",
+      "examples": [
+        "When did the alarm start?",
+        "When did the belt stop?"
+      ]
+    },
+    {
+      "pattern": "It started + time + ago.",
+      "explanation": "Simple past untuk menyebut waktu lampau.",
+      "examples": [
+        "It started two minutes ago.",
+        "It stopped ten minutes ago."
+      ]
+    },
+    {
+      "pattern": "Did you + verb + noun? — I didn't + verb + noun yet.",
+      "explanation": "Pertanyaan dan jawaban negatif dalam simple past.",
+      "examples": [
+        "Did you check the sensor? I didn't check the detector yet.",
+        "Did you restart the machine? I didn't restart it yet."
+      ]
+    }
+  ],
+  "learningNotes": [
+    "Gunakan simple past untuk kejadian yang sudah selesai, misalnya The alarm started two minutes ago.",
+    "Gunakan present continuous untuk kondisi yang sedang berlangsung, misalnya The alarm is sounding.",
+    "Periksa satu bagian pada satu waktu agar laporan tetap jelas.",
+    "Follow the official SOP and safety rules before checking power or opening panels."
+  ],
+  "pronunciationNotes": [
+    {
+      "title": "alarm",
+      "note": "Tekanan ada di suku kata kedua: uh-LARM (/əˈlɑːrm/)."
+    },
+    {
+      "title": "sensor",
+      "note": "Akhiran -or diucapkan seperti 'er': SEN-ser (/ˈsɛnsər/)."
+    }
+  ]
+}
